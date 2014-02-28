@@ -43,13 +43,26 @@ C-x 1       Delete other windows
 C-x 0       Delete current window
 C-x 2       Split window horizontally
 C-x 3       Split window vertically
+C-l         Center buffer to point
+```
+
+Movement of point
+```
+C-n         Line down
+C-p         Line up
+M-f         Word forward
+M-b         Word backward
+C-a         Line begin
+C-e         Line end
+M-<         Buffer begin
+M->         Buffer end
 ```
 
 General edit commands
 ```
 C-z         Undo
 C-k         Kill line
-C-d         Kill character
+C-d         Kill character forward
 M-d         Kill word
 M-delete    Kill word backwards
 C-c         Copy
@@ -122,8 +135,10 @@ C-c M-m     Macroexpand-1 preceding sexp
 M-.         Jump to definition
 M-/         Auto-complete word
 C-c C-d     Show docs for function
+```
 
 Cider-Mode specific (in REPL)
+```
 C-c C-c     Cancel current evaluation
 C-c C-o     Clear REPL buffer
 M-p         Back through REPL history
