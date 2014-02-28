@@ -18,17 +18,20 @@ To use this configuration:
 
 ## Some M-x commands
 
-| magit-status | Show Magit buffer |
-| visual-line-mode | Switch nice word wrap on/off |
-| replace-string | Replace all to end of buffer |
-| query-string | Replace all to end of buffer, ask for each |
-| shell | Create buffer with terminal |
+Command | Description
+--- | ---
+magit-status | Show Magit buffer
+visual-line-mode | Switch nice word wrap on/off
+replace-string | Replace all to end of buffer
+query-string | Replace all to end of buffer, ask for each
+shell | Create buffer with terminal
 
 
 ## Shortcuts
 
-```
+
 File/buffer/window commands
+```
 C-x C-c     Exit Emacs
 C-x C-f     Find file
 C-x C-s     Save buffer
@@ -40,8 +43,10 @@ C-x 1       Delete other windows
 C-x 0       Delete current window
 C-x 2       Split window horizontally
 C-x 3       Split window vertically
+```
 
 General edit commands
+```
 C-z         Undo
 C-k         Kill line
 C-d         Kill character
@@ -51,8 +56,10 @@ C-c         Copy
 C-x         Cut
 C-v         Paste
 C-x h       Mark whole buffer
+```
 
 Misc commands
+```
 C-g         Cancel command in minibuffer
 q           Dismiss a temporary buffer that has appeared
 M-g M-g     Goto line
@@ -62,11 +69,15 @@ M-%         Query replace
 C-x C-+     Increase font size in buffer
 C-x C--     Decrease font size in buffer
 C-x C-0     Reset font size in buffer
+```
 
 Markdown 
+```
 C-c C-c p   Preview in browser
+```
 
 Magit (for more see [cheatsheet](http://daemianmack.com/magit-cheatsheet.html))
+```
 C-x g       Magit status
 s           Stage one
 S           Stage all
@@ -75,8 +86,10 @@ U           Unstage all
 c c         Prepare commit
 C-c C-c     Commit
 P P         Push
+```
 
 Paredit (for more see [cheatsheet](https://github.com/joelittlejohn/paredit-cheatsheet))
+```
 TAB         Reindent
 C-M-d       Jump down to start of enclosed S-expr 
 C-M-u       Jump up to start of enclosing S-expr
@@ -93,8 +106,10 @@ M-s         Splice (unwrap)
 M-S         Split S-exprs
 M-J         Join S-exprs
 M-r         Raise S-expr
+```
 
 Clojure-Mode specific (for more see [Cider shortcuts](https://github.com/clojure-emacs/cider#keyboard-shortcuts))
+```
 C-c ,       Run tests
 C-c '       View test failure messages
 C-c C-c     Compile and load current toplevel sexp
