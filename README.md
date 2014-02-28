@@ -16,7 +16,16 @@ To use this configuration:
  1. Restart Emacs.
 
 
-## Shortcuts and frequently used M-x commands
+## Some M-x commands
+
+| magit-status | Show Magit buffer |
+| visual-line-mode | Switch nice word wrap on/off |
+| replace-string | Replace all to end of buffer |
+| query-string | Replace all to end of buffer, ask for each |
+| shell | Create buffer with terminal |
+
+
+## Shortcuts
 
 ```
 File/buffer/window commands
@@ -57,11 +66,17 @@ C-x C-0     Reset font size in buffer
 Markdown 
 C-c C-c p   Preview in browser
 
-Magit
+Magit (for more see [cheatsheet](http://daemianmack.com/magit-cheatsheet.html))
 C-x g       Magit status
+s           Stage one
+S           Stage all
+u           Unstage one
+U           Unstage all
+c c         Prepare commit
+C-c C-c     Commit
+P P         Push
 
-
-Paredit (for more see <a href="https://github.com/joelittlejohn/paredit-cheatsheet">cheatsheet</a>)
+Paredit (for more see [cheatsheet](https://github.com/joelittlejohn/paredit-cheatsheet))
 TAB         Reindent
 C-M-d       Jump down to start of enclosed S-expr 
 C-M-u       Jump up to start of enclosing S-expr
@@ -79,7 +94,7 @@ M-S         Split S-exprs
 M-J         Join S-exprs
 M-r         Raise S-expr
 
-Clojure-Mode specific (for more see <a href="https://github.com/clojure-emacs/cider#keyboard-shortcuts">Cider keyboard shortcuts</a>)
+Clojure-Mode specific (for more see [Cider shortcuts](https://github.com/clojure-emacs/cider#keyboard-shortcuts))
 C-c ,       Run tests
 C-c '       View test failure messages
 C-c C-c     Compile and load current toplevel sexp
