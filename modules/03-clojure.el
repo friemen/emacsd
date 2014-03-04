@@ -35,6 +35,6 @@
 (setq cider-repl-history-file "~/.emacs.d/cider-history")
 
 
-(setq nrepl-eval-sexp-fu-flash-duration 0.5)
-(setq cider-eval-sexp-fu-flash-duration 0.5)
+(setq nrepl-eval-sexp-fu-flash-duration 0.2)
+(setq cider-eval-sexp-fu-flash-duration 0.2)
 
