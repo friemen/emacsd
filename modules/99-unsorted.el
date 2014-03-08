@@ -28,9 +28,16 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 
 
+;; web mode
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(global-set-key (kbd "C-7") 'web-mode-element-close)
+
+
 ;; ido
 (require 'ido)
 (ido-mode t)
+
 
 ;; dired+
 (require 'dired)
@@ -47,6 +54,7 @@
                  ;; Set dired-x buffer-local variables here.  For example:
                  (dired-omit-mode 1)
                  ))
+
 
 ;; multiple cursors
 (require 'multiple-cursors)

@@ -45,6 +45,7 @@
 	tabbar-ruler
 	thingatpt
 	undo-tree
+	web-mode
 ))
 
 (dolist (p my-packages)

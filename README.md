@@ -172,3 +172,11 @@ C-c C-o     Clear previous REPL buffer output
 C-c M-o     Clear REPL buffer output
 , ha Tab    Kill REPL
 ```
+
+Web-Mode
+```
+C-7         Close tag
+C-c C-i     Indent buffer
+M-;         Toggle comment
+C-c C-d d   Detect tag mismatch
+```
