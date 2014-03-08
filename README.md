@@ -70,6 +70,9 @@ C-c         Copy
 C-x         Cut
 C-v         Paste
 C-x h       Mark whole buffer
+C-<         Mark previous like this (multiple cursors)
+C->         Mark next like this (multiple cursors)
+C-C C-<     Mark all like this (multiple cursors)
 C-Space     Set/end mark
 C-Enter     Set/end rectangle mark
 ```
@@ -145,6 +148,7 @@ Clojure-Mode specific (for more see [Cider shortcuts](https://github.com/clojure
 ```
 C-c ,       Run tests
 C-c '       View test failure messages
+C-c C-e     Evaluate expr preceding point and display result in echo area
 C-c C-c     Compile and load current toplevel sexp
 C-c C-p     Evaluate preceding sexp and pretty print result
 C-c C-k     Compile and load complete buffer
@@ -159,7 +163,12 @@ C-c C-d     Show docs for function
 
 Cider-Mode specific (in REPL)
 ```
+Tab         Complete symbol at point
+C-Up        Back through REPL history
+C-Down      Forward through REPL history
 C-c C-c     Cancel current evaluation
-C-c C-o     Clear REPL buffer
-M-p         Back through REPL history
+C-c C-u     Clear input before point
+C-c C-o     Clear previous REPL buffer output
+C-c M-o     Clear REPL buffer output
+, ha Tab    Kill REPL
 ```

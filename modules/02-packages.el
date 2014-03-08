@@ -32,6 +32,7 @@
 	ido
 	magit
 	markdown-mode
+	multiple-cursors
 	nrepl-eval-sexp-fu
 	org
 	paredit
