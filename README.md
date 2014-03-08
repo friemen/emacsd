@@ -36,6 +36,7 @@ C-x C-c     Exit Emacs
 C-x C-f     Find file
 C-x C-s     Save buffer
 C-x C-w     Write buffer to other file
+C-x d       Show directory (dired)
 C-x b       Switch buffer
 C-x k       Kill buffer
 C-x o       Jump to next buffer
@@ -69,6 +70,8 @@ C-c         Copy
 C-x         Cut
 C-v         Paste
 C-x h       Mark whole buffer
+C-Space     Set/end mark
+C-Enter     Set/end rectangle mark
 ```
 
 Misc commands
@@ -84,7 +87,24 @@ C-x C--     Decrease font size in buffer
 C-x C-0     Reset font size in buffer
 ```
 
-Markdown 
+Dired/Dired+
+```
+Enter       Select file/dir
+^           Goto parent dir
+C-x M-o     Toggle hidden file display
+m           Mark
+u           Unmark
+U           Unmark all
+* .         Mark by extension
+* %         Mark by regex
+C           Copy marked
+R           Move/Rename marked
+F           Visit marked
+D           Delete marked
++           Create new dir
+```
+
+Markdown
 ```
 C-c C-c p   Preview in browser
 ```
@@ -110,10 +130,10 @@ C-M-f       Jump forward to next S-expr
 C-M-b       Jump backward to beginning of previous S-expr
 C-M-Space   Mark current S-expr 
 C-k         Kill S-expr or rest until S-expr ends
-C-right     Forward slurp (closing bracket to the right)
-C-left      Forward barf (closing bracket to the left)
-ESC C-right Backward slurp (opening bracket to the left)
-ESC C-left  Backward barf (opening bracket to the right)
+C-Right     Forward slurp (closing bracket to the right)
+C-Left      Forward barf (closing bracket to the left)
+ESC C-Right Backward slurp (opening bracket to the left)
+ESC C-Left  Backward barf (opening bracket to the right)
 M-(         Wrap round
 M-s         Splice (unwrap)
 M-S         Split S-exprs

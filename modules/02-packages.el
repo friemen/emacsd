@@ -26,6 +26,7 @@
 	clojure-test-mode
 	clojure-project-mode
 	clojurescript-mode
+	dired+
 	dash
 	highlight
 	ido

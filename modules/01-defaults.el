@@ -16,7 +16,7 @@
  '(show-paren-mode t)
  '(tool-bar-mode nil)
  '(truncate-lines t)
- '(uniquify-buffer-name-style (quote forward) nil (uniquify)))      
+ '(uniquify-buffer-name-style (quote forward) nil (uniquify)))
 
 
 (custom-set-faces

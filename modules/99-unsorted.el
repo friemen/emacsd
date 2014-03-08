@@ -28,9 +28,25 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 
 
-;; ido configuration
+;; ido
 (require 'ido)
 (ido-mode t)
+
+;; dired+
+(require 'dired)
+(require 'dired+)
+(toggle-diredp-find-file-reuse-dir 1)
+(setq dired-omit-files "^\\.?#\\|^\\.$\\|^\\.\\.$\\|^\\..*$")
+(add-hook 'dired-load-hook
+               (lambda ()
+                 (load "dired-x")
+                 ;; Set dired-x global variables here.  For example:
+                 ))
+(add-hook 'dired-mode-hook
+               (lambda ()
+                 ;; Set dired-x buffer-local variables here.  For example:
+                 (dired-omit-mode 1)
+                 ))
 
 
 ;; Scroll one line at a time (less "jumpy" than defaults)
