@@ -29,6 +29,7 @@
 	dired+
 	dash
 	highlight
+	ibuffer
 	ido
 	magit
 	markdown-mode
@@ -37,9 +38,11 @@
 	org
 	paredit
 	popup
+	powerline
 	rainbow-delimiters
 	smartparens
 	smart-tab
+	smex
 	switch-window
 	tabbar
 	tabbar-ruler

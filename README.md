@@ -36,10 +36,12 @@ C-x C-c     Exit Emacs
 C-x C-f     Find file
 C-x C-s     Save buffer
 C-x C-w     Write buffer to other file
-C-x d       Show directory (dired)
+C-x d       Show directory (dired+)
 C-x b       Switch buffer
+C-x C-b     List buffers (ibuffer)
 C-x k       Kill buffer
-C-x o       Jump to next buffer
+C-x g       Git status (magit)
+C-x o       Jump to next window
 C-x 1       Delete other windows
 C-x 0       Delete current window
 C-x 2       Split window horizontally
@@ -107,14 +109,14 @@ D           Delete marked
 +           Create new dir
 ```
 
-Markdown
+Markdown (see also [project page](http://jblevins.org/projects/markdown-mode/))
 ```
 C-c C-c p   Preview in browser
 ```
 
 Magit (for more see [cheatsheet](http://daemianmack.com/magit-cheatsheet.html))
 ```
-C-x g       Magit status
+g           Refresh
 s           Stage one
 S           Stage all
 u           Unstage one
@@ -173,7 +175,7 @@ C-c M-o     Clear REPL buffer output
 , ha Tab    Kill REPL
 ```
 
-Web-Mode
+Web-Mode (see also [project page](http://web-mode.org/))
 ```
 C-7         Close tag
 C-c C-i     Indent buffer
