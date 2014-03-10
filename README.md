@@ -25,7 +25,7 @@ visual-line-mode | Switch nice word wrap on/off
 replace-string | Replace all to end of buffer
 query-string | Replace all to end of buffer, ask for each
 shell | Create buffer with terminal
-
+clojure-cheatsheet | Open cheatsheet
 
 ## Shortcuts
 
@@ -59,6 +59,7 @@ C-a         Line begin
 C-e         Line end
 M-<         Buffer begin
 M->         Buffer end
+C-c Space   Ace Jump
 ```
 
 General edit commands
@@ -81,7 +82,7 @@ C-Enter     Set/end rectangle mark
 
 Misc commands
 ```
-C-g         Cancel command in minibuffer
+C-g         Cancel command / buffer
 q           Dismiss a temporary buffer that has appeared
 M-g M-g     Goto line
 C-s         Regex search forwards

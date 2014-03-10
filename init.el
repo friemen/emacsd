@@ -2,11 +2,6 @@
 
 ;; (setq url-proxy-services '(("http" . "YOUR-HOST:8080")))
 
-;; turn off splash screen messages
-(setq inhibit-startup-echo-area-message t
-      inhibit-startup-screen t)
-      
- 
  
 ;;; LOAD MODULES
 ;;; All startup filenames begin with a number and get loaded in numerical order.
