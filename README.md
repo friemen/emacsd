@@ -75,14 +75,14 @@ C-v         Paste
 C-x h       Mark whole buffer
 C-<         Mark previous like this (multiple cursors)
 C->         Mark next like this (multiple cursors)
-C-C C-<     Mark all like this (multiple cursors)
+C-M-<       Mark all like this (multiple cursors)
 C-Space     Set/end mark
 C-Enter     Set/end rectangle mark
 ```
 
 Misc commands
 ```
-C-g         Cancel command / buffer
+C-g         Cancel command / buffer (or 3x Escape)
 q           Dismiss a temporary buffer that has appeared
 M-g M-g     Goto line
 C-s         Regex search forwards
@@ -125,6 +125,7 @@ U           Unstage all
 c c         Prepare commit
 C-c C-c     Commit
 P P         Push
+q           Close Magit buffer
 ```
 
 Paredit (for more see [cheatsheet](https://github.com/joelittlejohn/paredit-cheatsheet))
@@ -162,6 +163,7 @@ C-c M-m     Macroexpand-1 preceding sexp
 M-.         Jump to definition
 M-/         Auto-complete word
 C-c C-d     Show docs for function
+C-c C-j     Show Javadoc in browser
 ```
 
 Cider-Mode specific (in REPL)
