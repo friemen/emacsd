@@ -34,6 +34,7 @@
 	ibuffer
 	ido
 	; ido-vertical-mode
+	impatient-mode
 	magit
 	markdown-mode
 	multiple-cursors

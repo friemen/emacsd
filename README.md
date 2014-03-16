@@ -26,6 +26,9 @@ replace-string | Replace all to end of buffer
 query-string | Replace all to end of buffer, ask for each
 shell | Create buffer with terminal
 clojure-cheatsheet | Open cheatsheet
+httpd-start | Start internal http server
+impatient-mode | Enable buffers impatient minor mode
+
 
 ## Shortcuts
 
@@ -184,4 +187,9 @@ C-7         Close tag
 C-c C-i     Indent buffer
 M-;         Toggle comment
 C-c C-d d   Detect tag mismatch
+```
+
+Emacs-Lisp-Mode
+```
+C-x C-e     Eval Elisp Sexp
 ```

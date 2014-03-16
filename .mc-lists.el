@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+	cua-cut-region
 	cua-delete-region
 	markdown-exdent-or-delete
 	paredit-forward-delete
@@ -10,4 +11,6 @@
 
 (setq mc/cmds-to-run-once
       '(
+	kill-something
+	sp--cua-replace-region
 	))

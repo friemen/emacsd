@@ -5,6 +5,7 @@
 (require 'nrepl-eval-sexp-fu)
 (load (concat user-emacs-directory "cider-eval-sexp-fu.el"))
 (require 'cider-eval-sexp-fu)
+(require 'paredit)
 
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
@@ -28,7 +29,7 @@
 (eval-after-load "cider"
   '(define-key cider-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc))
 
-(global-set-key (kbd "RET") 'newline-and-indent)
+(global-set-key (kbd "RET") 'paredit-newline)
 (setq cider-popup-stacktraces nil)
 (setq nrepl-hide-special-buffers nil)
 (setq cider-repl-pop-to-buffer-on-connect t)
@@ -37,4 +38,5 @@
 
 (setq nrepl-eval-sexp-fu-flash-duration 0.2)
 (setq cider-eval-sexp-fu-flash-duration 0.2)
+
 
