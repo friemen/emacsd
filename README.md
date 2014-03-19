@@ -121,6 +121,7 @@ C-c C-c p   Preview in browser
 Magit (for more see [cheatsheet](http://daemianmack.com/magit-cheatsheet.html))
 ```
 g           Refresh
+Tab         Show diff for single file
 s           Stage one
 S           Stage all
 u           Unstage one
