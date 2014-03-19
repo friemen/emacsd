@@ -20,14 +20,15 @@ To use this configuration:
 
 Command | Description
 --- | ---
-magit-status | Show Magit buffer
-visual-line-mode | Switch nice word wrap on/off
-replace-string | Replace all to end of buffer
-query-string | Replace all to end of buffer, ask for each
-shell | Create buffer with terminal
 clojure-cheatsheet | Open cheatsheet
 httpd-start | Start internal http server
 impatient-mode | Enable buffers impatient minor mode
+magit-status | Show Magit buffer
+query-string | Replace all to end of buffer, ask for each
+replace-string | Replace all to end of buffer
+rgrep | Grep for pattern recursively in files
+shell | Create buffer with terminal
+visual-line-mode | Switch nice word wrap on/off
 
 
 ## Shortcuts
