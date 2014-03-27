@@ -34,6 +34,11 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 
+;; sr-speedbar
+(require 'sr-speedbar)
+(global-set-key (kbd "s-y") 'sr-speedbar-toggle)
+(setq speedbar-show-unknown-files t)
+
 ;; smex
 (require 'smex)
 (smex-initialize)

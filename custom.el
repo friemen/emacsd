@@ -17,6 +17,7 @@
  '(save-place t nil (saveplace))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
+ '(sr-speedbar-right-side nil)
  '(tool-bar-mode nil)
  '(truncate-lines t)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify)))

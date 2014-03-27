@@ -41,6 +41,7 @@ C-x C-f     Find file
 C-x C-s     Save buffer
 C-x C-w     Write buffer to other file
 C-x d       Show directory (dired+)
+s-y         Toggle directory bar (sr-speedbar)
 C-x b       Switch buffer
 C-x C-b     List buffers (ibuffer)
 C-x k       Kill buffer

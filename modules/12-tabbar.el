@@ -25,7 +25,12 @@
      ((string-match "*ielm*" (buffer-name))
       "REPL")
      ((member (buffer-name)
-	      '("*GNU Emacs*" "*Messages*" "*scratch*" "*helm*" "*Completions*"))
+	      '("*GNU Emacs*"
+		"*Messages*"
+		"*scratch*"
+		"*helm*"
+		"*Completions*"
+		"*SPEEDBAR*"))
       "Emacs Buffer")
      ((string-match "*magit" (buffer-name))
       "Magit")

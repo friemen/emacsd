@@ -47,6 +47,7 @@
 	smartparens
 	smart-tab
 	smex
+	sr-speedbar
 	switch-window
 	tabbar
 	tabbar-ruler
