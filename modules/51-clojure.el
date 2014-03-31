@@ -30,6 +30,8 @@
   '(define-key cider-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc))
 
 (global-set-key (kbd "RET") 'paredit-newline)
+(define-key ac-completing-map [return] nil) ; no auto complete on enter
+
 (setq cider-popup-stacktraces nil)
 (setq nrepl-hide-special-buffers nil)
 (setq cider-repl-pop-to-buffer-on-connect t)
