@@ -21,19 +21,19 @@
 	ace-jump-mode
 	ace-jump-buffer
 	auctex
-	auto-complete
 	cider
 	clojure-cheatsheet
 	clojure-mode
 	clojure-test-mode
 	clojure-project-mode
 	clojurescript-mode
+	company
+	company-cider
 	dired+
 	dash
 	highlight
 	ibuffer
 	ido
-	; ido-vertical-mode
 	impatient-mode
 	magit
 	markdown-mode

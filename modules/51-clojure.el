@@ -1,36 +1,41 @@
 ;; Clojure configuration
-(require 'clojure-mode)
 (require 'ac-nrepl)
+(require 'clojure-mode)
 (require 'cider)
+(require 'company)
+(require 'company-cider)
 (require 'nrepl-eval-sexp-fu)
 (load (concat user-emacs-directory "cider-eval-sexp-fu.el"))
 (require 'cider-eval-sexp-fu)
 (require 'paredit)
 
-(add-hook 'clojure-mode-hook 'paredit-mode)
-(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
 
-(add-hook 'cider-mode-hook 'ac-nrepl-setup)
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+(add-hook 'cider-mode-hook 'paredit-mode)
+(add-hook 'cider-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'cider-mode-hook 'company-mode)
+(add-hook 'cider-mode-hook 'subword-mode)
+(add-hook 'cider-mode-hook 'ac-nrepl-setup)
 
-(add-hook 'cider-repl-mode-hook 'subword-mode)
-(add-hook 'cider-repl-mode-hook 'paredit-mode)
-(add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
+(add-hook 'clojure-mode-hook 'cider-mode)
+
+(add-hook 'cider-repl-mode-hook 'cider-mode)
 
 
-(eval-after-load "auto-complete"
+
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-cider))
+
+(eval-after-load 'cider
   '(progn
-    (add-to-list 'ac-modes 'clojure-mode)
-    (add-to-list 'ac-modes 'cider-mode)
-    (add-to-list 'ac-modes 'cider-repl-mode)))
+     (define-key clojure-mode-map (kbd "RET") 'paredit-newline)
+     (define-key cider-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
+     (define-key cider-mode-map (kbd "TAB") 'company-complete)))
 
 
-(eval-after-load "cider"
-  '(define-key cider-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc))
 
-(global-set-key (kbd "RET") 'paredit-newline)
-(define-key ac-completing-map [return] nil) ; no auto complete on enter
+; (setq company-begin-commands '(self-insert-command))
+
 
 (setq cider-popup-stacktraces nil)
 (setq nrepl-hide-special-buffers nil)

@@ -1,12 +1,5 @@
 
 
-;; Auto completion configuration
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-(ac-config-default)
-(setq ac-delay 0.5)
-
-
 ;; Ace Jump configuration
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
