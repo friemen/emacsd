@@ -12,5 +12,6 @@
 (setq mc/cmds-to-run-once
       '(
 	kill-something
+	paredit-splice-sexp-killing-backward
 	sp--cua-replace-region
 	))

@@ -30,9 +30,9 @@
   '(progn
      (define-key clojure-mode-map (kbd "RET") 'paredit-newline)
      (define-key cider-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
-     (define-key cider-mode-map (kbd "TAB") 'company-complete)))
+     ))
 
-
+; (define-key cider-mode-map (kbd "TAB") 'company-complete)
 
 ; (setq company-begin-commands '(self-insert-command))
 

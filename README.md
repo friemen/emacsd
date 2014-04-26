@@ -83,6 +83,7 @@ C->         Mark next like this (multiple cursors)
 C-M-<       Mark all like this (multiple cursors)
 C-Space     Set/end mark
 C-Enter     Set/end rectangle mark
+M-q         Reformat paragraph
 ```
 
 Misc commands
