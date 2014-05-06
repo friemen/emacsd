@@ -18,6 +18,15 @@
 (add-hook 'cider-mode-hook 'ac-nrepl-setup)
 
 (add-hook 'clojure-mode-hook 'cider-mode)
+(add-hook 'clojure-mode-hook 'typed-clojure-mode)
+
+(add-hook 'clojure-mode-hook
+  '(lambda ()
+     (font-lock-add-keywords nil
+			     '(("(\\(defn>\\)\\s-+\\(\\w+\\)"
+				(1 font-lock-keyword-face)
+				(2 font-lock-function-name-face))))))
+
 
 (add-hook 'cider-repl-mode-hook 'cider-mode)
 

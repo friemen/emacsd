@@ -52,6 +52,7 @@
 	tabbar
 	tabbar-ruler
 	thingatpt
+	typed-clojure-mode
 	undo-tree
 	web-mode
 ))
