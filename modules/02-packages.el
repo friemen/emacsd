@@ -34,6 +34,7 @@
 	highlight
 	ibuffer
 	ido
+	ido-ubiquitous
 	impatient-mode
 	magit
 	markdown-mode

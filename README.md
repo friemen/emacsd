@@ -15,6 +15,12 @@ To use this configuration:
  1. Start Emacs, get something to drink.
  1. Restart Emacs.
 
+Clojure nREPL integration is provided by
+[CIDER](https://github.com/clojure-emacs/cider). To make full use of
+the [Leiningen](http://leiningen.org/) cider-nrepl plugin must be
+present, either in project.clj or ~/.lein/profiles.clj. Here's my
+[profiles.clj](https://gist.github.com/friemen/5153156d765265fe5c13)
+as example.
 
 ## Some M-x commands
 
@@ -171,6 +177,8 @@ M-.         Jump to definition
 M-/         Auto-complete word
 C-c C-d     Show docs for function
 C-c C-j     Show Javadoc in browser
+C-c C-x n   Type check namespace (typed-clojure-mode)
+C-c C-x f   Type check preceding form (typed-clojure-mode)
 ```
 
 Cider-Mode specific (in REPL)
