@@ -17,7 +17,7 @@ To use this configuration:
 
 Clojure nREPL integration is provided by
 [CIDER](https://github.com/clojure-emacs/cider). To make full use of
-the [Leiningen](http://leiningen.org/) cider-nrepl plugin must be
+it, the [Leiningen](http://leiningen.org/) cider-nrepl plugin must be
 present, either in project.clj or ~/.lein/profiles.clj. Here's my
 [profiles.clj](https://gist.github.com/friemen/5153156d765265fe5c13)
 as example.
@@ -161,7 +161,7 @@ M-J         Join S-exprs
 M-r         Raise S-expr
 ```
 
-Clojure-Mode specific (for more see [Cider shortcuts](https://github.com/clojure-emacs/cider#keyboard-shortcuts))
+Clojure-Mode specific (for more see [CIDER shortcuts](https://github.com/clojure-emacs/cider#keyboard-shortcuts))
 ```
 C-c ,       Run tests
 C-c '       View test failure messages
