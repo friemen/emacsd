@@ -22,7 +22,7 @@
 (setq scroll-step 1) ; keyboard scroll one line at a time
 
 
-
+(recentf-mode 1)
 (delete-selection-mode 1)
 (setq delete-active-region t)
 

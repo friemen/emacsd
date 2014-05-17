@@ -1,4 +1,12 @@
-;; Tabbar/Tabbar-ruler configuration
+
+(defvar tabbar-packages '(
+	tabbar
+	tabbar-ruler))
+
+(dolist (p tabbar-packages)
+  (require-package p))
+
+
 (require 'tabbar)
 (require 'tabbar-ruler)
 (tabbar-mode t)

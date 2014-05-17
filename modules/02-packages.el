@@ -1,6 +1,6 @@
 
 
-;; Auto installation of packages
+;; support for installation of packages
 (require 'package)
 
 (dolist (source '(("melpa" . "http://melpa.milkbox.net/packages/")
@@ -15,49 +15,4 @@
   "Installs package if it is not already installed"
   (when (not (package-installed-p pkg))
     (package-install pkg)))
-
-(defvar my-packages '(
-	ac-nrepl
-	ace-jump-mode
-	ace-jump-buffer
-	auctex
-	cider
-	clojure-cheatsheet
-	clojure-mode
-	clojure-test-mode
-	clojure-project-mode
-	clojurescript-mode
-	company
-	company-cider
-	dired+
-	dash
-	highlight
-	ibuffer
-	ido
-	ido-ubiquitous
-	impatient-mode
-	magit
-	markdown-mode
-	multiple-cursors
-	nrepl-eval-sexp-fu
-	org
-	paredit
-	popup
-	powerline
-	rainbow-delimiters
-	smartparens
-	smart-tab
-	smex
-	sr-speedbar
-	switch-window
-	tabbar
-	tabbar-ruler
-	thingatpt
-	typed-clojure-mode
-	undo-tree
-	web-mode
-))
-
-(dolist (p my-packages)
-  (require-package p))
 

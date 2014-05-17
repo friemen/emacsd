@@ -1,7 +1,13 @@
-;; Elisp
-(require 'paredit)
-(require 'rainbow-delimiters)
-(require 'company)
+(defvar elisp-packages '(
+	company
+	nrepl-eval-sexp-fu
+	paredit
+	popup
+	rainbow-delimiters
+	smartparens))
+
+(dolist (p elisp-packages)
+  (require-package p))
 
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)

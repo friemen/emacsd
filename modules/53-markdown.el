@@ -1,4 +1,6 @@
 
+(require-package 'markdown-mode)
+
 
 ;; Markdown auto activate
 (require 'markdown-mode)

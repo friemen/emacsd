@@ -6,3 +6,6 @@ cider-history
 elpa
 ido.last
 recentf
+/eshell/
+/projectile-bookmarks.eld
+/url/

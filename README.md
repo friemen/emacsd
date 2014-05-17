@@ -33,9 +33,9 @@ magit-status | Show Magit buffer
 query-string | Replace all to end of buffer, ask for each
 replace-string | Replace all to end of buffer
 rgrep | Grep for pattern recursively in files
-shell | Create buffer with terminal
+eshell | Create buffer with terminal
 visual-line-mode | Switch nice word wrap on/off
-
+string-rectangle | Insert prefix to every marked line
 
 ## Shortcuts
 
@@ -47,6 +47,7 @@ C-x C-f     Find file
 C-x C-s     Save buffer
 C-x C-w     Write buffer to other file
 C-x d       Show directory (dired+)
+C-x C-j     Open dired and go to file in current buffer
 s-y         Toggle directory bar (sr-speedbar)
 C-x b       Switch buffer
 C-x C-b     List buffers (ibuffer)
@@ -103,6 +104,19 @@ M-%         Query replace
 C-x C-+     Increase font size in buffer
 C-x C--     Decrease font size in buffer
 C-x C-0     Reset font size in buffer
+```
+
+Projectile (see also [project page](https://github.com/bbatsov/projectile#interactive-commands))
+```
+C-c p s     Select file among known projects
+C-c p f     Select file in current project
+C-c p e     Select within recently visited files in project
+C-c p b     Select within open project buffers
+C-c p T     Select test file in current project
+C-c p D     Open project root dir for current buffer
+C-c p c     Compile project
+C-c p p     Execute tests for project
+C-c p k     Kill all project buffers
 ```
 
 Dired/Dired+
@@ -181,7 +195,7 @@ C-c C-x n   Type check namespace (typed-clojure-mode)
 C-c C-x f   Type check preceding form (typed-clojure-mode)
 ```
 
-Cider-Mode specific (in REPL)
+CIDER-Mode specific (in REPL)
 ```
 Tab         Complete symbol at point
 C-Up        Back through REPL history
@@ -205,3 +219,4 @@ Emacs-Lisp-Mode
 ```
 C-x C-e     Eval Elisp Sexp
 ```
+

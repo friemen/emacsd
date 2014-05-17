@@ -1,4 +1,21 @@
-;; Clojure configuration
+(defvar clojure-packages '(
+	ac-nrepl
+	cider
+	clojure-cheatsheet
+	clojure-mode
+	clojure-test-mode
+	company
+	company-cider
+	nrepl-eval-sexp-fu
+	paredit
+	popup
+	rainbow-delimiters
+	smartparens
+	typed-clojure-mode))
+
+(dolist (p clojure-packages)
+  (require-package p))
+
 (require 'ac-nrepl)
 (require 'clojure-mode)
 (require 'cider)

@@ -1,4 +1,35 @@
 
+(defvar misc-packages '(
+	ace-jump-mode
+	ace-jump-buffer
+	auctex
+	dired+
+	dash
+	flx-ido
+	highlight
+	ibuffer
+	ido
+	ido-ubiquitous
+	;ido-vertical-mode
+	impatient-mode
+	magit
+	markdown-mode
+	multiple-cursors
+	org
+	popup
+	powerline
+	projectile
+	smart-tab
+	smex
+	sr-speedbar
+	switch-window
+	thingatpt
+	undo-tree))
+
+(dolist (p misc-packages)
+  (require-package p))
+
+
 
 ;; Ace Jump configuration
 (require 'ace-jump-mode)
@@ -17,9 +48,9 @@
 
 ;; ido
 (require 'ido)
-; (require 'ido-vertical-mode)
+;(require 'ido-vertical-mode)
 (ido-mode t)
-; (ido-vertical-mode 1)
+;(ido-vertical-mode 1)
 
 
 ;; ibuffer
@@ -57,14 +88,19 @@
                  ))
 
 
-;; multiple cursors
+;; Multiple cursors
 (require 'multiple-cursors)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-M-<") 'mc/mark-all-like-this)
 
 
+;; Powerline
 (require 'powerline)
 (powerline-default-theme)
 
+
+;; Projectile
+(require 'projectile)
+(projectile-global-mode)
 
