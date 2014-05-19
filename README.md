@@ -27,15 +27,16 @@ as example.
 Command | Description
 --- | ---
 clojure-cheatsheet | Open cheatsheet
+eshell | Create buffer with terminal
 httpd-start | Start internal http server
 impatient-mode | Enable buffers impatient minor mode
+linum-mode | Toggle line number display on the left
 magit-status | Show Magit buffer
 query-string | Replace all to end of buffer, ask for each
 replace-string | Replace all to end of buffer
 rgrep | Grep for pattern recursively in files
-eshell | Create buffer with terminal
-visual-line-mode | Switch nice word wrap on/off
 string-rectangle | Insert prefix to every marked line
+visual-line-mode | Switch nice word wrap on/off
 
 ## Shortcuts
 
@@ -59,6 +60,8 @@ C-x 0       Delete current window
 C-x 2       Split window horizontally
 C-x 3       Split window vertically
 C-l         Center buffer to point
+M-left      Goto previous tab
+M-right     Goto next tab
 ```
 
 Movement of point
@@ -81,16 +84,16 @@ C-k         Kill line
 C-d         Kill character forward
 M-d         Kill word
 M-delete    Kill word backwards
+M-q         Reformat paragraph
 C-c         Copy
 C-x         Cut
 C-v         Paste
-C-x h       Mark whole buffer
+C-x h       Mark whole buffer contents
 C-<         Mark previous like this (multiple cursors)
 C->         Mark next like this (multiple cursors)
 C-M-<       Mark all like this (multiple cursors)
 C-Space     Set/end mark
 C-Enter     Set/end rectangle mark
-M-q         Reformat paragraph
 ```
 
 Misc commands
@@ -99,7 +102,9 @@ C-g         Cancel command / buffer (or 3x Escape)
 q           Dismiss a temporary buffer that has appeared
 M-g M-g     Goto line
 C-s         Regex search forwards
+C-s C-w     Regex search forwards for word under point
 C-r         Regex search backwards
+C-r C-w     Regex search backwards for word under point
 M-%         Query replace
 C-x C-+     Increase font size in buffer
 C-x C--     Decrease font size in buffer
@@ -108,7 +113,7 @@ C-x C-0     Reset font size in buffer
 
 Projectile (see also [project page](https://github.com/bbatsov/projectile#interactive-commands))
 ```
-C-c p s     Select file among known projects
+C-c p s     Switch project / select file
 C-c p f     Select file in current project
 C-c p e     Select within recently visited files in project
 C-c p b     Select within open project buffers
@@ -124,6 +129,7 @@ Dired/Dired+
 Enter       Select file/dir
 ^           Goto parent dir
 C-x M-o     Toggle hidden file display
+g           Refresh
 m           Mark
 u           Unmark
 U           Unmark all
@@ -131,12 +137,13 @@ U           Unmark all
 * %         Mark by regex
 C           Copy marked
 R           Move/Rename marked
-F           Visit marked
 D           Delete marked
+F           Visit marked
 +           Create new dir
+q           Close dired buffer
 ```
 
-Markdown (see also [project page](http://jblevins.org/projects/markdown-mode/))
+Markdown (see also [cheatsheet](http://ddloeffler.blogspot.de/2013/04/keybindings-for-emacs-markdown-mode.html))
 ```
 C-c C-c p   Preview in browser
 ```
