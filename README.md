@@ -145,6 +145,7 @@ q           Close dired buffer
 
 Markdown (see also [cheatsheet](http://ddloeffler.blogspot.de/2013/04/keybindings-for-emacs-markdown-mode.html))
 ```
+C-c C-a l   Insert link
 C-c C-c p   Preview in browser
 ```
 
@@ -219,6 +220,8 @@ Web-Mode (see also [project page](http://web-mode.org/))
 C-7         Close tag
 C-c C-i     Indent buffer
 M-;         Toggle comment
+C-c C-n     Jump to end/begin tag
+C-c C-f     Toggle block folding
 C-c C-d d   Detect tag mismatch
 ```
 

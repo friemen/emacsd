@@ -5,6 +5,7 @@
 	auctex
 	dired+
 	dash
+	emms
 	flx-ido
 	highlight
 	ibuffer
@@ -51,6 +52,12 @@
                  ;; Set dired-x buffer-local variables here.  For example:
                  (dired-omit-mode 1)
                  ))
+
+
+;; emms (emacs multi-media system)
+(require 'emms-setup)
+(emms-standard)
+(emms-default-players)
 
 
 ;; ibuffer
@@ -104,4 +111,5 @@
 ;; switch window configuration
 (require 'switch-window)
 (global-set-key (kbd "C-x o") 'switch-window)
+
 

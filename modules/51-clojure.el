@@ -5,7 +5,6 @@
 	clojure-mode
 	clojure-test-mode
 	company
-	company-cider
 	nrepl-eval-sexp-fu
 	paredit
 	popup
@@ -20,7 +19,6 @@
 (require 'clojure-mode)
 (require 'cider)
 (require 'company)
-(require 'company-cider)
 (require 'nrepl-eval-sexp-fu)
 (load (concat user-emacs-directory "cider-eval-sexp-fu.el"))
 (require 'cider-eval-sexp-fu)
@@ -49,13 +47,11 @@
 
 
 
-(eval-after-load 'company
-  '(add-to-list 'company-backends 'company-cider))
-
 (eval-after-load 'cider
   '(progn
      (define-key clojure-mode-map (kbd "RET") 'paredit-newline)
      (define-key cider-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
+     (define-key cider-mode-map (kbd "C-c M-z") 'nrepl-make-repl-connection-default)
      ))
 
 ; (define-key cider-mode-map (kbd "TAB") 'company-complete)
