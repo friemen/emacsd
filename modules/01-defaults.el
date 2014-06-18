@@ -25,5 +25,3 @@
 (recentf-mode 1)
 (delete-selection-mode 1)
 (setq delete-active-region t)
-
-

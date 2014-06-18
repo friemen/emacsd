@@ -3,7 +3,6 @@
 	cider
 	clojure-cheatsheet
 	clojure-mode
-	clojure-test-mode
 	company
 	nrepl-eval-sexp-fu
 	paredit
@@ -25,6 +24,7 @@
 (require 'paredit)
 
 
+
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (add-hook 'cider-mode-hook 'paredit-mode)
 (add-hook 'cider-mode-hook 'rainbow-delimiters-mode)
@@ -40,23 +40,27 @@
      (font-lock-add-keywords nil
 			     '(("(\\(defn>\\)\\s-+\\(\\w+\\)"
 				(1 font-lock-keyword-face)
+				(2 font-lock-function-name-face))
+			       ("(\\(defrecord>\\)\\s-+\\(\\w+\\)"
+				(1 font-lock-keyword-face)
 				(2 font-lock-function-name-face))))))
 
 
-(add-hook 'cider-repl-mode-hook 'cider-mode)
-
+(add-hook 'cider-repl-mode-hook 'paredit-mode)
+(add-hook 'cider-repl-mode-hook 'subword-mode)
+(add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'cider-repl-mode-hook 'company-mode)
+(add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
 
 
 (eval-after-load 'cider
   '(progn
+     (define-key clojure-mode-map (kbd "C-ö") 'paredit-open-round)
+     (define-key clojure-mode-map (kbd "C-ä") 'paredit-open-bracket)
+     (define-key clojure-mode-map (kbd "C-ü") 'paredit-open-curly)     
      (define-key clojure-mode-map (kbd "RET") 'paredit-newline)
      (define-key cider-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
-     (define-key cider-mode-map (kbd "C-c M-z") 'nrepl-make-repl-connection-default)
-     ))
-
-; (define-key cider-mode-map (kbd "TAB") 'company-complete)
-
-; (setq company-begin-commands '(self-insert-command))
+     (define-key cider-mode-map (kbd "C-c M-z") 'nrepl-make-repl-connection-default)))
 
 
 (setq cider-popup-stacktraces nil)

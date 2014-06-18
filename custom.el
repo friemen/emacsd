@@ -9,8 +9,7 @@
  '(column-number-mode t)
  '(cua-mode t nil (cua-base))
  '(custom-enabled-themes (quote (wombat)))
- ;'(global-hl-line-mode t)
- ;'(global-hl-line-sticky-flag t)
+ '(custom-safe-themes (quote ("f0ea6118d1414b24c2e4babdc8e252707727e7b4ff2e791129f240a2b3093e32" default)))
  '(ido-max-window-height 10)
  '(inhibit-startup-screen t)
  '(initial-frame-alist (quote ((fullscreen . maximized))))
@@ -31,7 +30,4 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 98 :width normal))))
  '(cider-eval-sexp-fu-flash ((t (:background "rosy brown" :foreground "white" :weight bold))))
- '(cursor ((t (:background "dark orange"))))
- ;'(highlight ((t (:background "#333"))))
- ;'(hl-line ((t (:background "#333"))))
-)
+ '(cursor ((t (:background "dark orange")))))

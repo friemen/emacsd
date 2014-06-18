@@ -2,6 +2,7 @@
 (defvar misc-packages '(
 	ace-jump-mode
 	ace-jump-buffer
+	; afternoon-theme
 	auctex
 	dired+
 	dash
@@ -36,6 +37,7 @@
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
+; (load-theme 'afternoon t)
 
 ;; dired+
 (require 'dired)
@@ -70,6 +72,7 @@
 ;(require 'ido-vertical-mode)
 (ido-mode t)
 ;(ido-vertical-mode 1)
+(global-set-key (kbd "C-<escape>") 'ido-kill-buffer)
 
 
 ;; magit
@@ -111,5 +114,5 @@
 ;; switch window configuration
 (require 'switch-window)
 (global-set-key (kbd "C-x o") 'switch-window)
-
+(global-set-key (kbd "C-<tab>") 'switch-window)
 

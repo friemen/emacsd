@@ -51,8 +51,10 @@ C-x d       Show directory (dired+)
 C-x C-j     Open dired and go to file in current buffer
 s-y         Toggle directory bar (sr-speedbar)
 C-x b       Switch buffer
+C-tab       Switch buffer
 C-x C-b     List buffers (ibuffer)
 C-x k       Kill buffer
+C-escape    Kill buffer
 C-x g       Git status (magit)
 C-x o       Jump to next window
 C-x 1       Delete other windows
@@ -187,6 +189,7 @@ Clojure-Mode specific (for more see [CIDER shortcuts](https://github.com/clojure
 ```
 C-c ,       Run tests
 C-c '       View test failure messages
+C-i         Reindent selected sexp
 C-c C-e     Evaluate expr preceding point and display result in echo area
 C-c C-c     Compile and load current toplevel sexp
 C-c C-p     Evaluate preceding sexp and pretty print result

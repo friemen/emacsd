@@ -13,5 +13,6 @@
       '(
 	kill-something
 	paredit-splice-sexp-killing-backward
+	paredit-splice-sexp-killing-forward
 	sp--cua-replace-region
 	))
