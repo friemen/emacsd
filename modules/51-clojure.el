@@ -53,12 +53,19 @@
 (add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
 
 
+(defun delete-whitespace-except-one ()
+  (interactive)
+  (just-one-space -1))
+
+
+
 (eval-after-load 'cider
   '(progn
      (define-key clojure-mode-map (kbd "C-ö") 'paredit-open-round)
      (define-key clojure-mode-map (kbd "C-ä") 'paredit-open-bracket)
      (define-key clojure-mode-map (kbd "C-ü") 'paredit-open-curly)     
      (define-key clojure-mode-map (kbd "RET") 'paredit-newline)
+     (define-key paredit-mode-map (kbd "C-d") 'delete-whitespace-except-one)
      (define-key cider-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
      (define-key cider-mode-map (kbd "C-c M-z") 'nrepl-make-repl-connection-default)))
 

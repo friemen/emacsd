@@ -172,7 +172,8 @@ C-M-d       Jump down to start of enclosed S-expr
 C-M-u       Jump up to start of enclosing S-expr
 C-M-f       Jump forward to next S-expr
 C-M-b       Jump backward to beginning of previous S-expr
-C-M-Space   Mark current S-expr 
+C-M-Space   Mark current S-expr
+C-d         Delete whitespace until next S-expr except one
 C-k         Kill S-expr or rest until S-expr ends
 C-Right     Forward slurp (closing bracket to the right)
 C-Left      Forward barf (closing bracket to the left)
@@ -192,6 +193,7 @@ C-c '       View test failure messages
 C-i         Reindent selected sexp
 C-c C-e     Evaluate expr preceding point and display result in echo area
 C-c C-c     Compile and load current toplevel sexp
+C-u C-c C-c As before, but show result in buffer
 C-c C-p     Evaluate preceding sexp and pretty print result
 C-c C-k     Compile and load complete buffer
 C-c C-z     Jump to REPL buffer
