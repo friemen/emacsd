@@ -68,7 +68,8 @@
      (define-key clojure-mode-map (kbd "C-ü") 'paredit-open-curly)     
      (define-key clojure-mode-map (kbd "RET") 'paredit-newline)
      (define-key paredit-mode-map (kbd "C-d") 'delete-whitespace-except-one)
-     (define-key cider-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
+     (define-key cider-mode-map (kbd "C-c C-d") 'ac-cider-popup-doc)
+     (define-key cider-mode-map (kbd "C-c C-j") 'cider-javadoc)
      (define-key cider-mode-map (kbd "C-c M-z") 'nrepl-make-repl-connection-default)))
 
 
