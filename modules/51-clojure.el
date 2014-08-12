@@ -1,9 +1,8 @@
 (defvar clojure-packages '(
-	ac-nrepl
+	ac-cider
 	cider
 	clojure-cheatsheet
 	clojure-mode
-	company
 	nrepl-eval-sexp-fu
 	paredit
 	popup
@@ -14,10 +13,9 @@
 (dolist (p clojure-packages)
   (require-package p))
 
-(require 'ac-nrepl)
+(require 'ac-cider)
 (require 'clojure-mode)
 (require 'cider)
-(require 'company)
 (require 'nrepl-eval-sexp-fu)
 (load (concat user-emacs-directory "cider-eval-sexp-fu.el"))
 (require 'cider-eval-sexp-fu)
@@ -30,7 +28,8 @@
 (add-hook 'cider-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'cider-mode-hook 'company-mode)
 (add-hook 'cider-mode-hook 'subword-mode)
-(add-hook 'cider-mode-hook 'ac-nrepl-setup)
+(add-hook 'cider-mode-hook 'ac-cider-setup)
+
 
 (add-hook 'clojure-mode-hook 'cider-mode)
 (add-hook 'clojure-mode-hook 'typed-clojure-mode)
@@ -50,13 +49,16 @@
 (add-hook 'cider-repl-mode-hook 'subword-mode)
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'cider-repl-mode-hook 'company-mode)
-(add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
+(add-hook 'cider-repl-mode-hook 'ac-cider-setup)
 
 
 (defun delete-whitespace-except-one ()
   (interactive)
   (just-one-space -1))
 
+
+(eval-after-load "auto-complete"
+  '(add-to-list 'ac-modes 'cider-mode))
 
 
 (eval-after-load 'cider
