@@ -188,6 +188,7 @@ M-r         Raise S-expr
 
 Clojure-Mode specific (for more see [CIDER shortcuts](https://github.com/clojure-emacs/cider#keyboard-shortcuts))
 ```
+C-c M-j     Start REPL
 C-c ,       Run tests
 C-c '       View test failure messages
 C-i         Reindent selected sexp
