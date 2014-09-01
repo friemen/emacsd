@@ -27,6 +27,7 @@ as example.
 Command | Description
 --- | ---
 clojure-cheatsheet | Open cheatsheet
+describe-mode | Get help about active modes
 eshell | Create buffer with terminal
 httpd-start | Start internal http server
 impatient-mode | Enable buffers impatient minor mode
@@ -49,7 +50,7 @@ C-x C-s     Save buffer
 C-x C-w     Write buffer to other file
 C-x d       Show directory (dired+)
 C-x C-j     Open dired and go to file in current buffer
-s-y         Toggle directory bar (sr-speedbar)
+s-y         Open directory bar (speedbar)
 C-x b       Switch buffer
 C-tab       Switch buffer
 C-x C-b     List buffers (ibuffer)
@@ -236,3 +237,24 @@ Emacs-Lisp-Mode
 C-x C-e     Eval Elisp Sexp
 ```
 
+Haskell-Mode
+```
+C-c C-l     Load buffer in interactive GHC
+C-c C-h     Hoogle query
+C-c C-c     Cabal build
+C-c C-t     Show type of expression
+C-c C-i     Show info about expression
+C-c C-k     Clear REPL buffer output
+```
+
+Speedbar File-Mode
+```
+s-y         Open Speedbar frame
+q           Close Speedbar frame
+U           Move directory up
+Enter       Move into / load in buffer
++           Expand dir
+-           Collapse dir
+D           Delete file
+R           Rename file
+```

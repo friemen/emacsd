@@ -23,7 +23,7 @@
 	projectile
 	smart-tab
 	smex
-	sr-speedbar
+        speedbar
 	switch-window
 	thingatpt
 	undo-tree))
@@ -104,10 +104,17 @@
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 
-;; sr-speedbar
-(require 'sr-speedbar)
-(global-set-key (kbd "s-y") 'sr-speedbar-toggle)
+;; speedbar
+(require 'speedbar)
+(global-set-key (kbd "s-y") 'speedbar)
 (setq speedbar-show-unknown-files t)
+(add-hook 'speedbar-mode-hook
+	  (lambda ()
+	    (auto-raise-mode 1)
+	    (add-to-list 'speedbar-frame-parameters '(top . 30))
+	    (add-to-list 'speedbar-frame-parameters '(left . 100))
+	    (add-to-list 'speedbar-frame-parameters '(width . 30))
+	    (add-to-list 'speedbar-frame-parameters '(height . 30))))
 
 
 ;; switch window configuration
