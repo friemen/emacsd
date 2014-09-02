@@ -2,7 +2,7 @@
 
 ## .emacs.d contents
 
-My personal configuration of Emacs 24.x for Clojure development.
+My personal configuration of Emacs 24.x
 
 To install Emacs 24 on Debian based distros:
  1. Add PPA https://launchpad.net/~cassou/+archive/emacs
@@ -15,12 +15,27 @@ To use this configuration:
  1. Start Emacs, get something to drink.
  1. Restart Emacs.
 
+## Clojure hint
+
+If you plan to work with [Clojure](http://clojure.org) you can follow
+the steps as documented in
+[a blog post](http://www.falkoriemenschneider.de/a__2013-01-30__Setting%20up%20Emacs+Lein+Clojure%20in%2015%20minutes.html)
+of mine.
+
 Clojure nREPL integration is provided by
 [CIDER](https://github.com/clojure-emacs/cider). To make full use of
 it, the [Leiningen](http://leiningen.org/) cider-nrepl plugin must be
 present, either in project.clj or ~/.lein/profiles.clj. Here's my
 [profiles.clj](https://gist.github.com/friemen/5153156d765265fe5c13)
 as example.
+
+
+## Haskell hint
+
+If you want to work with [Haskell](http://www.haskell.org) you can
+follow the [steps that I recently took](http://www.falkoriemenschneider.de/a__2014-09-02__Setting-up-Emacs-and-Haskell.html)
+to get started.
+
 
 ## Some M-x commands
 
