@@ -243,8 +243,9 @@ C-c C-l     Load buffer in interactive GHC
 C-c C-h     Hoogle query
 C-c C-c     Cabal build
 C-c C-t     Show type of expression
-C-c C-i     Show info about expression
+C-c C-d     Show info about expression
 C-c C-k     Clear REPL buffer output
+M-.         Goto definition
 ```
 
 Speedbar File-Mode

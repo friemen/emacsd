@@ -20,7 +20,6 @@
 (add-hook 'haskell-mode-hook 'company-mode)
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-(add-hook 'haskell-mode-hook 'ghc-init)
 (add-hook 'haskell-mode-hook 'structured-haskell-mode)
 
 (add-hook 'haskell-interactive-mode-hook 'structured-haskell-repl-mode)
@@ -34,6 +33,4 @@
   (popup-tip (ghc-get-info (ghc-things-at-point))
 	     :around t :scroll-bar t))
 
-
-(define-key haskell-mode-map (kbd "C-c TAB") 'ghc-show-info-popup)
-(define-key haskell-mode-map (kbd "C-c C-i") 'ghc-show-info-popup)
+(define-key haskell-mode-map (kbd "C-c C-d") 'ghc-show-info-popup)
