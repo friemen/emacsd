@@ -11,7 +11,9 @@
 (require 'tabbar-ruler)
 (tabbar-mode t)
 (global-set-key [M-left] 'tabbar-backward-tab)
+(global-set-key [C-prior] 'tabbar-backward-tab)
 (global-set-key [M-right] 'tabbar-forward-tab)
+(global-set-key [C-next] 'tabbar-forward-tab)
 
 
 (setq tabbar-background-color "#F6F8E3") ;; the color of the tabbar background

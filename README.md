@@ -118,7 +118,7 @@ Misc commands
 ```
 C-g         Cancel command / buffer (or 3x Escape)
 q           Dismiss a temporary buffer that has appeared
-M-g M-g     Goto line
+M-g g       Goto line
 C-s         Regex search forwards
 C-s C-w     Regex search forwards for word under point
 C-r         Regex search backwards
