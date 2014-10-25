@@ -59,6 +59,10 @@
 (require 'emms-setup)
 (emms-standard)
 (emms-default-players)
+(setq emms-source-file-default-directory "/home/backup/Music")
+(add-hook 'emms-player-started-hook 'emms-show)
+(global-set-key (kbd "s-e p") 'emms-play-directory)
+(global-set-key (kbd "s-e e") 'emms)
 
 
 ;; ibuffer
@@ -69,8 +73,10 @@
 ;; ido
 (require 'ido)
 ;(require 'ido-vertical-mode)
-(ido-mode t)
 ;(ido-vertical-mode 1)
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode t)
 (global-set-key (kbd "C-<escape>") 'ido-kill-buffer)
 
 

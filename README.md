@@ -127,6 +127,8 @@ M-%         Query replace
 C-x C-+     Increase font size in buffer
 C-x C--     Decrease font size in buffer
 C-x C-0     Reset font size in buffer
+s-e p       EMMS play directory
+s-e e       EMMS display playlist
 ```
 
 Projectile (see also [project page](https://github.com/bbatsov/projectile#interactive-commands))

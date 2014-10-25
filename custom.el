@@ -30,4 +30,6 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 98 :width normal))))
  '(cider-eval-sexp-fu-flash ((t (:background "rosy brown" :foreground "white" :weight bold))))
- '(cursor ((t (:background "dark orange")))))
+ '(cursor ((t (:background "dark orange"))))
+ '(emms-playlist-selected-face ((t (:foreground "orange red"))))
+ '(emms-playlist-track-face ((t (:foreground "yellow")))))
