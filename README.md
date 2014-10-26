@@ -43,6 +43,8 @@ Command | Description
 --- | ---
 clojure-cheatsheet | Open cheatsheet
 describe-mode | Get help about active modes
+ediff | Load and diff files
+ediff-buffers | Diff buffers
 eshell | Create buffer with terminal
 httpd-start | Start internal http server
 impatient-mode | Enable buffers impatient minor mode
@@ -63,7 +65,7 @@ C-x C-c     Exit Emacs
 C-x C-f     Find file
 C-x C-s     Save buffer
 C-x C-w     Write buffer to other file
-C-x d       Show directory (dired+)
+C-x C-d     Show directory (dired+)
 C-x C-j     Open dired and go to file in current buffer
 s-y         Open directory bar (speedbar)
 C-x b       Switch buffer

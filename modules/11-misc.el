@@ -6,6 +6,7 @@
 	auctex
 	dired+
 	dash
+	ediff
 	emms
 	flx-ido
 	highlight
@@ -42,6 +43,7 @@
 (require 'dired)
 (require 'dired+)
 (toggle-diredp-find-file-reuse-dir 1)
+(diredp-make-find-file-keys-reuse-dirs)
 (setq dired-omit-files "^\\.?#\\|^\\.$\\|^\\.\\.$\\|^\\..*$")
 (add-hook 'dired-load-hook
                (lambda ()
@@ -53,13 +55,21 @@
                  ;; Set dired-x buffer-local variables here.  For example:
                  (dired-omit-mode 1)
                  ))
+(global-set-key (kbd "C-x C-d") 'ido-dired)
+
+;; ediff
+(setq ediff-split-window-function 'split-window-horizontally)
 
 
 ;; emms (emacs multi-media system)
 (require 'emms-setup)
+(require 'emms-info)
+(require 'emms-info-mp3info)
+(require 'emms-browser)
 (emms-standard)
 (emms-default-players)
 (setq emms-source-file-default-directory "/home/backup/Music")
+(setq emms-info-functions '(emms-info-mp3info))
 (add-hook 'emms-player-started-hook 'emms-show)
 (global-set-key (kbd "s-e p") 'emms-play-directory)
 (global-set-key (kbd "s-e e") 'emms)
