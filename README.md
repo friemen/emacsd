@@ -188,10 +188,10 @@ q           Close Magit buffer
 Paredit (for more see [cheatsheet](https://github.com/joelittlejohn/paredit-cheatsheet))
 ```
 TAB         Reindent
-C-M-d       Jump down to start of enclosed S-expr 
 C-M-u       Jump up to start of enclosing S-expr
-C-M-f       Jump forward to next S-expr
-C-M-b       Jump backward to beginning of previous S-expr
+C-f         Jump forward to next S-expr
+C-M-f       Jump forward+down to next S-expr
+C-b         Jump backward to beginning of previous S-expr
 C-M-Space   Mark current S-expr
 C-d         Delete whitespace until next S-expr except one
 C-k         Kill S-expr or rest until S-expr ends
