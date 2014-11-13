@@ -8,6 +8,7 @@
 	dash
 	ediff
 	emms
+	eshell
 	flx-ido
 	highlight
 	ibuffer
@@ -73,6 +74,14 @@
 (add-hook 'emms-player-started-hook 'emms-show)
 (global-set-key (kbd "s-e p") 'emms-play-directory)
 (global-set-key (kbd "s-e e") 'emms)
+
+
+;; eshell
+(require 'eshell)
+(setq eshell-prompt-function
+      (lambda ()
+	(concat
+	 (user-login-name) "@" (getenv "HOSTNAME") ":" (eshell/pwd) "\n$ ")))
 
 
 ;; ibuffer
