@@ -40,6 +40,7 @@
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
+
 ; (load-theme 'afternoon t)
 
 ;; dired+
@@ -83,7 +84,8 @@
 (setq eshell-prompt-function
       (lambda ()
 	(concat
-	 (user-login-name) "@" (getenv "HOSTNAME") ":" (eshell/pwd) "\n$ ")))
+	 (user-login-name) "@" (getenv "HOSTNAME") ":" (eshell/pwd) "\n$ "))
+      eshell-prompt-regexp "^$ ")
 
 
 ;; expand-region
