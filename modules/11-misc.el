@@ -9,6 +9,7 @@
 	ediff
 	emms
 	eshell
+	expand-region
 	flx-ido
 	highlight
 	ibuffer
@@ -23,6 +24,7 @@
 	popup
 	powerline
 	projectile
+	recentf
 	smart-tab
 	smex
         speedbar
@@ -84,6 +86,11 @@
 	 (user-login-name) "@" (getenv "HOSTNAME") ":" (eshell/pwd) "\n$ ")))
 
 
+;; expand-region
+(require 'expand-region)
+(global-set-key (kbd "C-SPC") 'er/expand-region)
+
+
 ;; ibuffer
 (require 'ibuffer)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -120,6 +127,10 @@
 (require 'projectile)
 (projectile-global-mode)
 
+;; resentf
+(require 'recentf)
+(recentf-mode 1)
+(global-set-key "\C-xf" 'recentf-open-files)
 
 ;; smex
 (require 'smex)

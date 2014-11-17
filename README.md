@@ -63,6 +63,7 @@ File/buffer/window commands
 ```
 C-x C-c     Exit Emacs
 C-x C-f     Find file
+C-x f       Open recently used file
 C-x C-s     Save buffer
 C-x C-w     Write buffer to other file
 C-x C-d     Show directory (dired+)
@@ -112,7 +113,7 @@ C-x h       Mark whole buffer contents
 C-<         Mark previous like this (multiple cursors)
 C->         Mark next like this (multiple cursors)
 C-M-<       Mark all like this (multiple cursors)
-C-Space     Set/end mark
+C-Space     Expand region
 C-Enter     Set/end rectangle mark
 ```
 
