@@ -2,9 +2,9 @@
 
 ## .emacs.d contents
 
-My personal configuration of Emacs 24.x
+My personal configuration of Emacs
 
-To install Emacs 24 on Debian based distros:
+To install a current (snapshot) Emacs on Debian based distros:
  1. Add PPA https://launchpad.net/~ubuntu-elisp/+archive/ubuntu/ppa `sudo apt-add-repository ppa:ubuntu-elisp/ppa`
  1. Execute `sudo apt-get install emacs-snapshot emacs-snapshot-el`.
 
