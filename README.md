@@ -5,8 +5,8 @@
 My personal configuration of Emacs 24.x
 
 To install Emacs 24 on Debian based distros:
- 1. Add PPA https://launchpad.net/~cassou/+archive/emacs
- 1. Execute `sudo apt-get install emacs24 emacs24-el emacs24-common-non-dfsg`.
+ 1. Add PPA https://launchpad.net/~ubuntu-elisp/+archive/ubuntu/ppa `sudo apt-add-repository ppa:ubuntu-elisp/ppa`
+ 1. Execute `sudo apt-get install emacs-snapshot emacs-snapshot-el`.
 
 To use this configuration:
  1. In case you have an existing configuration you don't want to loose make a backup of your `~/.emacs` and `~/.emacs.d`.
