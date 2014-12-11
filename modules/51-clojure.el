@@ -1,6 +1,7 @@
 (defvar clojure-packages '(
 	ac-cider
 	cider
+	clj-refactor
 	clojure-cheatsheet
 	clojure-mode
 	nrepl-eval-sexp-fu
@@ -20,6 +21,7 @@
 (load (concat user-emacs-directory "cider-eval-sexp-fu.el"))
 (require 'cider-eval-sexp-fu)
 (require 'paredit)
+(require 'clj-refactor)
 
 
 
@@ -86,3 +88,7 @@
 (setq cider-eval-sexp-fu-flash-duration 0.2)
 
 
+(add-hook 'clojure-mode-hook
+	  (lambda ()
+	    (clj-refactor-mode 1)
+	    (cljr-add-keybindings-with-prefix "C-c C-v")))

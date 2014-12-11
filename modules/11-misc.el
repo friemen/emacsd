@@ -11,6 +11,7 @@
 	eshell
 	expand-region
 	flx-ido
+	helm
 	highlight
 	ibuffer
 	ido
@@ -91,6 +92,11 @@
 ;; expand-region
 (require 'expand-region)
 (global-set-key (kbd "C-SPC") 'er/expand-region)
+
+
+;; helm kill ring
+(require 'helm)
+(global-set-key (kbd "C-y") 'helm-show-kill-ring)
 
 
 ;; ibuffer

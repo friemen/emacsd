@@ -155,7 +155,7 @@
 (defun* cider-eval-sexp-fu-flash (bounds &optional (face cider-eval-sexp-fu-flash-face) (eface cider-eval-sexp-fu-flash-error-face))
   "BOUNS is either the cell or the function returns, such that (BEGIN . END).
 Reurn the 4 values; bounds, highlighting, un-highlighting and error flashing procedure. This function is convenient to use with `define-cider-eval-sexp-fu-flash-command'."
-  (flet ((bounds () (if (functionp bounds) (funcall bounds) bounds)))
+  (cl-letf ((bounds () (if (functionp bounds) (funcall bounds) bounds)))
     (let ((b (bounds)) (buf (current-buffer)))
       (when b
         (funcall cider-eval-sexp-fu-flash-function b face eface buf)))))
@@ -238,7 +238,7 @@ See also `cider-eval-sexp-fu-flash'."
 
 (require 'rx)
 (defun nesf-forward-inner-sexp0 ()
-  (flet ((poss ()
+  (cl-letf ((poss ()
            (let
                ((prev (save-excursion (backward-sexp) (forward-sexp) (point)))
                 (next (save-excursion (forward-sexp) (backward-sexp) (point))))

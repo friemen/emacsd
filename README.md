@@ -5,15 +5,16 @@
 My personal configuration of Emacs
 
 To install a current (snapshot) Emacs on Debian based distros:
- 1. Add PPA https://launchpad.net/~ubuntu-elisp/+archive/ubuntu/ppa `sudo apt-add-repository ppa:ubuntu-elisp/ppa`
- 1. Execute `sudo apt-get install emacs-snapshot emacs-snapshot-el`.
+1. Add [PPA](https://launchpad.net/~ubuntu-elisp/+archive/ubuntu/ppa) with
+   `sudo apt-add-repository ppa:ubuntu-elisp/ppa`
+1. Install packages with `sudo apt-get install emacs-snapshot emacs-snapshot-el`.
 
 To use this configuration:
- 1. In case you have an existing configuration you don't want to loose make a backup of your `~/.emacs` and `~/.emacs.d`.
- 1. Remove `~/.emacs.d`. 
- 1. Clone this repo using `git clone https://github.com/friemen/emacsd.git ~/.emacs.d`.
- 1. Start Emacs, get something to drink.
- 1. Restart Emacs.
+1. In case you have an existing configuration you don't want to loose make a backup of your `~/.emacs` and `~/.emacs.d`.
+1. Remove `~/.emacs.d`. 
+1. Clone this repo using `git clone https://github.com/friemen/emacsd.git ~/.emacs.d`.
+1. Start Emacs, get something to drink.
+1. Restart Emacs.
 
 ## Clojure hint
 
@@ -46,7 +47,7 @@ describe-mode | Get help about active modes
 ediff | Load and diff files
 ediff-buffers | Diff buffers
 eshell | Create buffer with terminal
-httpd-start | Start internal http server
+httpd-start | Start internal http server on http://localhost:8080/imp
 impatient-mode | Enable buffers impatient minor mode
 linum-mode | Toggle line number display on the left
 magit-status | Show Magit buffer
@@ -73,7 +74,7 @@ C-x b       Switch buffer
 C-tab       Switch buffer
 C-x C-b     List buffers (ibuffer)
 C-x k       Kill buffer
-C-escape    Kill buffer
+C-Escape    Kill buffer
 C-x g       Git status (magit)
 C-x o       Jump to next window
 C-x 1       Delete other windows
@@ -81,8 +82,8 @@ C-x 0       Delete current window
 C-x 2       Split window horizontally
 C-x 3       Split window vertically
 C-l         Center buffer to point
-M-left      Goto previous tab
-M-right     Goto next tab
+C-PgUp      Goto previous tab
+C-PgDown    Goto next tab
 ```
 
 Movement of point
@@ -109,6 +110,7 @@ M-q         Reformat paragraph
 C-c         Copy
 C-x         Cut
 C-v         Paste
+C-y         Show kill ring (abort with C-g)
 C-x h       Mark whole buffer contents
 C-<         Mark previous like this (multiple cursors)
 C->         Mark next like this (multiple cursors)
@@ -223,6 +225,7 @@ C-c C-z     Jump to REPL buffer
 C-c M-p     Copy preceding sexp to REPL buffer
 C-c M-n     Switch REPL namespace to buffer
 C-c M-m     Macroexpand-1 preceding sexp
+C-c C-V     Refactorings (see link below)
 M-.         Jump to definition
 M-/         Auto-complete word
 C-c C-d     Show docs for function
@@ -230,6 +233,9 @@ C-c C-j     Show Javadoc in browser
 C-c C-x n   Type check namespace (typed-clojure-mode)
 C-c C-x f   Type check preceding form (typed-clojure-mode)
 ```
+
+[Clojure Refactoring shortcuts](https://github.com/clojure-emacs/clj-refactor.el#usage)
+
 
 CIDER-Mode specific (in REPL)
 ```
@@ -280,3 +286,45 @@ Enter       Move into / load in buffer
 D           Delete file
 R           Rename file
 ```
+
+
+Org-Mode (see also [refcard](http://orgmode.org/orgcard.txt))
+
+Example
+```
+* Todos
+** Organize christmas party [66%]
+   DEADLINE: <2014-12-05 Fri>
+- [X] Book guide for museum
+- [X] Reserve restaurant
+- [ ] Notify people
+```
+
+* A headline begins with `*` and starts a section.
+* A section contains items, starting by default with bullet `-`.
+* Checkboxes `[ ]` can be used after the bullet of an item.
+
+```
+M-Enter     Add next item
+M-S-Enter   Add next TODO item
+M-Left      Decrease heading level
+M-Right     Increase heading level
+M-Up        Move up within level
+M-Down      Move down with level
+Tab         Cycle folding
+S-Left      On heading:  cycle status backward
+            On item:     cycle bullet style
+            In calendar: previous day
+S-Right     On heading:  cycle status forward
+			On item:     cycle bullet style
+	        In calendar: next day
+S-Up        On heading:  cycle priority backward
+            On item:     move up within section
+S-Down      On heading: cycle priority forward
+         	On item:     move down within section
+C-c .       Add date
+C-c C-d     Add deadline to section
+C-c C-c     Toggle checkbox [ ] <-> [X]
+C-c C-z     Add note to section
+```
+
