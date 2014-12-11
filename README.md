@@ -225,7 +225,7 @@ C-c C-z     Jump to REPL buffer
 C-c M-p     Copy preceding sexp to REPL buffer
 C-c M-n     Switch REPL namespace to buffer
 C-c M-m     Macroexpand-1 preceding sexp
-C-c C-V     Refactorings (see link below)
+C-c C-v     Refactorings (see link below)
 M-.         Jump to definition
 M-/         Auto-complete word
 C-c C-d     Show docs for function
