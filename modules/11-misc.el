@@ -2,7 +2,6 @@
 (defvar misc-packages '(
 	ace-jump-mode
 	ace-jump-buffer
-	; afternoon-theme
 	auctex
 	dired+
 	dash
@@ -11,6 +10,7 @@
 	eshell
 	expand-region
 	flx-ido
+	gandalf-theme
 	helm
 	highlight
 	ibuffer
@@ -23,10 +23,11 @@
 	multiple-cursors
 	org
 	popup
-	powerline
 	projectile
 	recentf
 	smart-tab
+	smart-mode-line
+	smart-mode-line-powerline-theme
 	smex
         speedbar
 	switch-window
@@ -41,8 +42,6 @@
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
-
-; (load-theme 'afternoon t)
 
 ;; dired+
 (require 'dired)
@@ -61,6 +60,7 @@
                  (dired-omit-mode 1)
                  ))
 (global-set-key (kbd "C-x C-d") 'ido-dired)
+
 
 ;; ediff
 (setq ediff-split-window-function 'split-window-horizontally)
@@ -111,7 +111,7 @@
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode t)
-(global-set-key (kbd "C-<escape>") 'ido-kill-buffer)
+(global-set-key (kbd "C-<escape>") 'kill-this-buffer)
 
 
 ;; magit
@@ -126,19 +126,25 @@
 (global-set-key (kbd "C-M-<") 'mc/mark-all-like-this)
 
 
-;; powerline
-(require 'powerline)
-(powerline-default-theme)
+;; modeline config
+(require 'smart-mode-line)
+(require 'smart-mode-line-powerline-theme)
+(setq sml/no-confirm-load-theme t)
+(sml/setup)
+(setq sml/mode-width 'full)
+(sml/apply-theme 'automatic)
 
 
 ;; projectile
 (require 'projectile)
 (projectile-global-mode)
 
+
 ;; resentf
 (require 'recentf)
 (recentf-mode 1)
 (global-set-key "\C-xf" 'recentf-open-files)
+
 
 ;; smex
 (require 'smex)

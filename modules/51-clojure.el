@@ -37,14 +37,16 @@
 (add-hook 'clojure-mode-hook 'typed-clojure-mode)
 
 (add-hook 'clojure-mode-hook
-  '(lambda ()
-     (font-lock-add-keywords nil
-			     '(("(\\(defn>\\)\\s-+\\(\\w+\\)"
-				(1 font-lock-keyword-face)
-				(2 font-lock-function-name-face))
-			       ("(\\(defrecord>\\)\\s-+\\(\\w+\\)"
-				(1 font-lock-keyword-face)
-				(2 font-lock-function-name-face))))))
+	  '(lambda ()
+	     (clj-refactor-mode 1)
+	     (cljr-add-keybindings-with-prefix "C-c C-v")
+	     (font-lock-add-keywords nil
+				     '(("(\\(defn>\\)\\s-+\\(\\w+\\)"
+					(1 font-lock-keyword-face)
+					(2 font-lock-function-name-face))
+				       ("(\\(defrecord>\\)\\s-+\\(\\w+\\)"
+					(1 font-lock-keyword-face)
+					(2 font-lock-function-name-face))))))
 
 
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
@@ -52,6 +54,12 @@
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'cider-repl-mode-hook 'company-mode)
 (add-hook 'cider-repl-mode-hook 'ac-cider-setup)
+
+
+(defun refresh-zackzack ()
+  (interactive)
+  (cider-eval-defun-at-point)
+  (cider-interactive-eval "(zackzack.demo.app/refresh)"))
 
 
 (defun delete-whitespace-except-one ()
@@ -75,7 +83,8 @@
      (define-key paredit-mode-map (kbd "C-M-f") 'paredit-forward-down)
      (define-key cider-mode-map (kbd "C-c C-d") 'ac-cider-popup-doc)
      (define-key cider-mode-map (kbd "C-c C-j") 'cider-javadoc)
-     (define-key cider-mode-map (kbd "C-c M-z") 'nrepl-make-repl-connection-default)))
+     (define-key cider-mode-map (kbd "C-c M-z") 'nrepl-make-repl-connection-default)
+     (define-key cider-mode-map (kbd "C-1") 'refresh-zackzack)))
 
 
 (setq cider-popup-stacktraces nil)
@@ -88,7 +97,4 @@
 (setq cider-eval-sexp-fu-flash-duration 0.2)
 
 
-(add-hook 'clojure-mode-hook
-	  (lambda ()
-	    (clj-refactor-mode 1)
-	    (cljr-add-keybindings-with-prefix "C-c C-v")))
+

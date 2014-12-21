@@ -2,7 +2,8 @@
 
 ;; (setq url-proxy-services '(("http" . "YOUR-HOST:8080")))
 
- 
+(server-start)
+
 ;;; LOAD MODULES
 ;;; All startup filenames begin with a number and get loaded in numerical order.
 
@@ -13,7 +14,3 @@
  
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
-
-
-
-

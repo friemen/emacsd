@@ -52,6 +52,7 @@ impatient-mode | Enable buffers impatient minor mode
 linum-mode | Toggle line number display on the left
 magit-status | Show Magit buffer
 query-string | Replace all to end of buffer, ask for each
+package-list-packages | Open package manager
 replace-string | Replace all to end of buffer
 rgrep | Grep for pattern recursively in files
 string-rectangle | Insert prefix to every marked line
@@ -73,8 +74,8 @@ s-y         Open directory bar (speedbar)
 C-x b       Switch buffer
 C-tab       Switch buffer
 C-x C-b     List buffers (ibuffer)
+C-Escape    Kill this buffer
 C-x k       Kill buffer
-C-Escape    Kill buffer
 C-x g       Git status (magit)
 C-x o       Jump to next window
 C-x 1       Delete other windows
@@ -155,6 +156,7 @@ Dired/Dired+
 Enter       Select file/dir
 ^           Goto parent dir
 C-x M-o     Toggle hidden file display
+(           Toggle file details display
 g           Refresh
 m           Mark
 u           Unmark
@@ -290,7 +292,6 @@ R           Rename file
 
 Org-Mode (see also [refcard](http://orgmode.org/orgcard.txt))
 
-Example
 ```
 * Todos
 ** Organize christmas party [66%]
