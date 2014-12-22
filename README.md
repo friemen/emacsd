@@ -1,10 +1,10 @@
 # Emacs Resources
 
-![Emacs](emacs.png)
-
 ## .emacs.d contents
 
 My personal configuration for [GNU Emacs](http://www.gnu.org/software/emacs/).
+
+![Emacs](emacs.png)
 
 
 To install a current (snapshot) Emacs on Debian based distros:
