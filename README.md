@@ -1,20 +1,26 @@
 # Emacs Resources
 
+![Emacs](emacs.png)
+
 ## .emacs.d contents
 
-My personal configuration of Emacs
+My personal configuration for [GNU Emacs](http://www.gnu.org/software/emacs/).
+
 
 To install a current (snapshot) Emacs on Debian based distros:
+
 1. Add [PPA](https://launchpad.net/~ubuntu-elisp/+archive/ubuntu/ppa) with
    `sudo apt-add-repository ppa:ubuntu-elisp/ppa`
-1. Install packages with `sudo apt-get install emacs-snapshot emacs-snapshot-el`.
+2. Install packages with `sudo apt-get install emacs-snapshot emacs-snapshot-el`.
+
 
 To use this configuration:
+
 1. In case you have an existing configuration you don't want to loose make a backup of your `~/.emacs` and `~/.emacs.d`.
-1. Remove `~/.emacs.d`. 
-1. Clone this repo using `git clone https://github.com/friemen/emacsd.git ~/.emacs.d`.
-1. Start Emacs, get something to drink.
-1. Restart Emacs.
+2. Remove `~/.emacs.d`. 
+3. Clone this repo using `git clone https://github.com/friemen/emacsd.git ~/.emacs.d`.
+4. Start Emacs, get something to drink.
+5. Restart Emacs.
 
 ## Clojure hint
 
