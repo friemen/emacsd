@@ -328,6 +328,7 @@ S-Up        On heading:  cycle priority backward
             On item:     move up within section
 S-Down      On heading: cycle priority forward
          	On item:     move down within section
+C-c ^       Sort items
 C-c .       Add date
 C-c C-d     Add deadline to section
 C-c C-c     Toggle checkbox [ ] <-> [X]

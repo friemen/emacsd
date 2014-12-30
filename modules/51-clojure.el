@@ -63,8 +63,17 @@
 
 
 (defun delete-whitespace-except-one ()
+  "Deletes all whitespace chars following point except one space."
   (interactive)
   (just-one-space -1))
+
+
+(defun delete-region-or-char ()
+  "Deletes a region if active, or the char after the point."
+  (interactive)
+  (if (use-region-p)
+      (paredit-delete-region (region-beginning) (region-end))
+    (paredit-forward-delete)))
 
 
 (eval-after-load "auto-complete"
@@ -81,6 +90,7 @@
      (define-key clojure-mode-map (kbd "C-b") 'paredit-backward)
      (define-key paredit-mode-map (kbd "C-d") 'delete-whitespace-except-one)
      (define-key paredit-mode-map (kbd "C-M-f") 'paredit-forward-down)
+     (define-key paredit-mode-map (kbd "<delete>") 'delete-region-or-char)
      (define-key cider-mode-map (kbd "C-c C-d") 'ac-cider-popup-doc)
      (define-key cider-mode-map (kbd "C-c C-j") 'cider-javadoc)
      (define-key cider-mode-map (kbd "C-c M-z") 'nrepl-make-repl-connection-default)
