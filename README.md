@@ -10,7 +10,8 @@ To install a current (snapshot) Emacs on Debian based distros:
 
 1. Add [PPA](https://launchpad.net/~ubuntu-elisp/+archive/ubuntu/ppa) with
    `sudo apt-add-repository ppa:ubuntu-elisp/ppa`
-2. Install packages with `sudo apt-get install emacs-snapshot emacs-snapshot-el`.
+2. Refresh your package lists with `sudo apt-get update`
+3. Install packages with `sudo apt-get install emacs-snapshot emacs-snapshot-el`.
 
 
 To use this configuration:
