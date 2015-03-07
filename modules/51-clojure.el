@@ -30,6 +30,7 @@
 (add-hook 'cider-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'cider-mode-hook 'company-mode)
 (add-hook 'cider-mode-hook 'subword-mode)
+(add-hook 'cider-mode-hook 'ac-flyspell-workaround)
 (add-hook 'cider-mode-hook 'ac-cider-setup)
 
 
@@ -58,7 +59,9 @@
 
 (defun refresh-zackzack ()
   (interactive)
-  (cider-eval-defun-at-point)
+  (save-buffer)
+  (cider-load-buffer)
+  ;(cider-eval-defun-at-point)
   (cider-interactive-eval "(zackzack.demo.app/refresh)"))
 
 
@@ -77,7 +80,9 @@
 
 
 (eval-after-load "auto-complete"
-  '(add-to-list 'ac-modes 'cider-mode))
+  '(progn
+     (add-to-list 'ac-modes 'cider-mode)
+     (add-to-list 'ac-modes 'cider-repl-mode)))
 
 
 (eval-after-load 'cider
