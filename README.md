@@ -265,6 +265,8 @@ M-;         Toggle comment
 C-c C-n     Jump to end/begin tag
 C-c C-f     Toggle block folding
 C-c C-d d   Detect tag mismatch
+C-c C-e i   Insert element (interactive)
+C-c C-a i   Insert attribute (interactive)
 ```
 
 Emacs-Lisp-Mode

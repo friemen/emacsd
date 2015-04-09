@@ -16,7 +16,7 @@
 	ibuffer
 	ido
 	ido-ubiquitous
-	;ido-vertical-mode
+	ido-vertical-mode
 	impatient-mode
 	magit
 	markdown-mode
@@ -91,6 +91,7 @@
 
 ;; expand-region
 (require 'expand-region)
+(require 'web-mode-expansions)
 (global-set-key (kbd "C-SPC") 'er/expand-region)
 
 
@@ -106,8 +107,8 @@
 
 ;; ido
 (require 'ido)
-;(require 'ido-vertical-mode)
-;(ido-vertical-mode 1)
+(require 'ido-vertical-mode)
+(ido-vertical-mode 1)
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode t)
@@ -117,6 +118,7 @@
 ;; magit
 (require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
+(setq magit-last-seen-setup-instructions "1.4.0")
 
 
 ;; multiple cursors
@@ -128,7 +130,7 @@
 
 ;; modeline config
 (require 'smart-mode-line)
-(require 'smart-mode-line-powerline-theme)
+;(require 'smart-mode-line-powerline-theme)
 (setq sml/no-confirm-load-theme t)
 (sml/setup)
 (setq sml/mode-width 'full)
