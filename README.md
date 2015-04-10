@@ -272,7 +272,8 @@ C-c C-a i   Insert attribute (interactive)
 
 Emacs-Lisp-Mode
 ```
-C-x C-e     Eval Elisp Sexp
+C-c C-c     Eval top-level sexp
+C-x C-e     Eval last elisp sexp
 ```
 
 Haskell-Mode
