@@ -185,16 +185,23 @@ C-c C-c p   Preview in browser
 
 Magit (for more see [cheatsheet](http://daemianmack.com/magit-cheatsheet.html))
 ```
+q           Close Magit buffer
 g           Refresh
+l l         Show log
 Tab         Show diff for single file
 s           Stage one
-S           Stage all
 u           Unstage one
+S           Stage all
 U           Unstage all
 c c         Prepare commit
 C-c C-c     Commit
 P P         Push
-q           Close Magit buffer
+f f         Fetch
+m m         Merge
+b b         Switch branch
+z z         Create stash
+A           Apply stash and pop it
+i           Add file to .gitignore
 ```
 
 Paredit (for more see [cheatsheet](https://github.com/joelittlejohn/paredit-cheatsheet))
