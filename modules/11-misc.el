@@ -128,6 +128,13 @@
 (global-set-key (kbd "C-M-<") 'mc/mark-all-like-this)
 
 
+;; org
+(require 'org)
+(eval-after-load 'org
+  '(progn
+     (define-key org-mode-map (kbd "C-<tab>") 'switch-window)))
+
+
 ;; modeline config
 (require 'smart-mode-line)
 ;(require 'smart-mode-line-powerline-theme)
