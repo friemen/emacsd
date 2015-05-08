@@ -1,4 +1,4 @@
-
+(package-initialize)
 
 ;; (setq url-proxy-services '(("http" . "YOUR-HOST:8080")))
 

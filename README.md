@@ -317,7 +317,7 @@ Org-Mode (see also [refcard](http://orgmode.org/orgcard.txt))
 
 ```
 M-Enter     Add next item
-M-S-Enter   Add next TODO item
+M-S-Enter   Add next TODO or [ ] item
 M-Left      Decrease heading level
 M-Right     Increase heading level
 M-Up        Move up within level
