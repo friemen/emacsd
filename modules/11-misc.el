@@ -38,6 +38,11 @@
   (require-package p))
 
 
+
+(global-set-key (kbd "C-<prior>") 'previous-buffer)
+(global-set-key (kbd "C-<next>") 'next-buffer)
+
+
 ;; ace jump configuration
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
@@ -108,9 +113,10 @@
 ;; ido
 (require 'ido)
 (require 'ido-vertical-mode)
-(ido-vertical-mode 1)
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
+(setq ido-ignore-buffers '("\\` " "\\`*"))
+(ido-vertical-mode 1)
 (ido-mode t)
 (global-set-key (kbd "C-<escape>") 'kill-this-buffer)
 

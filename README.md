@@ -60,6 +60,7 @@ magit-status | Show Magit buffer
 query-string | Replace all to end of buffer, ask for each
 package-list-packages | Open package manager
 replace-string | Replace all to end of buffer
+revert-buffer | Reload buffer contents from file
 rgrep | Grep for pattern recursively in files
 string-rectangle | Insert prefix to every marked line
 visual-line-mode | Switch nice word wrap on/off
@@ -78,7 +79,9 @@ C-x C-d     Show directory (dired+)
 C-x C-j     Open dired and go to file in current buffer
 s-y         Open directory bar (speedbar)
 C-x b       Switch buffer
-C-tab       Switch buffer
+C-Pgup      Previous buffer
+C-Pgdn      Next buffer
+C-Tab       Switch window
 C-x C-b     List buffers (ibuffer)
 C-Escape    Kill this buffer
 C-x k       Kill buffer
@@ -89,8 +92,6 @@ C-x 0       Delete current window
 C-x 2       Split window horizontally
 C-x 3       Split window vertically
 C-l         Center buffer to point
-C-PgUp      Goto previous tab
-C-PgDown    Goto next tab
 ```
 
 Movement of point
@@ -112,7 +113,7 @@ C-z         Undo
 C-k         Kill line
 C-d         Kill character forward
 M-d         Kill word
-M-delete    Kill word backwards
+M-Delete    Kill word backwards
 M-q         Reformat paragraph
 C-c         Copy
 C-x         Cut
@@ -206,7 +207,7 @@ i           Add file to .gitignore
 
 Paredit (for more see [cheatsheet](https://github.com/joelittlejohn/paredit-cheatsheet))
 ```
-TAB         Reindent
+Tab         Reindent
 C-M-u       Jump up to start of enclosing S-expr
 C-f         Jump forward to next S-expr
 C-M-f       Jump forward+down to next S-expr
