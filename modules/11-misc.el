@@ -130,6 +130,7 @@
 
 ;; org
 (require 'org)
+(setq org-support-shift-select t)
 (eval-after-load 'org
   '(progn
      (define-key org-mode-map (kbd "C-<tab>") 'switch-window)))
@@ -137,7 +138,6 @@
 
 ;; modeline config
 (require 'smart-mode-line)
-;(require 'smart-mode-line-powerline-theme)
 (setq sml/no-confirm-load-theme t)
 (sml/setup)
 (setq sml/mode-width 'full)

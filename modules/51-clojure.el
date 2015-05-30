@@ -4,6 +4,7 @@
 	clj-refactor
 	clojure-cheatsheet
 	clojure-mode
+	clojure-quick-repls
 	nrepl-eval-sexp-fu
 	paredit
 	popup
@@ -57,12 +58,12 @@
 (add-hook 'cider-repl-mode-hook 'ac-cider-setup)
 
 
-(defun refresh-zackzack ()
+(defun refresh-om ()
   (interactive)
   (save-buffer)
   (cider-load-buffer)
   ;(cider-eval-defun-at-point)
-  (cider-interactive-eval "(zackzack.demo.app/refresh)"))
+  (cider-interactive-eval "(de.doctronic.ms.frontend.app/refresh)"))
 
 
 (defun delete-whitespace-except-one ()
@@ -99,7 +100,7 @@
      (define-key cider-mode-map (kbd "C-c C-d") 'ac-cider-popup-doc)
      (define-key cider-mode-map (kbd "C-c C-j") 'cider-javadoc)
      (define-key cider-mode-map (kbd "C-c M-z") 'nrepl-make-repl-connection-default)
-     (define-key cider-mode-map (kbd "C-1") 'refresh-zackzack)))
+     (define-key cider-mode-map (kbd "C-1") 'refresh-om)))
 
 
 (setq cider-popup-stacktraces nil)
@@ -112,4 +113,6 @@
 (setq cider-eval-sexp-fu-flash-duration 0.2)
 
 
-
+(setq clojure-quick-repls-cljs-setup
+      "(require 'repltools)
+       (repltools/cljs-repl)")
