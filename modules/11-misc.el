@@ -125,7 +125,10 @@
 (require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
 (setq magit-last-seen-setup-instructions "1.4.0")
-
+;; just use git -v push (and rely on the .git/config settings)
+(setq magit-push-hook
+      '((lambda (_)
+	  (magit-run-git-async "push" "-v" magit-custom-options))))
 
 ;; multiple cursors
 (require 'multiple-cursors)
