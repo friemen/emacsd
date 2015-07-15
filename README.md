@@ -250,7 +250,7 @@ C-c C-x n   Type check namespace (typed-clojure-mode)
 C-c C-x f   Type check preceding form (typed-clojure-mode)
 ```
 
-[Clojure Refactoring shortcuts](https://github.com/clojure-emacs/clj-refactor.el#usage)
+[Clojure Refactoring shortcuts](https://github.com/clojure-emacs/clj-refactor.el/wiki)
 
 
 CIDER-Mode specific (in REPL)
