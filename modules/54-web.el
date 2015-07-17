@@ -1,13 +1,14 @@
-(defvar web-packages '(
-        js2-mode
-	web-mode))
+(defvar web-packages '(js2-mode
+		       web-mode
+		       flycheck))
 
 (dolist (p web-packages)
   (require-package p))
 
-;; web mode
+;; web-mode
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
 
 (defun web-mode-insert-link (href)
   (interactive "sInsert link with HREF: ")
@@ -34,4 +35,15 @@
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (add-hook 'js2-mode-hook 'flycheck-mode)
+
+
+;; nxml-mode
+(require 'nxml-mode)
+(add-to-list 'auto-mode-alist
+	     (cons (concat "\\." (regexp-opt '("xml" "xsd" "rng" "xslt" "xsl") t) "\\'")
+		   'nxml-mode))
+
+(add-hook 'nxml-mode-hook
+	  '(lambda ()
+	     (define-key nxml-mode-map (kbd "C-7") 'nxml-finish-element)))
 
