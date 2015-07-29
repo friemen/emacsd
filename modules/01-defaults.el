@@ -12,15 +12,17 @@
 (prefer-coding-system 'utf-8)
 (load-library "iso-transl")
 
-;; Automatically save buffers before compiling
+;; automatically save buffers before compiling
 (setq compilation-ask-about-save nil)
 
-;; Scroll one line at a time (less "jumpy" than defaults)
+;; scroll one line at a time (less "jumpy" than defaults)
 (setq mouse-wheel-scroll-amount '(2 ((shift) . 1))) ; one line at a time
 (setq mouse-wheel-progressive-speed nil) ; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't) ; scroll window under mouse
 (setq scroll-step 1) ; keyboard scroll one line at a time
 
+;; whitespace stripping
+(add-hook 'before-save-hook 'delete-trailing-whitespace) 
 
 (recentf-mode 1)
 (delete-selection-mode 1)

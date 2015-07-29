@@ -30,6 +30,7 @@
 	smart-mode-line-powerline-theme
 	smex
         speedbar
+	swiper
 	switch-window
 	thingatpt
 	undo-tree))
@@ -45,7 +46,7 @@
 
 ;; ace jump configuration
 (require 'ace-jump-mode)
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 
 
 ;; dired+
@@ -129,6 +130,9 @@
 (setq magit-push-hook
       '((lambda (_)
 	  (magit-run-git-async "push" "-v" magit-custom-options))))
+(add-hook 'magit-mode-hook
+	  (lambda ()
+	    (define-key magit-mode-map (kbd "C-<tab>") 'switch-window)))
 
 ;; multiple cursors
 (require 'multiple-cursors)
@@ -140,9 +144,10 @@
 ;; org
 (require 'org)
 (setq org-support-shift-select t)
-(eval-after-load 'org
-  '(progn
-     (define-key org-mode-map (kbd "C-<tab>") 'switch-window)))
+(add-hook 'org-mode-hook
+	  (lambda ()
+	    (define-key org-mode-map (kbd "C-<tab>") 'switch-window)))
+
 
 
 ;; modeline config
@@ -185,8 +190,16 @@
 	    (add-to-list 'speedbar-frame-parameters '(height . 30))))
 
 
+;; swiper
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(global-set-key "\C-s" 'swiper)
+(global-set-key "\C-r" 'swiper)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key [f6] 'ivy-resume)
+
+
 ;; switch window configuration
 (require 'switch-window)
 (global-set-key (kbd "C-x o") 'switch-window)
 (global-set-key (kbd "C-<tab>") 'switch-window)
-

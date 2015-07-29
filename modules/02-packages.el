@@ -1,5 +1,3 @@
-
-
 ;; support for installation of packages
 (require 'package)
 
@@ -15,4 +13,3 @@
   "Installs package if it is not already installed"
   (when (not (package-installed-p pkg))
     (package-install pkg)))
-
