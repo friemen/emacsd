@@ -17,7 +17,7 @@ To install a current (snapshot) Emacs on Debian based distros:
 To use this configuration:
 
 1. In case you have an existing configuration you don't want to loose make a backup of your `~/.emacs` and `~/.emacs.d`.
-2. Remove `~/.emacs.d`. 
+2. Remove `~/.emacs.d`.
 3. Clone this repo using `git clone https://github.com/friemen/emacsd.git ~/.emacs.d`.
 4. Start Emacs, get something to drink.
 5. Restart Emacs.
@@ -56,6 +56,7 @@ eshell | Create buffer with terminal
 httpd-start | Start internal http server on http://localhost:8080/imp
 impatient-mode | Enable buffers impatient minor mode
 linum-mode | Toggle line number display on the left
+magit-log-buffer-file | Show Git log with commit touching file
 magit-status | Show Magit buffer
 query-string | Replace all to end of buffer, ask for each
 package-list-packages | Open package manager
@@ -347,4 +348,3 @@ C-c C-d     Add deadline to section
 C-c C-c     Toggle checkbox [ ] <-> [X]
 C-c C-z     Add note to section
 ```
-

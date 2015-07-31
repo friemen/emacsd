@@ -126,13 +126,17 @@
 (require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
 (setq magit-last-seen-setup-instructions "1.4.0")
-;; just use git -v push (and rely on the .git/config settings)
-(setq magit-push-hook
-      '((lambda (_)
-	  (magit-run-git-async "push" "-v" magit-custom-options))))
+(setq magit-push-always-verify nil)
+
+;; just use git push -v (and rely on the .git/config settings)
+(defun magit-push-current (branch remote &optional remote-branch args)
+  (interactive (magit-push-read-args t t))
+  (magit-run-git-async-no-revert "push" "-v"))
+
 (add-hook 'magit-mode-hook
 	  (lambda ()
 	    (define-key magit-mode-map (kbd "C-<tab>") 'switch-window)))
+
 
 ;; multiple cursors
 (require 'multiple-cursors)
