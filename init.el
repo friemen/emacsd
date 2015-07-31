@@ -11,6 +11,6 @@
  (lambda (filename) (load-file filename))
  (directory-files (concat user-emacs-directory "modules") t "[0-9]*.el"))
 
- 
+
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)

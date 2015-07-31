@@ -1,12 +1,14 @@
 (defvar clojure-packages '(
 	ac-cider
 	cider
+	cider-eval-sexp-fu
 	clj-refactor
 	clojure-cheatsheet
 	clojure-mode
 	clojure-quick-repls
 	nrepl-eval-sexp-fu
 	paredit
+	paxedit
 	popup
 	rainbow-delimiters
 	smartparens
@@ -18,10 +20,10 @@
 (require 'ac-cider)
 (require 'clojure-mode)
 (require 'cider)
-(require 'nrepl-eval-sexp-fu)
-(load (concat user-emacs-directory "cider-eval-sexp-fu.el"))
 (require 'cider-eval-sexp-fu)
+(require 'nrepl-eval-sexp-fu)
 (require 'paredit)
+(require 'paxedit)
 (require 'clj-refactor)
 
 
@@ -65,6 +67,77 @@
     (paredit-forward-delete)))
 
 
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Evaluate form within (comment) sexp
+;; Courtesy of Minh Hemmer
+
+(defun my-goto-end-of-form-rec (p)
+  (let ((next-pos (paxedit-sexp-move-to-core-start)))
+    (cond ((looking-at ".comment")
+           (progn (message "commment")
+                  (goto-char p)
+                  (paredit-forward)))
+
+          ((numberp next-pos)
+           (my-goto-end-of-form-rec next-pos))
+
+          (t
+           (paredit-forward)))))
+
+(defun my-goto-end-of-form ()
+  (interactive)
+  (my-goto-end-of-form-rec (point)))
+
+(defun my-end-of-form ()
+  (save-excursion
+    (my-goto-end-of-form)
+    (point)))
+
+(defun my-beginning-of-form ()
+  (save-excursion
+    (my-goto-end-of-form)
+    (paredit-backward)
+    (point)))
+
+(defun my-eval-region-or-last-sexp-in-repl ()
+  (interactive)
+  (save-window-excursion
+    (save-excursion
+      (if (region-active-p)
+          (let ((log-size message-log-max))
+            (setq message-log-max nil)
+            (cider-insert-region-in-repl (region-beginning)
+                                         (region-end))
+            (setq message-log-max log-size))
+
+        (cider-insert-last-sexp-in-repl))
+      (cider-repl-return))))
+
+
+(defun my-eval-form ()
+  (interactive)
+  (save-excursion
+    (my-goto-end-of-form)
+    (cider-eval-last-sexp)))
+
+(defun my-eval-form-in-repl ()
+  (interactive)
+  (save-window-excursion
+    (save-excursion
+      (my-goto-end-of-form)
+      (my-eval-region-or-last-sexp-in-repl))))
+
+
+(define-eval-sexp-fu-flash-command my-eval-form
+  (eval-sexp-fu-flash (cons (my-beginning-of-form) (my-end-of-form))))
+
+(define-eval-sexp-fu-flash-command my-eval-region-or-last-sexp-in-repl
+  (eval-sexp-fu-flash (cons (save-excursion (paredit-backward) (point)) (point))))
+
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (defun my-clojure-keybindings ()
      (define-key clojure-mode-map (kbd "C-ö") 'paredit-open-round)
      (define-key clojure-mode-map (kbd "C-ä") 'paredit-open-bracket)
@@ -80,6 +153,8 @@
      (define-key cider-repl-mode-map (kbd "C-c M-z") 'nrepl-make-connection-default)
      (define-key cider-mode-map (kbd "C-c C-d") 'ac-cider-popup-doc)
      (define-key cider-mode-map (kbd "C-c C-j") 'cider-javadoc)
+     (define-key cider-mode-map (kbd "C-c C-c") 'my-eval-form)
+     (define-key cider-mode-map (kbd "C-c M-p") 'my-eval-form-in-repl)
      (define-key cider-mode-map (kbd "C-1") 'my-refresh-om))
 
 
@@ -110,7 +185,6 @@
   '(progn
      (add-to-list 'ac-modes 'cider-mode)
      (add-to-list 'ac-modes 'cider-repl-mode)))
-
 
 
 (setq auto-mode-alist (cons '("\\.boot$" . clojure-mode) auto-mode-alist))

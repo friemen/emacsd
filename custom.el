@@ -21,7 +21,7 @@
  '(org-startup-with-inline-images t)
  '(package-selected-packages
    (quote
-    (shm company-ghc web-mode js2-mode company typed-clojure-mode rainbow-delimiters nrepl-eval-sexp-fu clojure-quick-repls clojure-cheatsheet clj-refactor ac-cider undo-tree switch-window smex smart-mode-line-powerline-theme smart-mode-line smart-tab projectile popup multiple-cursors markdown-mode magit impatient-mode ido-vertical-mode ido-ubiquitous highlight helm gandalf-theme flx-ido expand-region emms dired+ auctex ace-jump-buffer ace-jump-mode)))
+    (cider-eval-sexp-fu web-mode undo-tree typed-clojure-mode switch-window swiper smex smart-tab smart-mode-line-powerline-theme shm rainbow-delimiters projectile paxedit nrepl-eval-sexp-fu markdown-mode magit js2-mode impatient-mode ido-vertical-mode ido-ubiquitous gandalf-theme flycheck flx-ido expand-region emms dired+ company-ghc clojure-quick-repls clojure-cheatsheet clj-refactor auctex ace-jump-buffer ac-cider)))
  '(save-place t nil (saveplace))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
@@ -35,10 +35,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 98 :width normal))))
- '(cider-eval-sexp-fu-flash ((t (:background "rosy brown" :foreground "white" :weight bold))))
  '(cursor ((t (:background "dark orange"))))
+ '(eval-sexp-fu-flash ((t (:background "light coral" :foreground "white" :weight bold))))
+ '(eval-sexp-fu-flash-face ((((class color)) (:background "rosy brown" :foreground "white" :bold t)) (t (:inverse-video t))))
  '(ido-subdir ((t (:background "white" :foreground "black"))))
  '(magit-item-highlight ((t (:background "gainsboro")))))
-
-
-
