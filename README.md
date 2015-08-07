@@ -211,8 +211,10 @@ Paredit (for more see [cheatsheet](https://github.com/joelittlejohn/paredit-chea
 Tab         Reindent
 C-M-u       Jump up to start of enclosing S-expr
 C-f         Jump forward to next S-expr
+C-S-f       Jump forward and adjust region
 C-M-f       Jump forward+down to next S-expr
 C-b         Jump backward to beginning of previous S-expr
+C-S-b       Jump backward and adjust region
 C-M-Space   Mark current S-expr
 C-d         Delete whitespace until next S-expr except one
 C-k         Kill S-expr or rest until S-expr ends
