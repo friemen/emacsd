@@ -142,6 +142,8 @@ M-%         Query replace
 C-x C-+     Increase font size in buffer
 C-x C--     Decrease font size in buffer
 C-x C-0     Reset font size in buffer
+C-+         Highlight symbol at point
+C-#         Unhighlight symbol at point
 s-e p       EMMS play directory
 s-e e       EMMS display playlist
 ```

@@ -106,6 +106,11 @@
 (global-set-key (kbd "C-y") 'helm-show-kill-ring)
 
 
+;; highlight
+(global-set-key (kbd "C-+") 'hlt-highlight-symbol)
+(global-set-key (kbd "C-#") 'hlt-unhighlight-symbol)
+
+
 ;; ibuffer
 (require 'ibuffer)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
