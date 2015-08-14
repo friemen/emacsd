@@ -124,6 +124,10 @@
 (setq ido-ignore-buffers '("\\` " "\\`*"))
 (ido-vertical-mode 1)
 (ido-mode t)
+(defun my-ido-keys ()
+  (define-key ido-completion-map (kbd "<down>") 'ido-next-match)
+  (define-key ido-completion-map (kbd "<up>")   'ido-prev-match))
+(add-hook 'ido-setup-hook #'my-ido-keys)
 (global-set-key (kbd "C-<escape>") 'kill-this-buffer)
 
 
@@ -172,10 +176,14 @@
 (projectile-global-mode)
 
 
-;; resentf
+;; recentf
 (require 'recentf)
-(recentf-mode 1)
-(global-set-key "\C-xf" 'recentf-open-files)
+(defun ido-recentf-open ()
+  (interactive)
+  (if (find-file (ido-completing-read "Find recent file: " recentf-list))
+      (message "Opening file...")
+    (message "Aborting")))
+(global-set-key (kbd "C-x f") 'ido-recentf-open)
 
 
 ;; smex
@@ -202,7 +210,7 @@
 ;; swiper
 (require 'swiper)
 ;; (ivy-mode 1)
-;; (setq ivy-use-virtual-buffers t)
+(setq ivy-use-virtual-buffers t)
 (global-set-key "\C-s" 'swiper)
 (global-set-key "\C-r" 'swiper)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
