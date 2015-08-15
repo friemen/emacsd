@@ -150,14 +150,14 @@ s-e e       EMMS display playlist
 
 Projectile (see also [project page](https://github.com/bbatsov/projectile#interactive-commands))
 ```
-C-c p s     Switch project / select file
+C-c p p     Switch project + select file
 C-c p f     Select file in current project
 C-c p e     Select within recently visited files in project
 C-c p b     Select within open project buffers
-C-c p T     Select test file in current project
+C-c p t     Select test file in current project
 C-c p D     Open project root dir for current buffer
 C-c p c     Compile project
-C-c p p     Execute tests for project
+C-c p P     Execute tests for project
 C-c p k     Kill all project buffers
 ```
 

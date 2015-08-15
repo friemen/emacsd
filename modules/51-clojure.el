@@ -48,7 +48,7 @@
   (save-buffer)
   ;(cider-load-buffer)
   (cider-eval-defun-at-point)
-  (cider-interactive-eval "(zackzack.demo.app/refresh)")
+  (cider-interactive-eval "(app.core/refresh)")
   ;(cider-interactive-eval "(de.doctronic.ms.frontend.app/refresh)")
   )
 
@@ -139,9 +139,9 @@
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun my-clojure-keybindings ()
-     (define-key clojure-mode-map (kbd "C-ö") 'paredit-open-round)
-     (define-key clojure-mode-map (kbd "C-ä") 'paredit-open-bracket)
-     (define-key clojure-mode-map (kbd "C-ü") 'paredit-open-curly)
+     (define-key clojure-mode-map (kbd "C-1") 'paredit-open-round)
+     (define-key clojure-mode-map (kbd "C-2") 'paredit-open-bracket)
+     (define-key clojure-mode-map (kbd "C-3") 'paredit-open-curly)
      (define-key clojure-mode-map (kbd "RET") 'paredit-newline)
      (define-key clojure-mode-map (kbd "C-f") 'paredit-forward)
      (define-key clojure-mode-map (kbd "C-b") 'paredit-backward)
@@ -155,7 +155,7 @@
      (define-key cider-mode-map (kbd "C-c C-j") 'cider-javadoc)
      (define-key cider-mode-map (kbd "C-c C-c") 'my-eval-form)
      (define-key cider-mode-map (kbd "C-c M-p") 'my-eval-form-in-repl)
-     (define-key cider-mode-map (kbd "C-1") 'my-refresh-om))
+     (define-key cider-mode-map (kbd "C-dead-circumflex") 'my-refresh-om))
 
 
 (add-hook 'clojure-mode-hook 'cider-mode)
