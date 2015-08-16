@@ -186,6 +186,26 @@
 (global-set-key (kbd "C-x f") 'ido-recentf-open)
 
 
+;; resize interactively
+(defvar iresize-mode-map
+  (let ((m (make-sparse-keymap)))
+    (define-key m (kbd "<down>") 'enlarge-window)
+    (define-key m (kbd "<up>") 'shrink-window)
+    (define-key m (kbd "<left>") 'shrink-window-horizontally)
+    (define-key m (kbd "<right>") 'enlarge-window-horizontally)
+    (define-key m (kbd "C-c <end>") 'iresize-mode)
+    m))
+
+(define-minor-mode iresize-mode
+  :initial-value nil
+  :lighter " IResize"
+  :keymap iresize-mode-map
+  :group 'iresize)
+
+(provide 'iresize)
+(global-set-key (kbd "C-c <end>") 'iresize-mode)
+
+
 ;; smex
 (require 'smex)
 (smex-initialize)

@@ -155,7 +155,7 @@
      (define-key cider-mode-map (kbd "C-c C-j") 'cider-javadoc)
      (define-key cider-mode-map (kbd "C-c C-c") 'my-eval-form)
      (define-key cider-mode-map (kbd "C-c M-p") 'my-eval-form-in-repl)
-     (define-key cider-mode-map (kbd "C-dead-circumflex") 'my-refresh-om))
+     (define-key cider-mode-map (kbd "<C-dead-circumflex>") 'my-refresh-om))
 
 
 (add-hook 'clojure-mode-hook 'cider-mode)

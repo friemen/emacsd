@@ -139,6 +139,7 @@ C-s C-w     Regex search forwards for word under point
 C-r         Regex search backwards
 C-r C-w     Regex search backwards for word under point
 M-%         Query replace
+C-c End     Toggle window interactive resize mode
 C-x C-+     Increase font size in buffer
 C-x C--     Decrease font size in buffer
 C-x C-0     Reset font size in buffer
