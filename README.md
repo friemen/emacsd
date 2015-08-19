@@ -53,6 +53,7 @@ describe-mode | Get help about active modes
 ediff | Load and diff files
 ediff-buffers | Diff buffers
 eshell | Create buffer with terminal
+find-name-dired | List all files in dir tree
 httpd-start | Start internal http server on http://localhost:8080/imp
 impatient-mode | Enable buffers impatient minor mode
 linum-mode | Toggle line number display on the left
@@ -147,6 +148,13 @@ C-+         Highlight symbol at point
 C-#         Unhighlight symbol at point
 s-e p       EMMS play directory
 s-e e       EMMS display playlist
+```
+
+Elscreen (see also [project page](https://github.com/knu/elscreen#usage))
+```
+C-F1 c      Create new screen
+C-F1 0-9    Switch to screen
+C-F1 k      Kill current screen
 ```
 
 Projectile (see also [project page](https://github.com/bbatsov/projectile#interactive-commands))

@@ -6,6 +6,7 @@
 	dired+
 	dash
 	ediff
+	elscreen
 	emms
 	eshell
 	expand-region
@@ -70,6 +71,14 @@
 
 ;; ediff
 (setq ediff-split-window-function 'split-window-horizontally)
+
+
+;; elscreen
+(require 'elscreen)
+(setq elscreen-prefix-key (kbd "<C-f1>"))
+(setq elscreen-display-screen-number 1)
+(setq elscreen-display-tab nil)
+(elscreen-start)
 
 
 ;; emms (emacs multi-media system)
