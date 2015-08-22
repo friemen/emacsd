@@ -21,11 +21,12 @@
     (delete-active-region)
     (insert el)))
 
-(defun my-web-mode-hook ()  
+(defun my-web-mode-hook ()
   (setq web-mode-indent-style 2)
   (setq web-mode-markup-indent-offset 2)
   (define-key web-mode-map (kbd "C-7") 'web-mode-element-close)
   (define-key web-mode-map (kbd "C-c C-e l") 'web-mode-insert-link)
+  (define-key web-mode-map (kbd "C-c q q") 'web-mode-fold-or-unfold)
   (define-key web-mode-map (kbd "C-SPC") 'web-mode-mark-and-expand))
 
 (add-hook 'web-mode-hook 'my-web-mode-hook)
@@ -47,3 +48,19 @@
 	  '(lambda ()
 	     (define-key nxml-mode-map (kbd "C-7") 'nxml-finish-element)))
 
+(defun my-pretty-print-xml-region (begin end)
+  (interactive "r")
+  (save-excursion
+      (nxml-mode)
+      (goto-char begin)
+      (while (search-forward-regexp "\>[ \\t]*\<" nil t)
+        (backward-char) (insert "\n"))
+      (indent-region begin end)))
+
+(add-to-list 'hs-special-modes-alist
+             (list 'nxml-mode
+                   "<!--\\|<[^/>]*[^/]>"
+                   "-->\\|</[^/>]*[^/]>"
+                   "<!--"
+                   'nxml-forward-element
+                   nil))

@@ -162,6 +162,7 @@
 (add-hook 'clojure-mode-hook 'typed-clojure-mode)
 (add-hook 'clojure-mode-hook 'my-clojure-refactor-setup)
 (add-hook 'clojure-mode-hook 'my-clojure-typed-setup)
+(add-hook 'clojure-mode-hook 'hs-minor-mode)
 
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (add-hook 'cider-mode-hook 'paredit-mode)

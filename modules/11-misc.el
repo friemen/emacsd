@@ -119,6 +119,14 @@
 (global-set-key (kbd "C-+") 'hlt-highlight-symbol)
 (global-set-key (kbd "C-#") 'hlt-unhighlight-symbol)
 
+;; hideshow
+(add-hook 'hs-minor-mode-hook
+	  (lambda ()
+	    (define-key hs-minor-mode-map (kbd "C-c q q") 'hs-toggle-hiding)
+	    (define-key hs-minor-mode-map (kbd "C-c q s") 'hs-show-block)
+	    (define-key hs-minor-mode-map (kbd "C-c q h") 'hs-hide-block)
+	    (define-key hs-minor-mode-map (kbd "C-c q C-s") 'hs-show-all)
+	    (define-key hs-minor-mode-map (kbd "C-c q C-h") 'hs-hide-all)))
 
 ;; ibuffer
 (require 'ibuffer)

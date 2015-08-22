@@ -262,6 +262,7 @@ C-c C-d     Show docs for function
 C-c C-j     Show Javadoc in browser
 C-c C-x n   Type check namespace (typed-clojure-mode)
 C-c C-x f   Type check preceding form (typed-clojure-mode)
+C-c q q     Toggle folding
 ```
 
 [Clojure Refactoring shortcuts](https://github.com/clojure-emacs/clj-refactor.el/wiki)
@@ -290,6 +291,7 @@ C-c C-d d   Detect tag mismatch
 C-c C-e i   Insert element (interactive)
 C-c C-e l   Insert link (interactive)
 C-c C-a i   Insert attribute (interactive)
+C-c q q     Toggle folding
 ```
 
 Emacs-Lisp-Mode
