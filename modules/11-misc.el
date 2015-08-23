@@ -1,4 +1,3 @@
-
 (defvar misc-packages '(
 	ace-jump-mode
 	ace-jump-buffer
@@ -118,6 +117,8 @@
 ;; highlight
 (global-set-key (kbd "C-+") 'hlt-highlight-symbol)
 (global-set-key (kbd "C-#") 'hlt-unhighlight-symbol)
+(setq hlt-auto-face-backgrounds '("Sky Blue" "Pink" "Gold" "Thistle"
+				  "Green Yellow" "Light Salmon"))
 
 ;; hideshow
 (add-hook 'hs-minor-mode-hook
