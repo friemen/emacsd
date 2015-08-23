@@ -263,6 +263,8 @@ C-c C-j     Show Javadoc in browser
 C-c C-x n   Type check namespace (typed-clojure-mode)
 C-c C-x f   Type check preceding form (typed-clojure-mode)
 C-c q q     Toggle folding
+C-<         Mark all symbols in defn (multiple cursors)
+C-M-<       Mark all like this (multiple cursors)
 ```
 
 [Clojure Refactoring shortcuts](https://github.com/clojure-emacs/clj-refactor.el/wiki)
@@ -298,6 +300,8 @@ Emacs-Lisp-Mode
 ```
 C-c C-c     Eval top-level sexp
 C-x C-e     Eval last elisp sexp
+C-<         Mark all symbols in defun (multiple cursors)
+C-M-<       Mark all like this (multiple cursors)
 ```
 
 Haskell-Mode

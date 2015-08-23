@@ -11,9 +11,8 @@
 
 
 (defun my-elisp-mode-hook ()
-  (define-key emacs-lisp-mode-map (kbd "C->") 'mc/mark-next-symbol-like-this)
-  (define-key emacs-lisp-mode-map (kbd "C-<") 'mc/mark-previous-symbol-like-this)
-  (define-key emacs-lisp-mode-map (kbd "C-M-<") 'mc/mark-all-symbols-like-this-in-defun)
+  (define-key emacs-lisp-mode-map (kbd "C-M-<") 'mc/mark-all-like-this)
+  (define-key emacs-lisp-mode-map (kbd "C-<") 'mc/mark-all-symbols-like-this-in-defun)
   (define-key emacs-lisp-mode-map (kbd "C-c C-c") 'eval-defun))
 
 
