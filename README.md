@@ -79,7 +79,7 @@ C-x C-s     Save buffer
 C-x C-w     Write buffer to other file
 C-x C-d     Show directory (dired+)
 C-x C-j     Open dired and go to file in current buffer
-s-y         Open directory bar (speedbar)
+s-y         Open directory bar (neotree)
 C-x b       Switch buffer
 C-Pgup      Previous buffer
 C-Pgdn      Next buffer
@@ -151,11 +151,11 @@ s-e e       EMMS display playlist
 ```
 
 Elscreen (see also [project page](https://github.com/knu/elscreen#usage))
-```
-C-F1 c      Create new screen
-C-F1 0-9    Switch to screen
-C-F1 k      Kill current screen
-```
+
+C-c C-s c   Create new screen
+C-c C-s 0-9 Switch to screen
+C-c C-s k   Kill current screen
+
 
 Projectile (see also [project page](https://github.com/bbatsov/projectile#interactive-commands))
 ```
@@ -315,16 +315,16 @@ C-c C-k     Clear REPL buffer output
 M-.         Goto definition
 ```
 
-Speedbar File-Mode
+Neotree File-Mode (seet also [Emacs wiki page](http://www.emacswiki.org/emacs/NeoTree))
 ```
-s-y         Open Speedbar frame
-q           Close Speedbar frame
+q           Close neotree window
+d           Open dired
+g           Refresh
 U           Move directory up
-Enter       Move into / load in buffer
-+           Expand dir
--           Collapse dir
-D           Delete file
-R           Rename file
+A           Toggle neotree window maximization
+C-c C-c     Change root to dir
+Tab         Expand / Collapse
+Enter       Load file in buffer
 ```
 
 

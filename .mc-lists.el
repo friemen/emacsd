@@ -14,5 +14,6 @@
 	kill-something
 	paredit-splice-sexp-killing-backward
 	paredit-splice-sexp-killing-forward
+	smex
 	sp--cua-replace-region
 	))

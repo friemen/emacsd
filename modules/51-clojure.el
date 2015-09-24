@@ -1,7 +1,9 @@
 (defvar clojure-packages '(
-	ac-cider
+	;ac-cider
 	cider
 	cider-eval-sexp-fu
+	company
+	company-quickhelp
 	clj-refactor
 	clojure-cheatsheet
 	clojure-mode
@@ -17,7 +19,9 @@
 (dolist (p clojure-packages)
   (require-package p))
 
-(require 'ac-cider)
+;(require 'ac-cider)
+(require 'company)
+(require 'company-quickhelp)
 (require 'clojure-mode)
 (require 'cider)
 (require 'cider-eval-sexp-fu)
@@ -26,7 +30,7 @@
 (require 'paxedit)
 (require 'clj-refactor)
 
-
+(company-quickhelp-mode 1)
 
 (defun my-clojure-refactor-setup ()
   (clj-refactor-mode 1)
@@ -66,6 +70,18 @@
       (paredit-delete-region (region-beginning) (region-end))
     (paredit-forward-delete)))
 
+
+(defun my-cider-popup-doc ()
+  "A popup alternative to `cider-doc'."
+  (interactive)
+  (let ((doc-buffer (cider-create-doc-buffer (symbol-name (symbol-at-point)))))
+    (popup-tip (save-current-buffer
+		 (set-buffer doc-buffer)
+		 (buffer-string))
+     :point (cider-completion-symbol-start-pos)
+     :around t
+     :scroll-bar t
+     :margin t)))
 
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -150,10 +166,10 @@
      (define-key paredit-mode-map (kbd "C-d") 'my-delete-whitespace-except-one)
      (define-key paredit-mode-map (kbd "C-M-f") 'paredit-forward-down)
      (define-key paredit-mode-map (kbd "<delete>") 'my-delete-region-or-char)
-     (define-key cider-repl-mode-map (kbd "C-c C-d") 'ac-cider-popup-doc)
+     (define-key cider-repl-mode-map (kbd "C-c C-d") 'my-cider-popup-doc)
      (define-key cider-repl-mode-map (kbd "C-c C-j") 'cider-javadoc)
      (define-key cider-repl-mode-map (kbd "C-c M-z") 'nrepl-make-connection-default)
-     (define-key cider-mode-map (kbd "C-c C-d") 'ac-cider-popup-doc)
+     (define-key cider-mode-map (kbd "C-c C-d") 'my-cider-popup-doc)
      (define-key cider-mode-map (kbd "C-c C-j") 'cider-javadoc)
      (define-key cider-mode-map (kbd "C-c C-c") 'my-eval-form)
      (define-key cider-mode-map (kbd "C-c M-p") 'my-eval-form-in-repl)
@@ -171,23 +187,14 @@
 (add-hook 'cider-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'cider-mode-hook 'company-mode)
 (add-hook 'cider-mode-hook 'subword-mode)
-(add-hook 'cider-mode-hook 'ac-flyspell-workaround)
-(add-hook 'cider-mode-hook 'ac-cider-setup)
 (add-hook 'cider-mode-hook 'my-clojure-keybindings)
 
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 (add-hook 'cider-repl-mode-hook 'subword-mode)
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'cider-repl-mode-hook 'company-mode)
-(add-hook 'cider-repl-mode-hook 'ac-cider-setup)
 (add-hook 'cider-repl-mode-hook 'my-clojure-keybindings)
 (add-hook 'cider-repl-mode-hook 'my-clojure-refactor-setup)
-
-
-(eval-after-load "auto-complete"
-  '(progn
-     (add-to-list 'ac-modes 'cider-mode)
-     (add-to-list 'ac-modes 'cider-repl-mode)))
 
 
 (setq auto-mode-alist (cons '("\\.boot$" . clojure-mode) auto-mode-alist))

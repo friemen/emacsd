@@ -21,6 +21,7 @@
 	magit
 	markdown-mode
 	multiple-cursors
+	neotree
 	org
 	popup
 	projectile
@@ -29,7 +30,6 @@
 	smart-mode-line
 	smart-mode-line-powerline-theme
 	smex
-        speedbar
 	swiper
 	switch-window
 	thingatpt
@@ -74,7 +74,7 @@
 
 ;; elscreen
 (require 'elscreen)
-(setq elscreen-prefix-key (kbd "<C-f1>"))
+(setq elscreen-prefix-key (kbd "C-c C-s"))
 (setq elscreen-display-screen-number 1)
 (setq elscreen-display-tab nil)
 (elscreen-start)
@@ -189,9 +189,15 @@
 (sml/apply-theme 'automatic)
 
 
+;; neotree
+(require 'neotree)
+(global-set-key (kbd "s-y") 'neotree-toggle)
+
+
 ;; projectile
 (require 'projectile)
 (projectile-global-mode)
+(setq projectile-switch-project-action 'neotree-projectile-action)
 
 
 ;; recentf
@@ -230,19 +236,6 @@
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-
-
-;; speedbar
-(require 'speedbar)
-(global-set-key (kbd "s-y") 'speedbar)
-(setq speedbar-show-unknown-files t)
-(add-hook 'speedbar-mode-hook
-	  (lambda ()
-	    (auto-raise-mode 1)
-	    (add-to-list 'speedbar-frame-parameters '(top . 30))
-	    (add-to-list 'speedbar-frame-parameters '(left . 100))
-	    (add-to-list 'speedbar-frame-parameters '(width . 30))
-	    (add-to-list 'speedbar-frame-parameters '(height . 30))))
 
 
 ;; swiper
