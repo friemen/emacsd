@@ -21,7 +21,7 @@
  '(org-startup-with-inline-images t)
  '(package-selected-packages
    (quote
-    (cider-eval-sexp-fu web-mode undo-tree typed-clojure-mode switch-window swiper smex smart-tab smart-mode-line-powerline-theme shm rainbow-delimiters projectile paxedit nrepl-eval-sexp-fu markdown-mode magit js2-mode impatient-mode ido-vertical-mode ido-ubiquitous gandalf-theme flycheck flx-ido expand-region emms dired+ company-ghc clojure-quick-repls clojure-cheatsheet clj-refactor auctex ace-jump-buffer ac-cider)))
+    (neotree cider-test web-mode undo-tree typed-clojure-mode switch-window swiper smex smart-tab smart-mode-line-powerline-theme shm rainbow-delimiters projectile paxedit nrepl-eval-sexp-fu markdown-mode magit js2-mode impatient-mode ido-vertical-mode ido-ubiquitous gandalf-theme flycheck flx-ido expand-region emms elscreen dired+ company-ghc clojure-quick-repls clojure-cheatsheet clj-refactor cider-eval-sexp-fu auctex ace-jump-buffer ac-cider)))
  '(save-place t nil (saveplace))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)

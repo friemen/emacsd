@@ -14,3 +14,17 @@
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (shm company-ghc flycheck web-mode js2-mode typed-clojure-mode rainbow-delimiters paxedit nrepl-eval-sexp-fu clojure-quick-repls clojure-cheatsheet clj-refactor company-quickhelp company cider-eval-sexp-fu cider undo-tree switch-window swiper smex smart-mode-line-powerline-theme smart-mode-line smart-tab projectile popup neotree multiple-cursors markdown-mode magit impatient-mode ido-vertical-mode ido-ubiquitous highlight helm gandalf-theme flx-ido expand-region emms elscreen dired+ auctex ace-jump-buffer ace-jump-mode))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

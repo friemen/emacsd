@@ -151,11 +151,11 @@ s-e e       EMMS display playlist
 ```
 
 Elscreen (see also [project page](https://github.com/knu/elscreen#usage))
-
+```
 C-c C-s c   Create new screen
 C-c C-s 0-9 Switch to screen
 C-c C-s k   Kill current screen
-
+```
 
 Projectile (see also [project page](https://github.com/bbatsov/projectile#interactive-commands))
 ```
@@ -315,7 +315,7 @@ C-c C-k     Clear REPL buffer output
 M-.         Goto definition
 ```
 
-Neotree File-Mode (seet also [Emacs wiki page](http://www.emacswiki.org/emacs/NeoTree))
+Neotree File-Mode (see also [Emacs wiki page](http://www.emacswiki.org/emacs/NeoTree))
 ```
 q           Close neotree window
 d           Open dired
