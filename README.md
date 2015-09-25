@@ -201,6 +201,7 @@ Magit (for more see [cheatsheet](http://daemianmack.com/magit-cheatsheet.html))
 q           Close Magit buffer
 g           Refresh
 l l         Show log
+x           Reset to commit
 Tab         Show diff for single file
 s           Stage one
 u           Unstage one
@@ -265,6 +266,7 @@ C-c C-x f   Type check preceding form (typed-clojure-mode)
 C-c q q     Toggle folding
 C-<         Mark all symbols in defn (multiple cursors)
 C-M-<       Mark all like this (multiple cursors)
+Tab         Reindent, then auto-complete
 ```
 
 [Clojure Refactoring shortcuts](https://github.com/clojure-emacs/clj-refactor.el/wiki)

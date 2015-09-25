@@ -1,5 +1,4 @@
 (defvar clojure-packages '(
-	;ac-cider
 	cider
 	cider-eval-sexp-fu
 	company
@@ -19,7 +18,6 @@
 (dolist (p clojure-packages)
   (require-package p))
 
-;(require 'ac-cider)
 (require 'company)
 (require 'company-quickhelp)
 (require 'clojure-mode)
@@ -52,7 +50,7 @@
   (save-buffer)
   ;(cider-load-buffer)
   (cider-eval-defun-at-point)
-  (cider-interactive-eval "(app.core/refresh)")
+  (cider-interactive-eval "(zackzack.demo.app/refresh)")
   ;(cider-interactive-eval "(de.doctronic.ms.frontend.app/refresh)")
   )
 
@@ -82,6 +80,15 @@
      :around t
      :scroll-bar t
      :margin t)))
+
+
+(defun my-indent-and-complete-symbol ()
+  (interactive)
+  (let ((pos (point)))
+    (lisp-indent-line)
+    (when (= pos (point))
+      (if (save-excursion (re-search-backward "[^() \n\t\r]+\\=" nil t))
+	  (company-complete)))))
 
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -155,25 +162,27 @@
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun my-clojure-keybindings ()
-     (define-key clojure-mode-map (kbd "C-1") 'paredit-open-round)
-     (define-key clojure-mode-map (kbd "C-2") 'paredit-open-bracket)
-     (define-key clojure-mode-map (kbd "C-3") 'paredit-open-curly)
-     (define-key clojure-mode-map (kbd "RET") 'paredit-newline)
-     (define-key clojure-mode-map (kbd "C-f") 'paredit-forward)
-     (define-key clojure-mode-map (kbd "C-b") 'paredit-backward)
-     (define-key clojure-mode-map (kbd "C-M-<") 'mc/mark-all-like-this)
-     (define-key clojure-mode-map (kbd "C-<") 'mc/mark-all-symbols-like-this-in-defun)
-     (define-key paredit-mode-map (kbd "C-d") 'my-delete-whitespace-except-one)
-     (define-key paredit-mode-map (kbd "C-M-f") 'paredit-forward-down)
-     (define-key paredit-mode-map (kbd "<delete>") 'my-delete-region-or-char)
-     (define-key cider-repl-mode-map (kbd "C-c C-d") 'my-cider-popup-doc)
-     (define-key cider-repl-mode-map (kbd "C-c C-j") 'cider-javadoc)
-     (define-key cider-repl-mode-map (kbd "C-c M-z") 'nrepl-make-connection-default)
-     (define-key cider-mode-map (kbd "C-c C-d") 'my-cider-popup-doc)
-     (define-key cider-mode-map (kbd "C-c C-j") 'cider-javadoc)
-     (define-key cider-mode-map (kbd "C-c C-c") 'my-eval-form)
-     (define-key cider-mode-map (kbd "C-c M-p") 'my-eval-form-in-repl)
-     (define-key cider-mode-map (kbd "<C-dead-circumflex>") 'my-refresh-om))
+  (define-key clojure-mode-map (kbd "C-1") 'paredit-open-round)
+  (define-key clojure-mode-map (kbd "C-2") 'paredit-open-bracket)
+  (define-key clojure-mode-map (kbd "C-3") 'paredit-open-curly)
+  (define-key clojure-mode-map (kbd "RET") 'paredit-newline)
+  (define-key clojure-mode-map (kbd "TAB") 'my-indent-and-complete-symbol)
+  (define-key clojure-mode-map (kbd "C-f") 'paredit-forward)
+  (define-key clojure-mode-map (kbd "C-b") 'paredit-backward)
+  (define-key clojure-mode-map (kbd "C-M-<") 'mc/mark-all-like-this)
+  (define-key clojure-mode-map (kbd "C-<") 'mc/mark-all-symbols-like-this-in-defun)
+  (define-key paredit-mode-map (kbd "C-d") 'my-delete-whitespace-except-one)
+  (define-key paredit-mode-map (kbd "C-M-f") 'paredit-forward-down)
+  (define-key paredit-mode-map (kbd "<delete>") 'my-delete-region-or-char)
+  (define-key cider-repl-mode-map (kbd "C-c C-d") 'my-cider-popup-doc)
+  (define-key cider-repl-mode-map (kbd "C-c C-j") 'cider-javadoc)
+  (define-key cider-repl-mode-map (kbd "C-c M-z") 'nrepl-make-connection-default)
+  (define-key cider-repl-mode-map (kbd "TAB") 'my-indent-and-complete-symbol)
+  (define-key cider-mode-map (kbd "C-c C-d") 'my-cider-popup-doc)
+  (define-key cider-mode-map (kbd "C-c C-j") 'cider-javadoc)
+  (define-key cider-mode-map (kbd "C-c C-c") 'my-eval-form)
+  (define-key cider-mode-map (kbd "C-c M-p") 'my-eval-form-in-repl)
+  (define-key cider-mode-map (kbd "<C-dead-circumflex>") 'my-refresh-om))
 
 
 (add-hook 'clojure-mode-hook 'cider-mode)
