@@ -2,7 +2,7 @@
 ;; turn off splash screen messages
 (setq inhibit-startup-echo-area-message t
       inhibit-startup-screen t)
-      
+
 ;; allow y and n instead of yes and no
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -22,8 +22,12 @@
 (setq scroll-step 1) ; keyboard scroll one line at a time
 
 ;; whitespace stripping
-(add-hook 'before-save-hook 'delete-trailing-whitespace) 
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (recentf-mode 1)
 (delete-selection-mode 1)
 (setq delete-active-region t)
+
+;; remember positions in visited files
+(setq save-place-file "~/.emacs.d/saveplace")
+(save-place-mode t)

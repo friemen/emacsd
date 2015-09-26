@@ -120,7 +120,7 @@ M-q         Reformat paragraph
 C-c         Copy
 C-x         Cut
 C-v         Paste
-C-y         Show kill ring (abort with C-g)
+C-y         Browse kill ring
 C-x h       Mark whole buffer contents
 C-<         Mark previous like this (multiple cursors)
 C->         Mark next like this (multiple cursors)
@@ -128,6 +128,8 @@ C-M-<       Mark all like this (multiple cursors)
 C-Space     Expand region
 C-Enter     Set/end rectangle mark
 M-S-;       Toggle comment for region
+M-S-Up      Move line or region up
+M-S-Down    Move line or region down
 ```
 
 Misc commands
@@ -319,14 +321,17 @@ M-.         Goto definition
 
 Neotree File-Mode (see also [Emacs wiki page](http://www.emacswiki.org/emacs/NeoTree))
 ```
-q           Close neotree window
-d           Open dired
-g           Refresh
-U           Move directory up
-A           Toggle neotree window maximization
-C-c C-c     Change root to dir
 Tab         Expand / Collapse
 Enter       Load file in buffer
+q           Close neotree window
+c           New file
+d           Delete file
+r           Rename file
+g           Refresh
+A           Toggle neotree window maximization
+H           Toggle display of hidden files
+U           Move directory up
+C           Change root to dir
 ```
 
 

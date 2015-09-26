@@ -2,6 +2,7 @@
 	ace-jump-mode
 	ace-jump-buffer
 	auctex
+	browse-kill-ring
 	dired+
 	dash
 	ediff
@@ -11,7 +12,6 @@
 	expand-region
 	flx-ido
 	gandalf-theme
-	helm
 	highlight
 	ibuffer
 	ido
@@ -20,6 +20,7 @@
 	impatient-mode
 	magit
 	markdown-mode
+	move-text
 	multiple-cursors
 	neotree
 	org
@@ -39,16 +40,18 @@
   (require-package p))
 
 
-
 (global-set-key (kbd "C-<prior>") 'previous-buffer)
 (global-set-key (kbd "C-<next>") 'next-buffer)
 
 
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ace jump configuration
 (require 'ace-jump-mode)
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; dired+
 (require 'dired)
 (require 'dired+)
@@ -63,15 +66,16 @@
 (add-hook 'dired-mode-hook
                (lambda ()
                  ;; Set dired-x buffer-local variables here.  For example:
-                 (dired-omit-mode 1)
-                 ))
+                 (dired-omit-mode 1)))
 (global-set-key (kbd "C-x C-d") 'ido-dired)
 
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ediff
 (setq ediff-split-window-function 'split-window-horizontally)
 
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; elscreen
 (require 'elscreen)
 (setq elscreen-prefix-key (kbd "C-c C-s"))
@@ -80,6 +84,7 @@
 (elscreen-start)
 
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; emms (emacs multi-media system)
 (require 'emms-setup)
 (require 'emms-info)
@@ -87,13 +92,14 @@
 (require 'emms-browser)
 (emms-standard)
 (emms-default-players)
-(setq emms-source-file-default-directory "/home/backup/Music")
+(setq emms-source-file-default-directory "~/Music")
 (setq emms-info-functions '(emms-info-mp3info))
 (add-hook 'emms-player-started-hook 'emms-show)
 (global-set-key (kbd "s-e p") 'emms-play-directory)
 (global-set-key (kbd "s-e e") 'emms)
 
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; eshell
 (require 'eshell)
 (setq eshell-prompt-function
@@ -103,23 +109,28 @@
       eshell-prompt-regexp "^$ ")
 
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; expand-region
 (require 'expand-region)
 (require 'web-mode-expansions)
 (global-set-key (kbd "C-SPC") 'er/expand-region)
 
 
-;; helm kill ring
-(require 'helm)
-(global-set-key (kbd "C-y") 'helm-show-kill-ring)
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; browse kill ring
+(require 'browse-kill-ring)
+(global-set-key (kbd "C-y") 'browse-kill-ring)
 
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; highlight
 (global-set-key (kbd "C-+") 'hlt-highlight-symbol)
 (global-set-key (kbd "C-#") 'hlt-unhighlight-symbol)
 (setq hlt-auto-face-backgrounds '("Sky Blue" "Pink" "Gold" "Thistle"
 				  "Green Yellow" "Light Salmon"))
 
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; hideshow
 (add-hook 'hs-minor-mode-hook
 	  (lambda ()
@@ -129,11 +140,14 @@
 	    (define-key hs-minor-mode-map (kbd "C-c q C-s") 'hs-show-all)
 	    (define-key hs-minor-mode-map (kbd "C-c q C-h") 'hs-hide-all)))
 
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ibuffer
 (require 'ibuffer)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ido
 (require 'ido)
 (require 'ido-vertical-mode)
@@ -149,6 +163,7 @@
 (global-set-key (kbd "C-<escape>") 'kill-this-buffer)
 
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; magit
 (require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
@@ -165,6 +180,13 @@
 	    (define-key magit-mode-map (kbd "C-<tab>") 'switch-window)))
 
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; move-text
+
+(global-set-key (kbd "M-S-<up>") 'move-text-up)
+(global-set-key (kbd "M-S-<down>") 'move-text-down)
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; multiple cursors
 (require 'multiple-cursors)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
@@ -172,6 +194,7 @@
 (global-set-key (kbd "C-M-<") 'mc/mark-all-like-this)
 
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; org
 (require 'org)
 (setq org-support-shift-select t)
@@ -180,7 +203,7 @@
 	    (define-key org-mode-map (kbd "C-<tab>") 'switch-window)))
 
 
-
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; modeline config
 (require 'smart-mode-line)
 (setq sml/no-confirm-load-theme t)
@@ -189,17 +212,49 @@
 (sml/apply-theme 'automatic)
 
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; neotree
 (require 'neotree)
-(global-set-key (kbd "s-y") 'neotree-toggle)
+(setq neo-keymap-style 'concise
+      neo-theme 'classic)
+(add-hook 'neo-enter-hook
+	  (lambda (type path arg)
+	    (message path)
+	    (if (equal type 'file)
+		;; hide neotree after loading file
+	    	(neotree-hide))))
+(add-hook 'neotree-mode-hook
+	  (lambda ()
+	    (define-key neotree-mode-map (kbd "C") 'neotree-change-root)
+	    (define-key neotree-mode-map (kbd "c") 'neotree-create-node)
+	    (define-key neotree-mode-map (kbd "d") 'neotree-delete-node)
+	    (define-key neotree-mode-map (kbd "r") 'neotree-rename-node)
+	    (define-key neotree-mode-map (kbd "e") 'neotree-enter)
+	    (define-key neotree-mode-map (kbd "C-g") 'neotree-hide)
+	    (hl-line-mode)
+	    (visual-line-mode 0)))
+(defun my-neotree-show ()
+  "Change dir to current buffers project root if in a project."
+  (interactive)
+  (let ((project-root
+	 (if (projectile-project-p)
+	     (projectile-project-root)
+	   nil)))
+    (neotree-show)
+    (if (and project-root
+	     (not (equal default-directory project-root)))
+	(neotree-dir project-root))))
+(global-set-key (kbd "s-y") 'my-neotree-show)
 
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; projectile
 (require 'projectile)
 (projectile-global-mode)
 (setq projectile-switch-project-action 'neotree-projectile-action)
 
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; recentf
 (require 'recentf)
 (defun ido-recentf-open ()
@@ -210,6 +265,7 @@
 (global-set-key (kbd "C-x f") 'ido-recentf-open)
 
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; resize interactively
 (defvar iresize-mode-map
   (let ((m (make-sparse-keymap)))
@@ -230,6 +286,7 @@
 (global-set-key (kbd "C-c <end>") 'iresize-mode)
 
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; smex
 (require 'smex)
 (smex-initialize)
@@ -238,6 +295,7 @@
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; swiper
 (require 'swiper)
 ;; (ivy-mode 1)
@@ -247,6 +305,7 @@
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; switch window configuration
 (require 'switch-window)
 (global-set-key (kbd "C-x o") 'switch-window)
