@@ -217,22 +217,6 @@
 (require 'neotree)
 (setq neo-keymap-style 'concise
       neo-theme 'classic)
-(add-hook 'neo-enter-hook
-	  (lambda (type path arg)
-	    (message path)
-	    (if (equal type 'file)
-		;; hide neotree after loading file
-	    	(neotree-hide))))
-(add-hook 'neotree-mode-hook
-	  (lambda ()
-	    (define-key neotree-mode-map (kbd "C") 'neotree-change-root)
-	    (define-key neotree-mode-map (kbd "c") 'neotree-create-node)
-	    (define-key neotree-mode-map (kbd "d") 'neotree-delete-node)
-	    (define-key neotree-mode-map (kbd "r") 'neotree-rename-node)
-	    (define-key neotree-mode-map (kbd "e") 'neotree-enter)
-	    (define-key neotree-mode-map (kbd "C-g") 'neotree-hide)
-	    (hl-line-mode)
-	    (visual-line-mode 0)))
 (defun my-neotree-show ()
   "Change dir to current buffers project root if in a project."
   (interactive)
@@ -244,6 +228,34 @@
     (if (and project-root
 	     (not (equal default-directory project-root)))
 	(neotree-dir project-root))))
+
+(defun my-neotree-enter-hook (type path arg)
+  (message path)
+  (if (equal type 'file)
+      ;; hide neotree after loading file
+     (neotree-hide)))
+
+(defun my-neotree-peek ()
+  (interactive)
+  (let ((neo-window (neo-global--get-window)))
+    (remove-hook 'neo-enter-hook 'my-neotree-enter-hook)
+    (neotree-enter)
+    (add-hook 'neo-enter-hook 'my-neotree-enter-hook)
+    (select-window neo-window)))
+
+(add-hook 'neo-enter-hook #'my-neotree-enter-hook)
+(add-hook 'neotree-mode-hook
+	  (lambda ()
+	    (define-key neotree-mode-map (kbd "C") 'neotree-change-root)
+	    (define-key neotree-mode-map (kbd "c") 'neotree-create-node)
+	    (define-key neotree-mode-map (kbd "d") 'neotree-delete-node)
+	    (define-key neotree-mode-map (kbd "r") 'neotree-rename-node)
+	    (define-key neotree-mode-map (kbd "e") 'neotree-enter)
+	    (define-key neotree-mode-map (kbd "C-g") 'neotree-hide)
+	    (define-key neotree-mode-map (kbd "SPC") 'my-neotree-peek)
+	    (hl-line-mode)
+	    (visual-line-mode 0)))
+
 (global-set-key (kbd "s-y") 'my-neotree-show)
 
 

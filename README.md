@@ -322,8 +322,9 @@ M-.         Goto definition
 
 Neotree File-Mode (see also [Emacs wiki page](http://www.emacswiki.org/emacs/NeoTree))
 ```
-Tab         Expand / Collapse
-Enter       Load file in buffer
+Tab         Expand / Collapse dir
+Enter       Load file in buffer, exit neotree
+Space       Load file in buffer, stay in neotree
 q           Close neotree window
 c           New file
 d           Delete file
