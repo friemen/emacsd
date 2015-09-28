@@ -46,26 +46,27 @@ to get started.
 
 ## Some M-x commands
 
-Command | Description
---- | ---
-clojure-cheatsheet | Open cheatsheet
-describe-mode | Get help about active modes
-ediff | Load and diff files
-ediff-buffers | Diff buffers
-eshell | Create buffer with terminal
-find-name-dired | List all files in dir tree
-httpd-start | Start internal http server on http://localhost:8080/imp
-impatient-mode | Enable buffers impatient minor mode
-linum-mode | Toggle line number display on the left
-magit-log-buffer-file | Show Git log with commit touching file
-magit-status | Show Magit buffer
-query-string | Replace all to end of buffer, ask for each
-package-list-packages | Open package manager
-replace-string | Replace all to end of buffer
-revert-buffer | Reload buffer contents from file
-rgrep | Grep for pattern recursively in files
-string-rectangle | Insert prefix to every marked line
-visual-line-mode | Switch nice word wrap on/off
+Command					| Description
+---						| ---
+align-regexp			| Align within a region by regex
+clojure-cheatsheet		| Open cheatsheet
+describe-mode			| Get help about active modes
+ediff					| Load and diff files
+ediff-buffers			| Diff buffers
+eshell					| Create buffer with terminal
+find-name-dired			| List all files in dir tree
+httpd-start				| Start internal http server on http://localhost:8080/imp
+impatient-mode			| Enable buffers impatient minor mode
+linum-mode				| Toggle line number display on the left
+magit-log-buffer-file	| Show Git log with commit touching file
+magit-status			| Show Magit buffer
+query-string			| Replace all to end of buffer, ask for each
+package-list-packages	| Open package manager
+replace-string			| Replace all to end of buffer
+revert-buffer			| Reload buffer contents from file
+rgrep					| Grep for pattern recursively in files
+string-rectangle		| Insert prefix to every marked line
+visual-line-mode		| Switch nice word wrap on/off
 
 ## Shortcuts
 
@@ -154,9 +155,9 @@ s-e e       EMMS display playlist
 
 Elscreen (see also [project page](https://github.com/knu/elscreen#usage))
 ```
-C-c C-s c   Create new screen
-C-c C-s 0-9 Switch to screen
-C-c C-s k   Kill current screen
+s-x c       Create new screen
+s-x 0-9     Switch to screen
+s-x k       Kill current screen
 ```
 
 Projectile (see also [project page](https://github.com/bbatsov/projectile#interactive-commands))

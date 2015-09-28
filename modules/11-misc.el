@@ -78,7 +78,7 @@
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; elscreen
 (require 'elscreen)
-(setq elscreen-prefix-key (kbd "C-c C-s"))
+(setq elscreen-prefix-key (kbd "s-x"))
 (setq elscreen-display-screen-number 1)
 (setq elscreen-display-tab nil)
 (elscreen-start)
