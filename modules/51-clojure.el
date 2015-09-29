@@ -209,6 +209,7 @@
 (setq auto-mode-alist (cons '("\\.boot$" . clojure-mode) auto-mode-alist))
 (setq cider-popup-stacktraces nil)
 (setq nrepl-hide-special-buffers nil)
+(setq cider-prompt-for-project-on-connect nil)
 (setq cider-repl-pop-to-buffer-on-connect t)
 (setq cider-repl-history-file "~/.emacs.d/cider-history")
 (setq nrepl-eval-sexp-fu-flash-duration 0.2)
