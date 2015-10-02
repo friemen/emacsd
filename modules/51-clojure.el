@@ -55,6 +55,11 @@
   )
 
 
+(defun my-restart-system ()
+  (interactive)
+  (cider-interactive-eval "(user/system-restart!)"))
+
+
 (defun my-delete-whitespace-except-one ()
   "Deletes all whitespace chars following point except one space."
   (interactive)
@@ -171,6 +176,7 @@
   (define-key clojure-mode-map (kbd "C-b") 'paredit-backward)
   (define-key clojure-mode-map (kbd "C-M-<") 'mc/mark-all-like-this)
   (define-key clojure-mode-map (kbd "C-<") 'mc/mark-all-symbols-like-this-in-defun)
+  (define-key clojure-mode-map (kbd "C-c <C-return>") 'my-restart-system)
   (define-key paredit-mode-map (kbd "C-d") 'my-delete-whitespace-except-one)
   (define-key paredit-mode-map (kbd "C-M-f") 'paredit-forward-down)
   (define-key paredit-mode-map (kbd "<delete>") 'my-delete-region-or-char)
@@ -207,6 +213,8 @@
 
 
 (setq auto-mode-alist (cons '("\\.boot$" . clojure-mode) auto-mode-alist))
+(setq cider-ovelays-use-font-lock t)
+(setq cider-font-lock-dynamically '(macro core function var))
 (setq cider-popup-stacktraces nil)
 (setq nrepl-hide-special-buffers nil)
 (setq cider-prompt-for-project-on-connect nil)

@@ -21,7 +21,7 @@
  '(org-startup-with-inline-images t)
  '(package-selected-packages
    (quote
-    (move-text shm company-ghc flycheck web-mode js2-mode typed-clojure-mode rainbow-delimiters paxedit nrepl-eval-sexp-fu clojure-quick-repls clojure-cheatsheet clj-refactor company-quickhelp company cider-eval-sexp-fu cider undo-tree switch-window swiper smex smart-mode-line-powerline-theme smart-mode-line smart-tab projectile popup neotree multiple-cursors markdown-mode magit impatient-mode ido-vertical-mode ido-ubiquitous highlight helm gandalf-theme flx-ido expand-region emms elscreen dired+ auctex ace-jump-buffer ace-jump-mode)))
+    (crm-custom shm company-ghc flycheck web-mode js2-mode typed-clojure-mode rainbow-delimiters paxedit nrepl-eval-sexp-fu clojure-quick-repls clojure-cheatsheet clj-refactor company-quickhelp company cider-eval-sexp-fu cider undo-tree switch-window swiper smex smart-mode-line-powerline-theme smart-mode-line smart-tab projectile popup neotree multiple-cursors markdown-mode magit impatient-mode ido-vertical-mode ido-ubiquitous highlight helm gandalf-theme flx-ido expand-region emms elscreen dired+ auctex ace-jump-buffer ace-jump-mode)))
  '(save-place-mode t nil (saveplace))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)

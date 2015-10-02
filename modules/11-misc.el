@@ -16,6 +16,7 @@
 	ibuffer
 	ido
 	ido-ubiquitous
+	crm-custom
 	ido-vertical-mode
 	impatient-mode
 	magit
@@ -40,8 +41,12 @@
   (require-package p))
 
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; general key bindings
+
 (global-set-key (kbd "C-<prior>") 'previous-buffer)
 (global-set-key (kbd "C-<next>") 'next-buffer)
+(global-set-key (kbd "C-<escape>") 'kill-this-buffer)
 
 
 
@@ -151,16 +156,18 @@
 ;; ido
 (require 'ido)
 (require 'ido-vertical-mode)
+(require 'ido-ubiquitous)
+(require 'crm-custom)
 (setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
+(setq ido-everywhere 1)
 (setq ido-ignore-buffers '("\\` " "\\`*"))
 (ido-vertical-mode 1)
+(ido-ubiquitous-mode 1)
 (ido-mode t)
 (defun my-ido-keys ()
   (define-key ido-completion-map (kbd "<down>") 'ido-next-match)
   (define-key ido-completion-map (kbd "<up>")   'ido-prev-match))
 (add-hook 'ido-setup-hook #'my-ido-keys)
-(global-set-key (kbd "C-<escape>") 'kill-this-buffer)
 
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
