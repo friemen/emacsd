@@ -3,6 +3,7 @@
 	ace-jump-buffer
 	auctex
 	browse-kill-ring
+	counsel
 	dired+
 	dash
 	ediff
@@ -35,7 +36,8 @@
 	swiper
 	switch-window
 	thingatpt
-	undo-tree))
+	undo-tree
+	window-numbering))
 
 (dolist (p misc-packages)
   (require-package p))
@@ -49,11 +51,16 @@
 (global-set-key (kbd "C-<escape>") 'kill-this-buffer)
 
 
-
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ace jump configuration
 (require 'ace-jump-mode)
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
+
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; counsel
+(require 'counsel)
+(global-set-key (kbd "C-w") 'counsel-git-grep)
 
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -83,7 +90,7 @@
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; elscreen
 (require 'elscreen)
-(setq elscreen-prefix-key (kbd "s-x"))
+(setq elscreen-prefix-key (kbd "C-c C-s"))
 (setq elscreen-display-screen-number 1)
 (setq elscreen-display-tab nil)
 (elscreen-start)
@@ -224,6 +231,8 @@
 (require 'neotree)
 (setq neo-keymap-style 'concise
       neo-theme 'classic)
+(setq neo-smart-open t)
+
 (defun my-neotree-show ()
   "Change dir to current buffers project root if in a project."
   (interactive)
@@ -232,6 +241,8 @@
 	     (projectile-project-root)
 	   nil)))
     (neotree-show)
+    (select-window-2)
+    (select-window-1)
     (if (and project-root
 	     (not (equal default-directory project-root)))
 	(neotree-dir project-root))))
@@ -240,7 +251,7 @@
   (message path)
   (if (equal type 'file)
       ;; hide neotree after loading file
-     (neotree-hide)))
+      (neotree-hide)))
 
 (defun my-neotree-peek ()
   (interactive)
@@ -263,25 +274,32 @@
 	    (hl-line-mode)
 	    (visual-line-mode 0)))
 
-(global-set-key (kbd "s-y") 'my-neotree-show)
+(global-set-key (kbd "C-q") 'my-neotree-show)
 
+
+(defun my-show-mru ()
+  (interactive)
+  (message "%s" (get-mru-window)))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; projectile
 (require 'projectile)
 (projectile-global-mode)
 (setq projectile-switch-project-action 'neotree-projectile-action)
+(setq projectile-indexing-method 'native)
+(setq projectile-enable-caching)
+(setq projectile-globally-ignored-files '( ".#*" "#*#" "/target/"))
 
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; recentf
 (require 'recentf)
-(defun ido-recentf-open ()
+(defun my-ido-recentf-open ()
   (interactive)
   (if (find-file (ido-completing-read "Find recent file: " recentf-list))
       (message "Opening file...")
     (message "Aborting")))
-(global-set-key (kbd "C-x f") 'ido-recentf-open)
+(global-set-key (kbd "C-x f") 'my-ido-recentf-open)
 
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -319,8 +337,8 @@
 (require 'swiper)
 ;; (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
-(global-set-key "\C-s" 'swiper)
-(global-set-key "\C-r" 'swiper)
+(global-set-key (kbd "C-s") 'swiper)
+(global-set-key (kbd "C-r") 'swiper)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 
 
@@ -329,3 +347,9 @@
 (require 'switch-window)
 (global-set-key (kbd "C-x o") 'switch-window)
 (global-set-key (kbd "C-<tab>") 'switch-window)
+
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; window numbering using M-1 M-2 ...
+(require 'window-numbering)
+(window-numbering-mode 1)

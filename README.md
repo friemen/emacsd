@@ -80,7 +80,7 @@ C-x C-s     Save buffer
 C-x C-w     Write buffer to other file
 C-x C-d     Show directory (dired+)
 C-x C-j     Open dired and go to file in current buffer
-s-y         Open directory bar (neotree)
+C-q         Open directory bar (neotree)
 C-x b       Switch buffer
 C-Pgup      Previous buffer
 C-Pgdn      Next buffer
@@ -155,9 +155,9 @@ s-e e       EMMS display playlist
 
 Elscreen (see also [project page](https://github.com/knu/elscreen#usage))
 ```
-s-x c       Create new screen
-s-x 0-9     Switch to screen
-s-x k       Kill current screen
+C-c C-s c       Create new screen
+C-c C-s 0-9     Switch to screen
+C-c C-s k       Kill current screen
 ```
 
 Projectile (see also [project page](https://github.com/bbatsov/projectile#interactive-commands))
