@@ -149,6 +149,7 @@
     (my-goto-end-of-form)
     (cider-eval-last-sexp)))
 
+
 (defun my-eval-form-in-repl ()
   (interactive)
   (save-window-excursion
@@ -162,6 +163,33 @@
 
 (define-eval-sexp-fu-flash-command my-eval-region-or-last-sexp-in-repl
   (eval-sexp-fu-flash (cons (save-excursion (paredit-backward) (point)) (point))))
+
+
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+(defvar my-saved-ns)
+(defvar my-saved-sexp)
+
+(defun my-save-form ()
+  (interactive)
+  (my-goto-end-of-form)
+  (setq my-saved-ns (cider-current-ns))
+  (setq my-saved-sexp (cider-last-sexp))
+  (message my-saved-sexp))
+
+
+(defun my-eval-saved-form ()
+  (interactive)
+  (message "Eval saved sexp")
+  (when my-saved-sexp
+    (let* ((current-ns (cider-current-ns))
+	   (form (concat "(do (ns " my-saved-ns ")"
+			 "    (let [result " my-saved-sexp "]"
+			 "      (ns " current-ns ")"
+			 "      result))")))
+      (cider-interactive-eval form))))
 
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -192,6 +220,8 @@
   (define-key cider-mode-map (kbd "C-c C-d") 'my-cider-popup-doc)
   (define-key cider-mode-map (kbd "C-c C-j") 'cider-javadoc)
   (define-key cider-mode-map (kbd "C-c C-c") 'my-eval-form)
+  (define-key cider-mode-map (kbd "C-c l") 'my-save-form)
+  (define-key cider-mode-map (kbd "C-c C-l") 'my-eval-saved-form)
   (define-key cider-mode-map (kbd "C-c M-p") 'my-eval-form-in-repl)
   (define-key cider-mode-map (kbd "<C-dead-circumflex>") 'my-refresh-om))
 

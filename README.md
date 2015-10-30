@@ -250,11 +250,13 @@ C-c M-j     Start REPL
 C-c ,       Run tests
 C-c '       View test failure messages
 C-i         Reindent selected sexp
-C-c C-e     Evaluate expr preceding point and display result in echo area
+C-c C-e     Evaluate sexp preceding point and display result in echo area
 C-c C-c     Compile and load current toplevel sexp
 C-u C-c C-c As before, but show result in buffer
 C-c C-p     Evaluate preceding sexp and pretty print result
 C-c C-k     Compile and load complete buffer
+C-c l       Save sexp at point
+C-c C-l     Eval saved sexp
 C-c C-z     Jump to REPL buffer
 C-c M-p     Copy preceding sexp to REPL buffer
 C-c M-n     Switch REPL namespace to buffer
