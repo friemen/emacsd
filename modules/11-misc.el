@@ -187,7 +187,7 @@
 ;; just use git push -v (and rely on the .git/config settings)
 (defun magit-push-current (branch remote &optional remote-branch args)
   (interactive (magit-push-read-args t t))
-  (magit-run-git-async-no-revert "push" "-v"))
+  (magit-run-git-async-no-revert "push" "-v" "--tags"))
 
 (add-hook 'magit-mode-hook
 	  (lambda ()
@@ -231,21 +231,24 @@
 (require 'neotree)
 (setq neo-keymap-style 'concise
       neo-theme 'classic)
-(setq neo-smart-open t)
 
 (defun my-neotree-show ()
   "Change dir to current buffers project root if in a project."
   (interactive)
-  (let ((project-root
+  (let ((filename (file-name-nondirectory (buffer-file-name)))
+	(project-root
 	 (if (projectile-project-p)
 	     (projectile-project-root)
 	   nil)))
+
     (neotree-show)
+    (when (and project-root
+    	     (not (equal default-directory project-root)))
+      (neotree-dir project-root)
+      (search-forward filename nil t)
+      (beginning-of-line))
     (select-window-2)
-    (select-window-1)
-    (if (and project-root
-	     (not (equal default-directory project-root)))
-	(neotree-dir project-root))))
+    (select-window-1)))
 
 (defun my-neotree-enter-hook (type path arg)
   (message path)
@@ -285,7 +288,7 @@
 ;; projectile
 (require 'projectile)
 (projectile-global-mode)
-(setq projectile-switch-project-action 'neotree-projectile-action)
+(setq projectile-switch-project-action 'my-neotree-show)
 (setq projectile-indexing-method 'native)
 (setq projectile-enable-caching)
 (setq projectile-globally-ignored-files '( ".#*" "#*#" "/target/"))
