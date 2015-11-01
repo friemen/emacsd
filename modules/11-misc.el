@@ -247,8 +247,9 @@
       (neotree-dir project-root)
       (search-forward filename nil t)
       (beginning-of-line))
-    (select-window-2)
-    (select-window-1)))
+    (when (>= (length window-numbering-windows) 2)
+      (select-window-2)
+      (select-window-1))))
 
 (defun my-neotree-enter-hook (type path arg)
   (message path)
