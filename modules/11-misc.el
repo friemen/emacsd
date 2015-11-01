@@ -235,7 +235,7 @@
 (defun my-neotree-show ()
   "Change dir to current buffers project root if in a project."
   (interactive)
-  (let ((filename (file-name-nondirectory (buffer-file-name)))
+  (let ((filename (buffer-file-name))
 	(project-root
 	 (if (projectile-project-p)
 	     (projectile-project-root)
@@ -245,8 +245,9 @@
     (when (and project-root
     	     (not (equal default-directory project-root)))
       (neotree-dir project-root)
-      (search-forward filename nil t)
-      (beginning-of-line))
+      (when filename
+	(search-forward (file-name-nondirectory filename) nil t)
+	(beginning-of-line)))
     (when (>= (length window-numbering-windows) 2)
       (select-window-2)
       (select-window-1))))
