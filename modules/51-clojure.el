@@ -177,7 +177,7 @@
   (my-goto-end-of-form)
   (setq my-saved-ns (cider-current-ns))
   (setq my-saved-sexp (cider-last-sexp))
-  (message my-saved-sexp))
+  (message "%s" my-saved-sexp))
 
 
 (defun my-eval-saved-form ()

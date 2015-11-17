@@ -30,4 +30,4 @@
 
 ;; remember positions in visited files
 (setq save-place-file "~/.emacs.d/saveplace")
-(save-place-mode t)
+(toggle-save-place-globally)

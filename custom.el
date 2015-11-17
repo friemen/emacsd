@@ -22,12 +22,12 @@
  '(package-selected-packages
    (quote
     (window-numbering shm company-ghc flycheck web-mode js2-mode typed-clojure-mode rainbow-delimiters paxedit nrepl-eval-sexp-fu clojure-quick-repls clojure-cheatsheet clj-refactor company-quickhelp company cider-eval-sexp-fu cider undo-tree switch-window smex smart-mode-line-powerline-theme smart-mode-line smart-tab projectile popup neotree multiple-cursors move-text markdown-mode magit impatient-mode ido-vertical-mode crm-custom ido-ubiquitous highlight gandalf-theme flx-ido expand-region emms elscreen dired+ counsel browse-kill-ring auctex ace-jump-buffer ace-jump-mode)))
- '(save-place-mode t nil (saveplace))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(sr-speedbar-right-side nil)
  '(tool-bar-mode nil)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify)))
+
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

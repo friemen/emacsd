@@ -1,7 +1,7 @@
 (defvar misc-packages '(
 	ace-jump-mode
 	ace-jump-buffer
-	auctex
+;	auctex
 	browse-kill-ring
 	counsel
 	dired+
@@ -29,6 +29,7 @@
 	popup
 	projectile
 	recentf
+	saveplace
 	smart-tab
 	smart-mode-line
 	smart-mode-line-powerline-theme
@@ -157,7 +158,12 @@
 ;; ibuffer
 (require 'ibuffer)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-
+(add-hook 'ibuffer-mode-hook
+	  (lambda ()
+	    (visual-line-mode 0)
+	    (toggle-truncate-lines t)
+	    (ibuffer-do-sort-by-filename/process)
+	    (hl-line-mode)))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ido
@@ -187,7 +193,7 @@
 ;; just use git push -v (and rely on the .git/config settings)
 (defun magit-push-current (branch remote &optional remote-branch args)
   (interactive (magit-push-read-args t t))
-  (magit-run-git-async-no-revert "push" "-v" "--tags"))
+  (magit-run-git-async-no-revert "push" "-v"))
 
 (add-hook 'magit-mode-hook
 	  (lambda ()

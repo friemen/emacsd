@@ -14,6 +14,13 @@ To install a current (snapshot) Emacs on Debian based distros:
 3. Install packages with `sudo apt-get install emacs-snapshot emacs-snapshot-el`.
 
 
+To install from a [source archive](http://ftp.gnu.org/gnu/emacs/) on Ubuntu:
+1. `sudo apt-get install build-essential`
+2. `sudo apt-get build-dep emacs24`
+3. Unpack source archive to temp folder, cd into it
+4. `./configure && make && sudo make install`
+
+
 To use this configuration:
 
 1. In case you have an existing configuration you don't want to loose make a backup of your `~/.emacs` and `~/.emacs.d`.
@@ -244,7 +251,7 @@ M-J         Join S-exprs
 M-r         Raise S-expr
 ```
 
-Clojure-Mode specific (for more see [CIDER shortcuts](https://github.com/clojure-emacs/cider#keyboard-shortcuts))
+Clojure-Mode specific (for more see [CIDER shortcuts](https://github.com/clojure-emacs/cider#cider-mode))
 ```
 C-c M-j     Start REPL
 C-c ,       Run tests
@@ -277,7 +284,7 @@ Tab         Reindent, then auto-complete
 [Clojure Refactoring shortcuts](https://github.com/clojure-emacs/clj-refactor.el/wiki)
 
 
-CIDER-Mode specific (in REPL)
+CIDER-Mode specific (in REPL, for more see [CIDER shortcuts](https://github.com/clojure-emacs/cider#cider-repl-mode))
 ```
 Tab         Complete symbol at point
 C-Up        Back through REPL history
@@ -285,8 +292,8 @@ C-Down      Forward through REPL history
 C-c C-c     Cancel current evaluation
 C-c C-u     Clear input before point
 C-c C-o     Clear previous REPL buffer output
-C-c M-o     Clear REPL buffer output
-, ha Tab    Kill REPL
+C-u C-c C-o Clear REPL buffer output
+C-c C-q     Quit CIDER session / kill REPL
 ```
 
 Web-Mode (see also [project page](http://web-mode.org/))
