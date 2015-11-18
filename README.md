@@ -14,10 +14,11 @@ To install a current (snapshot) Emacs on Debian based distros:
 3. Install packages with `sudo apt-get install emacs-snapshot emacs-snapshot-el`.
 
 
-To install from a [source archive](http://ftp.gnu.org/gnu/emacs/) on Ubuntu:
+To install from a downloaded [source archive](http://ftp.gnu.org/gnu/emacs/) on Ubuntu:
+
 1. `sudo apt-get install build-essential`
 2. `sudo apt-get build-dep emacs24`
-3. Unpack source archive to temp folder, cd into it
+3. Unpack downloaded source archive to temp folder, cd into it
 4. `./configure && make && sudo make install`
 
 
