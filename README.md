@@ -103,6 +103,8 @@ C-x 0       Delete current window
 C-x 2       Split window horizontally
 C-x 3       Split window vertically
 C-l         Center buffer to point
+M-p         Scroll buffer up
+M-n         Scroll buffer down
 ```
 
 Movement of point
@@ -155,8 +157,7 @@ C-c End     Toggle window interactive resize mode
 C-x C-+     Increase font size in buffer
 C-x C--     Decrease font size in buffer
 C-x C-0     Reset font size in buffer
-C-+         Highlight symbol at point
-C-#         Unhighlight symbol at point
+C-+         Toggle highlight symbol at point
 s-e p       EMMS play directory
 s-e e       EMMS display playlist
 ```

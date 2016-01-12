@@ -25,6 +25,7 @@
 (defun my-web-mode-hook ()
   (setq web-mode-indent-style 2)
   (setq web-mode-markup-indent-offset 2)
+  (highlight-symbol-mode)
   (define-key web-mode-map (kbd "C-7") 'web-mode-element-close)
   (define-key web-mode-map (kbd "C-c C-e l") 'web-mode-insert-link)
   (define-key web-mode-map (kbd "C-c q q") 'web-mode-fold-or-unfold)
@@ -47,7 +48,8 @@
 
 (add-hook 'nxml-mode-hook
 	  '(lambda ()
-	     (define-key nxml-mode-map (kbd "C-7") 'nxml-finish-element)))
+	     (define-key nxml-mode-map (kbd "C-7") 'nxml-finish-element)
+	     (highlight-symbol-mode)))
 
 (defun my-pretty-print-xml-region (begin end)
   (interactive "r")

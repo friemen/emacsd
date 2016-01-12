@@ -21,3 +21,4 @@
 (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'emacs-lisp-mode-hook 'company-mode)
 (add-hook 'emacs-lisp-mode-hook 'my-elisp-mode-hook)
+(add-hook 'emacs-lisp-mode-hook 'highlight-symbol-mode)

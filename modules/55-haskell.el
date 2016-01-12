@@ -25,7 +25,7 @@
 (add-hook 'haskell-mode-hook 'company-mode)
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-
+(add-hook 'haskell-mode-hook 'highlight-symbol-mode)
 
 (add-hook 'haskell-interactive-mode-hook 'structured-haskell-repl-mode)
 (add-hook 'haskell-interactive-mode-hook 'company-mode)

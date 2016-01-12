@@ -14,6 +14,7 @@
 	flx-ido
 	gandalf-theme
 	highlight
+	highlight-symbol
 	ibuffer
 	ido
 	ido-ubiquitous
@@ -50,6 +51,8 @@
 (global-set-key (kbd "C-<prior>") 'previous-buffer)
 (global-set-key (kbd "C-<next>") 'next-buffer)
 (global-set-key (kbd "C-<escape>") 'kill-this-buffer)
+(global-set-key (kbd "M-p") 'scroll-up-line)
+(global-set-key (kbd "M-n") 'scroll-down-line)
 
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -136,11 +139,13 @@
 
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; highlight
-(global-set-key (kbd "C-+") 'hlt-highlight-symbol)
-(global-set-key (kbd "C-#") 'hlt-unhighlight-symbol)
-(setq hlt-auto-face-backgrounds '("Sky Blue" "Pink" "Gold" "Thistle"
-				  "Green Yellow" "Light Salmon"))
+;; highlight-symbol
+
+(global-set-key (kbd "C-+") 'highlight-symbol-at-point)
+(setq highlight-symbol-colors '("Sky Blue" "Pink" "Gold" "Thistle"
+ 				  "Green Yellow" "Light Salmon"))
+(setq highlight-symbol-idle-delay 0.7)
+(setq highlight-symbol-should-auto-highlight-p 1)
 
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -280,6 +285,7 @@
 	    (define-key neotree-mode-map (kbd "d") 'neotree-delete-node)
 	    (define-key neotree-mode-map (kbd "r") 'neotree-rename-node)
 	    (define-key neotree-mode-map (kbd "e") 'neotree-enter)
+	    (define-key neotree-mode-map (kbd "TAB") 'neotree-enter)
 	    (define-key neotree-mode-map (kbd "C-g") 'neotree-hide)
 	    (define-key neotree-mode-map (kbd "SPC") 'my-neotree-peek)
 	    (hl-line-mode)

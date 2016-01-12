@@ -21,7 +21,7 @@
  '(org-startup-with-inline-images t)
  '(package-selected-packages
    (quote
-    (window-numbering shm company-ghc flycheck web-mode js2-mode typed-clojure-mode rainbow-delimiters paxedit nrepl-eval-sexp-fu clojure-quick-repls clojure-cheatsheet clj-refactor company-quickhelp company cider-eval-sexp-fu cider undo-tree switch-window smex smart-mode-line-powerline-theme smart-mode-line smart-tab projectile popup neotree multiple-cursors move-text markdown-mode magit impatient-mode ido-vertical-mode crm-custom ido-ubiquitous highlight gandalf-theme flx-ido expand-region emms elscreen dired+ counsel browse-kill-ring auctex ace-jump-buffer ace-jump-mode)))
+    (shm company-ghc flycheck web-mode js2-mode typed-clojure-mode rainbow-delimiters paxedit nrepl-eval-sexp-fu clojure-quick-repls clojure-cheatsheet clj-refactor company-quickhelp company cider-eval-sexp-fu cider undo-tree switch-window smex smart-mode-line-powerline-theme smart-mode-line smart-tab projectile popup neotree multiple-cursors move-text markdown-mode magit impatient-mode ido-vertical-mode crm-custom ido-ubiquitous highlight gandalf-theme flx-ido expand-region emms elscreen dired+ counsel browse-kill-ring auctex ace-jump-buffer ace-jump-mode)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(sr-speedbar-right-side nil)
@@ -38,5 +38,6 @@
  '(cursor ((t (:background "dark orange"))))
  '(eval-sexp-fu-flash ((t (:background "light coral" :foreground "white" :weight bold))))
  '(eval-sexp-fu-flash-face ((((class color)) (:background "rosy brown" :foreground "white" :bold t)) (t (:inverse-video t))))
+ '(highlight-symbol-face ((t (:background "gray"))))
  '(ido-subdir ((t (:background "white" :foreground "black"))))
  '(magit-item-highlight ((t (:background "gainsboro")))))

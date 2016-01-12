@@ -238,6 +238,7 @@
 (add-hook 'cider-mode-hook 'company-mode)
 (add-hook 'cider-mode-hook 'subword-mode)
 (add-hook 'cider-mode-hook 'my-clojure-keybindings)
+(add-hook 'cider-mode-hook 'highlight-symbol-mode)
 
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 (add-hook 'cider-repl-mode-hook 'subword-mode)
@@ -245,7 +246,7 @@
 (add-hook 'cider-repl-mode-hook 'company-mode)
 (add-hook 'cider-repl-mode-hook 'my-clojure-keybindings)
 (add-hook 'cider-repl-mode-hook 'my-clojure-refactor-setup)
-
+(add-hook 'cider-mode-hook 'highlight-symbol-mode)
 
 (setq auto-mode-alist (cons '("\\.boot$" . clojure-mode) auto-mode-alist))
 (setq cider-ovelays-use-font-lock t)
