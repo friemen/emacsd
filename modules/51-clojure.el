@@ -207,6 +207,7 @@
   (define-key clojure-mode-map (kbd "C-c <C-return>") 'my-restart-system)
   (define-key paredit-mode-map (kbd "C-d") 'my-delete-whitespace-except-one)
   (define-key paredit-mode-map (kbd "C-M-f") 'paredit-forward-down)
+  (define-key paredit-mode-map (kbd "C-M-b") 'paredit-backward-up)
   (define-key paredit-mode-map (kbd "<delete>") 'my-delete-region-or-char)
   (define-key cider-repl-mode-map (kbd "C-1") 'paredit-open-round)
   (define-key cider-repl-mode-map (kbd "C-2") 'paredit-open-bracket)
@@ -223,7 +224,8 @@
   (define-key cider-mode-map (kbd "C-c l") 'my-save-form)
   (define-key cider-mode-map (kbd "C-c C-l") 'my-eval-saved-form)
   (define-key cider-mode-map (kbd "C-c M-p") 'my-eval-form-in-repl)
-  (define-key cider-mode-map (kbd "<C-dead-circumflex>") 'my-refresh-om))
+  ;(define-key cider-mode-map (kbd "<C-dead-circumflex>") 'my-refresh-om)
+  )
 
 
 (add-hook 'clojure-mode-hook 'cider-mode)

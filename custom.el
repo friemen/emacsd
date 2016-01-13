@@ -38,6 +38,6 @@
  '(cursor ((t (:background "dark orange"))))
  '(eval-sexp-fu-flash ((t (:background "light coral" :foreground "white" :weight bold))))
  '(eval-sexp-fu-flash-face ((((class color)) (:background "rosy brown" :foreground "white" :bold t)) (t (:inverse-video t))))
- '(highlight-symbol-face ((t (:background "gray"))))
+ '(highlight-symbol-face ((t (:background "gainsboro"))))
  '(ido-subdir ((t (:background "white" :foreground "black"))))
  '(magit-item-highlight ((t (:background "gainsboro")))))
