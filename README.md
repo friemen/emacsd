@@ -26,9 +26,10 @@ To use this configuration:
 
 1. In case you have an existing configuration you don't want to loose make a backup of your `~/.emacs` and `~/.emacs.d`.
 2. Remove `~/.emacs.d`.
-3. Clone this repo using `git clone https://github.com/friemen/emacsd.git ~/.emacs.d`.
-4. Start Emacs, get something to drink.
-5. Restart Emacs.
+3. Clone this repo using `git clone https://github.com/friemen/emacsd.git` to some place.
+4. Create a softlink `ln -s ~/place/of/cloned/emacsd ~/.emacs.d`
+5. Start Emacs, get something to drink.
+6. Restart Emacs.
 
 ## Clojure hint
 
@@ -216,6 +217,7 @@ q           Close Magit buffer
 g           Refresh
 l l         Show log
 x           Reset to commit
+C-u x       Hard reset to commit
 Tab         Show diff for single file
 s           Stage one
 u           Unstage one
@@ -224,7 +226,7 @@ U           Unstage all
 c c         Prepare commit
 C-c C-c     Commit
 P P         Push
-f f         Fetch
+f u         Fetch
 m m         Merge
 b b         Switch branch
 z z         Create stash
