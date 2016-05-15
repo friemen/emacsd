@@ -205,7 +205,7 @@ C-c C-a l   Insert link
 C-c C-c p   Preview in browser
 ```
 
-Magit (for more see [cheatsheet](http://daemianmack.com/magit-cheatsheet.html))
+Magit (for more see [keystroke index](https://magit.vc/manual/magit/Keystroke-Index.html#Keystroke-Index))
 ```
 q           Close Magit buffer
 g           Refresh
@@ -228,7 +228,7 @@ A           Apply stash and pop it
 i           Add file to .gitignore
 ```
 
-Paredit (for more see [cheatsheet](https://github.com/joelittlejohn/paredit-cheatsheet))
+Paredit (for more see [cheatsheet](https://www.emacswiki.org/emacs/PareditCheatsheet))
 ```
 Tab         Reindent
 C-M-u       Jump up to start of enclosing sexp
