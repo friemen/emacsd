@@ -46,13 +46,6 @@ present, either in project.clj or ~/.lein/profiles.clj. Here's my
 as example.
 
 
-## Haskell hint
-
-If you want to work with [Haskell](http://www.haskell.org) you can
-follow the [steps that I recently took](http://www.falkoriemenschneider.de/a__2014-09-02__Setting-up-Emacs-and-Haskell.html)
-to get started.
-
-
 ## Some M-x commands
 
 Command                 | Description
@@ -121,6 +114,7 @@ C-e         Line end
 M-<         Buffer begin
 M->         Buffer end
 C-c Space   Ace Jump
+C-x C-x     Jump back to previous mark
 ```
 
 General edit commands
@@ -237,32 +231,32 @@ i           Add file to .gitignore
 Paredit (for more see [cheatsheet](https://github.com/joelittlejohn/paredit-cheatsheet))
 ```
 Tab         Reindent
-C-M-u       Jump up to start of enclosing S-expr
-C-f         Jump forward to next S-expr
+C-M-u       Jump up to start of enclosing sexp
+C-f         Jump forward to next sexp
 C-S-f       Jump forward and adjust region
-C-M-f       Jump forward+down to next S-expr
-C-b         Jump backward to beginning of previous S-expr
+C-M-f       Jump forward+down to next sexp
+C-b         Jump backward to beginning of previous sexp
 C-S-b       Jump backward and adjust region
-C-M-Space   Mark current S-expr
-C-d         Delete whitespace until next S-expr except one
-C-k         Kill S-expr or rest until S-expr ends
+C-M-Space   Mark current sexp
+C-d         Delete whitespace until next sexp except one
+C-k         Kill sexp or rest until sexp ends
+C-i         Reindent sexp
 C-Right     Forward slurp (closing bracket to the right)
 C-Left      Forward barf (closing bracket to the left)
 ESC C-Right Backward slurp (opening bracket to the left)
 ESC C-Left  Backward barf (opening bracket to the right)
 M-(         Wrap round
 M-s         Splice (unwrap)
-M-S         Split S-exprs
-M-J         Join S-exprs
-M-r         Raise S-expr
+M-S         Split sexps
+M-J         Join sexps
+M-r         Raise sexp
 ```
 
-Clojure-Mode specific (for more see [CIDER shortcuts](https://github.com/clojure-emacs/cider#cider-mode))
+Clojure/CIDER-Mode specific (for more see [CIDER shortcuts](http://cider.readthedocs.io/en/latest/interactive_programming/))
 ```
-C-c M-j     Start REPL
-C-c ,       Run tests
-C-c '       View test failure messages
-C-i         Reindent selected sexp
+C-c M-j     Start new REPL
+C-c M-c     Connect to existing REPL
+C-c C-t n   Run tests for namespace
 C-c C-e     Evaluate sexp preceding point and display result in echo area
 C-c C-c     Compile and load current toplevel sexp
 C-u C-c C-c As before, but show result in buffer
@@ -276,22 +270,25 @@ C-c M-n     Switch REPL namespace to buffer
 C-c M-m     Macroexpand-1 preceding sexp
 C-c C-v     Refactorings (see link below)
 M-.         Jump to definition
-M-/         Auto-complete word
 C-c C-d     Show docs for function
 C-c C-j     Show Javadoc in browser
 C-c C-x n   Type check namespace (typed-clojure-mode)
 C-c C-x f   Type check preceding form (typed-clojure-mode)
-C-c q q     Toggle folding
+C-c i       Reindent defn
+C-c Tab     Toggle code folding
+C-c s       Show all folded code blocks
+C-c h       Hide foldable code blocks
 C-<         Mark all symbols in defn (multiple cursors)
-C-M-<       Mark all like this (multiple cursors)
+C-M-<       Mark all symbols like this (multiple cursors)
 Tab         Reindent, then auto-complete
 ```
 
 [Clojure Refactoring shortcuts](https://github.com/clojure-emacs/clj-refactor.el/wiki)
 
 
-CIDER-Mode specific (in REPL, for more see [CIDER shortcuts](https://github.com/clojure-emacs/cider#cider-repl-mode))
+CIDER-REPL-Mode specific (for more see [CIDER shortcuts](http://cider.readthedocs.io/en/latest/using_the_repl/))
 ```
+Enter       Evaluate entered sexp
 Tab         Complete symbol at point
 C-Up        Back through REPL history
 C-Down      Forward through REPL history
@@ -321,7 +318,7 @@ Emacs-Lisp-Mode
 C-c C-c     Eval top-level sexp
 C-x C-e     Eval last elisp sexp
 C-<         Mark all symbols in defun (multiple cursors)
-C-M-<       Mark all like this (multiple cursors)
+C-M-<       Mark all symbols like this (multiple cursors)
 ```
 
 Haskell-Mode

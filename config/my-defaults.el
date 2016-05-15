@@ -1,3 +1,6 @@
+(provide 'my-defaults)
+
+(require-package 'gandalf-theme)
 
 ;; turn off splash screen messages
 (setq inhibit-startup-echo-area-message t
@@ -31,3 +34,36 @@
 ;; remember positions in visited files
 (setq save-place-file "~/.emacs.d/saveplace")
 (toggle-save-place-globally)
+
+;; no backup files, please
+(setq backup-inhibited t)
+
+;; support cut, copy, paste on C-x, C-c and C-v
+(cua-mode)
+
+;; make frame initially fullscreen
+(toggle-frame-maximized)
+
+;; menu bar is ok, but no toolbar
+(menu-bar-mode t)
+(tool-bar-mode 0)
+
+;; wrap long lines
+(setq global-visual-line-mode t)
+
+;; no scroll bars
+(toggle-scroll-bar -1)
+
+;; highlight other parens
+(show-paren-mode t)
+
+;; display line and column number in modeline
+(column-number-mode 1)
+
+;; how to display buffer names in modeline
+(setq uniquify-buffer-name-style 'forward)
+
+(setq ediff-split-window-function 'split-window-horizontally)
+
+;; make C-i independent from TAB
+;(define-key local-function-key-map [tab] nil)
