@@ -13,4 +13,9 @@
 (add-hook 'dired-mode-hook
                (lambda ()
                  ;; Set dired-x buffer-local variables here.  For example:
-                 (dired-omit-mode 1)))
+                 (dired-omit-mode 1)
+		 (hl-line-mode)))
+
+(custom-set-faces
+ '(diredp-dir-name
+   ((t :background "white smoke" :inverse-video nil))))

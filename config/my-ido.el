@@ -23,4 +23,4 @@
 
 
 (custom-set-faces
- '(ido-subdir ((t (:background "gainsboro" :foreground "black")))))
+ '(ido-subdir ((t (:background "white smoke" :foreground "black")))))
