@@ -76,7 +76,7 @@
   (define-key cider-mode-map (kbd "C-c <C-return>") 'my-clojure-restart-system)
   (define-key cider-mode-map (kbd "C-c C-c") 'my-clojure-eval-form)
   (define-key cider-mode-map (kbd "C-c l") 'my-clojure-save-form)
-  (define-key cider-mode-map (kbd "C-c i") 'my-clojure-indent-defn)
+  (define-key cider-mode-map (kbd "C-c C-i") 'my-clojure-indent-defn)
   (define-key cider-mode-map (kbd "C-c C-l") 'my-clojure-eval-saved-form)
   (define-key cider-mode-map (kbd "C-c M-p") 'my-clojure-eval-form-in-repl))
 
@@ -104,6 +104,7 @@
   (local-set-key (kbd "C-<") 'mc/mark-all-symbols-like-this-in-defun)
   (local-set-key (kbd "C-c C-c") 'eval-defun)
   (local-set-key (kbd "C-c C-k") 'eval-buffer)
+  (local-set-key (kbd "C-c C-i") 'my-indent-defun)
   (local-set-key (kbd "C-c C-d") 'my-elisp-describe-thing-in-popup))
 
 (add-hook 'emacs-lisp-mode-hook #'my-elisp-keybindings)
@@ -171,7 +172,6 @@
   (define-key paredit-mode-map (kbd "C-f") 'paredit-forward)
   (define-key paredit-mode-map (kbd "C-b") 'paredit-backward)
   (define-key paredit-mode-map (kbd "<tab>") 'my-indent-and-complete-symbol)
-  (define-key paredit-mode-map (kbd "C-c C-i") 'my-indent-defun)
   (define-key paredit-mode-map (kbd "{") 'paredit-open-curly)
   (define-key paredit-mode-map (kbd "C-d") 'my-delete-whitespace-except-one)
   (define-key paredit-mode-map (kbd "C-M-f") 'paredit-forward-down)

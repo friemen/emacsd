@@ -1,5 +1,6 @@
 (provide 'my-web)
-(require-package 'web-mode)
+(require-packages '(web-mode css-mode company))
+
 
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
@@ -21,3 +22,4 @@
   (highlight-symbol-mode))
 
 (add-hook 'web-mode-hook 'my-web-mode-hook)
+(add-hook 'css-mode-hook 'company-mode)
