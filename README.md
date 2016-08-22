@@ -355,9 +355,9 @@ Org-Mode (see also [refcard](http://orgmode.org/orgcard.txt))
 * Todos
 ** Organize christmas party [66%]
    DEADLINE: <2014-12-05 Fri>
-- [X] Book guide for museum
-- [X] Reserve restaurant
-- [ ] Notify people
+*** DONE Book guide for museum
+*** DONE Book table restaurant
+*** TODO Invite people
 ```
 
 * A headline begins with `*` and starts a section.
@@ -384,7 +384,11 @@ S-Down      On heading: cycle priority forward
          	On item:     move down within section
 C-c ^       Sort items
 C-c .       Add date
+C-c C-q     Define tags
 C-c C-d     Add deadline to section
 C-c C-c     Toggle checkbox [ ] <-> [X]
 C-c C-z     Add note to section
+C-c C-l     Add link
+C-c / ...   Filter by ...
+C-c a ...   Open agenda
 ```

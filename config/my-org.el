@@ -2,5 +2,5 @@
 (require-package 'org)
 
 (setq org-support-shift-select t)
-(org-agenda-files (quote ("~/falko.org")))
+(setq org-agenda-files '("~/Documents/org"))
 (setq org-startup-with-inline-images t)

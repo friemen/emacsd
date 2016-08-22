@@ -138,7 +138,7 @@
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'cider-repl-mode-hook 'company-mode)
 (add-hook 'cider-repl-mode-hook 'my-clojure-refactor-setup)
-(add-hook 'cider-mode-hook 'highlight-symbol-mode)
+(add-hook 'cider-repl-mode-hook 'highlight-symbol-mode)
 
 
 (setq auto-mode-alist (cons '("\\.boot$" . clojure-mode) auto-mode-alist))
@@ -151,5 +151,6 @@
 (setq cider-repl-history-file "~/.emacs.d/cider-history")
 (setq nrepl-eval-sexp-fu-flash-duration 0.2)
 (setq cider-eval-sexp-fu-flash-duration 0.2)
-(setq clojure-quick-repls-cljs-setup
-      "(user/cljs-repl)")
+(setq cider-cljs-lein-repl "(user/cljs-repl)")
+(setq cider-mode-line-show-connection t)
+(cider-repl-toggle-pretty-printing)
