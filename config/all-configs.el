@@ -35,5 +35,6 @@
 		    impatient-mode
 		    move-text
 		    multiple-cursors
+		    restclient
 		    saveplace
 		    switch-window))

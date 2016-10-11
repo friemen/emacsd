@@ -1,8 +1,10 @@
 (provide 'my-web)
-(require-packages '(web-mode css-mode company))
+(require-packages '(web-mode css-mode sass-mode company))
 
 
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+(add-to-list 'auto-mode-alist '("\\.sass\\'" . sass-mode))
 
 
 (defun web-mode-insert-link (href)

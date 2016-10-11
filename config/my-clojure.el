@@ -37,6 +37,17 @@
   (cider-interactive-eval "(user/system-restart!)"))
 
 
+(defun my-clojure-start-figwheel ()
+  (interactive)
+  (cider-interactive-eval "(user/fig-init)"))
+
+
+(defun my-clojure-refresh-namespaces ()
+  (interactive)
+  (cider-interactive-eval "(do (require '[clojure.tools.namespace.repl :as tn])
+                               (tn/refresh-all))"))
+
+
 (defun my-clojure-cider-popup-doc ()
   "A popup alternative to `cider-doc'."
   (interactive)

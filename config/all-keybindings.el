@@ -69,6 +69,7 @@
   (define-key cider-mode-map (kbd "C-M-<") 'mc/mark-all-symbols-like-this)
   (define-key cider-mode-map (kbd "C-<") 'mc/mark-all-symbols-like-this-in-defun)
   (define-key cider-mode-map (kbd "C-c <C-return>") 'my-clojure-restart-system)
+  (define-key cider-mode-map (kbd "C-c RET") 'my-clojure-start-figwheel)
   (define-key cider-mode-map (kbd "C-c C-d") 'my-clojure-cider-popup-doc)
   (define-key cider-mode-map (kbd "C-c C-j") 'cider-javadoc)
   (define-key cider-mode-map (kbd "C-c M-z") 'nrepl-make-connection-default)
