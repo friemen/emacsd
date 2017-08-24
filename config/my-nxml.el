@@ -11,6 +11,10 @@
 		   'nxml-mode))
 
 (add-hook 'nxml-mode-hook
+	  (lambda()
+	    (hs-minor-mode 1)))
+
+(add-hook 'nxml-mode-hook
 	  '(lambda ()
 	     (define-key nxml-mode-map (kbd "C-7") 'nxml-finish-element)
 	     (highlight-symbol-mode)))
