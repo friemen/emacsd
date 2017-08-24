@@ -1,7 +1,7 @@
 (provide 'my-ido)
 (require-packages '(flx-ido
 		    ido
-                    ido-ubiquitous
+                    ido-completing-read+
                     ido-vertical-mode
                     crm-custom
                     recentf))
