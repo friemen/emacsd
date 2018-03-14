@@ -1,7 +1,5 @@
 (provide 'my-defaults)
 
-(require-package 'gandalf-theme)
-
 ;; turn off splash screen messages
 (setq inhibit-startup-echo-area-message t
       inhibit-startup-screen t)

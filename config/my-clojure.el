@@ -1,13 +1,10 @@
 (provide 'my-clojure)
 
-(require-packages '(cider
-		    ;; cider-eval-sexp-fu --> throws error "Symbol’s value as variable is void: hi"
+(require-packages '(cider		    
 		    company
 		    clj-refactor
-		    clojure-cheatsheet
 		    clojure-mode
-		    clojure-quick-repls
-		    ;; nrepl-eval-sexp-fu
+		    clojure-quick-repls		    
 		    paredit
 		    popup
 		    rainbow-delimiters

@@ -20,7 +20,3 @@
   (if (find-file (ido-completing-read "Find recent file: " recentf-list))
       (message "Opening file...")
     (message "Aborting")))
-
-
-(custom-set-faces
- '(ido-subdir ((t (:background "white smoke" :foreground "black")))))

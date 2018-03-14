@@ -22,6 +22,7 @@
 (require 'my-resize-window)
 (require 'my-smex)
 (require 'my-swiper)
+(require 'my-themes)
 (require 'my-web)
 (require 'my-window-numbering)
 (require 'all-keybindings)

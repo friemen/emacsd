@@ -7,7 +7,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (window-numbering web-mode typed-clojure-mode switch-window smex smart-mode-line sass-mode restclient rainbow-delimiters projectile paxedit nrepl-eval-sexp-fu neotree move-text markdown-mode magit js2-mode impatient-mode ido-vertical-mode ido-ubiquitous highlight-symbol gandalf-theme flycheck flx-ido expand-region emms elscreen dired+ crm-custom counsel company clomacs clojure-quick-repls clojure-cheatsheet clj-refactor cider-eval-sexp-fu browse-kill-ring auto-complete ace-jump-mode ace-jump-buffer))))
+    (window-numbering web-mode typed-clojure-mode switch-window smex smart-mode-line sass-mode restclient rainbow-delimiters projectile paxedit nrepl-eval-sexp-fu neotree move-text markdown-mode magit js2-mode impatient-mode ido-vertical-mode ido-ubiquitous highlight-symbol gandalf-theme flycheck flx-ido expand-region emms elscreen dired+ crm-custom counsel company clomacs clojure-quick-repls clj-refactor cider-eval-sexp-fu browse-kill-ring auto-complete ace-jump-mode ace-jump-buffer))))
 
 
 (custom-set-faces
@@ -19,7 +19,6 @@
  '(cursor ((t (:background "dark orange"))))
  '(diredp-dir-name ((t :background "white smoke" :inverse-video nil)))
  '(eval-sexp-fu-flash ((t (:background "light coral" :foreground "white" :weight bold))))
- '(ido-subdir ((t (:background "white smoke" :foreground "black"))))
  '(magit-item-highlight ((t (:background "gainsboro"))))
  '(mode-line ((t :foreground "black" :background "RosyBrown2" :inverse-video nil)))
  '(mode-line-inactive ((t :foreground "grey20" :background "Gainsboro" :inverse-video nil))))
