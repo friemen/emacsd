@@ -1,6 +1,11 @@
 (provide 'my-dired)
-(require-packages '(dired+
-		    ido))
+
+;; dired+ is not available in any repo, use copy from EmacsWiki
+(add-to-list 'load-path (concat user-emacs-directory "emacswiki/dired+"))
+(require 'dired+)
+
+(require-packages '(ido))
+
 
 (toggle-diredp-find-file-reuse-dir 1)
 (diredp-make-find-file-keys-reuse-dirs)

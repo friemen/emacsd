@@ -12,7 +12,7 @@
 
 ;; (setq url-proxy-services '(("http" . "YOUR-HOST:8080")))
 
-(dolist (source '(("melpa" . "http://melpa.milkbox.net/packages/")
+(dolist (source '(("stable.melpa" . "http://stable.melpa.org/packages/")
                   ("marmalade" . "http://marmalade-repo.org/packages/")))
   (add-to-list 'package-archives source t))
 
