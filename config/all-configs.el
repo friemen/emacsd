@@ -35,6 +35,6 @@
 		    impatient-mode
 		    move-text
 		    multiple-cursors
-		    ;; restclient    ;; Not available in Melpa stable?
+		    restclient
 		    saveplace
 		    switch-window))

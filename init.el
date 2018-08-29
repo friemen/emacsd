@@ -12,9 +12,15 @@
 
 ;; (setq url-proxy-services '(("http" . "YOUR-HOST:8080")))
 
-(dolist (source '(("stable.melpa" . "http://stable.melpa.org/packages/")
-                  ("marmalade" . "http://marmalade-repo.org/packages/")))
-  (add-to-list 'package-archives source t))
+(setq package-archives
+      '(("GNU ELPA"     . "http://elpa.gnu.org/packages/")
+        ("MELPA Stable" . "https://stable.melpa.org/packages/")
+        ("MELPA"        . "https://melpa.org/packages/"))
+      package-archive-priorities
+      '(("MELPA Stable" . 10)
+        ("GNU ELPA"     . 5)
+        ("MELPA"        . 0)))
+
 
 (package-initialize)
 
