@@ -155,6 +155,7 @@
   (local-set-key (kbd "e") 'neotree-enter)
   (local-set-key (kbd "<tab>") 'neotree-enter)
   (local-set-key (kbd "C-g") 'neotree-hide)
+  (local-set-key (kbd "C-q") 'neotree-hide)
   (local-set-key (kbd "SPC") 'my-neotree-peek))
 
 (add-hook 'neotree-mode-hook #'my-neotree-keybindings)

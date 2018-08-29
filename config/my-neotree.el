@@ -26,9 +26,9 @@
       (select-window-1))))
 
 (defun my-neotree-enter-hook (type path arg)
-  (message path)
-  (if (equal type 'file)
-      ;; hide neotree after loading file
+  "Hide neotree after loading file"
+  (when (equal type 'file)
+      (message "Hiding neotree after entering %s %s" path arg)
       (neotree-hide)))
 
 (defun my-neotree-peek ()
@@ -39,7 +39,10 @@
     (add-hook 'neo-enter-hook 'my-neotree-enter-hook)
     (select-window neo-window)))
 
-(add-hook 'neo-enter-hook #'my-neotree-enter-hook)
+;; Disabled automatic hiding
+;; Neotree seems to execute that hook even if no file has been entered
+;; (add-hook 'neo-enter-hook #'my-neotree-enter-hook)
+
 (add-hook 'neotree-mode-hook
 	  (lambda ()
 	    (hl-line-mode)
