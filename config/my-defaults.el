@@ -42,8 +42,9 @@
 ;; make frame initially fullscreen
 (toggle-frame-maximized)
 
-;; menu bar is ok, but no toolbar
-(menu-bar-mode t)
+;; no menu bar, no toolbar,
+;; M-x menu-bar-mode and tool-bar-mode will toggle this
+(menu-bar-mode 0)
 (tool-bar-mode 0)
 
 ;; wrap long lines

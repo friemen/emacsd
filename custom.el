@@ -20,5 +20,6 @@
  '(diredp-dir-name ((t :background "white smoke" :inverse-video nil)))
  '(eval-sexp-fu-flash ((t (:background "light coral" :foreground "white" :weight bold))))
  '(magit-item-highlight ((t (:background "gainsboro"))))
+ '(markdown-code-face ((t (:inherit nil :foreground "dim gray" :box (:line-width 1 :color "grey25")))))
  '(mode-line ((t :foreground "black" :background "RosyBrown2" :inverse-video nil)))
  '(mode-line-inactive ((t :foreground "grey20" :background "Gainsboro" :inverse-video nil))))
