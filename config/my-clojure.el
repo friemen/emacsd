@@ -1,15 +1,13 @@
 (provide 'my-clojure)
 
-(require-packages '(cider		    
+(require-packages '(cider
 		    company
 		    clj-refactor
 		    clojure-mode
-		    clojure-quick-repls		    
 		    paredit
 		    popup
 		    rainbow-delimiters
-		    smartparens
-		    typed-clojure-mode))
+		    smartparens))
 
 (require 'my-paredit)
 
