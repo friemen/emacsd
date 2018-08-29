@@ -5,7 +5,6 @@
 (require 'my-dired)
 (require 'my-elscreen)
 (require 'my-elisp)
-(require 'my-emms)
 (require 'my-eshell)
 (require 'my-highlight-symbol)
 (require 'my-ibuffer)

@@ -42,10 +42,6 @@
 ;; dired
 (global-set-key (kbd "C-x C-d") 'ido-dired)
 
-;; emacs multi media system
-(global-set-key (kbd "s-e e") 'emms)
-(global-set-key (kbd "s-e p") 'emms-play-directory)
-
 ;; move text
 (global-set-key (kbd "M-S-<down>") 'move-text-down)
 (global-set-key (kbd "M-S-<up>") 'move-text-up)
