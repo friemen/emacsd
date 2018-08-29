@@ -28,13 +28,11 @@
 ;; search
 (global-set-key (kbd "C-s") 'swiper)
 (global-set-key (kbd "C-r") 'swiper)
-(global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "C-w") 'counsel-git-grep)
 
 ;; M-x enhancement
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 ;; ace jump
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
@@ -74,9 +72,10 @@
   (define-key cider-mode-map (kbd "C-c <C-return>") 'my-clojure-restart-system)
   (define-key cider-mode-map (kbd "C-c C-c") 'my-clojure-eval-form)
   (define-key cider-mode-map (kbd "C-c l") 'my-clojure-save-form)
+  (define-key cider-mode-map (kbd "C-c M-p") 'my-clojure-insert-defun-in-repl)
   (define-key cider-mode-map (kbd "C-c C-i") 'my-clojure-indent-defn)
   (define-key cider-mode-map (kbd "C-c C-l") 'my-clojure-eval-saved-form)
-  (define-key cider-mode-map (kbd "C-c M-p") 'my-clojure-eval-form-in-repl))
+  (define-key cider-mode-map (kbd "C-c C-f") 'my-clojure-eval-form-in-repl))
 
 (add-hook 'cider-mode-hook #'my-cider-keybindings)
 
@@ -89,6 +88,7 @@
   (define-key cider-repl-mode-map (kbd "C-c <C-return>") 'my-clojure-restart-system)
   (define-key cider-repl-mode-map (kbd "C-c l") 'my-clojure-save-form)
   (define-key cider-repl-mode-map (kbd "C-c C-l") 'my-clojure-eval-saved-form)
+  (define-key cider-repl-mode-map (kbd "C-c C-i") 'my-clojure-indent-defn)
   (define-key cider-repl-mode-map (kbd "RET") 'cider-repl-return))
 
 (add-hook 'cider-repl-mode-hook #'my-cider-repl-keybindings)

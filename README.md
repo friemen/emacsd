@@ -146,18 +146,16 @@ Misc commands
 C-g         Cancel command / buffer (or 3x Escape)
 q           Dismiss a temporary buffer that has appeared
 M-g g       Goto line
-C-s         Regex search forwards
-C-s C-w     Regex search forwards for word under point
-C-r         Regex search backwards
-C-r C-w     Regex search backwards for word under point
+C-s         Regex search forward
+C-s C-w     Regex search forward for word under point
+C-r         Regex search backward
+C-r C-w     Regex search backward for word under point
 M-%         Query replace
 C-c End     Toggle window interactive resize mode
 C-x C-+     Increase font size in buffer
 C-x C--     Decrease font size in buffer
 C-x C-0     Reset font size in buffer
 C-+         Toggle highlight symbol at point
-s-e p       EMMS play directory
-s-e e       EMMS display playlist
 ```
 
 Elscreen (see also [project page](https://github.com/knu/elscreen#usage))
@@ -167,7 +165,7 @@ C-c C-s 0-9     Switch to screen
 C-c C-s k       Kill current screen
 ```
 
-Projectile (see also [project page](https://github.com/bbatsov/projectile#interactive-commands))
+Projectile (see also [project page](https://github.com/bbatsov/projectile/blob/master/doc/usage.md#interactive-commands))
 ```
 C-c p p     Switch project + select file
 C-c p f     Select file in current project
@@ -229,7 +227,7 @@ A           Apply stash and pop it
 i           Add file to .gitignore
 ```
 
-Paredit (for more see [cheatsheet](https://www.emacswiki.org/emacs/PareditCheatsheet))
+Paredit (for more see [cheatsheet](https://www.emacswiki.org/pics/static/PareditCheatsheet.png))
 ```
 Tab         Reindent
 C-M-u       Jump up to start of enclosing sexp
@@ -253,29 +251,32 @@ M-J         Join sexps
 M-r         Raise sexp
 ```
 
-Clojure/CIDER-Mode specific (for more see [CIDER shortcuts](http://cider.readthedocs.io/en/latest/interactive_programming/))
+Clojure/CIDER-Mode specific (for more see [CIDER shortcuts](https://cider.readthedocs.io/en/latest/interactive_programming/))
 ```
 C-c M-j     Start new REPL
 C-c M-c     Connect to existing REPL
-C-c C-t n   Run tests for namespace
-C-c C-e     Evaluate sexp preceding point and display result in echo area
-C-c C-c     Compile and load current toplevel sexp
+C-c C-c     Compile and evaluate current toplevel sexp
 C-u C-c C-c As before, but show result in buffer
-C-c C-p     Evaluate preceding sexp and pretty print result
+C-c C-f     Compile and evaluate toplevel sexp in REPL
 C-c C-k     Compile and load complete buffer
+C-c C-p     Recompile and load whole project
+C-c C-Enter Recompile and restart system
+C-c C-e     Evaluate sexp preceding point and display result in echo area
 C-c l       Save sexp at point
 C-c C-l     Eval saved sexp
 C-c C-z     Jump to REPL buffer
-C-c M-p     Copy preceding sexp to REPL buffer
+C-c M-p     Copy toplevel sexp to REPL buffer
 C-c M-n     Switch REPL namespace to buffer
 C-c M-m     Macroexpand-1 preceding sexp
+C-c C-t t   Run single test at point
+C-c C-t n   Run tests for namespace
+C-c C-t p   Run tests for project
 C-c C-v     Refactorings (see link below)
 M-.         Jump to definition
+M-,         Jump back
 C-c C-d     Show docs for function
 C-c C-j     Show Javadoc in browser
-C-c C-x n   Type check namespace (typed-clojure-mode)
-C-c C-x f   Type check preceding form (typed-clojure-mode)
-C-c i       Reindent defn
+C-c C-i     Reindent defn
 C-c Tab     Toggle code folding
 C-c s       Show all folded code blocks
 C-c h       Hide foldable code blocks
@@ -287,7 +288,7 @@ Tab         Reindent, then auto-complete
 [Clojure Refactoring shortcuts](https://github.com/clojure-emacs/clj-refactor.el/wiki)
 
 
-CIDER-REPL-Mode specific (for more see [CIDER shortcuts](http://cider.readthedocs.io/en/latest/using_the_repl/))
+CIDER-REPL-Mode specific (for more see [CIDER shortcuts](https://cider.readthedocs.io/en/latest/using_the_repl/))
 ```
 Enter       Evaluate entered sexp
 Tab         Complete symbol at point

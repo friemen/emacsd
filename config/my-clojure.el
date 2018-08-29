@@ -17,15 +17,6 @@
   (cljr-add-keybindings-with-prefix "C-c C-v"))
 
 
-(defun my-clojure-typed-setup ()
-  (font-lock-add-keywords nil
-			  '(("(\\(defn>\\)\\s-+\\(\\w+\\)"
-			     (1 font-lock-keyword-face)
-       			     (2 font-lock-function-name-face))
-			    ("(\\(defrecord>\\)\\s-+\\(\\w+\\)"
-			     (1 font-lock-keyword-face)
-			     (2 font-lock-function-name-face)))))
-
 (defun my-clojure-restart-system ()
   (interactive)
   (cider-interactive-eval "(user/system-restart!)"))
@@ -84,8 +75,16 @@
   (interactive)
   (save-window-excursion
     (save-excursion
-         (my-goto-end-of-form)
-      (my-eval-region-or-last-sexp-in-repl))))
+      (my-goto-end-of-form)
+      (my-clojure-eval-region-or-last-sexp-in-repl))))
+
+
+(defun my-clojure-insert-defun-in-repl ()
+  (interactive)
+  (save-window-excursion
+    (save-excursion
+      (my-goto-end-of-form)
+      (cider-insert-last-sexp-in-repl))))
 
 
 (defun my-clojure-indent-defn ()
@@ -125,9 +124,7 @@
 
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'clojure-mode-hook 'cider-mode)
-(add-hook 'clojure-mode-hook 'typed-clojure-mode)
 (add-hook 'clojure-mode-hook 'my-clojure-refactor-setup)
-(add-hook 'clojure-mode-hook 'my-clojure-typed-setup)
 (add-hook 'clojure-mode-hook 'hs-minor-mode)
 
 (add-hook 'cider-mode-hook 'eldoc-mode)
