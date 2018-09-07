@@ -75,7 +75,8 @@
   (define-key cider-mode-map (kbd "C-c M-p") 'my-clojure-insert-defun-in-repl)
   (define-key cider-mode-map (kbd "C-c C-i") 'my-clojure-indent-defn)
   (define-key cider-mode-map (kbd "C-c C-l") 'my-clojure-eval-saved-form)
-  (define-key cider-mode-map (kbd "C-c C-f") 'my-clojure-eval-form-in-repl))
+  (define-key cider-mode-map (kbd "C-c C-f") 'my-clojure-eval-form-in-repl)
+  (define-key cider-mode-map (kbd "C-c SPC") 'ace-jump-mode))
 
 (add-hook 'cider-mode-hook #'my-cider-keybindings)
 

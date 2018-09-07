@@ -209,6 +209,7 @@ Magit (for more see [keystroke index](https://magit.vc/manual/magit/Keystroke-In
 q           Close Magit buffer
 g           Refresh
 l l         Show log
+e           Enter Ediff mode
 x           Reset to commit
 C-u x       Hard reset to commit
 Tab         Show diff for single file
