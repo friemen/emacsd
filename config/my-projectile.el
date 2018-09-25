@@ -1,7 +1,7 @@
 (provide 'my-projectile)
 (require-packages '(projectile))
 
-(projectile-global-mode)
+(projectile-mode 1)
 (setq projectile-switch-project-action 'my-neotree-show)
 (setq projectile-indexing-method 'native)
 (setq projectile-enable-caching t)

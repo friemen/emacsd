@@ -25,6 +25,9 @@
 
 (global-set-key (kbd "C-SPC") 'er/expand-region)
 
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+
 ;; search
 (global-set-key (kbd "C-s") 'swiper)
 (global-set-key (kbd "C-r") 'swiper)

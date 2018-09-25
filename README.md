@@ -267,7 +267,7 @@ C-c l       Save sexp at point
 C-c C-l     Eval saved sexp
 C-c C-z     Jump to REPL buffer
 C-c M-p     Copy toplevel sexp to REPL buffer
-C-c M-n     Switch REPL namespace to buffer
+C-c M-n n   Switch REPL namespace to buffer
 C-c M-m     Macroexpand-1 preceding sexp
 C-c C-t t   Run single test at point
 C-c C-t n   Run tests for namespace
