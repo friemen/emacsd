@@ -5,6 +5,9 @@
 (setq neo-keymap-style 'concise
       neo-theme 'classic)
 
+(setq neo-window-width 50)
+
+
 (defun my-neotree-show ()
   "Change dir to current buffers project root if in a project."
   (interactive)
@@ -39,9 +42,7 @@
     (add-hook 'neo-enter-hook 'my-neotree-enter-hook)
     (select-window neo-window)))
 
-;; Disabled automatic hiding
-;; Neotree seems to execute that hook even if no file has been entered
-;; (add-hook 'neo-enter-hook #'my-neotree-enter-hook)
+(add-hook 'neo-enter-hook #'my-neotree-enter-hook)
 
 (add-hook 'neotree-mode-hook
 	  (lambda ()
