@@ -144,7 +144,7 @@
 
 
 (setq auto-mode-alist (cons '("\\.boot$" . clojure-mode) auto-mode-alist))
-(setq cider-ovelays-use-font-lock t)
+(setq cider-overlays-use-font-lock t)
 (setq cider-font-lock-dynamically '(macro core function var))
 (setq cider-popup-stacktraces nil)
 (setq nrepl-hide-special-buffers nil)
@@ -153,6 +153,7 @@
 (setq cider-repl-history-file "~/.emacs.d/cider-history")
 (setq nrepl-eval-sexp-fu-flash-duration 0.2)
 (setq cider-eval-sexp-fu-flash-duration 0.2)
-(setq cider-cljs-lein-repl "(user/cljs-repl)")
+(setq cider-default-cljs-repl "(user/fig-repl)")
+(setq cider-repl-auto-detect-type nil)
 (setq cider-mode-line-show-connection t)
 (cider-repl-toggle-pretty-printing)
