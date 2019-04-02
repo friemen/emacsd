@@ -31,7 +31,7 @@
 
 ;; remember positions in visited files
 (setq save-place-file "~/.emacs.d/saveplace")
-(toggle-save-place-globally)
+(save-place-mode 1)
 
 ;; no backup files, please
 (setq backup-inhibited t)
