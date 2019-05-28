@@ -154,6 +154,6 @@
 (setq nrepl-eval-sexp-fu-flash-duration 0.2)
 (setq cider-eval-sexp-fu-flash-duration 0.2)
 (setq cider-default-cljs-repl "(user/fig-repl)")
-(setq cider-repl-auto-detect-type nil)
+(setq cider-repl-auto-detect-type t)
 (setq cider-mode-line-show-connection t)
 (cider-repl-toggle-pretty-printing)
