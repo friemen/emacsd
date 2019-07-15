@@ -156,4 +156,5 @@
 (setq cider-default-cljs-repl "(user/fig-repl)")
 (setq cider-repl-auto-detect-type t)
 (setq cider-mode-line-show-connection t)
-(cider-repl-toggle-pretty-printing)
+(setq cider-repl-use-pretty-printing t)
+(setq cider-print-fn 'fipp)
