@@ -1,6 +1,7 @@
 (provide 'all-configs)
 
 (require 'my-clojure)
+(require 'my-dashboard)
 (require 'my-defaults)
 (require 'my-dired)
 (require 'my-elscreen)
