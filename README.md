@@ -145,13 +145,11 @@ Misc commands
 ```
 C-g         Cancel command / buffer (or 3x Escape)
 q           Dismiss a temporary buffer that has appeared
-M-g g       Goto line
-C-s         Regex search forward
-C-s C-w     Regex search forward for word under point
-C-r         Regex search backward
-C-r C-w     Regex search backward for word under point
+M-g         Goto line
+C-s         Search (swiper)
+C-r         Replace string
 M-%         Query replace
-C-c End     Toggle window interactive resize mode
+C-x End     Toggle window interactive resize mode
 C-x C-+     Increase font size in buffer
 C-x C--     Decrease font size in buffer
 C-x C-0     Reset font size in buffer

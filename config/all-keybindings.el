@@ -7,6 +7,8 @@
 (global-set-key (kbd "C-<escape>") 'kill-this-buffer)
 (global-set-key (kbd "M-p") 'scroll-up-line)
 (global-set-key (kbd "M-n") 'scroll-down-line)
+(global-set-key (kbd "M-g") 'goto-line)
+
 
 (global-set-key (kbd "C-x o") 'switch-window)
 (global-set-key (kbd "C-<tab>") 'switch-window)
@@ -30,7 +32,7 @@
 
 ;; search
 (global-set-key (kbd "C-s") 'swiper)
-(global-set-key (kbd "C-r") 'swiper)
+(global-set-key (kbd "C-r") 'replace-string)
 (global-set-key (kbd "C-w") 'counsel-git-grep)
 
 ;; M-x enhancement
@@ -48,7 +50,7 @@
 (global-set-key (kbd "M-S-<up>") 'move-text-up)
 
 ;; resize window
-(global-set-key (kbd "C-c <end>") 'my-resize-window-mode)
+(global-set-key (kbd "C-x <end>") 'my-resize-window-mode)
 
 ;; browse kill ring
 (global-set-key (kbd "C-y") 'browse-kill-ring)
