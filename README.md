@@ -173,7 +173,7 @@ Right       Focus window right of current window
 C-Up        Shrink current window vertically
 C-Down      Enlarge current window vertically
 C-Left      Shrink current window horizontally
-C-Right     Enlarge current window horizontcally
+C-Right     Enlarge current window horizontally
 ```
 
 Elscreen (see also [project page](https://github.com/knu/elscreen#usage))
