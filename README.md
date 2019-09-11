@@ -93,6 +93,9 @@ C-Pgdn      Next buffer
 C-Tab       Switch window
 C-x C-b     List buffers (ibuffer)
 C-Escape    Kill this buffer
+C-l         Center buffer to point
+M-p         Scroll buffer up
+M-n         Scroll buffer down
 C-x k       Kill buffer
 C-x g       Git status (magit)
 C-x l       Git log for file in current buffer
@@ -101,9 +104,7 @@ C-x 1       Delete other windows
 C-x 0       Delete current window
 C-x 2       Split window horizontally
 C-x 3       Split window vertically
-C-l         Center buffer to point
-M-p         Scroll buffer up
-M-n         Scroll buffer down
+C-o         Toggle window control mode (see below)
 ```
 
 Movement of point
@@ -151,11 +152,28 @@ M-g         Goto line
 C-s         Search (swiper)
 C-r         Replace string
 M-%         Query replace
-C-x End     Toggle window interactive resize mode
 C-x C-+     Increase font size in buffer
 C-x C--     Decrease font size in buffer
 C-x C-0     Reset font size in buffer
 C-+         Toggle highlight symbol at point
+```
+
+Window/buffer control mode commands
+```
+C-g         Leave window control
+x           Delete current buffer file
+r           Rename current buffer file
+c           Copy current buffer file
+p           Create new window right of current window
+l           Create new window below current window
+Up          Focus window above current window
+Down        Focus window below current window
+Left        Focus window left of current window
+Right       Focus window right of current window
+C-Up        Shrink current window vertically
+C-Down      Enlarge current window vertically
+C-Left      Shrink current window horizontally
+C-Right     Enlarge current window horizontcally
 ```
 
 Elscreen (see also [project page](https://github.com/knu/elscreen#usage))

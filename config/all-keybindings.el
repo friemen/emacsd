@@ -1,4 +1,5 @@
 (provide 'all-keybindings)
+(require-package 'smartrep)
 
 ;; global keybindings
 
@@ -49,8 +50,31 @@
 (global-set-key (kbd "M-S-<down>") 'move-text-down)
 (global-set-key (kbd "M-S-<up>") 'move-text-up)
 
-;; resize window
-(global-set-key (kbd "C-x <end>") 'my-resize-window-mode)
+;; control windows
+(global-unset-key (kbd "C-o"))
+(smartrep-define-key global-map
+    "C-o"
+  '(("=" . balance-windows)
+    ("k" . delete-window)
+    ("1" . delete-other-windows)
+    ("p" . my-split-and-switch-to-window-right)
+    ("l" . my-split-and-switch-to-window-below)
+    ("r" . my-rename-current-buffer-file)
+    ("x" . my-delete-current-buffer-file)
+    ("c" . my-copy-current-buffer-file)
+    ("<left>" . windmove-left)
+    ("<right>" . windmove-right)
+    ("<up>" . windmove-up)
+    ("<down>" . windmove-down)
+    ("C-<left>" . shrink-window-horizontally)
+    ("C-<right>" . enlarge-window-horizontally)
+    ("C-<up>" . shrink-window)
+    ("C-<down>" . enlarge-window)
+    ("S-<left>" . buf-move-left)
+    ("S-<right>" . buf-move-right)
+    ("S-<up>" . buf-move-up)
+    ("S-<down>" . buf-move-down)))
+
 
 ;; browse kill ring
 (global-set-key (kbd "C-y") 'browse-kill-ring)

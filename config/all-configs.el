@@ -7,6 +7,7 @@
 (require 'my-elscreen)
 (require 'my-elisp)
 (require 'my-eshell)
+(require 'my-file-utils)
 (require 'my-highlight-symbol)
 (require 'my-ibuffer)
 (require 'my-ido)
@@ -19,7 +20,7 @@
 (require 'my-org)
 (require 'my-paredit)
 (require 'my-projectile)
-(require 'my-resize-window)
+(require 'my-window-control)
 (require 'my-smex)
 (require 'my-swiper)
 (require 'my-themes)
@@ -31,6 +32,7 @@
 (require-packages '(ace-jump-mode
 		    ace-jump-buffer
 		    browse-kill-ring
+		    buffer-move
 		    counsel
 		    expand-region
 		    impatient-mode
