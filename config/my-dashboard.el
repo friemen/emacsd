@@ -4,6 +4,7 @@
 
 (dashboard-setup-startup-hook)
 (setq dashboard-startup-banner 'logo)
+(setq dashboard-center-content t)
 (setq dashboard-banner-logo-title "Welcome to Emacs!")
 (setq dashboard-items '((projects . 15)
 			(recents  . 10)

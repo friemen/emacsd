@@ -70,6 +70,7 @@ replace-string          | Replace all to end of buffer
 revert-buffer           | Reload buffer contents from file
 rgrep                   | Grep for pattern recursively in files
 string-rectangle        | Insert prefix to every marked line
+toggle-truncate-lines   | Turn visual line wrapping on or off
 uncomment-region        | Remove comment markers for region
 visual-line-mode        | Switch nice word wrap on/off
 
@@ -94,6 +95,7 @@ C-x C-b     List buffers (ibuffer)
 C-Escape    Kill this buffer
 C-x k       Kill buffer
 C-x g       Git status (magit)
+C-x l       Git log for file in current buffer
 C-x o       Jump to next window
 C-x 1       Delete other windows
 C-x 0       Delete current window
@@ -217,12 +219,13 @@ S           Stage all
 U           Unstage all
 c c         Prepare commit
 C-c C-c     Commit
-P P         Push
+P P         Push (without explicit refspec)
 f u         Fetch
 m m         Merge
 b b         Switch branch
 z z         Create stash
-A           Apply stash and pop it
+z p         Pop stash
+z k         Kill stash
 i           Add file to .gitignore
 ```
 

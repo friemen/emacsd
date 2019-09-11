@@ -58,6 +58,8 @@
 ;; use ibuffer to list buffers
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
+;; show git log for file in current buffer
+(global-set-key (kbd "C-x l") 'magit-log-buffer-file)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; clojure

@@ -66,3 +66,6 @@
 
 ;; make C-i independent from TAB
 ;(define-key local-function-key-map [tab] nil)
+
+;; Don't visually wrap lines that do not fit in window
+(setq-default truncate-lines t)
