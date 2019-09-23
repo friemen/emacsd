@@ -12,10 +12,12 @@
 
 ;; (setq url-proxy-services '(("http" . "YOUR-HOST:8080")))
 
+(setq package-check-signature nil)
+
 (setq package-archives
       '(("MELPA"        . "https://melpa.org/packages/")
         ("MELPA Stable" . "https://stable.melpa.org/packages/")
-        ("GNU ELPA"     . "http://elpa.gnu.org/packages/"))
+        ("GNU ELPA"     . "https://elpa.gnu.org/packages/"))
       package-archive-priorities
       '(("MELPA"        . 10)
         ("MELPA Stable" . 5)
