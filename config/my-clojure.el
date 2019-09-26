@@ -158,3 +158,4 @@
 (setq cider-mode-line-show-connection t)
 (setq cider-repl-use-pretty-printing t)
 (setq cider-print-fn 'fipp)
+(setq cider-repl-prompt-function 'cider-repl-prompt-abbreviated)
