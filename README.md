@@ -66,6 +66,7 @@ magit-log-buffer-file   | Show Git log with commit touching file
 magit-status            | Show Magit buffer
 query-replace           | Replace all to end of buffer, ask for each
 package-list-packages   | Open package manager
+projectile-replace      | Replace string in project files
 replace-string          | Replace all to end of buffer
 revert-buffer           | Reload buffer contents from file
 rgrep                   | Grep for pattern recursively in files
