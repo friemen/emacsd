@@ -5,7 +5,7 @@
 
 (global-set-key (kbd "C-<prior>") 'previous-buffer)
 (global-set-key (kbd "C-<next>") 'next-buffer)
-(global-set-key (kbd "C-<escape>") 'kill-this-buffer)
+(global-set-key (kbd "C-w") 'kill-this-buffer)
 (global-set-key (kbd "M-p") 'scroll-up-line)
 (global-set-key (kbd "M-n") 'scroll-down-line)
 (global-set-key (kbd "M-g") 'goto-line)
@@ -17,8 +17,11 @@
 (global-set-key (kbd "C-x f") 'my-ido-recentf-open)
 
 (global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x l") 'magit-log-buffer-file)
 
-(global-set-key (kbd "C-q") 'my-neotree-show)
+(global-set-key (kbd "C-^") 'my-neotree-show)
+
+(global-set-key (kbd "C-q") 'save-buffers-kill-emacs)
 
 (global-set-key (kbd "C-<") 'mc/mark-next-like-this)
 (global-set-key (kbd "C->") 'mc/mark-previous-like-this)
@@ -34,7 +37,7 @@
 ;; search
 (global-set-key (kbd "C-s") 'swiper)
 (global-set-key (kbd "C-r") 'replace-string)
-(global-set-key (kbd "C-w") 'counsel-git-grep)
+(global-set-key (kbd "C-y") 'counsel-git-grep)
 
 ;; M-x enhancement
 (global-set-key (kbd "M-x") 'smex)
@@ -77,13 +80,10 @@
 
 
 ;; browse kill ring
-(global-set-key (kbd "C-y") 'browse-kill-ring)
+(global-set-key (kbd "M-y") 'browse-kill-ring)
 
 ;; use ibuffer to list buffers
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-
-;; show git log for file in current buffer
-(global-set-key (kbd "C-x l") 'magit-log-buffer-file)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; clojure

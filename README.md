@@ -81,19 +81,20 @@ visual-line-mode        | Switch nice word wrap on/off
 File/buffer/window commands
 ```
 C-x C-c     Exit Emacs
+C-q         Exit Emacs
 C-x C-f     Find file
 C-x f       Open recently used file
 C-x C-s     Save buffer
 C-x C-w     Write buffer to other file
 C-x C-d     Show directory (dired+)
 C-x C-j     Open dired and go to file in current buffer
-C-q         Open directory bar (neotree)
+C-^         Open directory bar (neotree)
 C-x b       Switch buffer
 C-Pgup      Previous buffer
 C-Pgdn      Next buffer
 C-Tab       Switch window
 C-x C-b     List buffers (ibuffer)
-C-Escape    Kill this buffer
+C-w         Kill this buffer
 C-l         Center buffer to point
 M-p         Scroll buffer up
 M-n         Scroll buffer down
@@ -133,7 +134,7 @@ M-q         Reformat paragraph
 C-c         Copy
 C-x         Cut
 C-v         Paste
-C-y         Browse kill ring
+M-y         Browse kill ring
 C-x h       Mark whole buffer contents
 C-<         Mark previous like this (multiple cursors)
 C->         Mark next like this (multiple cursors)
@@ -152,6 +153,7 @@ q           Dismiss a temporary buffer that has appeared
 M-g         Goto line
 C-s         Search (swiper)
 C-r         Replace string
+C-y         Git grep
 M-%         Query replace
 C-x C-+     Increase font size in buffer
 C-x C--     Decrease font size in buffer

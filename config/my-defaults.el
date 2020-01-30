@@ -64,9 +64,7 @@
 (setq uniquify-buffer-name-style 'forward)
 
 (setq ediff-split-window-function 'split-window-horizontally)
-
-;; make C-i independent from TAB
-;(define-key local-function-key-map [tab] nil)
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
 ;; Don't visually wrap lines that do not fit in window
 (setq-default truncate-lines t)
