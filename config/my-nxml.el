@@ -1,38 +1,31 @@
 (provide 'my-nxml)
-(require 'nxml-mode)
 
-(add-to-list 'auto-mode-alist
-	     (cons (concat "\\." (regexp-opt '("xml"
-					       "xsd"
-					       "rng"
-					       "xslt"
-					       "xsl")
-					     t) "\\'")
-		   'nxml-mode))
+(use-package sgml-mode :ensure t)
 
-(add-hook 'nxml-mode-hook
-	  (lambda()
-	    (hs-minor-mode 1)))
+(use-package nxml :ensure t
+  :bind
+  (:map nxml-mode-map
+        ("C-7" . nxml-finish-element))
 
-(add-hook 'nxml-mode-hook
-	  '(lambda ()
-	     (define-key nxml-mode-map (kbd "C-7") 'nxml-finish-element)
-	     (highlight-symbol-mode)))
+  :config
+  (add-to-list 'hs-special-modes-alist
+             '(nxml-mode
+               "<!--\\|<[^/>]*[^/]>"
+               "-->\\|</[^/>]*[^/]>"
 
-(defun my-pretty-print-xml-region (begin end)
-  (interactive "r")
-  (save-excursion
-      (nxml-mode)
-      (goto-char begin)
-      (while (search-forward-regexp "\>[ \\t]*\<" nil t)
-        (backward-char) (insert "\n"))
-      (indent-region begin end)))
+               "<!--"
+               sgml-skip-tag-forward
+               nil))
+
+  (add-hook 'nxml-mode-hook 'hs-minor-mode)
+  (add-hook 'nxml-mode-hook 'highlight-symbol-mode))
 
 
 (add-to-list 'hs-special-modes-alist
-             (list 'nxml-mode
-                   "<!--\\|<[^/>]*[^/]>"
-                   "-->\\|</[^/>]*[^/]>"
-                   "<!--"
-                   'nxml-forward-element
-                   nil))
+             '(nxml-mode
+               "<!--\\|<[^/>]*[^/]>"
+               "-->\\|</[^/>]*[^/]>"
+
+               "<!--"
+               sgml-skip-tag-forward
+               nil))

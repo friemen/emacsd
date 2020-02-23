@@ -22,3 +22,6 @@ recentf
 .mc-lists.el
 /saveplace
 /transient
+/.cache/
+*~
+/.#recentf

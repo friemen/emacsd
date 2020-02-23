@@ -75,38 +75,33 @@ toggle-truncate-lines   | Turn visual line wrapping on or off
 uncomment-region        | Remove comment markers for region
 visual-line-mode        | Switch nice word wrap on/off
 
-## Shortcuts
+## Key bindings
 
 
 File/buffer/window commands
 ```
-C-x C-c     Exit Emacs
-C-q         Exit Emacs
-C-x C-f     Find file
+C-q         Exit Emacs (or C-x C-c)
+C-w         Kill current buffer (or C-x k)
+C-o         Toggle window control hydra
+C-^         Toggle treemacs
+C-x C-f     Load file
 C-x f       Open recently used file
-C-x C-s     Save buffer
+C-x C-s     Save buffer to file
 C-x C-w     Write buffer to other file
-C-x C-d     Show directory (dired+)
-C-x C-j     Open dired and go to file in current buffer
-C-^         Open directory bar (neotree)
+C-x C-d     Show directory of current buffer
 C-x b       Switch buffer
 C-Pgup      Previous buffer
 C-Pgdn      Next buffer
 C-Tab       Switch window
-C-x C-b     List buffers (ibuffer)
-C-w         Kill this buffer
+C-x C-b     List buffers
 C-l         Center buffer to point
-M-p         Scroll buffer up
-M-n         Scroll buffer down
-C-x k       Kill buffer
-C-x g       Git status (magit)
+C-x g       Git status for current project
 C-x l       Git log for file in current buffer
 C-x o       Jump to next window
 C-x 1       Delete other windows
 C-x 0       Delete current window
 C-x 2       Split window horizontally
 C-x 3       Split window vertically
-C-o         Toggle window control mode (see below)
 ```
 
 Movement of point
@@ -134,16 +129,14 @@ M-q         Reformat paragraph
 C-c         Copy
 C-x         Cut
 C-v         Paste
-M-y         Browse kill ring
+C-Ins       Browse kill ring
 C-x h       Mark whole buffer contents
-C-<         Mark previous like this (multiple cursors)
-C->         Mark next like this (multiple cursors)
+C-<         Mark next like this (multiple cursors)
+C->         Mark previous like this (multiple cursors)
 C-M-<       Mark all like this (multiple cursors)
 C-Space     Expand region
 C-Enter     Set/end rectangle mark
 M-S-;       Toggle comment for region
-M-S-Up      Move line or region up
-M-S-Down    Move line or region down
 ```
 
 Misc commands
@@ -161,61 +154,21 @@ C-x C-0     Reset font size in buffer
 C-+         Toggle highlight symbol at point
 ```
 
-Window/buffer control mode commands
-```
-C-g         Leave window control
-x           Delete current buffer file
-r           Rename current buffer file
-c           Copy current buffer file
-p           Create new window right of current window
-l           Create new window below current window
-Up          Focus window above current window
-Down        Focus window below current window
-Left        Focus window left of current window
-Right       Focus window right of current window
-C-Up        Shrink current window vertically
-C-Down      Enlarge current window vertically
-C-Left      Shrink current window horizontally
-C-Right     Enlarge current window horizontally
-```
-
-Elscreen (see also [project page](https://github.com/knu/elscreen#usage))
-```
-C-c C-s c       Create new screen
-C-c C-s 0-9     Switch to screen
-C-c C-s k       Kill current screen
-```
-
 Projectile (see also [project page](https://github.com/bbatsov/projectile/blob/master/doc/usage.md#interactive-commands))
 ```
-C-c p p     Switch project + select file
-C-c p f     Select file in current project
-C-c p e     Select within recently visited files in project
-C-c p b     Select within open project buffers
-C-c p t     Select test file in current project
-C-c p D     Open project root dir for current buffer
-C-c p c     Compile project
-C-c p P     Execute tests for project
-C-c p k     Kill all project buffers
+C-c p       Open projectile hydra
 ```
 
 Dired/Dired+
 ```
+?           Show hydra
 Enter       Select file/dir
-^           Goto parent dir
-C-x M-o     Toggle hidden file display
-(           Toggle file details display
+Backspace   Go to parent dir
+.           Toggle hidden file display
+Tab         Toggle file details display
 g           Refresh
 m           Mark
 u           Unmark
-U           Unmark all
-* .         Mark by extension
-* %         Mark by regex
-C           Copy marked
-R           Move/Rename marked
-D           Delete marked
-F           Visit marked
-+           Create new dir
 q           Close dired buffer
 ```
 
@@ -317,11 +270,14 @@ Enter       Evaluate entered sexp
 Tab         Complete symbol at point
 C-Up        Back through REPL history
 C-Down      Forward through REPL history
-C-c C-c     Cancel current evaluation
+C-c C-b     Cancel current evaluation
 C-c C-u     Clear input before point
 C-c C-o     Clear previous REPL buffer output
 C-u C-c C-o Clear REPL buffer output
 C-c C-q     Quit CIDER session / kill REPL
+C-c C-Enter Restart component system
+C-c f       Start figwheel for ClojureScript REPL
+C-c q       Quit ClojureScript REPL
 ```
 
 Web-Mode (see also [project page](http://web-mode.org/))
@@ -346,31 +302,13 @@ C-<         Mark all symbols in defun (multiple cursors)
 C-M-<       Mark all symbols like this (multiple cursors)
 ```
 
-Haskell-Mode
+Treemacs Mode
 ```
-C-c C-l     Load buffer in interactive GHC
-C-c C-h     Hoogle query
-C-c C-c     Cabal build
-C-c C-t     Show type of expression
-C-c C-d     Show info about expression
-C-c C-k     Clear REPL buffer output
-M-.         Goto definition
-```
-
-Neotree File-Mode (see also [Emacs wiki page](http://www.emacswiki.org/emacs/NeoTree))
-```
+?           Show hydra
+q           Close treemacs
+C-^         Close treemacs
 Tab         Expand / Collapse dir
-Enter       Load file in buffer, exit neotree
-Space       Load file in buffer, stay in neotree
-q           Close neotree window
-c           New file
-d           Delete file
-r           Rename file
-g           Refresh
-A           Toggle neotree window maximization
-H           Toggle display of hidden files
-U           Move directory up
-C           Change root to dir
+Enter       Load file in buffer
 ```
 
 

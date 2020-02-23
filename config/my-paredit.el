@@ -1,62 +1,35 @@
 (provide 'my-paredit)
-(require-packages '(paredit
-		    paxedit
-		    company))
 
-(defun my-delete-whitespace-except-one ()
-  "Deletes all whitespace chars following point except one space."
-  (interactive)
-  (just-one-space -1))
+(use-package smartparens :ensure t
+  :diminish
 
+  :config
+  (require 'smartparens-config)
+  (smartparens-global-mode t))
 
-(defun my-delete-region-or-char ()
-  "Deletes a region if active, or the char after the point."
-  (interactive)
-  (if (use-region-p)
-      (paredit-delete-region (region-beginning) (region-end))
-    (paredit-forward-delete)))
+(use-package paxedit :ensure t) ;; needed also for my-lisp-utils
 
+(use-package paredit :ensure t
+  :diminish
 
-(defun my-indent-and-complete-symbol ()
-  (interactive)
-  (let ((pos (point)))
-    (lisp-indent-line)
-    (when (= pos (point))
-      (if (save-excursion (re-search-backward "[^() \n\t\r]+\\=" nil t))
-	  (company-complete)))))
+  :bind
+  (:map paredit-mode-map
+        ("C-1" . paredit-open-round)
+        ("C-2" . paredit-open-bracket)
+        ("C-3" . paredit-open-curly)
+        ("C-d" . my-delete-whitespace-except-one)
+        ("C-f" . paredit-forward)
+        ("C-b" . paredit-backward)
+        ("C-M-f" . paredit-forward-down)
+        ("C-M-b" . paredit-backward-up)
+        ("C-c C-i" . my-indent-defun)
+        ("M-<right>" . paredit-forward)
+        ("M-<left>" . paredit-backward)
+        ("M-<down>" . paredit-forward-down)
+        ("M-<up>" . paredit-backward-up)
+        ;;("<backspace>" . paredit-backward-delete-key)
+        ("<delete>" . my-delete-region-or-char))
 
-
-(defun my-goto-end-of-form-rec (p)
-  (let ((next-pos (paxedit-sexp-move-to-core-start)))
-    (cond ((looking-at ".comment")
-           (progn (message "commment")
-                  (goto-char p)
-                  (paredit-forward)))
-
-          ((numberp next-pos)
-           (my-goto-end-of-form-rec next-pos))
-
-          (t
-           (paredit-forward)))))
-
-(defun my-goto-end-of-form ()
-  (interactive)
-  (my-goto-end-of-form-rec (point)))
-
-(defun my-end-of-form ()
-  (save-excursion
-    (my-goto-end-of-form)
-    (point)))
-
-(defun my-beginning-of-form ()
-  (save-excursion
-    (my-goto-end-of-form)
-    (paredit-backward)
-    (point)))
-
-
-(defun my-indent-defun ()
-  (interactive)
-  (save-excursion
-    (beginning-of-defun)
-    (indent-sexp)))
+  :config
+  (require 'my-lisp-utils)
+  )

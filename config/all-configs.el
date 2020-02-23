@@ -1,43 +1,46 @@
 (provide 'all-configs)
 
+(require 'my-global-settings)
+
+(use-package diminish :ensure t)
+(use-package hydra :ensure t)
+(use-package use-package-hydra :ensure t)
+(use-package popup :ensure t)
+(use-package rainbow-delimiters :ensure t)
+(use-package expand-region :ensure t
+  :bind
+  (("C-SPC" . er/expand-region)))
+(use-package browse-kill-ring :ensure t
+  :bind
+  (("<C-insert>" . browse-kill-ring)))
+(use-package impatient-mode :ensure t)
+(use-package restclient :ensure t)
+(use-package ibuffer
+  :bind
+  (("C-x C-b" . ibuffer))
+  :config
+  (add-hook 'ibuffer-mode-hook (lambda () (hl-line-mode t))))
+
 (require 'my-clojure)
+(require 'my-company)
 (require 'my-dashboard)
-(require 'my-defaults)
 (require 'my-dired)
-(require 'my-elscreen)
 (require 'my-elisp)
-(require 'my-eshell)
 (require 'my-file-utils)
+(require 'my-hideshow)
 (require 'my-highlight-symbol)
-(require 'my-ibuffer)
-(require 'my-ido)
-(require 'my-js2)
+(require 'my-ivy-swiper-counsel)
 (require 'my-magit)
+(require 'my-mode-line)
 (require 'my-markdown)
-(require 'my-modeline)
-(require 'my-neotree)
+(require 'my-multiple-cursors)
 (require 'my-nxml)
 (require 'my-org)
 (require 'my-paredit)
 (require 'my-projectile)
-(require 'my-window-control)
-(require 'my-smex)
-(require 'my-swiper)
+(require 'my-treemacs)
 (require 'my-themes)
-(require 'my-web)
-(require 'my-window-numbering)
-(require 'all-keybindings)
+(require 'my-web-css-sass)
+(require 'my-window-control)
 
-;; required packages without individual configuration
-(require-packages '(ace-jump-mode
-		    ace-jump-buffer
-		    browse-kill-ring
-		    buffer-move
-		    counsel
-		    expand-region
-		    impatient-mode
-		    move-text
-		    multiple-cursors
-		    restclient
-		    saveplace
-		    switch-window))
+(require 'my-global-keybindings)

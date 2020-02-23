@@ -1,4 +1,4 @@
-(provide 'my-defaults)
+(provide 'my-global-settings)
 
 ;; turn off splash screen messages
 (setq inhibit-startup-echo-area-message t
@@ -26,13 +26,20 @@
 ;; whitespace stripping
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-(recentf-mode 1)
-(delete-selection-mode 1)
+;; don't use tabs to indent
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 8)
+
+;; how to deal with active region
+(delete-selection-mode t)
 (setq delete-active-region t)
+;; disabling transient-mark-mode severly disturbs multiple-cursors *in-defun functions
+;; (setq transient-mark-mode nil)
 
 ;; remember positions in visited files
 (setq save-place-file "~/.emacs.d/saveplace")
 (save-place-mode 1)
+(recentf-mode 1)
 
 ;; no backup files, please
 (setq backup-inhibited t)
@@ -49,7 +56,9 @@
 (tool-bar-mode 0)
 
 ;; wrap long lines
-(setq global-visual-line-mode t)
+;; (setq global-visual-line-mode t)
+;; Don't visually wrap lines that do not fit in window
+(setq-default truncate-lines t)
 
 ;; no scroll bars
 (toggle-scroll-bar -1)
@@ -60,11 +69,36 @@
 ;; display line and column number in modeline
 (column-number-mode 1)
 
+;; set lighter background for current line
+;; (global-hl-line-mode t)
+;; (set-face-attribute 'hl-line nil :inherit nil :background "gray17")
+
 ;; how to display buffer names in modeline
 (setq uniquify-buffer-name-style 'forward)
+
+;; select help buffer, so typing q can kill it
+(setq help-window-select t)
+
+
+;; -------------------------------
+;; TODO put this to a my-ediff file
 
 (setq ediff-split-window-function 'split-window-horizontally)
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
-;; Don't visually wrap lines that do not fit in window
-(setq-default truncate-lines t)
+(defun disable-y-or-n-p (orig-fun &rest args)
+  (cl-letf (((symbol-function 'y-or-n-p) (lambda (prompt) t)))
+    (apply orig-fun args)))
+
+(advice-add 'ediff-quit :around #'disable-y-or-n-p)
+
+;; -------------------------------
+
+
+(defun my-update-impatient-buffer ()
+  (imp--on-change))
+
+(add-hook 'after-revert-hook
+          'my-update-impatient-buffer
+          ;;#'imp--on-change nil t
+          )

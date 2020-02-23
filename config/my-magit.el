@@ -1,15 +1,23 @@
 (provide 'my-magit)
 
-(require-packages '(fullframe
-		    magit))
+(use-package fullframe :ensure t)
 
-(setq magit-last-seen-setup-instructions "1.4.0")
-(setq magit-push-always-verify nil)
+(use-package magit :ensure t
+  :bind
+  (("C-x g" . magit-status)
+   ("C-x l" . magit-log-buffer-file)
+   :map magit-mode-map
+   ("C-<tab>" . other-window)
+   ("<tab>" . magit-section-toggle)
+   ("C-w" . magit-mode-bury-buffer)
+   )
 
-(transient-append-suffix 'magit-push "e"
-  '("P" "Push implicitly" magit-push-implicitly))
+  :config
+  (setq magit-push-always-verify nil)
 
-(custom-set-faces
- '(magit-item-highlight ((t (:background "gainsboro")))))
+  (transient-append-suffix 'magit-push "e"
+    '("P" "Push implicitly" magit-push-implicitly))
 
-(fullframe magit-status magit-mode-quit-window)
+  (fullframe magit-status magit-mode-quit-window)
+
+  )
