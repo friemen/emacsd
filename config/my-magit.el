@@ -14,6 +14,7 @@
 
   :config
   (setq magit-push-always-verify nil)
+  (setq transient-history-file (expand-file-name "magit-history.el" my-data-files-dir))
 
   (transient-append-suffix 'magit-push "e"
     '("P" "Push implicitly" magit-push-implicitly))

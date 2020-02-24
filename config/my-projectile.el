@@ -21,6 +21,8 @@
   :diminish
 
   :init
+  (setq projectile-known-projects-file (expand-file-name "projectile-bookmarks.eld" my-data-files-dir))
+  (setq projectile-cache-file (expand-file-name "projectile.cache" my-data-files-dir))
   (setq projectile-completion-system 'ivy)
   ;;(setq projectile-switch-project-action 'my-projectile-switch-project-action)
   (setq projectile-switch-project-action 'projectile-find-file)

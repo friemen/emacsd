@@ -37,12 +37,16 @@
 ;; (setq transient-mark-mode nil)
 
 ;; remember positions in visited files
-(setq save-place-file "~/.emacs.d/saveplace")
+(setq save-place-file (expand-file-name "saveplace" my-data-files-dir))
 (save-place-mode 1)
+;; remember last files visited
+(setq recentf-save-file (expand-file-name "recentf" my-data-files-dir))
 (recentf-mode 1)
 
 ;; no backup files, please
 (setq backup-inhibited t)
+;; but store file recovery data
+(setq auto-save-list-file-prefix (expand-file-name "auto-save-list" my-data-files-dir))
 
 ;; support cut, copy, paste on C-x, C-c and C-v
 (cua-mode)

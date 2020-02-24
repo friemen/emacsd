@@ -1,6 +1,8 @@
 (provide 'my-ivy-swiper-counsel)
 
-(use-package smex :ensure t)
+(use-package smex :ensure t
+  :config
+  (setq smex-save-file (expand-file-name "smex-items.el" my-data-files-dir)))
 
 (use-package ivy :ensure t
   :diminish

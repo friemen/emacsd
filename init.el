@@ -31,6 +31,8 @@
 
 (add-to-list 'load-path (concat user-emacs-directory "config"))
 (require-package 'use-package)
+
+(setq my-data-files-dir "~/.emacs.d/localdata")
 (require 'all-configs)
 
 

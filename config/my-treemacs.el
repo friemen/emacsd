@@ -3,12 +3,15 @@
 ;; force treemacs to restore it's state first otherwise treemacs
 ;; somehow fails to read its state when a project is visited first via
 ;; projectile
+(setq treemacs-persist-file
+      (expand-file-name "treemacs-persist" my-data-files-dir))
+(setq treemacs-last-error-persist-file
+      (expand-file-name "treemacs-last-error-persist" my-data-files-dir))
 (require-packages '(treemacs treemacs-projectile treemacs-magit))
 (treemacs--restore)
 
 
 (use-package treemacs :ensure t
-
   :bind
   (("<C-dead-circumflex>" . my-treemacs-activate)
    ("C-^" . my-treemacs-activate)

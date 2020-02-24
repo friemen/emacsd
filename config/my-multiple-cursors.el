@@ -13,6 +13,7 @@
 
   :config
   (setq mc/always-run-for-all t)
+  (setq mc/list-file (expand-file-name "mc-lists.el" my-data-files-dir))
 
   :hydra
   (hydra-multiple-cursors (:hint nil) "
