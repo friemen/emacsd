@@ -16,6 +16,7 @@
   (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
   (add-hook 'emacs-lisp-mode-hook 'highlight-symbol-mode)
   (add-hook 'emacs-lisp-mode-hook 'hs-minor-mode)
+  (add-hook 'emacs-lisp-mode-hook 'prettify-symbols-mode)
   (add-hook 'emacs-lisp-mode-hook (lambda ()
                                     (diminish 'eldoc-mode)
                                     (diminish 'hs-minor-mode)))

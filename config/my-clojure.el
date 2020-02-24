@@ -13,7 +13,6 @@
 (defun my-clj-refactor-setup ()
     (clj-refactor-mode 1))
 
-
 (use-package cider :ensure t
   :bind
   (:map cider-mode-map
@@ -48,6 +47,7 @@
   (add-hook 'cider-repl-mode-hook 'cider-mode)
   (add-hook 'cider-repl-mode-hook 'my-clj-refactor-setup)
   (add-hook 'cider-repl-mode-hook 'company-mode)
+  (add-hook 'cider-repl-mode-hook 'prettify-symbols-mode)
   (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
   )
 
@@ -71,6 +71,7 @@
   (add-hook 'clojure-mode-hook 'hs-minor-mode)
   (add-hook 'clojure-mode-hook 'turn-on-eldoc-mode)
   (add-hook 'clojure-mode-hook 'company-mode)
+  (add-hook 'clojure-mode-hook 'prettify-symbols-mode)
   (add-hook 'clojure-mode-hook 'subword-mode)
   (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
   (add-hook 'clojure-mode-hook 'highlight-symbol-mode)
