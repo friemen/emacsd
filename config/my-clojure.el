@@ -49,6 +49,7 @@
   (add-hook 'cider-repl-mode-hook 'company-mode)
   (add-hook 'cider-repl-mode-hook 'prettify-symbols-mode)
   (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
+  (add-hook 'cider-repl-mode-hook 'highlight-symbol-mode)
   )
 
 
