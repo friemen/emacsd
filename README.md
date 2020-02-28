@@ -227,6 +227,13 @@ M-J         Join sexps
 M-r         Raise sexp
 ```
 
+Hide-show code blocks (minor mode is activated where useful)
+```
+C-c x h     Hide all foldable code blocks in buffer
+C-c x s     Show all folded code blocks in buffer
+C-c x x     Toggle code folding for block at point
+```
+
 Clojure/CIDER-Mode specific (for more see [CIDER shortcuts](https://cider.readthedocs.io/en/latest/interactive_programming/))
 ```
 C-c M-j     Start new REPL
@@ -253,9 +260,6 @@ M-,         Jump back
 C-c C-d     Show docs for function
 C-c C-j     Show Javadoc in browser
 C-c C-i     Reindent defn
-C-c Tab     Toggle code folding
-C-c s       Show all folded code blocks
-C-c h       Hide foldable code blocks
 C-<         Mark all symbols in defn (multiple cursors)
 C-M-<       Mark all symbols like this (multiple cursors)
 Tab         Reindent, then auto-complete
