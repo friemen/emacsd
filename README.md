@@ -114,7 +114,7 @@ C-a         Line begin
 C-e         Line end
 M-<         Buffer begin
 M->         Buffer end
-C-c Space   Ace Jump
+C-,         Ace Jump
 C-x C-x     Jump back to previous mark
 ```
 

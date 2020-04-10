@@ -20,6 +20,9 @@
   (("C-x C-b" . ibuffer))
   :config
   (add-hook 'ibuffer-mode-hook (lambda () (hl-line-mode t))))
+(use-package ace-jump-mode :ensure t
+  :bind
+  (("C-," . ace-jump-mode)))
 
 (require 'my-clojure)
 (require 'my-company)
