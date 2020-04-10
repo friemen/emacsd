@@ -1,5 +1,9 @@
 (provide 'my-ivy-swiper-counsel)
 
+(defun my-region-text ()
+  (if mark-active
+      (buffer-substring-no-properties (region-beginning) (region-end))))
+
 (use-package smex :ensure t
   :config
   (setq smex-save-file (expand-file-name "smex-items.el" my-data-files-dir)))
@@ -22,7 +26,7 @@
 (use-package counsel :ensure t
   :bind
   (("M-x" . counsel-M-x)
-   ("C-y" . counsel-git-grep)
+   ("C-y" . my-git-grep)
    ("C-x C-f" . counsel-find-file)
    ("C-x f" . counsel-recentf))
   :config
@@ -31,4 +35,10 @@
         (alt  (where-is-internal #'ivy-alt-done ivy-minibuffer-map t)))
     (define-key counsel-find-file-map done #'ivy-alt-done)
     (define-key counsel-find-file-map alt  #'ivy-done))
+
+  (defun my-git-grep ()
+    (interactive)
+    (let ((text (my-region-text)))
+      (deactivate-mark)
+      (counsel-git-grep text)))
   )
