@@ -15,6 +15,7 @@
   :bind
   (("<C-dead-circumflex>" . my-treemacs-activate)
    ("C-^" . my-treemacs-activate)
+   ("C-`" . my-treemacs-activate)
    ("C-x t 1"   . treemacs-delete-other-windows)
    ("C-x t t"   . treemacs)
    ("C-x t B"   . treemacs-bookmark)
