@@ -4,8 +4,7 @@
   :diminish
 
   :bind
-  (("C-+" . highlight-symbol-at-point)
-   ("C-]" . highlight-symbol-at-point))
+  (("C-'" . highlight-symbol-at-point))
 
   :config
   (setq highlight-symbol-colors '("Sky Blue" "Pink" "Gold" "Thistle"
