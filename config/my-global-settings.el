@@ -83,6 +83,9 @@
 ;; select help buffer, so typing q can kill it
 (setq help-window-select t)
 
+;; frame title
+(setq frame-title-format "%b - Emacs")
+
 
 ;; -------------------------------
 ;; TODO put this to a my-ediff file
