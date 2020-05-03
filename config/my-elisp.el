@@ -6,8 +6,8 @@
         ("C-c C-c" . eval-defun)
         ("C-c C-k" . eval-buffer)
         ("C-c C-d" . my-elisp-describe-thing-in-popup)
-        ("C-M-<" . mc/mark-all-symbols-like-this)
-        ("C-<" . mc/mark-all-symbols-like-this-in-defun))
+        ("C-M-." . mc/mark-all-symbols-like-this)
+        ("C-." . mc/mark-all-symbols-like-this-in-defun))
 
   :config
   (add-hook 'emacs-lisp-mode-hook 'paredit-mode)

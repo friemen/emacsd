@@ -131,9 +131,9 @@ C-x         Cut
 C-v         Paste
 C-Ins       Browse kill ring
 C-x h       Mark whole buffer contents
-C-<         Mark next like this (multiple cursors)
+C-.         Mark next like this (multiple cursors)
 C->         Mark previous like this (multiple cursors)
-C-M-<       Mark all like this (multiple cursors)
+C-M-.       Mark all like this (multiple cursors)
 C-Space     Expand region
 C-Enter     Set/end rectangle mark
 M-S-;       Toggle comment for region
@@ -260,8 +260,8 @@ M-,         Jump back
 C-c C-d     Show docs for function
 C-c C-j     Show Javadoc in browser
 C-c C-i     Reindent defn
-C-<         Mark all symbols in defn (multiple cursors)
-C-M-<       Mark all symbols like this (multiple cursors)
+C-.         Mark all symbols in defn (multiple cursors)
+C-M-.       Mark all symbols like this (multiple cursors)
 Tab         Reindent, then auto-complete
 ```
 
@@ -302,8 +302,8 @@ Emacs-Lisp-Mode
 ```
 C-c C-c     Eval top-level sexp
 C-x C-e     Eval last elisp sexp
-C-<         Mark all symbols in defun (multiple cursors)
-C-M-<       Mark all symbols like this (multiple cursors)
+C-.         Mark all symbols in defun (multiple cursors)
+C-M-.       Mark all symbols like this (multiple cursors)
 ```
 
 Treemacs Mode

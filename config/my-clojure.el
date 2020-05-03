@@ -59,8 +59,8 @@
    ("C-c C-i" . my-clojure-indent-defn)
    :map clojure-mode-map
    ("RET" . paredit-newline)
-   ("C-M-<" . mc/mark-all-symbols-like-this)
-   ("C-<" . mc/mark-all-symbols-like-this-in-defun))
+   ("C-M-." . mc/mark-all-symbols-like-this)
+   ("C-." . mc/mark-all-symbols-like-this-in-defun))
 
   :config
   ;;(message "Started CLOJURE MODE")
