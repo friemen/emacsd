@@ -6,9 +6,9 @@
   :bind
   (("C-M-m" . hydra-multiple-cursors/body)
    ("C-M-SPC" . mc/mark-all-like-this)
-   ("C-<" . mc/mark-next-like-this)
+   ("C-." . mc/mark-next-like-this)
    ("C->" . mc/mark-previous-like-this)
-   ("C-M-<" . mc/mark-all-like-this)
+   ("C-M-." . mc/mark-all-like-this)
    )
 
   :config
