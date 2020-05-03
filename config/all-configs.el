@@ -33,6 +33,7 @@
 (require 'my-hideshow)
 (require 'my-highlight-symbol)
 (require 'my-ivy-swiper-counsel)
+(require 'my-jump-mark-utils)
 (require 'my-magit)
 (require 'my-mode-line)
 (require 'my-markdown)

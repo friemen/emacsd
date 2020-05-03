@@ -115,7 +115,8 @@ C-e         Line end
 M-<         Buffer begin
 M->         Buffer end
 C-,         Ace Jump
-C-x C-x     Jump back to previous mark
+M-[         Set mark
+M-]         Jump back to mark
 ```
 
 General edit commands
