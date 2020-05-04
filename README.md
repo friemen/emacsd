@@ -83,7 +83,7 @@ File/buffer/window commands
 C-q         Exit Emacs (or C-x C-c)
 C-w         Kill current buffer (or C-x k)
 C-o         Toggle window control hydra
-C-^         Toggle treemacs
+C-Escape    Toggle treemacs sidebar
 C-x C-f     Load file
 C-x f       Open recently used file
 C-x C-s     Save buffer to file
@@ -311,7 +311,7 @@ Treemacs Mode
 ```
 ?           Show hydra
 q           Close treemacs
-C-^         Close treemacs
+C-Escape    Close treemacs
 Tab         Expand / Collapse dir
 Enter       Load file in buffer
 ```
