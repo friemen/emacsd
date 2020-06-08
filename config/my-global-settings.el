@@ -48,6 +48,9 @@
 ;; but store file recovery data
 (setq auto-save-list-file-prefix (expand-file-name "auto-save-list" my-data-files-dir))
 
+;; save abbrev_defs in localdata dir
+(setq abbrev-file-name (expand-file-name "abbrev_defs" my-data-files-dir))
+
 ;; support cut, copy, paste on C-x, C-c and C-v
 (cua-mode)
 

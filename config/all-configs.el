@@ -44,6 +44,7 @@
 (require 'my-projectile)
 (require 'my-treemacs)
 (require 'my-themes)
+(require 'my-visual-basic)
 (require 'my-web-css-sass)
 (require 'my-window-control)
 
