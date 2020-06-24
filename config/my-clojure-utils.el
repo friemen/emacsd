@@ -36,6 +36,9 @@
      :scroll-bar t
      :margin t)))
 
+(defun my-clojure-clear-repl ()
+  (interactive)
+  (cider-find-and-clear-repl-output t))
 
 
 ;; Evaluate form within (comment) sexp

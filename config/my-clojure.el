@@ -13,6 +13,7 @@
 (defun my-clj-refactor-setup ()
     (clj-refactor-mode 1))
 
+
 (use-package cider :ensure t
   :bind
   (:map cider-mode-map
@@ -26,7 +27,8 @@
         ("C-c C-f" . my-clojure-eval-form-in-repl)
         ("C-c l" . my-clojure-save-form)
         ("C-c C-l" . my-clojure-eval-saved-form)
-        ("C-c C-i" . my-clojure-indent-defn))
+        ("C-c C-i" . my-clojure-indent-defn)
+        ("C-c C-x" . my-clojure-clear-repl))
 
   :config
   (setq cider-overlays-use-font-lock t)

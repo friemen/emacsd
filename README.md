@@ -248,6 +248,7 @@ C-c s       Recompile and restart system
 C-c C-e     Evaluate sexp preceding point and display result in echo area
 C-c l       Save sexp at point
 C-c C-l     Eval saved sexp
+C-c C-x     Clear REPL buffer
 C-c C-z     Jump to REPL buffer
 C-c M-p     Copy toplevel sexp to REPL buffer
 C-c M-n n   Switch REPL namespace to buffer
