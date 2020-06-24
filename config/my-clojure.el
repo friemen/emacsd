@@ -18,7 +18,7 @@
   (:map cider-mode-map
         ("C-c C-c" . my-clojure-eval-form)
         ("C-c C-p" . my-clojure-refresh-namespaces)
-        ("C-c <C-return>" . my-clojure-restart-system)
+        ("C-c s" . my-clojure-restart-system)
         ("C-c f" . my-clojure-figwheel-start)
         ("C-c r" . my-clojure-figwheel-repl)
         ("C-c q" . my-clojure-cljs-repl-quit)

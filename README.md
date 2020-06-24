@@ -244,7 +244,7 @@ C-u C-c C-c As before, but show result in buffer
 C-c C-f     Compile and evaluate toplevel sexp in REPL
 C-c C-k     Compile and load complete buffer
 C-c C-p     Recompile and load whole project
-C-c C-Enter Recompile and restart system
+C-c s       Recompile and restart system
 C-c C-e     Evaluate sexp preceding point and display result in echo area
 C-c l       Save sexp at point
 C-c C-l     Eval saved sexp
