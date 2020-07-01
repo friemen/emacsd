@@ -152,7 +152,7 @@ M-%         Query replace
 C-+         Increase font size in buffer
 C--         Decrease font size in buffer
 C-x C-0     Reset font size in buffer
-C-'         Toggle highlight symbol at point
+C-;         Toggle highlight symbol at point
 ```
 
 Projectile (see also [project page](https://github.com/bbatsov/projectile/blob/master/doc/usage.md#interactive-commands))
