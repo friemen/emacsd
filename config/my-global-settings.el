@@ -89,6 +89,8 @@
 ;; frame title
 (setq frame-title-format "%b - Emacs")
 
+;; ask before quitting emacs
+(setq confirm-kill-emacs 'yes-or-no-p)
 
 ;; -------------------------------
 ;; TODO put this to a my-ediff file
