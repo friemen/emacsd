@@ -33,7 +33,7 @@
 (defun my-goto-end-of-form-rec (p)
   (let ((next-pos (paxedit-sexp-move-to-core-start)))
     (cond ((looking-at ".comment")
-           (progn (message "commment")
+           (progn (message "comment")
                   (goto-char p)
                   (paredit-forward)))
 
