@@ -112,11 +112,9 @@ M-f         Word forward
 M-b         Word backward
 C-a         Line begin
 C-e         Line end
-M-<         Buffer begin
-M->         Buffer end
 C-,         Ace Jump
-M-[         Set mark
-M-]         Jump back to mark
+M-<         Set mark
+M->         Jump back to mark
 ```
 
 General edit commands
@@ -133,11 +131,11 @@ C-v         Paste
 C-Ins       Browse kill ring
 C-x h       Mark whole buffer contents
 C-.         Mark next like this (multiple cursors)
+C-:         Toggle comment for region
 C->         Mark previous like this (multiple cursors)
 C-M-.       Mark all like this (multiple cursors)
 C-Space     Expand region
 C-Enter     Set/end rectangle mark
-M-S-;       Toggle comment for region
 ```
 
 Misc commands
