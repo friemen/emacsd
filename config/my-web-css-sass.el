@@ -44,7 +44,7 @@
 (use-package sass-mode :ensure t
   :mode "\\.sass\\'"
   :bind
-  (:map css-mode-map
+  (:map sass-mode-map
         ("C-c C-i" . my-web-mode-indent-buffer))
   :config
   (add-hook 'sass-mode-hook 'company-mode))
@@ -52,7 +52,7 @@
 (use-package scss-mode :ensure t
   :mode "\\.scss\\'"
   :bind
-  (:map css-mode-map
+  (:map scss-mode-map
         ("C-c C-i" . my-web-mode-indent-buffer))
   :config
   (add-hook 'scss-mode-hook 'company-mode))
