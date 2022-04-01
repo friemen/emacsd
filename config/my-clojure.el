@@ -78,4 +78,20 @@
   (add-hook 'clojure-mode-hook 'subword-mode)
   (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
   (add-hook 'clojure-mode-hook 'highlight-symbol-mode)
+  (define-clojure-indent
+    ;; re-frame
+    (rf/reg-event-fx 0)
+    (rf/reg-fx 0)
+    (rf/reg-event-db 0)
+    (rf/reg-sub 0)
+    ;; clojure.match
+    (match 1)
+    ;; compojure
+    (context 1)
+    (POST 1)
+    (GET 1)
+    (PUT 1)
+    (DELETE 1)
+
+    )
   )
