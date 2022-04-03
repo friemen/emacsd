@@ -7,6 +7,10 @@
 (use-package use-package-hydra :ensure t)
 (use-package popup :ensure t)
 (use-package rainbow-delimiters :ensure t)
+(use-package window-number :ensure t
+  :config
+  (window-number-meta-mode) ;; use meta key (i.e. Alt-1, Alt-2, ...) to switch between windows
+  )
 (use-package expand-region :ensure t
   :bind
   (("C-SPC" . er/expand-region)))

@@ -12,4 +12,5 @@
   (setq org-support-shift-select t)
   (setq org-agenda-files '("~/Documents/org"))
   (setq org-startup-with-inline-images t)
+  (setq org-startup-folded t)
 )

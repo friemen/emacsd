@@ -8,7 +8,7 @@
  '(custom-safe-themes
    '("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" "1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "cf08ae4c26cacce2eebff39d129ea0a21c9d7bf70ea9b945588c1c66392578d1" "5ee12d8250b0952deefc88814cf0672327d7ee70b16344372db9460e9a0e3ffc" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" default))
  '(package-selected-packages
-   '(markdown-mode+ scss-mode nxml-mode cider buffer-move smartrep window-numbering web-mode switch-window smex smart-mode-line sass-mode restclient rainbow-delimiters projectile paxedit nrepl-eval-sexp-fu neotree move-text markdown-mode magit js2-mode impatient-mode ido-vertical-mode ido-ubiquitous highlight-symbol gandalf-theme flycheck flx-ido expand-region emms elscreen dired+ crm-custom counsel company clomacs clojure-quick-repls clj-refactor cider-eval-sexp-fu browse-kill-ring auto-complete ace-jump-mode ace-jump-buffer)))
+   '(window-number markdown-mode+ scss-mode nxml-mode cider buffer-move smartrep window-numbering web-mode switch-window smex smart-mode-line sass-mode restclient rainbow-delimiters projectile paxedit nrepl-eval-sexp-fu neotree move-text markdown-mode magit js2-mode impatient-mode ido-vertical-mode ido-ubiquitous highlight-symbol gandalf-theme flycheck flx-ido expand-region emms elscreen dired+ crm-custom counsel company clomacs clojure-quick-repls clj-refactor cider-eval-sexp-fu browse-kill-ring auto-complete ace-jump-mode ace-jump-buffer)))
 
 
 (custom-set-faces

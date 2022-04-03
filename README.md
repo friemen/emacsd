@@ -92,7 +92,8 @@ C-x C-d     Show directory of current buffer
 C-x b       Switch buffer
 C-Pgup      Previous buffer
 C-Pgdn      Next buffer
-C-Tab       Switch window
+C-Tab       Switch to next window
+M-<1 2 ..>  Goto window 1, 2, 3, ..
 C-x C-b     List buffers
 C-l         Center buffer to point
 C-x g       Git status for current project
