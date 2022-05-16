@@ -70,6 +70,9 @@
 ;; no scroll bars
 (toggle-scroll-bar -1)
 
+;; no blinking cursor
+(blink-cursor-mode 0)
+
 ;; highlight other parens
 (show-paren-mode t)
 
