@@ -51,5 +51,6 @@
 (require 'my-visual-basic)
 (require 'my-web-css-sass)
 (require 'my-window-control)
+(require 'my-yasnippet)
 
 (require 'my-global-keybindings)

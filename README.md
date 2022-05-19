@@ -146,6 +146,7 @@ q           Dismiss a temporary buffer that has appeared
 M-g         Goto line
 C-s         Search (swiper)
 C-r         Replace string
+C-x y       Insert snippet
 C-y         Git grep
 M-%         Query replace
 C-+         Increase font size in buffer
