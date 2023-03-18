@@ -1,0 +1,10 @@
+# name: regsub
+# key: regsub
+# --
+
+(rf/reg-sub
+  $1
+  :<- [$2]
+  (fn [[$3]]
+  $4
+   ))

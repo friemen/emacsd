@@ -1,0 +1,9 @@
+# name: regdb
+# key: regdb
+# --
+
+(rf/reg-event-db
+  $1
+  [(when ^boolean goog.DEBUG rf/debug)]
+  (fn [db [_ $2]]
+    db))

@@ -113,7 +113,6 @@
     (input 'defun)
     (go 'defun)
     (form 'defun)
-    (update! 'defun)
     (let-routes 'defun)
     (html 'defun)
     (doall 'defun)
@@ -127,7 +126,6 @@
     (ANY 2)
     (routes 'defun)
     (context 'defun)
-    (where 'defun)
     (add-watch 'defun)
     (listen! 'defun)
 
