@@ -1,9 +1,10 @@
 (provide 'my-mode-line)
 
-(use-package smart-mode-line :ensure t
+(use-package spaceline :ensure t)
 
+(use-package spaceline-config :ensure spaceline
   :config
-  (setq sml/no-confirm-load-theme t)
-  (sml/setup)
-  (setq sml/mode-width 'full)
-  (sml/apply-theme 'automatic))
+  (setq powerline-height 26)
+  (setq powerline-default-separator 'rounded)
+  (spaceline-toggle-projectile-root-on)
+  (spaceline-emacs-theme 'projectile-root))
