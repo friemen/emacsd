@@ -43,6 +43,8 @@
   (setq cider-repl-display-help-banner nil)
   (setq cider-prompt-for-symbol nil)
   (setq cider-save-file-on-load nil)
+  (setq nrepl-repl-buffer-name-template "*cider-repl %s(%r:%S)*")
+  (setq cider-session-name-template "%j:%h")
 
   (require 'my-clojure-utils)
   (add-hook 'cider-repl-mode-hook 'paredit-mode)
