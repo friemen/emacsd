@@ -46,13 +46,26 @@ present, either in project.clj or ~/.lein/profiles.clj. Here's my
 [profiles.clj](https://gist.github.com/friemen/5153156d765265fe5c13)
 as example.
 
+## E-Mail setup
 
-## Some M-x commands
+E-Mail searching, reading and writing requires notmuch (indexer) and
+msmtp (SMTP command), respectively. Syncing of local maildirs is done
+via mbsync (IMAP) and mpop (POP3). Password managment is done via
+[pass](https://passwordstore.org).
+
+## Calendar/Diary setup
+
+The Emacs diary uses #includes. The included diary files are generated
+from iCalendar .ics files that are synced via vdirsyncer with CalDAV
+compliant services like Radicale or Nextcloud.
+
+## Some important M-x commands
 
 Command                 | Description
 ---                     | ---
 align-regexp            | Align within a region by regex
-clojure-cheatsheet      | Open cheatsheet
+calendar                | Open calendar and diary
+clojure-cheatsheet      | Open clojure cheatsheet
 comment-region          | Put region in comments
 describe-mode           | Get help about active modes
 ediff                   | Load and diff files
@@ -62,8 +75,10 @@ find-name-dired         | List all files in dir tree
 httpd-start             | Start internal http server on http://localhost:8080/imp
 impatient-mode          | Enable buffers impatient minor mode
 linum-mode              | Toggle line number display on the left
-magit-log-buffer-file   | Show Git log with commit touching file
+magit-blame             | Show Git blame lines for current file
+magit-log-buffer-file   | Show Git log with commits touching file
 magit-status            | Show Magit buffer
+notmuch                 | Open e-mail search overview
 query-replace           | Replace all to end of buffer, ask for each
 package-list-packages   | Open package manager
 projectile-replace      | Replace string in project files
@@ -77,10 +92,9 @@ visual-line-mode        | Switch nice word wrap on/off
 
 ## Key bindings
 
-
 File/buffer/window commands
 ```
-C-q         Exit Emacs (or C-x C-c)
+C-q         Exit Emacs
 C-w         Kill current buffer (or C-x k)
 C-o         Toggle window control hydra
 C-Escape    Toggle treemacs sidebar
@@ -318,7 +332,6 @@ Tab         Expand / Collapse dir
 Enter       Load file in buffer
 ```
 
-
 Org-Mode (see also [refcard](http://orgmode.org/orgcard.txt))
 
 ```
@@ -361,4 +374,80 @@ C-c C-z     Add note to section
 C-c C-l     Add link
 C-c / ...   Filter by ...
 C-c a ...   Open agenda
+```
+
+Calendar
+```
+C-x C-c     Show calendar with diary-fancy-display
+q           Close calendar
+i d         Insert new diary entry
+```
+
+Notmuch E-Mail / general
+```
+C-x C-n     Show message overview buffer *notmuch-hello*
+C-x c       Select mail composition context (from address, signature etc)
+C-x m       Compose new message
+C-u C-x m   Compose new message, ask for sender first
+```
+
+Notmuch E-Mail / saved searches overview in notmuch-hello
+```
+?           Display help
+q           Close window
+m           Compose new message
+C-u m       Compose new message, ask for sender first
+j           Jump to query
+g           Refresh view
+G           Notmuch sync with POP3 and IMAP servers
+```
+
+Notmuch E-Mail / search results as list of messages and threads
+```
+?           Display help
+q           Close window
+o           Toggle ordering of messages
+t           Filter by tag
+E           Edit current search
+Z           Toggle tree view
+U           Unthreaded view
++           Add tag
+-           Remove tag
+g           Refresh view
+G           Notmuch sync with POP3 and IMAP servers
+r           Reply to sender
+R           Reply to all
+m           Compose new message
+C-u m       Compose new message, ask for sender first
+```
+
+Notmuch E-Mail / view single message or thread of messages
+```
+?           Display help
+q           Close window
+r           Reply to sender
+R           Reply to all
+f           Forward message
+e           Resume editing of draft
++           Add tag
+-           Remove tag
+w           Save all attachments
+m           Compose new message
+C-u m       Compose new message, ask for sender first
+```
+
+Notmuch E-Mail / new message composition
+```
+C-c C-b     Go to body
+C-c C-f C-s Go to Subject: header field
+C-c C-f C-t Go to To: header field
+C-c C-f C-c Go to Cc: header field
+C-c C-f C-b Go to Bcc: header field
+C-x C-s     Save (as draft)
+C-c C-c     Send and exit
+C-c C-s     Send
+C-c C-d     Don't send and exit
+C-c t       Replace contents with mail template
+C-c C-a     Add attachment
+To remove an attachment just delete the markup from the message body.
 ```
