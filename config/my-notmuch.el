@@ -188,6 +188,11 @@
         '((:name "unread/attention"
                  :query "query:attention"
                  :sort-order "newest-first")
+          (:name "unread" :query "tag:unread" :key "u")
+          (:name "sent last 7d" :query "tag:sent and date:7days..now" :key "s")
+          (:name "todo" :query "tag:todo" :key "t")
+          (:name "flagged" :query "tag:flagged" :key "f")
+          (:name "drafts" :query "tag:draft" :key "d")
           (:name "arcor/unread"
                  :query "path:\"falko.riemenschneider@arcor.de/**\" tag:unread -tag:trash"
                  :sort-order "newest-first")
@@ -195,7 +200,7 @@
                  :query "path:\"falko.riemenschneider@arcor.de/**\" tag:inbox -tag:trash"
                  :sort-order "newest-first")
           (:name "arcor/sent"
-                 :query "folder:falko.riemenschneider@arcor.de/Sent tag:sent"
+                 :query "folder:falko.riemenschneider@arcor.de/Sent and tag:sent"
                  :sort-order "newest-first")
           (:name "dt/unread"
                  :query "path:\"riemenschneider@doctronic.de/**\" and tag:unread and -tag:trash and -tag:rl2020 and -tag:ottoschmidt and -tag:doctronic-ms and -tag:doctronic-kwaestio"
@@ -204,7 +209,7 @@
                  :query "path:\"riemenschneider@doctronic.de/**\" tag:inbox -tag:trash"
                  :sort-order "newest-first")
           (:name "dt/sent"
-                 :query "folder:riemenschneider@doctronic.de/Sent tag:sent"
+                 :query "folder:riemenschneider@doctronic.de/Sent and tag:sent"
                  :sort-order "newest-first")
           (:name "rl2020/unread"
                  :query "query:rl2020 tag:unread"
@@ -221,11 +226,6 @@
           (:name "doctronic-kwaestio/unread"
                  :query "query:doctronic-kwaestio tag:unread"
                  :sort-order "newest-first")
-          (:name "todo" :query "tag:todo" :key "t")
-          (:name "unread" :query "tag:unread -tag:trash" :key "u")
-          (:name "flagged" :query "tag:flagged" :key "f")
-          (:name "sent" :query "tag:sent" :key "s")
-          (:name "drafts" :query "tag:draft -tag:trash" :key "d")
           (:name "trash" :query "tag:trash")
           (:name "all mail" :query "*" :key "a")))
   (setq notmuch-search-result-format
