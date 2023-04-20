@@ -22,6 +22,9 @@
 (setq mouse-wheel-follow-mouse 't) ; scroll window under mouse
 (setq scroll-step 1) ; keyboard scroll one line at a time
 (setq scroll-margin 4)
+(setq delete-by-moving-to-trash nil)
+
+
 
 ;; whitespace stripping
 (add-hook 'before-save-hook 'delete-trailing-whitespace)

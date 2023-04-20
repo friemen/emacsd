@@ -1,28 +1,27 @@
 (provide 'my-dired)
 
-;; dired+ is not available in any repo, use copy from EmacsWiki
-(add-to-list 'load-path (concat user-emacs-directory "emacswiki/dired+"))
+(defun my-dired-up-directory ()
+  (interactive)
+  (find-alternate-file ".."))
+
 
 (use-package dired
-  :init
-  (setq dired-omit-files "^\\.?#\\|^\\.$\\|^\\.\\.$\\|^\\..*$")
-
   :bind
   (("C-x C-d" . dired-jump)
    ("C-x d" . dired)
    :map dired-mode-map
-   ("<backspace>" . diredp-up-directory-reuse-dir-buffer)
+   ("<backspace>" . my-dired-up-directory)
+   ("^" . my-dired-up-directory)
    ("." . dired-omit-mode)
    ("<tab>" . dired-hide-details-mode)
    ("?" . hydra-dired/body))
 
   :config
-  (require 'dired+)
-  (toggle-diredp-find-file-reuse-dir 1)
-  (diredp-make-find-file-keys-reuse-dirs)
+  (setq dired-omit-files "^\\.?#\\|^\\.$\\|^\\.\\.$\\|^\\..*$")
   (add-hook 'dired-mode-hook (lambda ()
                                (dired-omit-mode 1)
-                               (hl-line-mode)))
+                               (hl-line-mode)
+                               (dired-hide-details-mode 1)))
   (add-hook 'dired-load-hook (lambda ()
                                (hydra-dired/body))))
 
@@ -47,5 +46,4 @@
   ("R" dired-do-rename)
   ("C" dired-do-copy)
   ("D" dired-do-delete)
-  ("q" nil)
-  )
+  ("q" nil))
