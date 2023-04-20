@@ -59,13 +59,12 @@ The Emacs diary uses #includes. The included diary files are generated
 from iCalendar .ics files that are synced via vdirsyncer with CalDAV
 compliant services like Radicale or Nextcloud.
 
-## Some important M-x commands
+## Some M-x commands I use often
 
 Command                 | Description
 ---                     | ---
 align-regexp            | Align within a region by regex
 calendar                | Open calendar and diary
-clojure-cheatsheet      | Open clojure cheatsheet
 comment-region          | Put region in comments
 describe-mode           | Get help about active modes
 ediff                   | Load and diff files
@@ -79,6 +78,9 @@ magit-blame             | Show Git blame lines for current file
 magit-log-buffer-file   | Show Git log with commits touching file
 magit-status            | Show Magit buffer
 notmuch                 | Open e-mail search overview
+org-agenda              | Open Org agenda view
+org-capture             | Capture TODO item or anything else
+org-store-link          | Capture current place as link
 query-replace           | Replace all to end of buffer, ask for each
 package-list-packages   | Open package manager
 projectile-replace      | Replace string in project files
@@ -97,26 +99,37 @@ File/buffer/window commands
 C-q         Exit Emacs
 C-w         Kill current buffer (or C-x k)
 C-o         Toggle window control hydra
-C-Escape    Toggle treemacs sidebar
 C-x C-f     Load file
 C-x f       Open recently used file
 C-x C-s     Save buffer to file
 C-x C-w     Write buffer to other file
-C-x C-d     Show directory of current buffer
 C-x b       Switch buffer
 C-Pgup      Previous buffer
 C-Pgdn      Next buffer
 C-Tab       Switch to next window
 M-<1 2 ..>  Goto window 1, 2, 3, ..
-C-x C-b     List buffers
 C-l         Center buffer to point
-C-x g       Git status for current project
-C-x l       Git log for file in current buffer
 C-x o       Jump to next window
 C-x 1       Delete other windows
 C-x 0       Delete current window
 C-x 2       Split window horizontally
 C-x 3       Split window vertically
+```
+
+Globally available special functions
+```
+C-Escape    Toggle treemacs sidebar
+C-x C-b     List buffers
+C-x C-a     Org agenda
+C-x C-d     Show directory of current buffer in dired+
+C-x d       Ask for start directory, then open dired
+C-x C-c     Show calendar with diary-fancy-display
+C-x g       Git status for current project
+C-x l       Git log for file in current buffer
+C-x C-n     Show e-mail overview buffer *notmuch-hello*
+C-x C-m     Select mail composition context (from address, signature etc)
+C-x m       Compose new message
+C-u C-x m   Compose new message, ask for sender first
 ```
 
 Movement of point
@@ -179,6 +192,7 @@ Dired/Dired+
 ```
 ?           Show hydra
 Enter       Select file/dir
+^           Go to parent dir
 Backspace   Go to parent dir
 .           Toggle hidden file display
 Tab         Toggle file details display
@@ -332,21 +346,14 @@ Tab         Expand / Collapse dir
 Enter       Load file in buffer
 ```
 
-Org-Mode (see also [refcard](http://orgmode.org/orgcard.txt))
+Orgmode (see also [refcard](https://orgmode.org/orgcard.txt))
 
+Global bindings related to Org
 ```
-* Todos
-** Organize christmas party [66%]
-   DEADLINE: <2014-12-05 Fri>
-*** DONE Book guide for museum
-*** DONE Book table restaurant
-*** TODO Invite people
+F12         Open Org hydra
 ```
 
-* A headline begins with `*` and starts a section.
-* A section contains items, starting by default with bullet `-`.
-* Checkboxes `[ ]` can be used after the bullet of an item.
-
+Bindings in Org buffer
 ```
 M-Enter     Add next item
 M-S-Enter   Add next TODO or [ ] item
@@ -368,30 +375,22 @@ S-Down      On heading: cycle priority forward
 C-c ^       Sort items
 C-c .       Add date
 C-c C-q     Define tags
-C-c C-d     Add deadline to section
+C-c C-d     Add deadline date to section
+C-c C-s     Add schedule date to section
 C-c C-c     Toggle checkbox [ ] <-> [X]
 C-c C-z     Add note to section
-C-c C-l     Add link
+C-c C-l     Insert link
 C-c / ...   Filter by ...
 C-c a ...   Open agenda
 ```
 
 Calendar
 ```
-C-x C-c     Show calendar with diary-fancy-display
 q           Close calendar
 i d         Insert new diary entry
 ```
 
-Notmuch E-Mail / general
-```
-C-x C-n     Show message overview buffer *notmuch-hello*
-C-x c       Select mail composition context (from address, signature etc)
-C-x m       Compose new message
-C-u C-x m   Compose new message, ask for sender first
-```
-
-Notmuch E-Mail / saved searches overview in notmuch-hello
+Notmuch E-Mail / saved searches overview aka notmuch-hello
 ```
 ?           Display help
 q           Close window
