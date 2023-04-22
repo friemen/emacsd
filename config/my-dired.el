@@ -4,12 +4,22 @@
   (interactive)
   (find-alternate-file ".."))
 
+(defun my-dired-find-file ()
+  (interactive)
+  (let ((file (dired-get-file-for-visit)))
+    (if (file-directory-p file)
+	(or (and (cdr dired-subdir-alist)
+		 (dired-goto-subdir file))
+	    (find-alternate-file file))
+      (view-file file))))
+
 
 (use-package dired
   :bind
   (("C-x C-d" . dired-jump)
    ("C-x d" . dired)
    :map dired-mode-map
+   ("<enter>" . my-dired-find-file)
    ("<backspace>" . my-dired-up-directory)
    ("^" . my-dired-up-directory)
    ("." . dired-omit-mode)
@@ -17,7 +27,13 @@
    ("?" . hydra-dired/body))
 
   :config
+  (require 'dired-x)
+  (add-to-list 'dired-guess-shell-alist-default
+               (list my-xdg-open-file-extension-re "xdg-open"))
   (setq dired-omit-files "^\\.?#\\|^\\.$\\|^\\.\\.$\\|^\\..*$")
+  (setq dired-listing-switches "-lAhgG --group-directories-first")
+  (setq dired-dwim-target t)
+
   (add-hook 'dired-mode-hook (lambda ()
                                (dired-omit-mode 1)
                                (hl-line-mode)

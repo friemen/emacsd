@@ -98,8 +98,18 @@
 ;; ask before quitting emacs
 (setq confirm-kill-emacs 'yes-or-no-p)
 
+(defvar my-xdg-open-file-extension-re
+  (concat
+   "\\.pdf"
+   "\\|\\.docx\\|\\.doc\\|\\.xlsx\\|\\.xls\\|\\.pptx\\|\\.ppt"
+   "\\|\\.odt\\|\\.ods\\|\\.odg\\|\\.odp"
+   "\\|\\.vsd"
+   "\\|\\.mkv\\|\\.m4v\\|\\.mp4\\|\\.mp3"
+   "\\|\\.epgz"
+   "\\|\\.qea\\|\\.feap"))
+
 ;; -------------------------------
-;; TODO put this to a my-ediff file
+;; idea: put this to a my-ediff file
 
 (setq ediff-split-window-function 'split-window-horizontally)
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
