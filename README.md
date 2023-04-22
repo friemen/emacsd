@@ -97,7 +97,8 @@ visual-line-mode        | Switch nice word wrap on/off
 File/buffer/window commands
 ```
 C-q         Exit Emacs
-C-w         Kill current buffer (or C-x k)
+C-w         Kill current buffer
+C-x k       Ask for buffer to kill
 C-o         Toggle window control hydra
 C-x C-f     Load file
 C-x f       Open recently used file
@@ -121,6 +122,8 @@ Globally available special functions
 C-Escape    Toggle treemacs sidebar
 C-x C-b     List buffers
 C-x C-a     Org agenda
+C-x C-l     Org store link
+C-x C-q     Org capture
 C-x C-d     Show directory of current buffer in dired+
 C-x d       Ask for start directory, then open dired
 C-x C-c     Show calendar with diary-fancy-display
@@ -188,17 +191,25 @@ Projectile (see also [project page](https://github.com/bbatsov/projectile/blob/m
 C-c p       Open projectile hydra
 ```
 
-Dired/Dired+
+Dired
 ```
 ?           Show hydra
-Enter       Select file/dir
+Enter       Visit file/dir
+v           View file/dir in place
+o           Visit file in other window
+&           Do shell command on file (e.g. xdg-open)
+C-o         View file in other window
 ^           Go to parent dir
 Backspace   Go to parent dir
 .           Toggle hidden file display
 Tab         Toggle file details display
+s           Toggle sorting by date or by name
 g           Refresh
 m           Mark
+% m         Mark using regexp
 u           Unmark
+U           Unmark all
+k           Hide marked lines from list
 q           Close dired buffer
 ```
 
@@ -346,7 +357,7 @@ Tab         Expand / Collapse dir
 Enter       Load file in buffer
 ```
 
-Orgmode (see also [refcard](https://orgmode.org/orgcard.txt))
+Org Mode (see also [refcard](https://orgmode.org/orgcard.txt))
 
 Global bindings related to Org
 ```
