@@ -161,9 +161,9 @@ C-x         Cut
 C-v         Paste
 C-Ins       Browse kill ring
 C-x h       Mark whole buffer contents
-C-.         Mark next like this (multiple cursors)
 C-/         Toggle comment for region
-C->         Mark previous like this (multiple cursors)
+C->         Mark next like this (multiple cursors)
+C-<         Mark previous like this (multiple cursors)
 C-M-.       Mark all like this (multiple cursors)
 C-M-m       Multiple cursors hydra
 C-Space     Expand region
