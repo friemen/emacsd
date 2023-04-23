@@ -185,6 +185,7 @@
   :init
   (require 'notmuch-mua)
   (require 'org)
+  (require 'org-element)
   :bind
   (("C-x C-m" . hydra-notmuch-context/body)
    ("C-x m" . my-notmuch-new-mail)
