@@ -152,6 +152,34 @@
                             ("\\<todo\\>" 0 'my-notmuch-tag-todo))
                           'set))
 
+;; Taken from https://gist.github.com/fedxa/fac592424473f1b70ea489cc64e08911
+(defun my-org-notmuch-open (id)
+  "Visit the notmuch message or thread with id ID."
+  (notmuch-show id))
+
+(defun my-org-notmuch-store-link ()
+  "Store a link to a notmuch mail message."
+  (case major-mode
+    ('notmuch-show-mode
+     ;; Store link to the current message
+     (let* ((id (notmuch-show-get-message-id))
+	    (link (concat "notmuch:" id))
+	    (description (format "Mail: %s" (notmuch-show-get-subject))))
+       (org-store-link-props
+	:type "notmuch"
+	:link link
+	:description description)))
+    ('notmuch-search-mode
+     ;; Store link to the thread on the current line
+     (let* ((id (notmuch-search-find-thread-id))
+
+  (link (concat "notmuch:" id))
+	    (description (format "Mail: %s" (notmuch-search-find-subject))))
+       (org-store-link-props
+	:type "notmuch"
+	:link link
+	:description description)))))
+
 
 (use-package notmuch :ensure t
   :init
@@ -176,10 +204,11 @@
         ("f" . my-notmuch-show-forward-message)
         ("m" . my-notmuch-new-mail)
         ("C-t" . my-notmuch-show-trash-message)
-        :map notmuch-message-mode-map
+   :map notmuch-message-mode-map
         ("C-c t" . my-notmuch-replace-with-template))
   :config
   ;; hello screen
+  (fullframe notmuch notmuch-bury-or-kill-this-buffer)
   (setq notmuch-sort-saved-searches nil)
   (setq notmuch-show-logo nil)
   (setq notmuch-hello-thousands-separator ".")
@@ -247,16 +276,21 @@
   (setq notmuch-always-prompt-for-sender nil)
   (setq notmuch-mua-compose-in 'new-window)
   (add-hook 'message-send-hook (lambda ()
-			       (let ((from (car (mail-header-parse-address
-                                                 (message-fetch-field "from")))))
-                                 (setq message-sendmail-extra-arguments (list "-a" from)))))
-  (fullframe notmuch notmuch-bury-or-kill-this-buffer)
+			         (let ((from (car (mail-header-parse-address
+                                                   (message-fetch-field "from")))))
+                                   (setq message-sendmail-extra-arguments (list "-a" from)))))
+
+  ;; org - notmuch integration with respect to store link
+  (org-link-set-parameters "notmuch"
+			   :follow 'my-org-notmuch-open
+			   :store 'my-org-notmuch-store-link)
+
   :hydra
   (hydra-notmuch-context (:hint nil :exit nil) "
 Select mail context:
 [_d_] doctronic.de
 [_a_] arcor.de
 [_f_] admin@falkoriemenschneider.de"
-  ("d" my-notmuch-context-doctronic)
-  ("a" my-notmuch-context-arcor)
-  ("f" my-notmuch-context-admin@falkoriemenschneider)))
+                         ("d" my-notmuch-context-doctronic)
+                         ("a" my-notmuch-context-arcor)
+                         ("f" my-notmuch-context-admin@falkoriemenschneider)))
