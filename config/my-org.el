@@ -34,6 +34,7 @@
   (setq org-startup-indented t)
   (setq org-hide-leading-stars t)
   (setq org-support-shift-select t)
+  (setq org-tags-column 80)
   (setq org-todo-keywords '((sequence "TODO" "NEXT" "STARTED" "DONE")))
 
   ;; capture
@@ -72,6 +73,9 @@
                                     (concat org-directory "/dt")))
             (org-agenda-start-on-weekday nil) ;; start on current day
             (org-agenda-span 7)))))
+
+  ;; auto save org buffers
+  (add-hook 'auto-save-hook 'org-save-all-org-buffers)
 
   ;; try to register file extension pattern with xdg open for org mode
   (add-hook 'org-open-at-point-functions
