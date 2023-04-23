@@ -27,34 +27,68 @@
    ;;("S-<down>" . nil)
    )
   :config
+  (setq org-directory "~/Org")
+  (setq org-ellipsis "⤵")
   (setq org-startup-with-inline-images t)
   (setq org-startup-folded t)
-  (setq org-agenda-include-diary t)
+  (setq org-startup-indented t)
   (setq org-hide-leading-stars t)
   (setq org-support-shift-select t)
-  (setq org-directory "~/Org")
   (setq org-todo-keywords '((sequence "TODO" "NEXT" "STARTED" "DONE")))
-  (setq org-agenda-files '("~/Org/falko.org"
-                           "~/Org/dt/bfn-rl2020.org"
-                           "~/Org/dt/idw-qmhb.org"
-                           ;;"~/Org/dt/ottoschmidt.org"
-                           "~/Org/dt/dt-kwaestio.org"
-                           "~/Org/dt/dt-ms.org"
-                           ))
+
+  ;; capture
+  (setq org-capture-templates
+        '(("t" "Todo" entry (file+headline "~/Org/inbox--todos.org" "Tasks to be refiled")
+           "* TODO %?\n  %i\n  %a")
+          ("j" "Journal" entry (file+datetree "~/Org/journal.org")
+           "* %?\nEntered on %U\n  %i\n  %a")))
+
+  ;;refile
+  (setq org-refile-targets
+        `(
+          (,(directory-files-recursively (concat org-directory "/private") "^[a-zA-Z0-9-_+]*--todos.org$")
+           :maxlevel . 1)
+          (,(directory-files-recursively (concat org-directory "/dt") "^[a-zA-Z0-9-_+]*--todos.org$")
+           :maxlevel . 1)
+
+          ))
+
+  ;; agenda
+  (setq org-agenda-include-diary t)
+  (setq org-agenda-file-regexp "\\`[^.].*--todos\\.org\\'")
+  (setq org-agenda-todo-ignore-scheduled t)
   (setq org-agenda-custom-commands
         '(("p" "Private"
            ((agenda "")
             (alltodo))
-           ((org-agenda-files '("~/Org/private"))
+           ((org-agenda-files (list (concat org-directory "/inbox--todos.org")
+                                    (concat org-directory "/private")))
             (org-agenda-start-on-weekday nil) ;; start on current day
             (org-agenda-span 7)))
           ("w" "Work"
            ((agenda "")
             (alltodo))
-           ((org-agenda-files '("~/Org/dt"))
+           ((org-agenda-files (list (concat org-directory "/inbox--todos.org")
+                                    (concat org-directory "/dt")))
             (org-agenda-start-on-weekday nil) ;; start on current day
             (org-agenda-span 7)))))
 
   ;; try to register file extension pattern with xdg open for org mode
   (add-hook 'org-open-at-point-functions
-            #'my-org-xdg-open-at-point))
+            #'my-org-xdg-open-at-point)
+
+  ;; look
+  (font-lock-add-keywords 'org-mode
+                          '(
+                            ;; ("^\\(**\\) "
+                            ;;  (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "❇ "))))
+                            ;; ("^\\(*\\) "
+                            ;;  (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "✣ "))))
+                            ("^\\([-]\\) "
+                             (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+  )
+
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
