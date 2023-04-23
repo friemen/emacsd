@@ -68,10 +68,7 @@
         (setq notmuch-mua-compose-in 'current-window)
         (my-notmuch-new-mail prompt-for-sender)
         (setq notmuch-mua-compose-in notmuch-mua-compose-in*))
-      (mml-attach-file my-temp-ics-file))
-    )
-
-  )
+      (mml-attach-file my-temp-ics-file))))
 
 
 (defun my-diary-font-locking ()
@@ -97,6 +94,7 @@
   (setq calendar-view-diary-initially-flag t
         diary-number-of-entries 7
         diary-display-function #'diary-fancy-display)
+  (setq diary-show-holidays-flag nil)
   (add-hook 'calendar-today-visible-hook 'calendar-mark-today)
   (add-hook 'diary-fancy-display-mode-hook 'my-diary-font-locking)
   (setq diary-file "~/Calendar/diary"
