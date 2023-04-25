@@ -35,7 +35,8 @@
   (setq org-hide-leading-stars t)
   (setq org-support-shift-select t)
   (setq org-tags-column 80)
-  (setq org-todo-keywords '((sequence "TODO" "NEXT" "STARTED" "DONE")))
+  (setq org-todo-keywords '((sequence "TODO" "NEXT" "STARTED" "WAITING" "DONE")))
+  (setq org-todo-keyword-faces '(("STARTED" . "#d08770") ("WAITING" . "#b48ead")))
 
   ;; capture
   (setq org-capture-templates
@@ -56,6 +57,9 @@
 
   ;; agenda
   (setq org-agenda-include-diary t)
+  (setq org-agenda-files (list (concat org-directory "/inbox--todos.org")
+                               (concat org-directory "/dt")
+                               (concat org-directory "/private")))
   (setq org-agenda-file-regexp "\\`[^.].*--todos\\.org\\'")
   (setq org-agenda-todo-ignore-scheduled t)
   (setq org-agenda-custom-commands
