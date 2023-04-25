@@ -159,7 +159,7 @@
 
 (defun my-org-notmuch-store-link ()
   "Store a link to a notmuch mail message."
-  (case major-mode
+  (cl-case major-mode
     ('notmuch-show-mode
      ;; Store link to the current message
      (let* ((id (notmuch-show-get-message-id))
@@ -191,22 +191,22 @@
    ("C-x m" . my-notmuch-new-mail)
    ("C-x C-n" . notmuch)
    :map notmuch-hello-mode-map
-        ("m" . my-notmuch-new-mail)
+   ("m" . my-notmuch-new-mail)
    :map notmuch-search-mode-map
-        ("r" . my-notmuch-search-reply-sender)
-        ("R" . my-notmuch-search-reply-all)
-        ("m" . my-notmuch-new-mail)
-        ("C-t" . my-notmuch-search-trash-messages)
+   ("r" . my-notmuch-search-reply-sender)
+   ("R" . my-notmuch-search-reply-all)
+   ("m" . my-notmuch-new-mail)
+   ("d" . my-notmuch-search-trash-messages)
    :map notmuch-show-mode-map
-        ("C-<tab>" . other-window)
-        ("C-c C-o" . org-open-at-point)
-        ("r" . my-notmuch-show-reply-sender)
-        ("R" . my-notmuch-show-reply-all)
-        ("f" . my-notmuch-show-forward-message)
-        ("m" . my-notmuch-new-mail)
-        ("C-t" . my-notmuch-show-trash-message)
+   ("C-<tab>" . other-window)
+   ("C-c C-o" . org-open-at-point)
+   ("r" . my-notmuch-show-reply-sender)
+   ("R" . my-notmuch-show-reply-all)
+   ("f" . my-notmuch-show-forward-message)
+   ("m" . my-notmuch-new-mail)
+   ("d" . my-notmuch-show-trash-message)
    :map notmuch-message-mode-map
-        ("C-c t" . my-notmuch-replace-with-template))
+   ("C-c t" . my-notmuch-replace-with-template))
   :config
   ;; hello screen
   (fullframe notmuch notmuch-bury-or-kill-this-buffer)
