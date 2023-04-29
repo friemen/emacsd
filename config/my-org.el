@@ -35,7 +35,7 @@
   (setq org-hide-leading-stars t)
   (setq org-support-shift-select t)
   (setq org-tags-column 80)
-  (setq org-todo-keywords '((sequence "TODO" "NEXT" "STARTED" "WAITING" "DONE")))
+  (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "STARTED(s)" "WAITING(w)" "DONE(d)")))
   (setq org-todo-keyword-faces '(("STARTED" . "#d08770") ("WAITING" . "#b48ead")))
 
   ;; capture
@@ -62,6 +62,10 @@
                                (concat org-directory "/private")))
   (setq org-agenda-file-regexp "\\`[^.].*--todos\\.org\\'")
   (setq org-agenda-todo-ignore-scheduled t)
+  (setq org-agenda-sorting-strategy '((agenda habit-down time-up priority-down category-keep)
+                                      (todo   todo-state-up priority-down category-keep)
+                                      (tags   priority-down category-keep)
+                                      (search category-keep)))
   (setq org-agenda-custom-commands
         '(("p" "Private"
            ((agenda "")
