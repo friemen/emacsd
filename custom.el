@@ -35,7 +35,7 @@
  '(dired-marked ((t (:foreground "#88C0D0"))))
  '(highlight ((t (:background "#81a1c1" :foreground "#2e3440"))))
  '(highlight-symbol-face ((t (:background "gray30"))))
- '(linum ((t :background "#4A8986" :foreground "light gray")))
+ '(linum ((t :foreground "#4c566a")))
  '(magit-diff-added ((t (:extend t :background "#a3be8c" :foreground "#2e3440"))))
  '(magit-diff-added-highlight ((t (:extend t :background "#a3be8c" :foreground "#2e3440"))))
  '(magit-diff-removed ((t (:extend t :background "#bf616a" :foreground "#2e3440"))))
