@@ -133,6 +133,7 @@ C-x C-n     Show e-mail overview buffer *notmuch-hello*
 C-x C-m     Select mail composition context (from address, signature etc)
 C-x m       Compose new message
 C-u C-x m   Compose new message, ask for sender first
+C-x y       Insert snippet
 ```
 
 Movement of point
