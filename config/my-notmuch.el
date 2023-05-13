@@ -132,13 +132,13 @@
       (insert-file-contents mail-file))))
 
 
-(defun my-notmuch-search-trash-messages (&optional beg end)
+(defun my-notmuch-search-delete-messages (&optional beg end)
   (interactive)
-  (notmuch-search-tag (list "+trash") beg end))
+  (notmuch-search-tag (list "+deleted") beg end))
 
-(defun my-notmuch-show-trash-message ()
+(defun my-notmuch-show-delete-message ()
   (interactive)
-  (notmuch-show-tag (list "+trash")))
+  (notmuch-show-tag (list "+deleted")))
 
 
 (defface my-notmuch-tag-todo
@@ -196,7 +196,7 @@
    ("r" . my-notmuch-search-reply-sender)
    ("R" . my-notmuch-search-reply-all)
    ("m" . my-notmuch-new-mail)
-   ("d" . my-notmuch-search-trash-messages)
+   ("d" . my-notmuch-search-delete-messages)
    :map notmuch-show-mode-map
    ("C-<tab>" . other-window)
    ("C-c C-o" . org-open-at-point)
@@ -204,7 +204,7 @@
    ("R" . my-notmuch-show-reply-all)
    ("f" . my-notmuch-show-forward-message)
    ("m" . my-notmuch-new-mail)
-   ("d" . my-notmuch-show-trash-message)
+   ("d" . my-notmuch-show-delete-message)
    :map notmuch-message-mode-map
    ("C-c t" . my-notmuch-replace-with-template))
   :config
@@ -224,19 +224,19 @@
           (:name "flagged" :query "tag:flagged" :key "f")
           (:name "drafts" :query "tag:draft" :key "d")
           (:name "arcor/unread"
-                 :query "path:\"falko.riemenschneider@arcor.de/**\" tag:unread -tag:trash"
+                 :query "path:\"falko.riemenschneider@arcor.de/**\" tag:unread"
                  :sort-order "newest-first")
           (:name "arcor/inbox"
-                 :query "path:\"falko.riemenschneider@arcor.de/**\" tag:inbox -tag:trash"
+                 :query "path:\"falko.riemenschneider@arcor.de/**\" tag:inbox"
                  :sort-order "newest-first")
           (:name "arcor/sent"
                  :query "folder:falko.riemenschneider@arcor.de/Sent and tag:sent"
                  :sort-order "newest-first")
           (:name "dt/unread"
-                 :query "path:\"riemenschneider@doctronic.de/**\" and tag:unread and -tag:trash and -tag:rl2020 and -tag:ottoschmidt and -tag:doctronic-ms and -tag:doctronic-kwaestio"
+                 :query "path:\"riemenschneider@doctronic.de/**\" and tag:unread and -tag:rl2020 and -tag:ottoschmidt and -tag:doctronic-ms and -tag:doctronic-kwaestio"
                  :sort-order "newest-first")
           (:name "dt/inbox"
-                 :query "path:\"riemenschneider@doctronic.de/**\" tag:inbox -tag:trash"
+                 :query "path:\"riemenschneider@doctronic.de/**\" tag:inbox"
                  :sort-order "newest-first")
           (:name "dt/sent"
                  :query "folder:riemenschneider@doctronic.de/Sent and tag:sent"
@@ -256,7 +256,7 @@
           (:name "doctronic-kwaestio/unread"
                  :query "query:doctronic-kwaestio tag:unread"
                  :sort-order "newest-first")
-          (:name "trash" :query "tag:trash")
+          (:name "trash" :query "tag:deleted")
           (:name "all mail" :query "*" :key "a")))
   (setq notmuch-search-result-format
         '(("date" . "%12s ")
@@ -287,11 +287,11 @@
 			   :store 'my-org-notmuch-store-link)
 
   :hydra
-  (hydra-notmuch-context (:hint nil :exit nil) "
+  (hydra-notmuch-context (:hint nil :exit t) "
 Select mail context:
 [_d_] doctronic.de
 [_a_] arcor.de
 [_f_] admin@falkoriemenschneider.de"
                          ("d" my-notmuch-context-doctronic)
                          ("a" my-notmuch-context-arcor)
-                         ("f" my-notmuch-context-admin@falkoriemenschneider)))
+                         ("f" my-notmuch-context-falkoriemenschneider)))
