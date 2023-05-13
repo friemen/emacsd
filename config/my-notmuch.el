@@ -45,9 +45,9 @@
          (message (concat  "Unable to set mail context for address: " mail-address)))))
 
 (setq notmuch-fcc-dirs
-      '(("riemenschneider@doctronic.de" . "riemenschneider@doctronic.de/Sent")
-        ("falko.riemenschneider@arcor.de" . "falko.riemenschneider@arcor.de/Sent")
-        ("admin@falkoriemenschneider.de" . "admin@falkoriemenschneider.de/Sent")))
+      '(("riemenschneider@doctronic.de" . "riemenschneider@doctronic.de/Sent -unread +sent")
+        ("falko.riemenschneider@arcor.de" . "falko.riemenschneider@arcor.de/Sent -unread +sent")
+        ("admin@falkoriemenschneider.de" . "admin@falkoriemenschneider.de/Sent -unread +sent")))
 
 (defun my-notmuch-ensure-mail-context (prompt-for-sender)
   (if (or (not user-mail-address)
