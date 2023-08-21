@@ -17,6 +17,7 @@
 (use-package cider :ensure t
   :bind
   (:map cider-mode-map
+        ("RET" . nil)
         ("C-c C-c" . my-clojure-eval-form)
         ("C-c C-p" . my-clojure-refresh-namespaces)
         ("C-c s" . my-clojure-restart-system)
@@ -60,9 +61,9 @@
 (use-package clojure-mode :ensure t
   :bind
   (:map paredit-mode-map
+        ("RET" . nil)
         ("C-c C-i" . my-clojure-indent-defn)
         :map clojure-mode-map
-        ("RET" . paredit-newline)
         ("C-M-." . mc/mark-all-symbols-like-this)
         ("C-." . mc/mark-all-symbols-like-this-in-defun))
 

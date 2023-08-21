@@ -3,6 +3,7 @@
 (use-package lisp-mode
   :bind
   (:map emacs-lisp-mode-map
+        ("RET" . nil)
         ("C-c C-c" . eval-defun)
         ("C-c C-k" . eval-buffer)
         ("C-c C-d" . my-elisp-describe-thing-in-popup)
