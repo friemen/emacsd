@@ -63,7 +63,7 @@
   (setq org-agenda-file-regexp "\\`[^.].*--todos\\.org\\'")
   (setq org-agenda-todo-ignore-scheduled t)
   (setq org-agenda-sorting-strategy '((agenda habit-down time-up priority-down category-keep)
-                                      (todo   todo-state-up priority-down category-keep)
+                                      (todo   todo-state-down priority-down category-keep)
                                       (tags   priority-down category-keep)
                                       (search category-keep)))
   (setq org-agenda-custom-commands
