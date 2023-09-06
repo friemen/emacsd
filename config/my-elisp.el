@@ -4,6 +4,7 @@
   :bind
   (:map emacs-lisp-mode-map
         ("RET" . nil)
+        ("C-j" . paredit-RET)
         ("C-c C-c" . eval-defun)
         ("C-c C-k" . eval-buffer)
         ("C-c C-d" . my-elisp-describe-thing-in-popup)
