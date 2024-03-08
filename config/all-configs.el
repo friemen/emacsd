@@ -48,6 +48,7 @@
 (require 'my-org)
 (require 'my-paredit)
 (require 'my-projectile)
+(require 'my-python)
 (require 'my-treemacs)
 (require 'my-themes)
 (require 'my-visual-basic)
