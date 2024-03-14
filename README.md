@@ -360,11 +360,6 @@ Enter       Load file in buffer
 
 Org Mode (see also [refcard](https://orgmode.org/orgcard.txt))
 
-Global bindings related to Org
-```
-F12         Open Org hydra
-```
-
 Bindings in Org buffer
 ```
 M-Enter     Add next item

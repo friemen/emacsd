@@ -36,7 +36,8 @@
   (setq cider-overlays-use-font-lock t)
   (setq cider-font-lock-dynamically '(macro core function var))
   (setq cider-popup-stacktraces nil)
-  (setq cider-default-cljs-repl "(user/fig-repl)")
+  ;; (setq cider-default-cljs-repl "(user/fig-repl)")
+  (setq cider-default-cljs-repl nil)
   (setq cider-repl-auto-detect-type t)
   (setq cider-mode-line-show-connection t)
   (setq cider-repl-use-pretty-printing t)
@@ -47,6 +48,7 @@
   (setq cider-save-file-on-load nil)
   (setq nrepl-repl-buffer-name-template "*cider-repl %s(%r:%S)*")
   (setq cider-session-name-template "%j:%h")
+  (setq cider-test-fail-fast nil)
 
   (require 'my-clojure-utils)
   (add-hook 'cider-repl-mode-hook 'paredit-mode)
