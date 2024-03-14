@@ -18,7 +18,7 @@
   :config
   (require 'dired-x)
   (require 'dired-single)
-  (add-to-list 'dired-guess-shell-alist-default
+  (add-to-list 'dired-guess-shell-alist-user
                (list my-xdg-open-file-extension-re "xdg-open"))
   (setq dired-omit-files "^\\.?#\\|^\\.$\\|^\\.\\.$\\|^\\..*$")
   (setq dired-listing-switches "-lAhgG --group-directories-first")

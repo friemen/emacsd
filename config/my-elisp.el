@@ -1,5 +1,9 @@
 (provide 'my-elisp)
 
+(require 'my-highlight-symbol)
+(require 'my-company)
+(require 'my-hideshow)
+
 (use-package lisp-mode
   :bind
   (:map emacs-lisp-mode-map
