@@ -19,7 +19,7 @@
   (require 'dired-x)
   (require 'dired-single)
   (add-to-list 'dired-guess-shell-alist-user
-               (list my-xdg-open-file-extension-re "xdg-open"))
+               (list my-xdg-open-file-extension-re "xdg-open &"))
   (setq dired-omit-files "^\\.?#\\|^\\.$\\|^\\.\\.$\\|^\\..*$")
   (setq dired-listing-switches "-lAhgG --group-directories-first")
   (setq dired-dwim-target t)
@@ -32,12 +32,12 @@
 
 
 (defhydra hydra-dired (:hint nil) "
- Navigate^^                       Mark^^              Show/Hide^^
------------------------------------------------------------------------------------------------
+ Navigate^^                       Mark^^              Show/Hide^^               Act
+----------------------------------------------------------------------------------------------------
  [_<backspace>_]  Dir up          [_m_]  Mark         [_._]      Hidden files   [_R_]  Rename
  [_RET_]          Visit item      [_u_]  Unmark       [_<tab>_]  File details   [_C_]  Copy
  [_<up>_]         Next item       [_U_]  Unmark all   [_g_]      Refresh        [_D_]  Delete
- [_<down>_]       Previous item
+ [_<down>_]       Previous item   ^^                  ^^                        [_!_]  Shell command
  "
   ("<backspace>" dired-single-up-directory)
   ("RET" dired-single-buffer)
@@ -52,6 +52,7 @@
   ("R" dired-do-rename)
   ("C" dired-do-copy)
   ("D" dired-do-delete)
+  ("!" dired-do-shell-command)
   ("q" nil))
 
 
