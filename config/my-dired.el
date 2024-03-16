@@ -36,8 +36,8 @@
 ----------------------------------------------------------------------------------------------------
  [_<backspace>_]  Dir up          [_m_]  Mark         [_._]      Hidden files   [_R_]  Rename
  [_RET_]          Visit item      [_u_]  Unmark       [_<tab>_]  File details   [_C_]  Copy
- [_<up>_]         Next item       [_U_]  Unmark all   [_g_]      Refresh        [_D_]  Delete
- [_<down>_]       Previous item   ^^                  ^^                        [_!_]  Shell command
+ [_<up>_]         Next item       [_t_]  Mark all     [_g_]      Refresh        [_D_]  Delete
+ [_<down>_]       Previous item   [_U_]  Unmark all   ^^                        [_!_]  Shell command
  "
   ("<backspace>" dired-single-up-directory)
   ("RET" dired-single-buffer)
@@ -45,6 +45,7 @@
   ("<down>" dired-next-line)
   ("m" dired-mark)
   ("u" dired-unmark)
+  ("t" dired-toggle-marks)
   ("U" dired-unmark-all)
   ("." dired-omit-mode)
   ("<tab>" dired-hide-details-mode)
