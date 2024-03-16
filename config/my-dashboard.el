@@ -2,7 +2,8 @@
 
 (use-package dashboard :ensure t
   :init
-  (setq dashboard-startup-banner 'logo)
+  ;; (setq dashboard-startup-banner 'logo)
+  (setq dashboard-startup-banner "~/.emacs.d/gnu.png")
   (setq dashboard-center-content t)
   (setq dashboard-banner-logo-title "Welcome to Emacs!")
   (setq dashboard-items '((projects . 15)
