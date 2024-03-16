@@ -126,13 +126,14 @@ C-x C-l     Org store link
 C-x C-q     Org capture
 C-x C-d     Show directory of current buffer in dired+
 C-x d       Ask for start directory, then open dired
+C-x t a     Add current dir to treemacs workspace
 C-x C-c     Show calendar with diary-fancy-display
 C-x g       Git status for current project
 C-x l       Git log for file in current buffer
 C-x C-n     Show e-mail overview buffer *notmuch-hello*
-C-x C-m     Select mail composition context (from address, signature etc)
-C-x m       Compose new message
-C-u C-x m   Compose new message, ask for sender first
+C-x m       Select mail composition context (from address, signature etc)
+C-x C-m     Compose new message
+C-u C-x C-m Compose new message, ask for sender first
 C-x y       Insert snippet
 ```
 

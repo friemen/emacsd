@@ -190,8 +190,8 @@
   (require 'org)
   (require 'org-element)
   :bind
-  (("C-x C-m" . hydra-notmuch-context/body)
-   ("C-x m" . my-notmuch-new-mail)
+  (("C-x m" . hydra-notmuch-context/body)
+   ("C-x C-m" . my-notmuch-new-mail)
    ("C-x C-n" . notmuch)
    :map notmuch-hello-mode-map
    ("m" . my-notmuch-new-mail)
