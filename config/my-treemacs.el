@@ -17,6 +17,7 @@
    ("C-x t 1"   . treemacs-delete-other-windows)
    ("C-x t t"   . treemacs)
    ("C-x t B"   . treemacs-bookmark)
+   ("C-x t a"   . treemacs-add-project-to-workspace)
    ("C-x t C-t" . treemacs-find-file)
    ("C-x t M-t" . treemacs-find-tag)
    :map treemacs-mode-map
