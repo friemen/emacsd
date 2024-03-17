@@ -129,6 +129,7 @@ C-x d       Ask for start directory, then open dired
 C-x t a     Add current dir to treemacs workspace
 C-x C-c     Show calendar with diary-fancy-display
 C-x g       Git status for current project
+C-x C-g     Git blame for file in current buffer
 C-x l       Git log for file in current buffer
 C-x C-n     Show e-mail overview buffer *notmuch-hello*
 C-x m       Select mail composition context (from address, signature etc)

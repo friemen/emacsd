@@ -19,6 +19,7 @@
 (use-package magit :ensure t
   :bind
   (("C-x g" . magit-status)
+   ("C-x C-g" . magit-blame)
    ("C-x l" . magit-log-buffer-file)
    :map magit-mode-map
    ("C-<tab>" . other-window)
