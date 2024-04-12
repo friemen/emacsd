@@ -183,6 +183,10 @@
 	:link link
 	:description description)))))
 
+(defun my-notmuch-hello ()
+  (interactive)
+  (notmuch)
+  (widget-forward 4))
 
 (use-package notmuch :ensure t
   :init
@@ -192,7 +196,7 @@
   :bind
   (("C-x m" . hydra-notmuch-context/body)
    ("C-x C-m" . my-notmuch-new-mail)
-   ("C-x C-n" . notmuch)
+   ("C-x C-n" . my-notmuch-hello)
    :map notmuch-hello-mode-map
    ("m" . my-notmuch-new-mail)
    :map notmuch-search-mode-map
