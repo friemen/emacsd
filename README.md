@@ -94,7 +94,7 @@ visual-line-mode        | Switch nice word wrap on/off
 
 ## Key bindings
 
-File/buffer/window commands
+File/buffer/window/frame commands
 ```
 C-q         Exit Emacs
 C-w         Kill current buffer
@@ -104,7 +104,7 @@ C-x C-f     Load file
 C-x f       Open recently used file
 C-x C-s     Save buffer to file
 C-x C-w     Write buffer to other file
-C-x b       Switch buffer
+C-x b, F8   Switch buffer
 C-Pgup      Previous buffer
 C-Pgdn      Next buffer
 C-Tab       Switch to next window
@@ -115,12 +115,15 @@ C-x 1       Delete other windows
 C-x 0       Delete current window
 C-x 2       Split window horizontally
 C-x 3       Split window vertically
+C-x 5 2     Create new frame
+C-x 5 0     Delete current frame
 ```
 
 Globally available special functions
 ```
 C-Escape    Toggle treemacs sidebar
 C-x C-b     List buffers
+C-F8        List buffers
 C-x C-a     Org agenda
 C-x C-l     Org store link
 C-x C-q     Org capture
@@ -129,13 +132,13 @@ C-x d       Ask for start directory, then open dired
 C-x t a     Add current dir to treemacs workspace
 C-x C-c     Show calendar with diary-fancy-display
 C-x g       Git status for current project
-C-x C-g     Git blame for file in current buffer
+C-x C-.     Git blame for file in current buffer
 C-x l       Git log for file in current buffer
 C-x C-n     Show e-mail overview buffer *notmuch-hello*
 C-x m       Select mail composition context (from address, signature etc)
 C-x C-m     Compose new message
 C-u C-x C-m Compose new message, ask for sender first
-C-x y       Insert snippet
+C-x y, F7   Insert snippet
 ```
 
 Movement of point
@@ -192,6 +195,7 @@ C-;         Toggle highlight symbol at point
 Projectile (see also [project page](https://github.com/bbatsov/projectile/blob/master/doc/usage.md#interactive-commands))
 ```
 C-c p       Open projectile hydra
+C-F12       Find project file
 ```
 
 Dired
@@ -269,6 +273,7 @@ M-s         Splice (unwrap)
 M-S         Split sexps
 M-J         Join sexps
 M-r         Raise sexp
+C-M-t       Transpose sexps
 ```
 
 Hide-show code blocks (minor mode is activated where useful)

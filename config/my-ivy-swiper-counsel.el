@@ -27,6 +27,7 @@
   :bind
   (("M-x" . counsel-M-x)
    ("C-y" . my-git-grep)
+   ("C-t" . my-git-grep)
    ("C-x C-f" . counsel-find-file)
    ("C-x f" . counsel-recentf))
   :config

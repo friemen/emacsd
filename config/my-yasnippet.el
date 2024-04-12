@@ -2,7 +2,8 @@
 
 (use-package yasnippet :ensure t
   :bind
-  (("C-x y" . yas-insert-snippet))
+  (("C-x y" . yas-insert-snippet)
+   ("<f7>" . yas-insert-snippet))
 
   :hook
   (prog-mode . yas-minor-mode)
@@ -12,6 +13,4 @@
   (yas-reload-all)
 
   :diminish
-  yas-minor-mode
-
-  )
+  yas-minor-mode)
