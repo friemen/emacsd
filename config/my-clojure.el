@@ -58,6 +58,7 @@
   (add-hook 'cider-repl-mode-hook 'prettify-symbols-mode)
   (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
   (add-hook 'cider-repl-mode-hook 'highlight-symbol-mode)
+  (add-hook 'cider-repl-mode-hook 'yas-minor-mode)
   )
 
 
