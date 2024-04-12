@@ -19,13 +19,12 @@
 (use-package magit :ensure t
   :bind
   (("C-x g" . magit-status)
-   ("C-x C-g" . magit-blame)
+   ("C-x C-." . magit-blame)
    ("C-x l" . magit-log-buffer-file)
    :map magit-mode-map
    ("C-<tab>" . other-window)
    ("<tab>" . magit-section-toggle)
-   ("C-w" . magit-mode-bury-buffer)
-   )
+   ("C-w" . magit-mode-bury-buffer))
 
   :config
   (setq magit-push-always-verify nil)
@@ -39,5 +38,8 @@
   (transient-append-suffix 'magit-push "e"
     '("G" "Push a branch to Gerrit" magit-push-to-gerrit-local-branch-or-commit))
 
-  (fullframe magit-status magit-mode-quit-window)
-  )
+  (advice-add 'magit-diff-visit-file
+              :before
+              (lambda (orig-fun &rest args)
+                (fullframe/maybe-restore-configuration fullframe/previous-window-configuration)))
+  (fullframe magit-status magit-mode-quit-window))

@@ -19,11 +19,6 @@
   (("<C-insert>" . browse-kill-ring)))
 (use-package impatient-mode :ensure t)
 (use-package restclient :ensure t)
-(use-package ibuffer
-  :bind
-  (("C-x C-b" . ibuffer))
-  :config
-  (add-hook 'ibuffer-mode-hook (lambda () (hl-line-mode t))))
 (use-package ace-jump-mode :ensure t
   :bind
   (("C-," . ace-jump-mode)))
@@ -37,6 +32,7 @@
 (require 'my-file-utils)
 (require 'my-hideshow)
 (require 'my-highlight-symbol)
+(require 'my-ibuffer)
 (require 'my-ivy-swiper-counsel)
 (require 'my-jump-mark-utils)
 (require 'my-magit)
