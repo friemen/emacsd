@@ -10,6 +10,7 @@
  '(cider-repl-display-help-banner nil)
  '(cider-repl-prompt-function 'cider-repl-prompt-abbreviated)
  '(cider-save-file-on-load nil)
+ '(ibuffer-default-sorting-mode 'filename/process)
  '(custom-safe-themes
    '("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" "1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "cf08ae4c26cacce2eebff39d129ea0a21c9d7bf70ea9b945588c1c66392578d1" "5ee12d8250b0952deefc88814cf0672327d7ee70b16344372db9460e9a0e3ffc" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" default))
  '(package-selected-packages
