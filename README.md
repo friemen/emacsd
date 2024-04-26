@@ -365,7 +365,7 @@ Tab         Expand / Collapse dir
 Enter       Load file in buffer
 ```
 
-Org Mode (see also [refcard](https://orgmode.org/orgcard.txt))
+Org Mode (see also [refcard](https://orgmode.org/orgcard.txt) and [org guide](https://orgmode.org/orgguide.pdf))
 
 Bindings in Org buffer
 ```
@@ -376,6 +376,7 @@ M-Right     Increase heading level
 M-Up        Move up within level
 M-Down      Move down with level
 Tab         Cycle folding
+S-Tab       Cycle global folding
 S-Left      On heading:  cycle status backward
             On item:     cycle bullet style
             In calendar: previous day
@@ -388,14 +389,31 @@ S-Down      On heading: cycle priority forward
          	On item:     move down within section
 C-c ^       Sort items
 C-c .       Add date
-C-c C-q     Define tags
+C-t         Define tags
+C-c C-t ... Set heading status
 C-c C-d     Add deadline date to section
 C-c C-s     Add schedule date to section
-C-c C-c     Toggle checkbox [ ] <-> [X]
+C-c C-c     Toggle checkbox [ ] <-> [X], fix date, relayout table etc.
 C-c C-z     Add note to section
 C-c C-l     Insert link
 C-c / ...   Filter by ...
 C-c a ...   Open agenda
+```
+
+Bindings in Org agenda buffer
+```
+q           Quit
+g           Refresh
+s           Save all Org buffers
+.           Go to today
+f           Go forward in time
+b           Go backward in time
+t           Set TODO status
+C-c C-s     Schedule item
+C-c C-d     Set deadline for item
+I           Start clock
+O           Stop clock
+X           Cancel running clock
 ```
 
 Calendar
