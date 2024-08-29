@@ -87,6 +87,11 @@
   (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
   (add-hook 'clojure-mode-hook 'highlight-symbol-mode)
 
+  (font-lock-add-keywords
+   'clojure-mode '(("\\<\\(wip\\(?:(.*)\\)?:?\\)\\>"  1 'warning prepend)
+                   ("\\<\\(TODO\\(?:(.*)\\)?:?\\)\\>"  1 'warning prepend)
+                   ("\\<\\(FIXME\\(?:(.*)\\)?:?\\)\\>" 1 'error prepend)))
+
   (define-clojure-indent
     (defroutes 'defun)
     (match 'defun)
