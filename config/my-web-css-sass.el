@@ -18,6 +18,15 @@
   (indent-region (point-min) (point-max) nil)
   (pop-global-mark))
 
+(defun my-css-indent-2 ()
+  (interactive)
+  (setq css-indent-offset 2)
+  (message "CSS indentation width set to 2 spaces"))
+
+(defun my-css-indent-4 ()
+  (interactive)
+  (setq css-indent-offset 4)
+  (message "CSS indentation width set to 4 spaces"))
 
 (use-package web-mode :ensure t
   :mode "\\.html?\\'"

@@ -77,6 +77,7 @@ linum-mode              | Toggle line number display on the left
 magit-blame             | Show Git blame lines for current file
 magit-log-buffer-file   | Show Git log with commits touching file
 magit-status            | Show Magit buffer
+my-css-indent-2/4       | Set css indentation width
 notmuch                 | Open e-mail search overview
 org-agenda              | Open Org agenda view
 org-capture             | Capture TODO item or anything else
