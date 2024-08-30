@@ -98,6 +98,7 @@
 ;; ask before quitting emacs
 (setq confirm-kill-emacs 'yes-or-no-p)
 
+;; extensions to be handled by xdg-open
 (defvar my-xdg-open-file-extension-re
   (concat
    "\\.pdf"
@@ -107,6 +108,13 @@
    "\\|\\.mkv\\|\\.m4v\\|\\.mp4\\|\\.mp3"
    "\\|\\.epgz"
    "\\|\\.qea\\|\\.feap"))
+
+;; use this with like
+;; (font-lock-add-keywords 'clojure-mode my-todo-keywords)
+(defconst my-todo-keywords
+  '(("\\<\\(wip\\(?:(.*)\\)?:?\\)\\>"  1 'warning prepend)
+    ("\\<\\(TODO\\(?:(.*)\\)?:?\\)\\>"  1 'warning prepend)
+    ("\\<\\(FIXME\\(?:(.*)\\)?:?\\)\\>" 1 'error prepend)))
 
 ;; -------------------------------
 ;; idea: put this to a my-ediff file

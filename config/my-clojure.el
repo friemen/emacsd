@@ -1,6 +1,5 @@
 (provide 'my-clojure)
 
-
 (use-package clj-refactor :ensure t
   :diminish
   :bind
@@ -61,7 +60,6 @@
   (add-hook 'cider-repl-mode-hook 'yas-minor-mode)
   )
 
-
 (use-package clojure-mode :ensure t
   :bind
   (:map paredit-mode-map
@@ -87,10 +85,8 @@
   (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
   (add-hook 'clojure-mode-hook 'highlight-symbol-mode)
 
-  (font-lock-add-keywords
-   'clojure-mode '(("\\<\\(wip\\(?:(.*)\\)?:?\\)\\>"  1 'warning prepend)
-                   ("\\<\\(TODO\\(?:(.*)\\)?:?\\)\\>"  1 'warning prepend)
-                   ("\\<\\(FIXME\\(?:(.*)\\)?:?\\)\\>" 1 'error prepend)))
+  (font-lock-add-keywords 'clojure-mode my-todo-keywords)
+  (font-lock-add-keywords 'clojurescript-mode my-todo-keywords)
 
   (define-clojure-indent
     (defroutes 'defun)
