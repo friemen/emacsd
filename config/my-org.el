@@ -13,6 +13,22 @@
         (shell-command (concat "xdg-open " path))
         t))))
 
+(defvar my-ticket-url-prefix
+  "https://doctronic.atlassian.net/browse/")
+
+(defun my-org-ticket-at-point ()
+  (let* ((r (org-in-regexp "[A-Z]\\{3,\\}-[0-9]+")))
+    (when r
+      (let* ((beg (car r))
+             (end (cdr r))
+             (ticket (buffer-substring beg end))
+             (beg 0)
+             (end (length ticket))
+             (_ (set-text-properties beg end nil ticket))
+             (url (concat my-ticket-url-prefix ticket)))
+        (message "Opening ticket in browser %s" url)
+        (browse-url url))
+      t)))
 
 (use-package org
   :bind
@@ -85,9 +101,10 @@
   ;; auto save org buffers
   (add-hook 'auto-save-hook 'org-save-all-org-buffers)
 
-  ;; try to register file extension pattern with xdg open for org mode
-  (add-hook 'org-open-at-point-functions
-            #'my-org-xdg-open-at-point)
+  ;; register file extension pattern with xdg open for org mode
+  (add-hook 'org-open-at-point-functions #'my-org-xdg-open-at-point)
+  ;; do browse-url on text that looks like a ticket nr
+  (add-hook 'org-open-at-point-functions #'my-org-ticket-at-point)
 
   ;; look
   (font-lock-add-keywords 'org-mode
