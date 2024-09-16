@@ -86,6 +86,7 @@
   (add-hook 'clojure-mode-hook 'highlight-symbol-mode)
 
   (font-lock-add-keywords 'clojure-mode my-todo-keywords)
+  (font-lock-add-keywords 'clojurec-mode my-todo-keywords)
   (font-lock-add-keywords 'clojurescript-mode my-todo-keywords)
 
   (define-clojure-indent
