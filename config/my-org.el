@@ -16,19 +16,29 @@
 (defvar my-ticket-url-prefix
   "https://doctronic.atlassian.net/browse/")
 
-(defun my-org-ticket-at-point ()
+(defun my-org-browse-ticket-at-point ()
   (let* ((r (org-in-regexp "[A-Z]\\{3,\\}-[0-9]+")))
     (when r
       (let* ((beg (car r))
              (end (cdr r))
-             (ticket (buffer-substring beg end))
+             (ticket-nr (buffer-substring beg end))
              (beg 0)
-             (end (length ticket))
-             (_ (set-text-properties beg end nil ticket))
-             (url (concat my-ticket-url-prefix ticket)))
+             (end (length ticket-nr))
+             (_ (set-text-properties beg end nil ticket-nr))
+             (url (concat my-ticket-url-prefix ticket-nr)))
         (message "Opening ticket in browser %s" url)
         (browse-url url))
       t)))
+
+(defun my-org-insert-jira-ticket-link (&optional ticket-nr)
+    (interactive "MTicket: ")
+    (let* ((ticket-nr
+            (upcase ticket-nr))
+
+           (jira-issue-link
+            (concat my-ticket-url-prefix ticket-nr)))
+
+      (org-insert-link nil jira-issue-link ticket-nr)))
 
 (use-package org
   :bind
@@ -41,7 +51,8 @@
    ("C-t" . org-set-tags-command)
    ;;("S-<right>" . nil)
    ;;("S-<down>" . nil)
-   )
+   :map org-agenda-mode-map
+   ("C-c C-o" . org-open-at-point))
   :config
   (setq org-directory "~/Org")
   (setq org-ellipsis "⤵")
@@ -104,7 +115,7 @@
   ;; register file extension pattern with xdg open for org mode
   (add-hook 'org-open-at-point-functions #'my-org-xdg-open-at-point)
   ;; do browse-url on text that looks like a ticket nr
-  (add-hook 'org-open-at-point-functions #'my-org-ticket-at-point)
+  (add-hook 'org-open-at-point-functions #'my-org-browse-ticket-at-point)
 
   ;; look
   (font-lock-add-keywords 'org-mode
