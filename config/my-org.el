@@ -17,7 +17,7 @@
   "https://doctronic.atlassian.net/browse/")
 
 (defun my-org-browse-ticket-at-point ()
-  (let* ((r (org-in-regexp "[A-Z]\\{3,\\}-[0-9]+")))
+  (let* ((r (org-in-regexp "[A-Z]\\{2,\\}-[0-9]+")))
     (when r
       (let* ((beg (car r))
              (end (cdr r))
@@ -54,6 +54,7 @@
    :map org-agenda-mode-map
    ("C-c C-o" . org-open-at-point))
   :config
+  (require 'org-agenda)
   (setq org-directory "~/Org")
   (setq org-ellipsis "⤵")
   (setq org-startup-with-inline-images t)
@@ -125,8 +126,8 @@
                             ;; ("^\\(*\\) "
                             ;;  (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "✣ "))))
                             ("^\\([-]\\) "
-                             (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
-  )
+                             (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•")))))))
+
 
 (use-package org-bullets
   :ensure t
