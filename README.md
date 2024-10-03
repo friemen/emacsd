@@ -71,6 +71,7 @@ ediff                   | Load and diff files
 ediff-buffers           | Diff buffers
 eshell                  | Create buffer with terminal
 find-name-dired         | List all files in dir tree
+hl-line-mode            | Toggle highlighting of current line
 httpd-start             | Start internal http server on http://localhost:8080/imp
 impatient-mode          | Enable buffers impatient minor mode
 linum-mode              | Toggle line number display on the left
