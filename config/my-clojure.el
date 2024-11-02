@@ -65,8 +65,9 @@
   (:map paredit-mode-map
         ("RET" . nil)
         ("C-j" . paredit-RET)
+        ("C-c C-i" . nil)
+   :map clojure-mode-map
         ("C-c C-i" . my-clojure-indent-defn)
-        :map clojure-mode-map
         ("C-M-." . mc/mark-all-symbols-like-this)
         ("C-." . mc/mark-all-symbols-like-this-in-defun))
 

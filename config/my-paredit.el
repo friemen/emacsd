@@ -22,7 +22,6 @@
         ("C-b" . paredit-backward)
         ("C-M-f" . paredit-forward-down)
         ("C-M-b" . paredit-backward-up)
-        ("C-c C-i" . my-indent-defun)
         ("M-<right>" . paredit-forward)
         ("M-<left>" . paredit-backward)
         ("M-<down>" . paredit-forward-down)

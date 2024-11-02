@@ -6,12 +6,15 @@
 
 (use-package lisp-mode
   :bind
-  (:map emacs-lisp-mode-map
+  (:map paredit-mode-map
+        ("C-c C-i" . nil)
+   :map emacs-lisp-mode-map
         ("RET" . nil)
         ("C-j" . paredit-RET)
         ("C-c C-c" . eval-defun)
         ("C-c C-k" . eval-buffer)
         ("C-c C-d" . my-elisp-describe-thing-in-popup)
+        ("C-c C-i" . my-indent-defun)
         ("C-M-." . mc/mark-all-symbols-like-this)
         ("C-." . mc/mark-all-symbols-like-this-in-defun))
 
