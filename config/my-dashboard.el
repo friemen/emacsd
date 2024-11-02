@@ -15,4 +15,5 @@
   (add-hook 'dashboard-mode-hook (lambda ()
                                    (hl-line-mode)))
   :config
-  (dashboard-setup-startup-hook))
+  (dashboard-setup-startup-hook)
+  (setq dashboard-projects-backend 'projectile))
