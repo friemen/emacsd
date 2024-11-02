@@ -56,7 +56,7 @@
   :config
   (require 'org-agenda)
   (setq org-directory "~/Org")
-  (setq org-ellipsis "⤵")
+  (setq org-ellipsis " ⏷") ; ⤵↴
   (setq org-startup-with-inline-images t)
   (setq org-startup-folded t)
   (setq org-startup-indented t)
