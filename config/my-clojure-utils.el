@@ -1,6 +1,7 @@
 (provide 'my-clojure-utils)
 
 (require 'my-lisp-utils)
+(require 'cider-util)
 
 (defun my-clojure-restart-system ()
   (interactive)
@@ -83,7 +84,7 @@
     (indent-sexp)
     (clojure-align (point) (my-end-of-form))))
 
-cider-repl-set-ns
+
 ;; save form and eval saved form
 
 (defvar my-clojure-saved-ns)
