@@ -16,7 +16,7 @@
  '(ibuffer-default-sorting-mode 'filename/process)
  '(notmuch-search-oldest-first nil)
  '(package-selected-packages
-   '(elpy dired-single org-bullets org-contrib org-notmuch notmuch-message notmuch fontawesome window-number markdown-mode+ scss-mode nxml-mode cider buffer-move smartrep window-numbering web-mode switch-window smex spaceline spaceline-config sass-mode restclient rainbow-delimiters projectile paxedit nrepl-eval-sexp-fu neotree move-text markdown-mode magit js2-mode impatient-mode ido-vertical-mode ido-ubiquitous highlight-symbol gandalf-theme flycheck flx-ido expand-region emms elscreen dired+ crm-custom counsel company clomacs clojure-quick-repls clj-refactor cider-eval-sexp-fu browse-kill-ring auto-complete ace-jump-mode ace-jump-buffer))
+   '(undo-tree elpy dired-single org-bullets org-contrib org-notmuch notmuch-message notmuch fontawesome window-number markdown-mode+ scss-mode nxml-mode cider buffer-move smartrep window-numbering web-mode switch-window smex spaceline spaceline-config sass-mode restclient rainbow-delimiters projectile paxedit nrepl-eval-sexp-fu neotree move-text markdown-mode magit js2-mode impatient-mode ido-vertical-mode ido-ubiquitous highlight-symbol gandalf-theme flycheck flx-ido expand-region emms elscreen dired+ crm-custom counsel company clomacs clojure-quick-repls clj-refactor cider-eval-sexp-fu browse-kill-ring auto-complete ace-jump-mode ace-jump-buffer))
  '(sml/no-confirm-load-theme t)
  '(sml/theme 'light))
 

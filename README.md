@@ -159,6 +159,8 @@ M->         Jump back to mark
 General edit commands
 ```
 C-z         Undo
+C-Z         Redo
+C-x u       Show undo tree
 C-k         Kill line
 C-d         Kill character forward
 M-d         Kill word

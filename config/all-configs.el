@@ -47,6 +47,7 @@
 (require 'my-python)
 (require 'my-treemacs)
 (require 'my-themes)
+(require 'my-undotree)
 (require 'my-visual-basic)
 (require 'my-web-css-sass)
 (require 'my-window-control)
