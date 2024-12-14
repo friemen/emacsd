@@ -13,7 +13,7 @@
         ("C-j" . paredit-RET)
         ("C-c C-c" . eval-defun)
         ("C-c C-k" . eval-buffer)
-        ("C-c C-d" . my-elisp-describe-thing-in-popup)
+        ("C-c C-d" . my-elisp-describe-symbol-at-point)
         ("C-c C-i" . my-indent-defun)
         ("C-M-." . mc/mark-all-symbols-like-this)
         ("C-." . mc/mark-all-symbols-like-this-in-defun))
@@ -30,7 +30,7 @@
                                     (diminish 'eldoc-mode)
                                     (diminish 'hs-minor-mode)))
 
-  (defun my-elisp-describe-thing-in-popup ()
+  (defun my-elisp-describe-symbol-at-point-in-popup ()
     (interactive)
     (let* ((thing (symbol-at-point))
            (help-xref-following t)
@@ -45,4 +45,10 @@
                  :height 30
                  :scroll-bar t
                  :margin t)))
+
+
+  (defun my-elisp-describe-symbol-at-point ()
+    (interactive)
+    (let* ((thing (symbol-at-point)))
+      (describe-symbol thing)))
   )

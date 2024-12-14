@@ -24,7 +24,7 @@
         ("C-c f" . my-clojure-figwheel-start)
         ("C-c r" . my-clojure-figwheel-repl)
         ("C-c q" . my-clojure-cljs-repl-quit)
-        ("C-c C-d" . my-clojure-cider-popup-doc)
+        ("C-c C-d" . cider-doc)
         ("C-c C-f" . my-clojure-eval-form-in-repl)
         ("C-c l" . my-clojure-save-form)
         ("C-c C-l" . my-clojure-eval-saved-form)
