@@ -23,7 +23,6 @@
   (cider-interactive-eval "(do (require '[clojure.tools.namespace.repl :as tn])
                                (tn/refresh-all))"))
 
-
 (defun my-clojure-cider-popup-doc ()
   "A popup alternative to `cider-doc'."
   (interactive)
@@ -57,13 +56,11 @@
         (cider-insert-last-sexp-in-repl))
       (cider-repl-return))))
 
-
 (defun my-clojure-eval-form ()
   (interactive)
   (save-excursion
     (my-goto-end-of-form)
     (cider-eval-last-sexp)))
-
 
 (defun my-clojure-eval-form-in-repl ()
   (interactive)
@@ -72,14 +69,12 @@
       (my-goto-end-of-form)
       (my-clojure-eval-region-or-last-sexp-in-repl))))
 
-
 (defun my-clojure-insert-defun-in-repl ()
   (interactive)
   (save-window-excursion
     (save-excursion
       (my-goto-end-of-form)
       (cider-insert-last-sexp-in-repl))))
-
 
 (defun my-clojure-indent-defn ()
   (interactive)
@@ -88,7 +83,7 @@
     (indent-sexp)
     (clojure-align (point) (my-end-of-form))))
 
-
+cider-repl-set-ns
 ;; save form and eval saved form
 
 (defvar my-clojure-saved-ns)
@@ -101,7 +96,6 @@
   (setq my-clojure-saved-sexp (cider-last-sexp))
   (message "%s" my-clojure-saved-sexp))
 
-
 (defun my-clojure-eval-saved-form ()
   (interactive)
   (message "Eval saved sexp")
@@ -112,3 +106,9 @@
 			 "      (ns " current-ns ")"
 			 "      result))")))
       (cider-interactive-eval form))))
+
+(defun my-clojure-namespace-to-clipboard ()
+  (interactive)
+  (let ((ns (cider-get-ns-name)))
+    (kill-new ns)
+    (message "Copied to clipboard: %s" ns)))
