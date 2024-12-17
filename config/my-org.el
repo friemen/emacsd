@@ -62,6 +62,7 @@
   (setq org-startup-indented t)
   (setq org-hide-leading-stars t)
   (setq org-support-shift-select t)
+  (setq org-return-follows-link t)
   (setq org-tags-column 80)
   (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "STARTED(s)" "WAITING(w)" "DONE(d)")))
   (setq org-todo-keyword-faces '(("STARTED" . "#d08770") ("WAITING" . "#b48ead")))

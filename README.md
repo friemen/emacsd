@@ -16,11 +16,27 @@ To install a current (snapshot) Emacs on Debian based distros:
 
 To install from a downloaded [source archive](http://ftp.gnu.org/gnu/emacs/) on Ubuntu:
 
-1. `sudo apt-get install build-essential`
-2. `sudo apt-get build-dep emacs`
+1. Install additional packages like so
+```
+sudo apt-get -y install \
+    build-essential \
+    texinfo \
+    libncurses-dev \
+    libgnutls28-dev \
+    xaw3dg-dev \
+    libjpeg-dev \
+    libpng-dev \
+    libgif-dev \
+    libgtk-3-dev \
+    libsqlite3-dev \
+    libgccjit0 \
+    libgccjit-13-dev \
+    libtiff-dev
+```
+2. `sudo apt-get -y build-dep emacs`
    (Perhaps you need to include source archives in your sources.list file.)
 3. Unpack downloaded source archive to temp folder, cd into it
-4. `./configure && make && sudo make install`
+4. `./autogen.sh && ./configure --with-native-compilation --with-x-toolkit=gtk && make && sudo make install`
 
 
 To use this configuration:
@@ -419,6 +435,14 @@ I           Start clock
 O           Stop clock
 X           Cancel running clock
 ```
+
+Org-roam
+```
+C-c n i    Insert node
+C-c n f    Find node
+C-c n l    Toggle Org-roam buffer display
+```
+
 
 Calendar
 ```
