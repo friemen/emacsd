@@ -220,7 +220,6 @@
   (setq notmuch-sort-saved-searches nil)
   (setq notmuch-show-logo nil)
   (setq notmuch-hello-thousands-separator ".")
-  (setq notmuch-search-oldest-first nil)
   (setq notmuch-saved-searches
         '((:name "unread/attention"
                  :query "query:attention"
@@ -272,6 +271,9 @@
           ("subject" . "%s ")
           ("tags" . "(%s)")))
   (add-hook 'notmuch-hello-refresh-hook 'my-notmuch-font-locking)
+
+  ;; search results buffer
+  (setq notmuch-search-oldest-first nil) ;; also set in custom.el
 
   ;; view single thread/mail in buffer
   (setq notmuch-message-headers '("Date" "To" "Cc" "Subject"))
