@@ -81,7 +81,6 @@
            :maxlevel . 1)
           (,(directory-files-recursively (concat org-directory "/dt") "^[a-zA-Z0-9-_+]*--todos.org$")
            :maxlevel . 1)
-
           ))
 
   ;; agenda
@@ -97,19 +96,34 @@
                                       (search category-keep)))
   (setq org-agenda-custom-commands
         '(("p" "Private"
-           ((agenda "")
-            (alltodo))
+           ;; multi block view
+           ((agenda)
+            (todo "STARTED"
+                  ;; settings applying to this block
+                  ((org-super-agenda-groups nil))))
+           ;; settings applying to all blocks
            ((org-agenda-files (list (concat org-directory "/inbox--todos.org")
                                     (concat org-directory "/private")))
             (org-agenda-start-on-weekday nil) ;; start on current day
-            (org-agenda-span 7)))
+            (org-agenda-span 7)
+            (org-agenda-format-date "                                                                          \n%A %d.%B")
+            (org-super-agenda-groups
+             '((:time-grid t)
+               (:name "Things to do"
+                      :todo ("TODO" "NEXT" "STARTED"))))))
           ("w" "Work"
-           ((agenda "")
-            (alltodo))
+           ((agenda)
+            (todo "STARTED"
+                  ((org-super-agenda-groups nil))))
            ((org-agenda-files (list (concat org-directory "/inbox--todos.org")
                                     (concat org-directory "/dt")))
             (org-agenda-start-on-weekday nil) ;; start on current day
-            (org-agenda-span 7)))))
+            (org-agenda-span 7)
+            (org-agenda-format-date "                                                                          \n%A %d.%B")
+            (org-super-agenda-groups
+             '((:time-grid t)
+               (:name "Things to do"
+                      :todo ("TODO" "NEXT" "STARTED"))))))))
 
   ;; auto save org buffers
   (add-hook 'auto-save-hook 'org-save-all-org-buffers)
@@ -129,8 +143,17 @@
                             ("^\\([-]\\) "
                              (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•")))))))
 
-
-(use-package org-bullets
-  :ensure t
+(use-package org-bullets :ensure t
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+(use-package org-super-agenda :ensure t
+  :init
+  (org-super-agenda-mode t))
+
+;; org-super-agenda-groups Testing
+;; (let ((org-agenda-files (list (concat org-directory "/inbox--todos.org")
+;;                               (concat org-directory "/dt")))
+;;       (org-super-agenda-groups
+;;              '((:auto-category t))))
+;;   (org-agenda nil "t"))

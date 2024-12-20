@@ -16,7 +16,7 @@
  '(ibuffer-default-sorting-mode 'filename/process)
  '(notmuch-search-oldest-first nil)
  '(package-selected-packages
-   '(org-roam undo-tree elpy dired-single org-bullets org-contrib org-notmuch notmuch-message notmuch fontawesome window-number markdown-mode+ scss-mode nxml-mode cider buffer-move smartrep window-numbering web-mode switch-window smex spaceline spaceline-config sass-mode restclient rainbow-delimiters projectile paxedit nrepl-eval-sexp-fu neotree move-text markdown-mode magit js2-mode impatient-mode ido-vertical-mode ido-ubiquitous highlight-symbol gandalf-theme flycheck flx-ido expand-region emms elscreen dired+ crm-custom counsel company clomacs clojure-quick-repls clj-refactor cider-eval-sexp-fu browse-kill-ring auto-complete ace-jump-mode ace-jump-buffer))
+   '(org-super-agenda org-roam undo-tree elpy dired-single org-bullets org-contrib org-notmuch notmuch-message notmuch fontawesome window-number markdown-mode+ scss-mode nxml-mode cider buffer-move smartrep window-numbering web-mode switch-window smex spaceline spaceline-config sass-mode restclient rainbow-delimiters projectile paxedit nrepl-eval-sexp-fu neotree move-text markdown-mode magit js2-mode impatient-mode ido-vertical-mode ido-ubiquitous highlight-symbol gandalf-theme flycheck flx-ido expand-region emms elscreen dired+ crm-custom counsel company clomacs clojure-quick-repls clj-refactor cider-eval-sexp-fu browse-kill-ring auto-complete ace-jump-mode ace-jump-buffer))
  '(sml/no-confirm-load-theme t)
  '(sml/theme 'light))
 
@@ -49,6 +49,9 @@
  '(notmuch-tag-face ((t :foreground "#a3be8c")))
  '(notmuch-tag-flagged ((t :foreground "#ebcb8b")))
  '(notmuch-tag-unread ((t :foreground "#5e81ac")))
+ '(org-agenda-date ((t (:foreground "#88C0D0" :underline t :height 1.2))))
+ '(org-agenda-date-today ((t (:foreground "#88C0D0" :underline t :weight bold :height 1.2))))
+ '(org-agenda-date-weekend ((t (:foreground "#81A1C1" :underline t :height 1.2))))
  '(org-headline-done ((t (:foreground "#4c566a"))))
  '(org-headline-todo ((t (:foreground "#81a1c1"))))
  '(org-level-1 ((t (:extend nil :foreground "#8FBCBB" :weight extra-bold :height 1.5))))
