@@ -107,7 +107,8 @@
    "\\|\\.vsd"
    "\\|\\.mkv\\|\\.m4v\\|\\.mp4\\|\\.mp3"
    "\\|\\.epgz"
-   "\\|\\.qea\\|\\.feap"))
+   "\\|\\.qea\\|\\.feap"
+   "\\|\\.xmind"))
 
 ;; use this with like
 ;; (font-lock-add-keywords 'clojure-mode my-todo-keywords)
