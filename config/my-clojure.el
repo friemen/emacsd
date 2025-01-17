@@ -50,6 +50,7 @@
   (setq cider-test-fail-fast nil)
 
   (require 'my-clojure-utils)
+  (require 'my-paredit)
   (add-hook 'cider-repl-mode-hook 'paredit-mode)
   (add-hook 'cider-repl-mode-hook 'cider-mode)
   (add-hook 'cider-repl-mode-hook 'my-clj-refactor-setup)

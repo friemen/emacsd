@@ -19,6 +19,7 @@
         ("C-." . mc/mark-all-symbols-like-this-in-defun))
 
   :config
+  (require 'my-paredit)
   (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
   (add-hook 'emacs-lisp-mode-hook 'company-mode)
   (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
