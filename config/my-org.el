@@ -157,3 +157,5 @@
 ;;       (org-super-agenda-groups
 ;;              '((:auto-category t))))
 ;;   (org-agenda nil "t"))
+
+(use-package org-anki :ensure t)
