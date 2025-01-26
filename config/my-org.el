@@ -40,6 +40,11 @@
 
       (org-insert-link nil jira-issue-link ticket-nr)))
 
+(defun my-org-reset-checklist-when-done ()
+  (when (and (org-get-repeat)
+             (member org-state org-done-keywords))
+    (org-reset-checkbox-state-subtree)))
+
 (use-package org
   :bind
   (("C-x C-a" . org-agenda)
@@ -142,7 +147,10 @@
                             ;; ("^\\(*\\) "
                             ;;  (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "✣ "))))
                             ("^\\([-]\\) "
-                             (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•")))))))
+                             (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+
+  ;; auto reset checklist when DONE state is reached
+  (add-hook 'org-after-todo-state-change-hook #'my-org-reset-checklist-when-done))
 
 (use-package org-bullets :ensure t
   :config
