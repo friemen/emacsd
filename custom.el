@@ -52,6 +52,7 @@
  '(org-agenda-date ((t (:foreground "#88C0D0" :underline t :height 1.2))))
  '(org-agenda-date-today ((t (:foreground "#88C0D0" :underline t :weight bold :height 1.2))))
  '(org-agenda-date-weekend ((t (:foreground "#81A1C1" :underline t :height 1.2))))
+ '(org-drawer ((t (:foreground "dark gray" :height 0.8))))
  '(org-headline-done ((t (:foreground "#4c566a"))))
  '(org-headline-todo ((t (:foreground "#81a1c1"))))
  '(org-level-1 ((t (:extend nil :foreground "#8FBCBB" :weight extra-bold :height 1.5))))
