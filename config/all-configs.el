@@ -5,6 +5,7 @@
 (use-package diminish :ensure t)
 (use-package hydra :ensure t)
 (use-package use-package-hydra :ensure t)
+(use-package hide-mode-line :ensure t)
 (use-package popup :ensure t)
 (use-package rainbow-delimiters :ensure t)
 (use-package window-number :ensure t

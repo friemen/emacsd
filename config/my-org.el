@@ -54,6 +54,7 @@
    ("C-<tab>" . other-window)
    ("C-," . ace-jump-mode)
    ("C-t" . org-set-tags-command)
+   ("<f5>" . org-tree-slide-mode)
    ;;("S-<right>" . nil)
    ;;("S-<down>" . nil)
    :map org-agenda-mode-map
@@ -63,6 +64,7 @@
   (setq org-directory "~/Org")
   (setq org-ellipsis " ⏷") ; ⤵↴
   (setq org-startup-with-inline-images t)
+  (setq org-image-actual-width '(800))
   (setq org-startup-folded t)
   (setq org-startup-indented t)
   (setq org-hide-leading-stars t)
@@ -152,9 +154,9 @@
   ;; auto reset checklist when DONE state is reached
   (add-hook 'org-after-todo-state-change-hook #'my-org-reset-checklist-when-done))
 
-(use-package org-bullets :ensure t
+(use-package org-superstar :ensure t
   :config
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+  (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1))))
 
 (use-package org-super-agenda :ensure t
   :init
@@ -168,3 +170,27 @@
 ;;   (org-agenda nil "t"))
 
 (use-package org-anki :ensure t)
+
+
+(use-package org-tree-slide :ensure t
+  :bind
+  (:map org-tree-slide-mode-map
+        ("<next>" . org-tree-slide-move-next-tree)
+        ("<prior>" . org-tree-slide-move-previous-tree))
+  :config
+  (setq org-tree-slide-cursor-init t)
+  (add-hook 'org-tree-slide-play-hook
+            (lambda ()
+              (set-face-attribute 'org-meta-line nil
+			          :foreground (face-attribute 'default :background))
+              (set-cursor-color "White")
+              (text-scale-adjust +3)
+              (set-window-margins nil 40)
+              (hide-mode-line-mode 1)))
+  (add-hook 'org-tree-slide-stop-hook
+            (lambda ()
+              (set-face-attribute 'org-meta-line nil :foreground nil)
+              (hide-mode-line-mode 0)
+              (text-scale-adjust 0)
+              (set-window-margins nil 0)
+              (set-cursor-color "Orange Red"))))

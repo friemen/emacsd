@@ -77,38 +77,38 @@ compliant services like Radicale or Nextcloud.
 
 ## Some M-x commands I use often
 
-Command                 | Description
----                     | ---
-align-regexp            | Align within a region by regex
-calendar                | Open calendar and diary
-comment-region          | Put region in comments
-describe-mode           | Get help about active modes
-ediff                   | Load and diff files
-ediff-buffers           | Diff buffers
-eshell                  | Create buffer with terminal
-find-name-dired         | List all files in dir tree
-hl-line-mode            | Toggle highlighting of current line
-httpd-start             | Start internal http server on http://localhost:8080/imp
-impatient-mode          | Enable buffers impatient minor mode
-linum-mode              | Toggle line number display on the left
-magit-blame             | Show Git blame lines for current file
-magit-log-buffer-file   | Show Git log with commits touching file
-magit-status            | Show Magit buffer
-my-css-indent-2/4       | Set css indentation width
-notmuch                 | Open e-mail search overview
-org-agenda              | Open Org agenda view
-org-capture             | Capture TODO item or anything else
-org-store-link          | Capture current place as link
-query-replace           | Replace all to end of buffer, ask for each
-package-list-packages   | Open package manager
-projectile-replace      | Replace string in project files
-replace-string          | Replace all to end of buffer
-revert-buffer           | Reload buffer contents from file
-rgrep                   | Grep for pattern recursively in files
-string-rectangle        | Insert prefix to every marked line
-toggle-truncate-lines   | Turn visual line wrapping on or off
-uncomment-region        | Remove comment markers for region
-visual-line-mode        | Switch nice word wrap on/off
+Command                     | Description
+---                         | ---
+align-regexp                | Align within a region by regex
+calendar                    | Open calendar and diary
+comment-region              | Put region in comments
+describe-mode               | Get help about active modes
+display-line-numbers-mode   | Toggle line number display on the left
+ediff                       | Load and diff files
+ediff-buffers               | Diff buffers
+eshell                      | Create buffer with terminal
+find-name-dired             | List all files in dir tree
+hl-line-mode                | Toggle highlighting of current line
+httpd-start                 | Start internal http server on http://localhost:8080/imp
+impatient-mode              | Enable buffers impatient minor mode
+magit-blame                 | Show Git blame lines for current file
+magit-log-buffer-file       | Show Git log with commits touching file
+magit-status                | Show Magit buffer
+my-css-indent-2/4           | Set css indentation width
+notmuch                     | Open e-mail search overview
+org-agenda                  | Open Org agenda view
+org-capture                 | Capture TODO item or anything else
+org-store-link              | Capture current place as link
+query-replace               | Replace all to end of buffer, ask for each
+package-list-packages       | Open package manager
+projectile-replace          | Replace string in project files
+replace-string              | Replace all to end of buffer
+revert-buffer               | Reload buffer contents from file
+rgrep                       | Grep for pattern recursively in files
+string-rectangle            | Insert prefix to every marked line
+toggle-truncate-lines       | Turn visual line wrapping on or off
+uncomment-region            | Remove comment markers for region
+visual-line-mode            | Switch nice word wrap on/off
 
 ## Key bindings
 
@@ -417,7 +417,7 @@ C-c C-c     Toggle checkbox [ ] <-> [X], fix date, relayout table etc.
 C-c C-z     Add note to section
 C-c C-l     Insert link
 C-c / ...   Filter by ...
-C-c a ...   Open agenda
+F5          Toggle presentation mode (via org-tree-slide)
 ```
 
 Bindings in Org agenda buffer
