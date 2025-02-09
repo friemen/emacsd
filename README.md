@@ -192,6 +192,7 @@ C->         Mark next like this (multiple cursors)
 C-<         Mark previous like this (multiple cursors)
 C-M-.       Mark all like this (multiple cursors)
 C-M-m       Multiple cursors hydra
+C-4         Mark region begin
 C-Space     Expand region
 C-Enter     Set/end rectangle mark
 ```

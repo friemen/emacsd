@@ -21,3 +21,4 @@
 (global-set-key (kbd "M->") 'my-jump-to-mark)
 (global-set-key (kbd "<menu>") 'counsel-M-x)
 (global-set-key (kbd "C-t") 'my-git-grep)
+(global-set-key (kbd "C-4") 'set-mark-command)
