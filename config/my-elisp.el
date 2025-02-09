@@ -30,6 +30,7 @@
   (add-hook 'emacs-lisp-mode-hook (lambda ()
                                     (diminish 'eldoc-mode)
                                     (diminish 'hs-minor-mode)))
+  (font-lock-add-keywords 'emacs-lisp-mode my-todo-keywords)
 
   (defun my-elisp-describe-symbol-at-point-in-popup ()
     (interactive)

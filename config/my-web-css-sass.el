@@ -41,14 +41,16 @@
   :config
   (setq web-mode-indent-style 2)
   (setq web-mode-markup-indent-offset 2)
-  (add-hook 'web-mode-hook 'company-mode))
+  (add-hook 'web-mode-hook 'company-mode)
+  (font-lock-add-keywords 'web-mode my-todo-keywords))
 
 (use-package css-mode :ensure t
   :bind
   (:map css-mode-map
         ("C-c C-i" . my-web-mode-indent-buffer))
   :config
-  (add-hook 'css-mode-hook 'company-mode))
+  (add-hook 'css-mode-hook 'company-mode)
+  (font-lock-add-keywords 'css-mode my-todo-keywords))
 
 (use-package sass-mode :ensure t
   :mode "\\.sass\\'"
@@ -56,7 +58,8 @@
   (:map sass-mode-map
         ("C-c C-i" . my-web-mode-indent-buffer))
   :config
-  (add-hook 'sass-mode-hook 'company-mode))
+  (add-hook 'sass-mode-hook 'company-mode)
+  (font-lock-add-keywords 'sass-mode my-todo-keywords))
 
 (use-package scss-mode :ensure t
   :mode "\\.scss\\'"
@@ -64,4 +67,5 @@
   (:map scss-mode-map
         ("C-c C-i" . my-web-mode-indent-buffer))
   :config
-  (add-hook 'scss-mode-hook 'company-mode))
+  (add-hook 'scss-mode-hook 'company-mode)
+  (font-lock-add-keywords 'scss-mode my-todo-keywords))

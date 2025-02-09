@@ -17,4 +17,5 @@
 
   :config
   (setq python-shell-interpreter "python3"
-        python-shell-interpreter-args "-i"))
+        python-shell-interpreter-args "-i")
+  (font-lock-add-keywords 'python-mode my-todo-keywords))
