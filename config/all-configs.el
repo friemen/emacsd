@@ -43,7 +43,6 @@
 (require 'my-notmuch)
 (require 'my-nxml)
 (require 'my-org)
-(require 'my-org-roam)
 (require 'my-paredit)
 (require 'my-projectile)
 (require 'my-python)

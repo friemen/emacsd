@@ -408,15 +408,16 @@ S-Up        On heading:  cycle priority backward
 S-Down      On heading: cycle priority forward
          	On item:     move down within section
 C-c ^       Sort items
-C-c .       Add date
 C-t         Define tags
-C-c C-t ... Set heading status
+C-c C-t ... Set heading TODO status
+C-c .       Add date
 C-c C-d     Add deadline date to section
 C-c C-s     Add schedule date to section
 C-c C-c     Toggle checkbox [ ] <-> [X], fix date, relayout table etc.
 C-c C-z     Add note to section
 C-c C-l     Insert link
 C-c / ...   Filter by ...
+C-c $       Move heading to archive
 F5          Toggle presentation mode (via org-tree-slide)
 ```
 
@@ -442,7 +443,6 @@ C-c n i    Insert node
 C-c n f    Find node
 C-c n l    Toggle Org-roam buffer display
 ```
-
 
 Calendar
 ```
