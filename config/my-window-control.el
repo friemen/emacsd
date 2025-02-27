@@ -31,7 +31,7 @@
 
 (defun my-buffer-show-and-tell-toggle ()
   (interactive)
-  (if display-line-numbers-mode
+  (if display-line-numbers
       (progn
         (text-scale-adjust 0)
         (hl-line-mode 0)
