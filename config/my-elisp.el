@@ -16,7 +16,8 @@
         ("C-c C-d" . my-elisp-describe-symbol-at-point)
         ("C-c C-i" . my-indent-defun)
         ("C-M-." . mc/mark-all-symbols-like-this)
-        ("C-." . mc/mark-all-symbols-like-this-in-defun))
+        ("C-." . mc/mark-all-symbols-like-this-in-defun)
+        ("<tab>" . my-indent-and-complete-symbol))
 
   :config
   (require 'my-paredit)

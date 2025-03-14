@@ -1,13 +1,12 @@
 ;;; nord-theme.el --- An arctic, north-bluish clean and elegant theme
 
-;; Copyright (C) 2016-present Arctic Ice Studio <development@arcticicestudio.com> (https://www.arcticicestudio.com)
-;; Copyright (C) 2016-present Sven Greb <development@svengreb.de> (https://www.svengreb.de)
+;; Copyright (c) 2016-present Sven Greb <development@svengreb.de> (https://www.svengreb.de)
 
 ;; Title: Nord Theme
 ;; Project: nord-emacs
-;; Version: 0.5.0
-;; URL: https://github.com/arcticicestudio/nord-emacs
-;; Author: Arctic Ice Studio <development@arcticicestudio.com>
+;; Version: 0.6.0
+;; URL: https://github.com/nordtheme/emacs
+;; Author: Sven Greb <development@svengreb.de>
 ;; Package-Requires: ((emacs "24"))
 ;; License: MIT
 
@@ -52,7 +51,7 @@
   "Allows to define a custom comment color brightness with percentage adjustments from 0% - 20%.
   As of version 0.4.0, this variable is obsolete/deprecated and has no effect anymore and will be removed in version 1.0.0!
   The comment color brightness has been increased by 10% by default.
-  Please see https://github.com/arcticicestudio/nord-emacs/issues/73 for more details."
+  Please see https://github.com/nordtheme/emacs/issues/73 for more details."
   :type 'integer
   :group 'nord)
 
@@ -60,7 +59,7 @@
   'nord-comment-brightness
   "The custom color brightness feature has been deprecated and will be removed in version 1.0.0!
   The comment color brightness has been increased by 10% by default.
-  Please see https://github.com/arcticicestudio/nord-emacs/issues/73 for more details."
+  Please see https://github.com/nordtheme/emacs/issues/73 for more details."
   "0.4.0")
 
 (defcustom nord-region-highlight nil
@@ -83,14 +82,14 @@
   The value must be greater or equal to 0 and less or equal to 20, otherwise the default 'nord3' color is used.
   As of version 0.4.0, this function is obsolete/deprecated and has no effect anymore and will be removed in version 1.0.0!
   The comment color brightness has been increased by 10% by default.
-  Please see https://github.com/arcticicestudio/nord-emacs/issues/73 for more details."
+  Please see https://github.com/nordtheme/emacs/issues/73 for more details."
   (nth 10 nord-theme--brightened-comments))
 
 (make-obsolete
   'nord-theme--brightened-comment-color
   "The custom color brightness feature has been deprecated and will be removed in version 1.0.0!\
   The comment color brightness has been increased by 10% by default.\
-  Please see https://github.com/arcticicestudio/nord-emacs/issues/73 for more details."
+  Please see https://github.com/nordtheme/emacs/issues/73 for more details."
   "0.4.0")
 
 (defun nord-display-truecolor-or-graphic-p ()
@@ -99,7 +98,7 @@
 
 ;;;; Color Constants
 (let ((class '((class color) (min-colors 89)))
-  (nord0 (if (nord-display-truecolor-or-graphic-p) "#181c22" nil)) ;; original #2e3440
+  (nord0 (if (nord-display-truecolor-or-graphic-p) "#181c22" nil)) ;; original #2E3440
   (nord1 (if (nord-display-truecolor-or-graphic-p) "#3B4252" "black"))
   (nord2 (if (nord-display-truecolor-or-graphic-p) "#434C5E" "#434C5E"))
   (nord3 (if (nord-display-truecolor-or-graphic-p) "#4C566A" "brightblack"))
@@ -194,15 +193,15 @@
     ;; +--- UI ---+
     `(border ((,class (:foreground ,nord4))))
     `(buffer-menu-buffer ((,class (:foreground ,nord4 :weight bold))))
-    `(button ((,class (:background ,nord0 :foreground ,nord8 :box (:line-width 2 :color ,nord4 :style sunken-button)))))
+    `(button ((,class (:background ,nord0 :foreground ,nord8 :box (:line-width 2 :color ,nord4 :style pressed-button)))))
     `(completions-annotations ((,class (:foreground ,nord9))))
     `(completions-common-part ((,class (:foreground ,nord8 :weight bold))))
     `(completions-first-difference ((,class (:foreground ,nord11))))
-    `(custom-button ((,class (:background ,nord0 :foreground ,nord8 :box (:line-width 2 :color ,nord4 :style sunken-button)))))
-    `(custom-button-mouse ((,class (:background ,nord4 :foreground ,nord0 :box (:line-width 2 :color ,nord4 :style sunken-button)))))
-    `(custom-button-pressed ((,class (:background ,nord6 :foreground ,nord0 :box (:line-width 2 :color ,nord4 :style sunken-button)))))
-    `(custom-button-pressed-unraised ((,class (:background ,nord4 :foreground ,nord0 :box (:line-width 2 :color ,nord4 :style sunken-button)))))
-    `(custom-button-unraised ((,class (:background ,nord0 :foreground ,nord8 :box (:line-width 2 :color ,nord4 :style sunken-button)))))
+    `(custom-button ((,class (:background ,nord0 :foreground ,nord8 :box (:line-width 2 :color ,nord4 :style pressed-button)))))
+    `(custom-button-mouse ((,class (:background ,nord4 :foreground ,nord0 :box (:line-width 2 :color ,nord4 :style pressed-button)))))
+    `(custom-button-pressed ((,class (:background ,nord6 :foreground ,nord0 :box (:line-width 2 :color ,nord4 :style pressed-button)))))
+    `(custom-button-pressed-unraised ((,class (:background ,nord4 :foreground ,nord0 :box (:line-width 2 :color ,nord4 :style pressed-button)))))
+    `(custom-button-unraised ((,class (:background ,nord0 :foreground ,nord8 :box (:line-width 2 :color ,nord4 :style pressed-button)))))
     `(custom-changed ((,class (:foreground ,nord13))))
     `(custom-comment ((,class (:foreground ,nord-comment))))
     `(custom-comment-tag ((,class (:foreground ,nord7))))
@@ -278,7 +277,7 @@
 
     ;; `show-paren-match-face` and `show-paren-mismatch-face` are deprecated since Emacs version 22.1 and were
     ;; removed in Emacs 25.
-    ;; https://github.com/arcticicestudio/nord-emacs/issues/75
+    ;; https://github.com/nordtheme/emacs/issues/75
     ;; http://git.savannah.gnu.org/cgit/emacs.git/commit/?id=c430f7e23fc2c22f251ace4254e37dea1452dfc3
     ;; https://github.com/emacs-mirror/emacs/commit/c430f7e23fc2c22f251ace4254e37dea1452dfc3
     `(show-paren-match-face ((,class (:foreground ,nord0 :background ,nord8))))

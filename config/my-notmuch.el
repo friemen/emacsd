@@ -1,7 +1,7 @@
 (provide 'my-notmuch)
 
 (setq user-full-name "Falko Riemenschneider")
-(setq user-mail-address nil) ;; ensure that user needs to select a mail context
+(setq user-mail-address "unknown") ;; WATCHOUT nil would break Org html export, use `unknown' to ensure that user needs to select a mail context
 (setq send-mail-function 'message-send-mail-with-sendmail)
 (setq sendmail-program "/usr/bin/msmtp")
 (setq mail-specify-envelope-from t)
@@ -50,7 +50,7 @@
         ("admin@falkoriemenschneider.de" . "admin@falkoriemenschneider.de/Sent -unread +sent")))
 
 (defun my-notmuch-ensure-mail-context (prompt-for-sender)
-  (if (or (not user-mail-address)
+  (if (or (string-equal user-mail-address "unknown")
           prompt-for-sender
           notmuch-always-prompt-for-sender)
       (let* ((from (notmuch-mua-prompt-for-sender))

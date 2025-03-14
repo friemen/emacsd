@@ -4,7 +4,7 @@
 (global-set-key (kbd "C-/") 'comment-or-uncomment-region) ;; no undo please, C-z is sufficient
 (global-set-key (kbd "C-o") 'hydra-window-control/body)
 (global-set-key (kbd "C-q") 'save-buffers-kill-terminal)
-(global-set-key (kbd "C-w") 'kill-this-buffer)
+(global-set-key (kbd "C-w") 'kill-current-buffer)
 (global-set-key (kbd "C-r") 'replace-string)
 (global-set-key (kbd "<f8>") 'ivy-switch-buffer)
 (global-set-key (kbd "C-<f8>") 'ibuffer)

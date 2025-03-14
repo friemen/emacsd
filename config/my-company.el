@@ -10,10 +10,6 @@
 (use-package company :ensure t
   :diminish
 
-  :bind
-  (:map company-mode-map
-        ("<tab>" . my-indent-and-complete-symbol))
-
   :config
   (add-hook 'after-init-hook 'global-company-mode)
 

@@ -1,28 +1,27 @@
 (provide 'my-dired)
 
-(use-package dired-single :ensure t)
-
 (use-package dired
   :bind
   (("C-x C-d" . dired-jump)
    ("C-x d" . hydra-dired-goto/body)
    :map dired-mode-map
-   ("RET" . dired-single-buffer)
-   ("<backspace>" . dired-single-up-directory)
-   ("^" . dired-single-up-directory)
+   ("RET" . dired-view-file)
+   ("<backspace>" . dired-up-directory)
+   ("^" . dired-up-directory)
    ("." . dired-omit-mode)
    ("<tab>" . dired-hide-details-mode)
-   ("q" . kill-this-buffer)
+   ("q" . kill-current-buffer)
    ("?" . hydra-dired/body))
 
   :config
   (require 'dired-x)
-  (require 'dired-single)
+  ;(require 'dired-single)
   (add-to-list 'dired-guess-shell-alist-user
                (list my-xdg-open-file-extension-re "xdg-open &"))
   (setq dired-omit-files "^\\.?#\\|^\\.$\\|^\\.\\.$\\|^\\..*$")
   (setq dired-listing-switches "-lAhgG --group-directories-first")
   (setq dired-dwim-target t)
+  (setq dired-kill-when-opening-new-dired-buffer t)
   (add-hook 'dired-mode-hook (lambda ()
                                (dired-omit-mode 1)
                                (hl-line-mode)
@@ -39,8 +38,8 @@
  [_<up>_]         Next item       [_t_]  Mark all     [_g_]      Refresh        [_D_]  Delete
  [_<down>_]       Previous item   [_U_]  Unmark all   ^^                        [_!_]  Shell command
  "
-  ("<backspace>" dired-single-up-directory)
-  ("RET" dired-single-buffer)
+  ("<backspace>" dired-up-directory)
+  ("RET" dired-view-file)
   ("<up>" dired-previous-line)
   ("<down>" dired-next-line)
   ("m" dired-mark)

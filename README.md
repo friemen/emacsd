@@ -31,7 +31,8 @@ sudo apt-get -y install \
     libsqlite3-dev \
     libgccjit0 \
     libgccjit-13-dev \
-    libtiff-dev
+    libtiff-dev \
+    libxml2-dev
 ```
 2. `sudo apt-get -y build-dep emacs`
    (Perhaps you need to include source archives in your sources.list file.)

@@ -12,6 +12,9 @@
 (defun my-clj-refactor-setup ()
     (clj-refactor-mode 1))
 
+(require 'my-highlight-symbol)
+(require 'my-company)
+(require 'my-hideshow)
 
 (use-package cider :ensure t
   :bind
@@ -29,7 +32,8 @@
         ("C-c l" . my-clojure-save-form)
         ("C-c C-l" . my-clojure-eval-saved-form)
         ("C-c C-i" . my-clojure-indent-defn)
-        ("C-c C-x" . my-clojure-clear-repl))
+        ("C-c C-x" . my-clojure-clear-repl)
+        ("<tab>" . my-indent-and-complete-symbol))
 
   :config
   (setq cider-overlays-use-font-lock t)
@@ -70,7 +74,8 @@
    :map clojure-mode-map
         ("C-c C-i" . my-clojure-indent-defn)
         ("C-M-." . mc/mark-all-symbols-like-this)
-        ("C-." . mc/mark-all-symbols-like-this-in-defun))
+        ("C-." . mc/mark-all-symbols-like-this-in-defun)
+        ("<tab>" . my-indent-and-complete-symbol))
 
   :config
   ;;(message "Started CLOJURE MODE")
