@@ -35,7 +35,7 @@
 ----------------------------------------------------------------------------------------------------
  [_<backspace>_]  Dir up          [_m_]  Mark         [_._]      Hidden files   [_R_]  Rename
  [_RET_]          Visit item      [_u_]  Unmark       [_<tab>_]  File details   [_C_]  Copy
- [_<up>_]         Next item       [_t_]  Mark all     [_g_]      Refresh        [_D_]  Delete
+ [_<up>_]         Next item       [_t_]  Invert mark  [_g_]      Refresh        [_D_]  Delete
  [_<down>_]       Previous item   [_U_]  Unmark all   ^^                        [_!_]  Shell command
  "
   ("<backspace>" dired-up-directory)

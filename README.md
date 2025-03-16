@@ -114,12 +114,13 @@ visual-line-mode            | Switch nice word wrap on/off
 ## Key bindings
 
 File/buffer/window/frame commands
+
 ```
 C-q         Exit Emacs
 C-w         Kill current buffer
 C-x k       Ask for buffer to kill
 C-o         Toggle window control hydra
-C-x C-f     Load file
+C-x C-f     Open file in new buffer
 C-x f       Open recently used file
 C-x C-s     Save buffer to file
 C-x C-w     Write buffer to other file
@@ -128,7 +129,6 @@ C-Pgup      Previous buffer
 C-Pgdn      Next buffer
 C-Tab       Switch to next window
 M-<1 2 ..>  Goto window 1, 2, 3, ..
-C-l         Center buffer to point
 C-x o       Jump to next window
 C-x 1       Delete other windows
 C-x 0       Delete current window
@@ -136,9 +136,11 @@ C-x 2       Split window horizontally
 C-x 3       Split window vertically
 C-x 5 2     Create new frame
 C-x 5 0     Delete current frame
+C-l         Center buffer to point
 ```
 
 Globally available special functions
+
 ```
 C-Escape    Toggle treemacs sidebar
 C-x C-b     List buffers
@@ -146,7 +148,7 @@ C-F8        List buffers
 C-x C-a     Org agenda
 C-x C-l     Org store link
 C-x C-q     Org capture
-C-x C-d     Show directory of current buffer in dired+
+C-x C-d     Show directory of current buffer in dired
 C-x d       Ask for start directory, then open dired
 C-x t a     Add current dir to treemacs workspace
 C-x C-c     Show calendar with diary-fancy-display
@@ -161,6 +163,7 @@ C-x y, F7   Insert snippet
 ```
 
 Movement of point
+
 ```
 C-n         Line down
 C-p         Line up
@@ -169,11 +172,12 @@ M-b         Word backward
 C-a         Line begin
 C-e         Line end
 C-,         Ace Jump
-M-<         Set mark
-M->         Jump back to mark
+M-<         Push point position to mark ring
+M->         Jump back
 ```
 
 General edit commands
+
 ```
 C-z         Undo
 C-Z         Redo
@@ -199,6 +203,7 @@ C-Enter     Set/end rectangle mark
 ```
 
 Misc commands
+
 ```
 C-g         Cancel command / buffer (or 3x Escape)
 q           Dismiss a temporary buffer that has appeared
@@ -215,15 +220,18 @@ C-;         Toggle highlight symbol at point
 ```
 
 Projectile (see also [project page](https://github.com/bbatsov/projectile/blob/master/doc/usage.md#interactive-commands))
+
 ```
 C-c p       Open projectile hydra
 C-F12       Find project file
 ```
 
 Dired
+
 ```
 ?           Show hydra
 Enter       Visit file/dir
+e           Edit file
 v           View file/dir in place
 o           Visit file in other window
 &           Do shell command on file (e.g. xdg-open)
@@ -234,21 +242,26 @@ Backspace   Go to parent dir
 Tab         Toggle file details display
 s           Toggle sorting by date or by name
 g           Refresh
+t           Invert selection marks
 m           Mark
 % m         Mark using regexp
 u           Unmark
 U           Unmark all
 k           Hide marked lines from list
+M           Modify access flags (chmod)
 q           Close dired buffer
 ```
 
 Markdown (see also [cheatsheet](http://ddloeffler.blogspot.de/2013/04/keybindings-for-emacs-markdown-mode.html))
+
 ```
 C-c C-a l   Insert link
 C-c C-c p   Preview in browser
+C-c C-c l   Toggle live preview in other window
 ```
 
 Magit (for more see [keystroke index](https://magit.vc/manual/magit/Keystroke-Index.html#Keystroke-Index))
+
 ```
 q           Close Magit buffer
 g           Refresh
@@ -274,6 +287,7 @@ i           Add file to .gitignore
 ```
 
 Paredit (for more see [cheatsheet](https://www.emacswiki.org/pics/static/PareditCheatsheet.png))
+
 ```
 Tab         Reindent
 C-M-u       Jump up to start of enclosing sexp
@@ -299,6 +313,7 @@ C-M-t       Transpose sexps
 ```
 
 Hide-show code blocks (minor mode is activated where useful)
+
 ```
 C-c x h     Hide all foldable code blocks in buffer
 C-c x s     Show all folded code blocks in buffer
@@ -306,6 +321,7 @@ C-c x x     Toggle code folding for block at point
 ```
 
 Clojure/CIDER-Mode specific (for more see [CIDER shortcuts](https://cider.readthedocs.io/en/latest/interactive_programming/))
+
 ```
 C-c M-j     Start new REPL
 C-c M-c     Connect to existing REPL
@@ -341,6 +357,7 @@ Tab         Reindent, then auto-complete
 
 
 CIDER-REPL-Mode specific (for more see [CIDER shortcuts](https://cider.readthedocs.io/en/latest/using_the_repl/))
+
 ```
 Enter       Evaluate entered sexp
 Tab         Complete symbol at point
@@ -357,6 +374,7 @@ C-c q       Quit ClojureScript REPL
 ```
 
 Web-Mode (see also [project page](http://web-mode.org/))
+
 ```
 C-7         Close tag
 C-c C-i     Indent buffer
@@ -371,6 +389,7 @@ C-c q q     Toggle folding
 ```
 
 Emacs-Lisp-Mode
+
 ```
 C-c C-c     Eval top-level sexp
 C-x C-e     Eval last elisp sexp
@@ -379,6 +398,7 @@ C-M-.       Mark all symbols like this (multiple cursors)
 ```
 
 Treemacs Mode
+
 ```
 ?           Show hydra
 q           Close treemacs
@@ -390,6 +410,7 @@ Enter       Load file in buffer
 Org Mode (see also [refcard](https://orgmode.org/orgcard.txt) and [org guide](https://orgmode.org/orgguide.pdf))
 
 Bindings in Org buffer
+
 ```
 M-Enter     Add next item
 M-S-Enter   Add next TODO or [ ] item
@@ -420,10 +441,12 @@ C-c C-z     Add note to section
 C-c C-l     Insert link
 C-c / ...   Filter by ...
 C-c $       Move heading to archive
+C-c C-e     Export Org file to ...
 F5          Toggle presentation mode (via org-tree-slide)
 ```
 
 Bindings in Org agenda buffer
+
 ```
 q           Quit
 g           Refresh
@@ -440,6 +463,7 @@ X           Cancel running clock
 ```
 
 Org-roam
+
 ```
 C-c n i    Insert node
 C-c n f    Find node
@@ -447,12 +471,14 @@ C-c n l    Toggle Org-roam buffer display
 ```
 
 Calendar
+
 ```
 q           Close calendar
 i d         Insert new diary entry
 ```
 
 Notmuch E-Mail / saved searches overview aka notmuch-hello
+
 ```
 ?           Display help
 q           Close window
@@ -464,6 +490,7 @@ G           Notmuch sync with POP3 and IMAP servers
 ```
 
 Notmuch E-Mail / search results as list of messages and threads
+
 ```
 ?           Display help
 q           Close window
@@ -483,6 +510,7 @@ C-u m       Compose new message, ask for sender first
 ```
 
 Notmuch E-Mail / view single message or thread of messages
+
 ```
 ?           Display help
 q           Close window
@@ -498,6 +526,7 @@ C-u m       Compose new message, ask for sender first
 ```
 
 Notmuch E-Mail / new message composition
+
 ```
 C-c C-b     Go to body
 C-c C-f C-s Go to Subject: header field
