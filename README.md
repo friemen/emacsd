@@ -515,6 +515,8 @@ e           Resume editing of draft
 w           Save all attachments
 m           Compose new message
 C-u m       Compose new message, ask for sender first
+C-c C-l     Goto next HTTP url
+C-c C-o     Open URL at point
 ```
 
 Notmuch E-Mail / new message composition

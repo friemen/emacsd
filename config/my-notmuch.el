@@ -134,6 +134,9 @@
       (erase-buffer)
       (insert-file-contents mail-file))))
 
+(defun my-notmuch-goto-next-url ()
+  (interactive)
+  (search-forward "http"))
 
 (defun my-notmuch-search-delete-messages (&optional beg end)
   (interactive)
@@ -206,6 +209,7 @@
    ("d" . my-notmuch-search-delete-messages)
    :map notmuch-show-mode-map
    ("C-<tab>" . other-window)
+   ("C-c C-l" . my-notmuch-goto-next-url)
    ("C-c C-o" . browse-url-at-point)
    ("r" . my-notmuch-show-reply-sender)
    ("R" . my-notmuch-show-reply-all)
