@@ -206,7 +206,7 @@
    ("d" . my-notmuch-search-delete-messages)
    :map notmuch-show-mode-map
    ("C-<tab>" . other-window)
-   ("C-c C-o" . org-open-at-point)
+   ("C-c C-o" . browse-url-at-point)
    ("r" . my-notmuch-show-reply-sender)
    ("R" . my-notmuch-show-reply-all)
    ("f" . my-notmuch-show-forward-message)
