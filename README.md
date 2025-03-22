@@ -420,19 +420,10 @@ M-Up        Move up within level
 M-Down      Move down with level
 Tab         Cycle folding
 S-Tab       Cycle global folding
-S-Left      On heading:  cycle status backward
-            On item:     cycle bullet style
-            In calendar: previous day
-S-Right     On heading:  cycle status forward
-			On item:     cycle bullet style
-	        In calendar: next day
-S-Up        On heading:  cycle priority backward
-            On item:     move up within section
-S-Down      On heading: cycle priority forward
-         	On item:     move down within section
-C-c ^       Sort items
 C-t         Define tags
-C-c C-t ... Set heading TODO status
+C-c C-t ... Set heading TODO status keyword
+C-c , ...   Set priority
+C-c b       Cycle list bullet type
 C-c .       Add date
 C-c C-d     Add deadline date to section
 C-c C-s     Add schedule date to section
@@ -440,6 +431,7 @@ C-c C-c     Toggle checkbox [ ] <-> [X], fix date, relayout table etc.
 C-c C-z     Add note to section
 C-c C-l     Insert link
 C-c / ...   Filter by ...
+C-c ^       Sort items
 C-c $       Move heading to archive
 C-c C-e     Export Org file to ...
 F5          Toggle presentation mode (via org-tree-slide)

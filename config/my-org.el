@@ -55,8 +55,11 @@
    ("C-," . ace-jump-mode)
    ("C-t" . org-set-tags-command)
    ("<f5>" . org-tree-slide-mode)
-   ;;("S-<right>" . nil)
-   ;;("S-<down>" . nil)
+   ("S-<right>" . nil)
+   ("S-<left>" . nil)
+   ("S-<up>" . nil)
+   ("S-<down>" . nil)
+   ("C-c b" . org-cycle-list-bullet)
    :map org-agenda-mode-map
    ("C-c C-o" . org-open-at-point))
   :config
