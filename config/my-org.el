@@ -55,6 +55,8 @@
    ("C-," . ace-jump-mode)
    ("C-t" . org-set-tags-command)
    ("<f5>" . org-tree-slide-mode)
+   ("S-M-<right>" . org-shiftright)
+   ("S-M-<left>" . org-shiftleft)
    ("S-<right>" . nil)
    ("S-<left>" . nil)
    ("S-<up>" . nil)

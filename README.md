@@ -420,15 +420,17 @@ M-Up        Move up within level
 M-Down      Move down with level
 Tab         Cycle folding
 S-Tab       Cycle global folding
+M-S-Left    Shift-left behaviour on item
+M-S-Right   Shift-right behaviour on item
 C-t         Define tags
 C-c C-t ... Set heading TODO status keyword
 C-c , ...   Set priority
 C-c b       Cycle list bullet type
-C-c .       Add date
-C-c C-d     Add deadline date to section
-C-c C-s     Add schedule date to section
+C-c .       Set date
+C-c C-d     Set deadline date for headline
+C-c C-s     Set schedule date for headline
 C-c C-c     Toggle checkbox [ ] <-> [X], fix date, relayout table etc.
-C-c C-z     Add note to section
+C-c C-z     Add note to headline
 C-c C-l     Insert link
 C-c / ...   Filter by ...
 C-c ^       Sort items
