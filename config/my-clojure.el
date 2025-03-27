@@ -65,6 +65,8 @@
   (add-hook 'cider-repl-mode-hook 'yas-minor-mode)
   )
 
+(use-package cider-eval-sexp-fu :ensure t)
+
 (use-package clojure-mode :ensure t
   :bind
   (:map paredit-mode-map

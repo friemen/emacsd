@@ -42,6 +42,7 @@
  '(dired-directory ((t (:foreground "#ebcb8b"))))
  '(dired-directory-face ((t (:foreground "#ebcb8b"))))
  '(dired-marked ((t (:foreground "#88C0D0"))))
+ '(eval-sexp-fu-flash ((t (:background "#b48ead"))))
  '(highlight ((t (:background "#81a1c1" :foreground "#2e3440"))))
  '(highlight-symbol-face ((t (:background "gray30"))))
  '(linum ((t :foreground "#4c566a")))

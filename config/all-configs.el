@@ -23,6 +23,7 @@
 (use-package ace-jump-mode :ensure t
   :bind
   (("C-," . ace-jump-mode)))
+(use-package eval-sexp-fu :ensure t)
 
 (require 'my-clojure)
 (require 'my-company)
