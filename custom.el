@@ -61,6 +61,7 @@
  '(org-block ((t (:extend t :background "gray12" :foreground "#D8DEE9"))))
  '(org-block-begin-line ((t (:extend t :background "gray12" :foreground "#8FBCBB"))))
  '(org-block-end-line ((t (:extend t :background "gray12" :foreground "#8FBCBB"))))
+ '(org-code ((t (:foreground "#a3be8c"))))
  '(org-drawer ((t (:foreground "dark gray" :height 0.8))))
  '(org-headline-done ((t (:foreground "#4c566a"))))
  '(org-headline-todo ((t (:foreground "#81a1c1"))))
