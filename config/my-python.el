@@ -1,5 +1,7 @@
 (provide 'my-python)
 
+(require 'my-hideshow)
+
 (defun my-elpy-shell-clear-buffer ()
   (interactive)
   (with-current-buffer (process-buffer (elpy-shell-get-or-create-process))
@@ -17,11 +19,11 @@
 (use-package elpy :ensure t :defer t
   :bind
   (:map elpy-mode-map
-        ("C-c C-c" . elpy-shell-send-top-statement)
-        ("C-c C-x" . my-elpy-shell-clear-buffer)
-        ("C-c C-k" . elpy-shell-send-buffer)
         ("C-c M-c" . run-python)
-        ("C-c r" . my-elpy-system-reload)
+        ("C-c C-c" . elpy-shell-send-top-statement)
+        ("C-c C-k" . elpy-shell-send-buffer)
+        ("C-c s" . my-elpy-system-reload)
+        ("C-c C-x" . my-elpy-shell-clear-buffer)
    :map inferior-python-mode-map
         ("C-c C-x" . my-elpy-shell-clear-buffer)
         ("C-c C-q" . my-elpy-shell-kill-buffer))
@@ -36,6 +38,8 @@
   (setq elpy-shell-echo-input nil)
   (add-hook 'elpy-mode-hook 'highlight-symbol-mode)
   (add-hook 'elpy-mode-hook 'eval-sexp-fu-flash-mode)
+  (add-hook 'elpy-mode-hook 'hs-minor-mode)
+  (add-hook 'elpy-mode-hook 'rainbow-delimiters-mode)
   (font-lock-add-keywords 'python-mode my-todo-keywords))
 
 

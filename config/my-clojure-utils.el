@@ -1,6 +1,7 @@
 (provide 'my-clojure-utils)
 
 (require 'my-lisp-utils)
+(require 'my-company)
 (require 'cider-util)
 
 (defun my-clojure-restart-system ()
@@ -84,6 +85,9 @@
     (indent-sexp)
     (clojure-align (point) (my-end-of-form))))
 
+(defun my-clojure-indent-then-complete ()
+  (interactive)
+  (my-company-indent-then-complete #'lisp-indent-line))
 
 ;; save form and eval saved form
 

@@ -33,7 +33,7 @@
         ("C-c C-l" . my-clojure-eval-saved-form)
         ("C-c C-i" . my-clojure-indent-defn)
         ("C-c C-x" . my-clojure-clear-repl)
-        ("<tab>" . my-indent-and-complete-symbol))
+        ("<tab>" . my-clojure-indent-then-complete))
 
   :config
   (setq cider-overlays-use-font-lock t)
@@ -77,7 +77,7 @@
         ("C-c C-i" . my-clojure-indent-defn)
         ("C-M-." . mc/mark-all-symbols-like-this)
         ("C-." . mc/mark-all-symbols-like-this-in-defun)
-        ("<tab>" . my-indent-and-complete-symbol))
+        ("<tab>" . my-clojure-indent-then-complete))
 
   :config
   ;;(message "Started CLOJURE MODE")

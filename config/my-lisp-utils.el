@@ -1,5 +1,7 @@
 (provide 'my-lisp-utils)
 
+(require 'my-company)
+
 (defun my-delete-whitespace-except-one ()
   "Deletes all whitespace chars following point except one space."
   (interactive)
@@ -14,13 +16,9 @@
     (paredit-forward-delete)))
 
 
-(defun my-indent-and-complete-symbol ()
+(defun my-elisp-indent-then-complete ()
   (interactive)
-  (let ((pos (point)))
-    (lisp-indent-line)
-    (when (= pos (point))
-      (if (save-excursion (re-search-backward "[^() \n\t\r]+\\=" nil t))
-	  (company-complete)))))
+  (my-company-indent-then-complete #'lisp-indent-line))
 
 
 (defun my-indent-defun ()
@@ -43,14 +41,17 @@
           (t
            (paredit-forward)))))
 
+
 (defun my-goto-end-of-form ()
   (interactive)
   (my-goto-end-of-form-rec (point)))
+
 
 (defun my-end-of-form ()
   (save-excursion
     (my-goto-end-of-form)
     (point)))
+
 
 (defun my-beginning-of-form ()
   (save-excursion

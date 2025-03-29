@@ -320,7 +320,7 @@ C-c x s     Show all folded code blocks in buffer
 C-c x x     Toggle code folding for block at point
 ```
 
-Clojure/CIDER-Mode specific (for more see [CIDER shortcuts](https://cider.readthedocs.io/en/latest/interactive_programming/))
+Clojure/Cider-Mode specific (for more see [CIDER shortcuts](https://cider.readthedocs.io/en/latest/interactive_programming/))
 
 ```
 C-c M-j     Start new REPL
@@ -356,7 +356,7 @@ Tab         Reindent, then auto-complete
 [Clojure Refactoring shortcuts](https://github.com/clojure-emacs/clj-refactor.el/wiki)
 
 
-CIDER-REPL-Mode specific (for more see [CIDER shortcuts](https://cider.readthedocs.io/en/latest/using_the_repl/))
+Cider-REPL-Mode specific (for more see [CIDER shortcuts](https://cider.readthedocs.io/en/latest/using_the_repl/))
 
 ```
 Enter       Evaluate entered sexp
@@ -536,4 +536,27 @@ C-c C-d     Don't send and exit
 C-c t       Replace contents with mail template
 C-c C-a     Add attachment
 To remove an attachment just delete the markup from the message body.
+```
+
+Python (with [Elpy](https://elpy.readthedocs.io) and [auto-virtualenv](https://github.com/marcwebbie/auto-virtualenv))
+
+```
+C-c M-c     Launch Python shell
+C-c C-z     Switch to shell buffer
+C-c C-c     Eval function at point
+C-c C-k     Eval whole buffer
+C-c C-x     Clear REPL output
+C-c C-q     Quit shell
+```
+
+JavaScript (js2-mode with [Indium](https://indium.readthedocs.io/en/latest/))
+
+```
+C-c M-c     Launch REPL, connect to Chrome or Node
+C-c C-z     Switch to REPL buffer
+C-c C-c     Eval function at point
+C-c C-k     Eval whole buffer
+C-c C-e     Eval previous statement
+C-c C-x     Clear REPL output
+C-c C-q     Quit REPL connection
 ```

@@ -1,5 +1,6 @@
 (provide 'my-elisp)
 
+(require 'my-lisp-utils)
 (require 'my-highlight-symbol)
 (require 'my-company)
 (require 'my-hideshow)
@@ -17,7 +18,7 @@
         ("C-c C-i" . my-indent-defun)
         ("C-M-." . mc/mark-all-symbols-like-this)
         ("C-." . mc/mark-all-symbols-like-this-in-defun)
-        ("<tab>" . my-indent-and-complete-symbol))
+        ("<tab>" . my-elisp-indent-then-complete))
 
   :config
   (require 'my-paredit)
