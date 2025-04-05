@@ -63,11 +63,13 @@
    ("S-<down>" . nil)
    ("C-c b" . org-cycle-list-bullet)
    :map org-agenda-mode-map
-   ("C-c C-o" . org-open-at-point))
+   ("C-c C-o" . org-open-at-point)
+   ("s" . org-agenda-schedule)
+   ("S" . org-save-all-org-buffers))
   :config
   (require 'org-agenda)
   (setq org-directory "~/Org")
-  (setq org-ellipsis " ⏷") ; ⤵↴
+  (setq org-ellipsis " ⏷") ;; ⤵↴
   (setq org-startup-with-inline-images t)
   (setq org-image-actual-width '(800))
   (setq org-startup-folded t)
@@ -79,6 +81,29 @@
   (setq org-tags-column 80)
   (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "STARTED(s)" "WAITING(w)" "DONE(d!)")))
   (setq org-todo-keyword-faces '(("STARTED" . "#d08770") ("WAITING" . "#b48ead")))
+
+  ;; speed keys
+  (setq org-use-speed-commands t)
+  (setq org-speed-commands
+        '(("Outline Navigation")
+          ("n" org-speed-move-safe 'org-next-visible-heading)
+          ("p" org-speed-move-safe 'org-previous-visible-heading)
+          ("N" org-speed-move-safe 'org-forward-heading-same-level)
+          ("P" org-speed-move-safe 'org-backward-heading-same-level)
+          ("u" org-speed-move-safe 'outline-up-heading)
+          ("On Headline")
+          ("t" org-todo)
+          ("s" . org-schedule)
+          ("," org-priority)
+          ("0" org-priority 32)
+          ("1" org-priority 65)
+          ("2" org-priority 66)
+          ("3" org-priority 67)
+          (":" org-set-tags-command)
+          ("Agenda")
+          ("a" org-agenda)
+          ("Misc")
+          ("?" org-speed-command-help)))
 
   ;; capture
   (setq org-capture-templates

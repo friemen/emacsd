@@ -439,18 +439,41 @@ C-c C-e     Export Org file to ...
 F5          Toggle presentation mode (via org-tree-slide)
 ```
 
+My Org [Speed Keys](https://emacsdocs.org/docs/org/Speed-Keys)
+
+```
+?           Speed Keys help
+a           Org Agenda
+n           Jump to next heading
+p           Jump to previous heading
+N           Jump to next heading with same level
+P           Jump to next heading with same level
+u           Jump up to parent heading
+t           Select TODO keyword
+s           Schedule headline
+,           Set priority
+0           Remove priority
+1           Priority A
+2           Priority B
+3           Priority C
+:           Set tags
+```
+
 Bindings in Org agenda buffer
 
 ```
 q           Quit
 g           Refresh
-s           Save all Org buffers
+Tab         Jump to item in Org file
+S           Save all Org buffers
 .           Go to today
 f           Go forward in time
 b           Go backward in time
 t           Set TODO status
-C-c C-s     Schedule item
+,           Choose priority
+s           Schedule item
 C-c C-d     Set deadline for item
+D           Toggle diary item display
 I           Start clock
 O           Stop clock
 X           Cancel running clock
@@ -538,7 +561,8 @@ C-c C-a     Add attachment
 To remove an attachment just delete the markup from the message body.
 ```
 
-Python (with [Elpy](https://elpy.readthedocs.io) and [auto-virtualenv](https://github.com/marcwebbie/auto-virtualenv))
+Python (with [Elpy](https://elpy.readthedocs.io) and
+[auto-virtualenv](https://github.com/marcwebbie/auto-virtualenv))
 
 ```
 C-c M-c     Launch Python shell
