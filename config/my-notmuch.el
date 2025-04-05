@@ -26,6 +26,14 @@
   (setq notmuch-draft-folder "falko.riemenschneider@arcor.de/Drafts")
   (message "Mail context is arcor.de"))
 
+(defun my-notmuch-context-gmail ()
+  (interactive)
+  (setq user-mail-address "falko.riemenschneider@gmail.com")
+  (setq message-signature-file "~/Mail/signature-private.txt")
+  (setq mail-host-address "gmail.com")
+  (setq notmuch-draft-folder "falko.riemenschneider@gmail.com/Drafts")
+  (message "Mail context is gmail.com"))
+
 (defun my-notmuch-context-falkoriemenschneider ()
   (interactive)
   (setq user-mail-address "admin@falkoriemenschneider.de")
@@ -39,6 +47,8 @@
          (my-notmuch-context-doctronic))
         ((string= mail-address "falko.riemenschneider@arcor.de")
          (my-notmuch-context-arcor))
+        ((string= mail-address "falko.riemenschneider@gmail.com")
+         (my-notmuch-context-gmail))
         ((string= mail-address "admin@falkoriemenschneider.de")
          (my-notmuch-context-falkoriemenschneider))
         (t
@@ -47,6 +57,7 @@
 (setq notmuch-fcc-dirs
       '(("riemenschneider@doctronic.de" . "riemenschneider@doctronic.de/Sent -unread +sent")
         ("falko.riemenschneider@arcor.de" . "falko.riemenschneider@arcor.de/Sent -unread +sent")
+        ("falko.riemenschneider@gmail.com" . "falko.riemenschneider@gmail.com/Sent -unread +sent")
         ("admin@falkoriemenschneider.de" . "admin@falkoriemenschneider.de/Sent -unread +sent")))
 
 (defun my-notmuch-ensure-mail-context (prompt-for-sender)
@@ -304,7 +315,9 @@
 Select mail context:
 [_d_] doctronic.de
 [_a_] arcor.de
+[_g_] gmail.com
 [_f_] admin@falkoriemenschneider.de"
                          ("d" my-notmuch-context-doctronic)
                          ("a" my-notmuch-context-arcor)
+                         ("g" my-notmuch-context-gmail)
                          ("f" my-notmuch-context-falkoriemenschneider)))
