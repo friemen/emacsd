@@ -43,3 +43,17 @@
               (lambda (orig-fun &rest args)
                 (fullframe/maybe-restore-configuration fullframe/previous-window-configuration)))
   (fullframe magit-status magit-mode-quit-window))
+
+
+(use-package magit-blame-color-by-age
+  :vc
+  (:url "https://github.com/jdtsmith/magit-blame-color-by-age")
+
+  :hook
+  magit-blame-mode
+
+  :config
+  (setf (alist-get 'heading-format (alist-get 'headings magit-blame-styles)) "%C %-20a %s\n")
+
+  :custom
+  (magit-blame-color-by-age-full-heading t))
