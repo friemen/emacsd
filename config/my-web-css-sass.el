@@ -1,5 +1,6 @@
 (provide 'my-web-css-sass)
 
+(require 'flymake-proc) ;; see https://github.com/haskell/haskell-mode/issues/1825
 
 (defun my-web-mode-insert-link (href)
   (interactive "sInsert link with HREF: ")
