@@ -104,6 +104,7 @@ query-replace               | Replace all to end of buffer, ask for each
 package-list-packages       | Open package manager
 projectile-replace          | Replace string in project files
 replace-string              | Replace all to end of buffer
+restclient-mode             | REST client for HTTP API testing
 revert-buffer               | Reload buffer contents from file
 rgrep                       | Grep for pattern recursively in files
 string-rectangle            | Insert prefix to every marked line
@@ -386,6 +387,18 @@ C-c C-e i   Insert element (interactive)
 C-c C-e l   Insert link (interactive)
 C-c C-a i   Insert attribute (interactive)
 C-c q q     Toggle folding
+```
+
+[REST Client](https://github.com/pashky/restclient.el)
+
+Use `# -*- restclient -*-` at the top of a .txt file to auto-start
+restclient-mode when Emacs visits the file.
+
+```
+C-c C-c     Run query at point
+C-c C-u     Copy query at point as a curl command
+Tab         Hide/show current request body
+C-c C-i     Show information on restclient variables at point
 ```
 
 Emacs-Lisp-Mode
