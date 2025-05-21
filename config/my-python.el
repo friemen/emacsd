@@ -25,6 +25,7 @@
         ("C-c s" . my-elpy-system-reload)
         ("C-c C-x" . my-elpy-shell-clear-buffer)
    :map inferior-python-mode-map
+        ("C-c s" . my-elpy-system-reload)
         ("C-c C-x" . my-elpy-shell-clear-buffer)
         ("C-c C-q" . my-elpy-shell-kill-buffer))
 
