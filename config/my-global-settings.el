@@ -108,6 +108,7 @@
    "\\|\\.mkv\\|\\.m4v\\|\\.mp4\\|\\.mp3"
    "\\|\\.epgz"
    "\\|\\.qea\\|\\.feap"
+   "\\|\\.svg"
    "\\|\\.xmind"))
 
 ;; use this with like
