@@ -15,9 +15,6 @@
 (use-package expand-region :ensure t
   :bind
   (("C-SPC" . er/expand-region)))
-(use-package browse-kill-ring :ensure t
-  :bind
-  (("<C-insert>" . browse-kill-ring)))
 (use-package impatient-mode :ensure t)
 (use-package restclient :ensure t)
 (use-package ace-jump-mode :ensure t
@@ -25,6 +22,7 @@
   (("C-," . ace-jump-mode)))
 (use-package eval-sexp-fu :ensure t)
 
+(require 'my-browse-kill-ring)
 (require 'my-clojure)
 (require 'my-company)
 (require 'my-dashboard)
