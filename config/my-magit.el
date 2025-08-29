@@ -1,8 +1,5 @@
 (provide 'my-magit)
 
-(use-package fullframe :ensure t)
-
-
 (defun magit-push-to-gerrit-local-branch-or-commit (source)
   "Push an arbitrary branch or commit to Gerrit server. The source is read in the minibuffer."
   (interactive
@@ -30,6 +27,7 @@
   (setq magit-push-always-verify nil)
   (setq transient-history-file (expand-file-name "magit-history.el" my-data-files-dir))
   (setq magit-delete-by-moving-to-trash nil)
+  (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
 
   (transient-append-suffix 'magit-push "e"
     '("P" "Push implicitly" magit-push-implicitly))
@@ -41,8 +39,7 @@
   (advice-add 'magit-diff-visit-file
               :before
               (lambda (orig-fun &rest args)
-                (fullframe/maybe-restore-configuration fullframe/previous-window-configuration)))
-  (fullframe magit-status magit-mode-quit-window))
+                (fullframe/maybe-restore-configuration fullframe/previous-window-configuration))))
 
 
 (use-package magit-blame-color-by-age

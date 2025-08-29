@@ -278,6 +278,7 @@ U           Unstage all
 c c         Prepare commit
 C-c C-c     Commit
 P P         Push (without explicit refspec)
+P g         Push to Gerrit review branch
 f u         Fetch
 m m         Merge
 b b         Switch branch
