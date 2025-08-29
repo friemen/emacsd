@@ -65,6 +65,8 @@
   (add-hook 'cider-repl-mode-hook 'yas-minor-mode)
   )
 
+(use-package flycheck-clj-kondo :ensure t)
+
 (use-package cider-eval-sexp-fu :ensure t)
 
 (use-package clojure-mode :ensure t
@@ -80,9 +82,8 @@
         ("<tab>" . my-clojure-indent-then-complete))
 
   :config
-  ;;(message "Started CLOJURE MODE")
-  ;;(require 'clojure-mode-expansions)
-  ;;(add-hook 'clojure-mode-hook 'er/add-clojure-mode-expansions)
+  (require 'flycheck-clj-kondo)
+  (add-hook 'clojure-mode-hook 'flycheck-mode)
   (add-hook 'clojure-mode-hook 'paredit-mode)
   (add-hook 'clojure-mode-hook 'cider-mode)
   (add-hook 'clojure-mode-hook 'my-clj-refactor-setup)
