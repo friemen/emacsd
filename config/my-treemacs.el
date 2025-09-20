@@ -26,6 +26,7 @@
   :config
   (setq treemacs-collapse-dirs 3)
   (setq treemacs-git-mode 'deferred)
+  (setq treemacs-width 60)
   (treemacs-resize-icons 12)
 
   (defun my-treemacs-activate ()

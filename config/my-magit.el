@@ -12,7 +12,6 @@
   (interactive)
   (magit-push-to-gerrit-local-branch-or-commit (magit-get-current-branch)))
 
-
 (use-package magit :ensure t
   :bind
   (("C-x g" . magit-status)
@@ -21,13 +20,14 @@
    :map magit-mode-map
    ("C-<tab>" . other-window)
    ("<tab>" . magit-section-toggle)
-   ("C-w" . magit-mode-bury-buffer))
+   ("C-w" . magit-mode-bury-buffer)
+   ("<return>" . magit-diff-visit-worktree-file-other-window))
 
   :config
   (setq magit-push-always-verify nil)
   (setq transient-history-file (expand-file-name "magit-history.el" my-data-files-dir))
   (setq magit-delete-by-moving-to-trash nil)
-  (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
+  (setq magit-display-buffer-function #'magit-display-buffer-traditional)
 
   (transient-append-suffix 'magit-push "e"
     '("P" "Push implicitly" magit-push-implicitly))
@@ -36,10 +36,16 @@
   (transient-append-suffix 'magit-push "e"
     '("G" "Push a branch to Gerrit" magit-push-to-gerrit-local-branch-or-commit))
 
-  (advice-add 'magit-diff-visit-file
-              :before
-              (lambda (orig-fun &rest args)
-                (fullframe/maybe-restore-configuration fullframe/previous-window-configuration))))
+  ;; not using fullframe anymore
+  ;; visit file does not work when the before advice is activates
+  ;; (require 'fullframe)
+  ;; (advice-add 'magit-diff-visit-file
+  ;;             :before
+  ;;             (lambda (orig-fun &rest args)
+  ;;               (fullframe/maybe-restore-configuration fullframe/previous-window-configuration)
+  ;;               ))
+  ;; (fullframe magit-status magit-mode-quit-window)
+  )
 
 
 (use-package magit-blame-color-by-age
