@@ -20,8 +20,7 @@
    :map magit-mode-map
    ("C-<tab>" . other-window)
    ("<tab>" . magit-section-toggle)
-   ("C-w" . magit-mode-bury-buffer)
-   ("<return>" . magit-diff-visit-worktree-file-other-window))
+   ("C-w" . magit-mode-bury-buffer))
 
   :config
   (setq magit-push-always-verify nil)
