@@ -165,7 +165,8 @@
 
   ;; auto save org buffers
   (add-hook 'auto-save-hook 'org-save-all-org-buffers)
-
+  ;; Break lines automatically
+  (add-hook 'org-mode-hook 'turn-on-auto-fill)
   ;; register file extension pattern with xdg open for org mode
   (add-hook 'org-open-at-point-functions #'my-org-xdg-open-at-point)
   ;; do browse-url on text that looks like a ticket nr
