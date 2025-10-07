@@ -269,13 +269,14 @@ q           Close Magit buffer
 g           Refresh
 l l         Show log
 e           Enter Ediff mode
-x           Reset to commit
-C-u x       Hard reset to commit
 Tab         Show diff for single file
+C-u C-j     Visit worktree file in other window
 s           Stage one
 u           Unstage one
 S           Stage all
 U           Unstage all
+x           Reset to commit
+C-u x       Hard reset to commit
 c c         Prepare commit
 C-c C-c     Commit
 P P         Push (without explicit refspec)
