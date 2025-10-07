@@ -1,5 +1,11 @@
 (provide 'my-dashboard)
 
+(defun my-dashboard ()
+  (interactive)
+  (dashboard-initialize)
+  (dashboard-jump-to-projects)
+  (delete-other-windows))
+
 (use-package dashboard :ensure t
   :init
   ;; (setq dashboard-startup-banner 'logo)

@@ -6,6 +6,7 @@
 (global-set-key (kbd "C-q") 'save-buffers-kill-terminal)
 (global-set-key (kbd "C-w") 'kill-current-buffer)
 (global-set-key (kbd "C-r") 'replace-string)
+(global-set-key (kbd "<f5>") 'my-dashboard)
 (global-set-key (kbd "<f8>") 'ivy-switch-buffer)
 (global-set-key (kbd "C-<f8>") 'ibuffer)
 (global-set-key (kbd "<f9>") 'org-agenda)

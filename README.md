@@ -144,6 +144,7 @@ Globally available special functions
 
 ```
 C-Escape    Toggle treemacs sidebar
+F5          Open dashboard
 C-x C-b     List buffers
 C-F8        List buffers
 C-x C-a     Org agenda
