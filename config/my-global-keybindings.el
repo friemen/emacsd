@@ -1,6 +1,5 @@
 (provide 'my-global-keybindings)
 
-(global-set-key (kbd "C-x C-z") nil) ;; don't suspend or minimize emacs
 (global-set-key (kbd "C-/") 'comment-or-uncomment-region) ;; no undo please, C-z is sufficient
 (global-set-key (kbd "C-o") 'hydra-window-control/body)
 (global-set-key (kbd "C-q") 'save-buffers-kill-terminal)

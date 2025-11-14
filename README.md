@@ -162,6 +162,7 @@ C-x m       Select mail composition context (from address, signature etc)
 C-x C-m     Compose new message
 C-u C-x C-m Compose new message, ask for sender first
 C-x y, F7   Insert snippet
+C-x C-z     Show newsticker
 ```
 
 Movement of point

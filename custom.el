@@ -22,7 +22,22 @@
      default))
  '(ibuffer-default-sorting-mode 'filename/process)
  '(notmuch-search-oldest-first nil)
- '(package-selected-packages nil)
+ '(package-selected-packages
+   '(ace-jump-mode auto-virtualenv browse-kill-ring buffer-move
+                   cider-eval-sexp-fu clj-refactor counsel dashboard
+                   diminish elpy expand-region flycheck-clj-kondo
+                   fullframe hide-mode-line highlight-symbol
+                   impatient-mode indium magit-blame-color-by-age
+                   markdown-mode notmuch org-anki org-fancy-priorities
+                   org-roam org-super-agenda org-superstar
+                   org-tree-slide paxedit popup rainbow-delimiters
+                   restclient sass-mode scss-mode smartparens smex
+                   spaceline treemacs-magit treemacs-projectile
+                   undo-tree use-package-hydra web-mode window-number))
+ '(package-vc-selected-packages
+   '((magit-blame-color-by-age :url
+                               "https://github.com/jdtsmith/magit-blame-color-by-age")))
+ '(safe-local-variable-values '((checkdoc-allow-quoting-nil-and-t . t)))
  '(sml/no-confirm-load-theme t)
  '(sml/theme 'light))
 
@@ -53,6 +68,8 @@
  '(markdown-code-face ((t (:inherit nil :foreground "dark gray"))))
  '(mode-line ((t :foreground "#2e3440" :background "#81a1c1" :inverse-video nil)))
  '(mode-line-inactive ((t :foreground "#2e3440" :background "#d8dee9" :inverse-video nil)))
+ '(newsticker-feed-face ((t (:foreground "white" :weight bold :height 1.5))))
+ '(newsticker-treeview-selection-face ((t (:background "#5e81ac"))))
  '(notmuch-tag-face ((t :foreground "#a3be8c")))
  '(notmuch-tag-flagged ((t :foreground "#ebcb8b")))
  '(notmuch-tag-unread ((t :foreground "#5e81ac")))

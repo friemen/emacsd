@@ -40,6 +40,7 @@
 (require 'my-mode-line)
 (require 'my-markdown)
 (require 'my-multiple-cursors)
+(require 'my-newsticker)
 (require 'my-notmuch)
 (require 'my-nxml)
 (require 'my-org)
