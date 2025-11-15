@@ -453,7 +453,7 @@ C-c / ...   Filter by (aka sparse tree) ...
 C-c ^       Sort items
 C-c $       Move heading to archive
 C-c C-e     Export Org file to ...
-F5          Toggle presentation mode (via org-tree-slide)
+F6          Toggle presentation mode (via org-tree-slide)
 ```
 
 My Org [Speed Keys](https://emacsdocs.org/docs/org/Speed-Keys)
