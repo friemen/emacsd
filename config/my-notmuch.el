@@ -157,6 +157,9 @@
   (interactive)
   (notmuch-show-tag (list "+deleted")))
 
+(defun my-notmuch-mua-confirm-send ()
+  (or (y-or-n-p "Confirm send?")
+      (error "Cancelled")))
 
 (defface my-notmuch-tag-todo
   '((t :foreground "#d08770"))
@@ -300,6 +303,7 @@
   ;; message composition
   (setq notmuch-always-prompt-for-sender nil)
   (setq notmuch-mua-compose-in 'new-window)
+  (add-hook 'notmuch-mua-send-hook #'my-notmuch-mua-confirm-send)
   (add-hook 'message-send-hook (lambda ()
 			         (let ((from (car (mail-header-parse-address
                                                    (message-fetch-field "from")))))
